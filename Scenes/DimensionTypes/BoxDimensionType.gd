@@ -3,6 +3,7 @@ extends DimensionType
 @onready var Floor = $CSGCombiner3D/Floor
 @onready var CeilingRemover = $CSGCombiner3D/Floor/CeilingRemover
 @onready var Player = $Player
+@onready var ObjectSpawner = $ObjectSpawner
 
 func _generate_dimension(seed:int):
 	RNG.seed = seed
@@ -24,7 +25,11 @@ func _generate_dimension(seed:int):
 		CeilingRemover.queue_free()
 	
 	for i in range(1,RNG.randi_range(2,10)):
-		pass
+		var TreePositionX = RNG.randi_range((-FloorSizeX/2.0)-10,(FloorSizeX/2.0)+10)
+		var TreePositionZ = RNG.randi_range((-FloorSizeZ/2.0)-10,(FloorSizeZ/2.0)+10)
+		var TreePositionY = 0
+		print(Vector3(TreePositionX,TreePositionY,TreePositionZ))
+		ObjectSpawner.spawn_object("res://Objects/StaticObjects/Tree/TreeObject.tscn",Vector3(TreePositionX,TreePositionY,TreePositionZ))
 		#generate_door(FloorSizeX,HeightDifference/2.0,FloorSizeZ)
 
 	var Materials = pick_random_materials(seed)

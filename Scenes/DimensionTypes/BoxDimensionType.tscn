@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dyf6cgigv8kqe"]
+
+[ext_resource type="Script" uid="uid://cva2ivf7wj2n8" path="res://Scenes/DimensionTypes/BoxDimensionType.gd" id="1_0qrrk"]
+[ext_resource type="Material" uid="uid://bvs8plnqls81j" path="res://Materials/Fence1.tres" id="2_i6ang"]
+[ext_resource type="Material" uid="uid://qdrroywmlg5l" path="res://Materials/Bricks1.tres" id="2_wnxm8"]
+[ext_resource type="PackedScene" uid="uid://igw0ct71j4e2" path="res://Player/Player.tscn" id="3_tt7km"]
+
+[node name="BoxDimensionType" type="Node3D" unique_id=11375313]
+script = ExtResource("1_0qrrk")
+metadata/_custom_type_script = "uid://bepr8n1natohq"
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=1217228530]
+use_collision = true
+
+[node name="Floor" type="CSGBox3D" parent="CSGCombiner3D" unique_id=467331964]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.028, 5.12, -0.069)
+flip_faces = true
+size = Vector3(20, 10, 20)
+material = ExtResource("2_i6ang")
+
+[node name="CeilingRemover" type="CSGBox3D" parent="CSGCombiner3D/Floor" unique_id=1606546734]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.028, 23.529995, 0.549)
+operation = 2
+size = Vector3(35.52, 40.8, 28.8)
+material = ExtResource("2_wnxm8")
+
+[node name="Player" parent="." unique_id=1083039947 instance=ExtResource("3_tt7km")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.062366, 0)

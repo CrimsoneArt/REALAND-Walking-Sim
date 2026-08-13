@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://66jhr2whqlto"]
+
+[ext_resource type="Script" uid="uid://d3l1uywy8qcau" path="res://Scenes/DimensionTypes/Maze1DimensionType.gd" id="1_h31ln"]
+[ext_resource type="PackedScene" uid="uid://igw0ct71j4e2" path="res://Objects/Player/Player.tscn" id="2_10llp"]
+
+[node name="Maze1DimensionType" type="Node3D" unique_id=1934074020]
+script = ExtResource("1_h31ln")
+
+[node name="Player" parent="." unique_id=1083039947 instance=ExtResource("2_10llp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8799996, 0)

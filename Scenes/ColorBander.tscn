@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cei1asx8hq7ft"]
+
+[ext_resource type="Shader" uid="uid://dxdbwru0y4u47" path="res://Scenes/ColorBandingShader.gdshader" id="1_3fj5s"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e4b1c"]
+shader = ExtResource("1_3fj5s")
+shader_parameter/step_size = 0.50000002375
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=2026648265]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1416179095]
+material = SubResource("ShaderMaterial_e4b1c")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

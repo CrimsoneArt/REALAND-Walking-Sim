@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cf31gf6dexort"]
+
+[ext_resource type="Script" uid="uid://b10xreo46wcwl" path="res://Scenes/SceneLoader.gd" id="1_jgsyn"]
+
+[node name="SceneLoader" type="Node3D" unique_id=858517008]
+script = ExtResource("1_jgsyn")

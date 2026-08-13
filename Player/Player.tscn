@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://igw0ct71j4e2"]
+
+[ext_resource type="Script" uid="uid://cllm3ak12877a" path="res://Player/Player.gd" id="1_xhfnw"]
+[ext_resource type="PackedScene" uid="uid://cxd7stqoepm5b" path="res://Player/PlayerUI/PlayerUI.tscn" id="2_oansn"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xhfnw"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_xrivr"]
+
+[node name="Player" type="CharacterBody3D" unique_id=1083039947]
+script = ExtResource("1_xhfnw")
+
+[node name="Head" type="Node3D" parent="." unique_id=1170419024]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4554807, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=536561370]
+
+[node name="RayCast3D" type="RayCast3D" parent="Head" unique_id=732901662]
+target_position = Vector3(0, 0, -2)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=839309152]
+shape = SubResource("CapsuleShape3D_xhfnw")
+debug_color = Color(1, 1, 1, 0.41960785)
+
+[node name="PlayerUI" parent="." unique_id=676471365 instance=ExtResource("2_oansn")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1148924469]
+mesh = SubResource("CapsuleMesh_xrivr")

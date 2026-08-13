@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://dyveir2wh5n0p"]
+
+[ext_resource type="Material" uid="uid://qdrroywmlg5l" path="res://Materials/Bricks1.tres" id="1_p5j8r"]
+[ext_resource type="Script" uid="uid://bojjlhwam21fl" path="res://Scenes/DimensionTypes/Maze1Cell.gd" id="1_ysl6p"]
+
+[node name="Maze1Cell" type="Node3D" unique_id=1576416744]
+script = ExtResource("1_ysl6p")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=780178495]
+use_collision = true
+
+[node name="Floor" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1460693962]
+size = Vector3(15, 0.1, 15)
+material = ExtResource("1_p5j8r")
+
+[node name="Cieling" type="CSGBox3D" parent="CSGCombiner3D" unique_id=42736341]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+size = Vector3(15, 0.1, 15)
+material = ExtResource("1_p5j8r")
+
+[node name="PostNW" type="CSGBox3D" parent="CSGCombiner3D" unique_id=541983551]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 5, -7.5)
+size = Vector3(6, 10, 6)
+material = ExtResource("1_p5j8r")
+
+[node name="PostSW" type="CSGBox3D" parent="CSGCombiner3D" unique_id=591470815]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 5, 7.5)
+size = Vector3(6, 10, 6)
+material = ExtResource("1_p5j8r")
+
+[node name="PostSE" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1430500848]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 5, 7.5)
+size = Vector3(6, 10, 6)
+material = ExtResource("1_p5j8r")
+
+[node name="PostNE" type="CSGBox3D" parent="CSGCombiner3D" unique_id=303533677]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 5, -7.5)
+size = Vector3(6, 10, 6)
+material = ExtResource("1_p5j8r")
+
+[node name="WallNorth" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1946077358]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -7.5)
+size = Vector3(15, 10, 6)
+material = ExtResource("1_p5j8r")
+
+[node name="WallEast" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1790710359]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 5, 0)
+size = Vector3(6, 10, 15)
+material = ExtResource("1_p5j8r")
+
+[node name="WallSouth" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1685490915]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 7.5)
+size = Vector3(15, 10, 6)
+material = ExtResource("1_p5j8r")
+
+[node name="WallWest" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1965738650]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 5, 0)
+size = Vector3(6, 10, 15)
+material = ExtResource("1_p5j8r")

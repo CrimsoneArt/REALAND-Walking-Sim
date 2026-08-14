@@ -4,7 +4,6 @@ var seed : int
 
 @export var DimensionTypes : Array[PackedScene]
 
-@onready var DoorNodesContainer = $DoorNodes
 @onready var World =  $WorldEnvironment
 
 var RNG

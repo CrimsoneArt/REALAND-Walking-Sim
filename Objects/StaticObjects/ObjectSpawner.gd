@@ -1,7 +1,14 @@
-extends Node
+class_name ObjectSpawner extends Node
 
-func spawn_object(Scene:String,Position:Vector3):
+var RNG = RandomNumberGenerator.new()
+
+func spawn_object(Seed:int,Scene:String,Position:Vector3,ObjectVariables:={}):
+	RNG.seed = Seed
 	var ObjectScene = load(Scene)
 	var ObjectNode = ObjectScene.instantiate()
-	ObjectNode.position = Position
+	if ObjectNode is StaticObject:
+		ObjectNode.position = Position
+		ObjectNode.rotation_degrees.y = RNG.randf_range(-360,360)
+		for key in ObjectVariables:
+			ObjectNode.SetObjectVariable(key,ObjectVariables[key])
 	get_parent().add_child(ObjectNode)

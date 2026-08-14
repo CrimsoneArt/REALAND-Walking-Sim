@@ -26,11 +26,11 @@ func _process(delta: float) -> void:
 		Head.rotate_y(-1.0 * Sensitivity)
 	
 	if InteractableChecker.is_colliding():
-		var collider = InteractableChecker.get_collider()
+		var Collider = InteractableChecker.get_collider()
 		PlayerUI.change_cross_hair(CrossHair2)
 		if Input.is_action_just_pressed("Enter"):
-			if collider is Door:
-				get_node("/root/SceneLoader").load_dimension_scene(collider.seed)
+			if Collider is InteractabilityComponent:
+				Collider.interact()
 	else:
 		PlayerUI.change_cross_hair(CrossHair1)
 

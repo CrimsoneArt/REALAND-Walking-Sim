@@ -2,13 +2,9 @@
 
 [ext_resource type="Material" uid="uid://qdrroywmlg5l" path="res://Materials/Bricks1.tres" id="1_ruj7l"]
 [ext_resource type="PackedScene" uid="uid://igw0ct71j4e2" path="res://Player/Player.tscn" id="2_fxrh3"]
-[ext_resource type="PackedScene" uid="uid://chyy3e5djbvnt" path="res://Objects/StaticObjects/Door/DoorOld.tscn" id="3_fxrh3"]
+[ext_resource type="PackedScene" uid="uid://dwqol8w28tgyb" path="res://Objects/StaticObjects/Door/DoorObject.tscn" id="3_fxrh3"]
 
 [node name="HubWorld" type="Node3D" unique_id=31661345]
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1510399545]
-transform = Transform3D(-0.4017944, -0.7470276, 0.52963305, 0.23368844, 0.47557715, 0.8480662, -0.88541025, 0.46451733, -0.016512591, 0, 10.4439745, 0)
-shadow_enabled = true
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=291160429]
 use_collision = true
@@ -28,34 +24,5 @@ material = ExtResource("1_ruj7l")
 [node name="Player" parent="." unique_id=1083039947 instance=ExtResource("2_fxrh3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.062366, 0)
 
-[node name="Door" parent="." unique_id=1435925402 instance=ExtResource("3_fxrh3")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -5.7599998, 0, 0)
-seed = 1
-
-[node name="Door2" parent="." unique_id=104015293 instance=ExtResource("3_fxrh3")]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 0, 0, -5.7599998)
-seed = 11
-
-[node name="Door3" parent="." unique_id=1363427986 instance=ExtResource("3_fxrh3")]
-transform = Transform3D(-4.371138e-08, 0, -1, 0, 1, 0, 1, 0, -4.371138e-08, 0, 0, 5.7599998)
-seed = 33
-
-[node name="Door4" parent="." unique_id=167977270 instance=ExtResource("3_fxrh3")]
-transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 5.7599998, 0, 0)
-seed = 666
-
-[node name="Door5" parent="." unique_id=816975381 instance=ExtResource("3_fxrh3")]
-transform = Transform3D(-0.7071067, 0, 0.7071068, 0, 1, 0, -0.7071068, 0, -0.7071067, -4.0729346, 0, -4.0729346)
-seed = 8
-
-[node name="Door6" parent="." unique_id=533220416 instance=ExtResource("3_fxrh3")]
-transform = Transform3D(0.7071069, 0, 0.70710665, 0, 1, 0, -0.70710665, 0, 0.7071069, 4.0729346, 0, -4.0729346)
-seed = 9
-
-[node name="Door7" parent="." unique_id=835080280 instance=ExtResource("3_fxrh3")]
-transform = Transform3D(-0.7071068, 0, -0.7071067, 0, 1, 0, 0.7071067, 0, -0.7071068, -4.0729346, 0, 4.0729346)
-seed = 314159
-
-[node name="Door8" parent="." unique_id=1235085191 instance=ExtResource("3_fxrh3")]
-transform = Transform3D(0.70710665, 0, -0.7071069, 0, 1, 0, 0.7071069, 0, 0.70710665, 4.0729346, 0, 4.0729346)
-seed = 2026
+[node name="DoorObject" parent="." unique_id=1515677631 instance=ExtResource("3_fxrh3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.7999997)

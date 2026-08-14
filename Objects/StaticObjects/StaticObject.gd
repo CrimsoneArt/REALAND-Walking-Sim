@@ -1,12 +1,9 @@
 class_name StaticObject extends StaticBody3D
 
-@export var ObjectVariablesComponent : ObjectVariablesComponent
+@export var objectVariablesComponent : ObjectVariablesComponent
 
 func SetObjectVariable(key:String, Value):
-	ObjectVariablesComponent.Variables[key] = Value
+	objectVariablesComponent.SetObjectVariable(key, Value)
 
 func GetObjectVariable(key:String):
-	if ObjectVariablesComponent.Variables.has(key):
-		return ObjectVariablesComponent.Variables[key]
-	else:
-		return null
+	return objectVariablesComponent.GetObjectVariable(key)

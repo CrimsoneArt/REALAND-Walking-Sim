@@ -5,8 +5,8 @@ extends DimensionType
 @onready var Player = $Player
 @onready var ObjectSpawner = $ObjectSpawner
 
-func _generate_dimension(seed:int):
-	RNG.seed = seed
+func _generate_dimension(Seed:int):
+	RNG.seed = Seed
 	var FloorSizeX = RNG.randi_range(20,250)
 	var FloorSizeZ = RNG.randi_range(20,250)
 	var FloorSizeY = RNG.randi_range(5.0,15.0)
@@ -24,23 +24,15 @@ func _generate_dimension(seed:int):
 	if RNG.randi_range(0,4) == 0:
 		CeilingRemover.queue_free()
 	
+	for i in range(1,RNG.randi_range(2,30)):
+		ObjectSpawner.spawn_object(Seed,"res://Objects/StaticObjects/Tree/TreeObject.tscn",generate_position(FloorSizeX,FloorSizeZ))
 	for i in range(1,RNG.randi_range(2,10)):
-		var TreePositionX = RNG.randi_range((-FloorSizeX/2.0)-10,(FloorSizeX/2.0)+10)
-		var TreePositionZ = RNG.randi_range((-FloorSizeZ/2.0)-10,(FloorSizeZ/2.0)+10)
-		var TreePositionY = 0
-		print(Vector3(TreePositionX,TreePositionY,TreePositionZ))
-		ObjectSpawner.spawn_object("res://Objects/StaticObjects/Tree/TreeObject.tscn",Vector3(TreePositionX,TreePositionY,TreePositionZ))
+		ObjectSpawner.spawn_object(Seed,"res://Objects/StaticObjects/Door/DoorObject.tscn",generate_position(FloorSizeX,FloorSizeZ),{"Seed":RNG.randi()})
 		#generate_door(FloorSizeX,HeightDifference/2.0,FloorSizeZ)
 
-	var Materials = pick_random_materials(seed)
+	var Materials = pick_random_materials(Seed)
 	Floor.material = Materials[RNG.randi() % Materials.size()]
 	CeilingRemover.material = Materials[RNG.randi() % Materials.size()]
-#
-#func generate_door(RegionX:int,RegionY:int,RegionZ:int):
-	#var DoorNode = DoorScene.instantiate()
-	#DoorNode.position.x = RNG.randi_range((-RegionX/2.0)-10,(RegionX/2.0)+10)
-	#DoorNode.position.z = RNG.randi_range((-RegionZ/2.0)-10,(RegionZ/2.0)+01)
-	#DoorNode.position.y = 0 
-	#DoorNode.rotation.y = RNG.randf_range(-360,360)
-	#DoorNode.seed = RNG.randi()
-	#DoorNodesContainer.add_child(DoorNode)
+
+func generate_position(FloorSizeX:float,FloorSizeZ:float) -> Vector3:
+	return Vector3(RNG.randi_range((-FloorSizeX/2.0)+2.5,(FloorSizeX/2.0)-2.5),0,RNG.randi_range((-FloorSizeZ/2.0)+2.5,(FloorSizeZ/2.0)-2.5))

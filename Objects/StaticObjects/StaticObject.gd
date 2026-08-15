@@ -10,5 +10,3 @@ func GetObjectVariable(key:String):
 		return ObjectVariablesComponent.Variables[key]
 	else:
 		return null
-
-#dijushgfiuoshd

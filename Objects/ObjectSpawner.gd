@@ -1,10 +1,10 @@
 class_name ObjectSpawner extends Node
 
 var RNG = RandomNumberGenerator.new()
+var DoorScene = preload("res://Objects/Door/DoorObject.tscn")
 
-func spawn_object(Seed:int,Scene:String,Position:Vector3,ObjectVariables:={}):
+func spawn_object(Seed:int,ObjectScene:PackedScene,Position:Vector3,ObjectVariables:={}):
 	RNG.seed = Seed
-	var ObjectScene = load(Scene)
 	var ObjectNode = ObjectScene.instantiate()
 	if ObjectNode is StaticObject:
 		ObjectNode.position = Position

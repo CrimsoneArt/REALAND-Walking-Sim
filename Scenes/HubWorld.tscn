@@ -2,7 +2,7 @@
 
 [ext_resource type="Material" uid="uid://qdrroywmlg5l" path="res://Materials/Bricks1.tres" id="1_ruj7l"]
 [ext_resource type="PackedScene" uid="uid://igw0ct71j4e2" path="res://Player/Player.tscn" id="2_fxrh3"]
-[ext_resource type="PackedScene" uid="uid://dwqol8w28tgyb" path="res://Objects/StaticObjects/Door/DoorObject.tscn" id="3_fxrh3"]
+[ext_resource type="PackedScene" uid="uid://dwqol8w28tgyb" path="res://Objects/Door/DoorObject.tscn" id="3_fxrh3"]
 
 [node name="HubWorld" type="Node3D" unique_id=31661345]
 

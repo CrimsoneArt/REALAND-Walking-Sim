@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dexhnwru7tdhn"]
+
+[ext_resource type="Script" uid="uid://dfaoiafl3jaxa" path="res://Objects/StaticObject.gd" id="1_ohtt6"]
+[ext_resource type="Texture2D" uid="uid://d00vfegkaijor" path="res://Objects/ObjectsLibrary/Tree1.png" id="2_ohtt6"]
+[ext_resource type="Script" uid="uid://cbgpvmrkx1dw3" path="res://Objects/ObjectVariablesComponent.gd" id="3_mrs3s"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ohtt6"]
+radius = 0.625
+height = 3.125
+
+[node name="TreeObject" type="StaticBody3D" unique_id=1515677631 node_paths=PackedStringArray("objectVariablesComponent")]
+script = ExtResource("1_ohtt6")
+objectVariablesComponent = NodePath("ObjectVariablesComponent")
+metadata/_custom_type_script = "uid://dfaoiafl3jaxa"
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=2081312377]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8612413, 0)
+pixel_size = 0.02
+texture_filter = 0
+texture = ExtResource("2_ohtt6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2068898764]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6875, 0)
+shape = SubResource("CapsuleShape3D_ohtt6")
+
+[node name="ObjectVariablesComponent" type="Node" parent="." unique_id=1539516392]
+script = ExtResource("3_mrs3s")
+metadata/_custom_type_script = "uid://cbgpvmrkx1dw3"

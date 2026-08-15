@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://44rudu2fw800"
-path.s3tc="res://.godot/imported/DoorPlaceHolder.png-0a6975480d3b38a289146827c8bb1feb.s3tc.ctex"
+uid="uid://d1hxun7aqtor1"
+path.s3tc="res://.godot/imported/Tree2.png-25f53cc4d307eb5c8c67c029bd1f54ab.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Objects/StaticObjects/Door/DoorPlaceHolder.png"
-dest_files=["res://.godot/imported/DoorPlaceHolder.png-0a6975480d3b38a289146827c8bb1feb.s3tc.ctex"]
+source_file="res://Objects/ObjectsLibrary/Tree2.png"
+dest_files=["res://.godot/imported/Tree2.png-25f53cc4d307eb5c8c67c029bd1f54ab.s3tc.ctex"]
 
 [params]
 

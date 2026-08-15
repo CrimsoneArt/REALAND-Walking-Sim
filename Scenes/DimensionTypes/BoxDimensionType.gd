@@ -24,11 +24,14 @@ func _generate_dimension(Seed:int):
 	if RNG.randi_range(0,4) == 0:
 		CeilingRemover.queue_free()
 	
-	for i in range(1,RNG.randi_range(2,30)):
-		ObjectSpawner.spawn_object(Seed,"res://Objects/StaticObjects/Tree/TreeObject.tscn",generate_position(FloorSizeX,FloorSizeZ))
-	for i in range(1,RNG.randi_range(2,10)):
-		ObjectSpawner.spawn_object(Seed,"res://Objects/StaticObjects/Door/DoorObject.tscn",generate_position(FloorSizeX,FloorSizeZ),{"Seed":RNG.randi()})
-		#generate_door(FloorSizeX,HeightDifference/2.0,FloorSizeZ)
+	var Objects = pick_random_objects(Seed)
+	
+	
+	for Count in range(1,RNG.randi_range(2,10)):
+		ObjectSpawner.spawn_object(Seed,DoorObjectScene,generate_position(FloorSizeX,FloorSizeZ),{"Seed":RNG.randi()})
+	for ObjectScene in Objects:
+		for Count in range(1,RNG.randi_range(2,10)):
+			ObjectSpawner.spawn_object(Seed,ObjectScene,generate_position(FloorSizeX,FloorSizeZ))
 
 	var Materials = pick_random_materials(Seed)
 	Floor.material = Materials[RNG.randi() % Materials.size()]

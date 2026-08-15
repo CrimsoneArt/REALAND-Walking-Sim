@@ -10,3 +10,6 @@ func GetObjectVariable(key:String):
 		return Variables[key]
 	else:
 		return null
+
+func GetObjectVariables() -> Dictionary:
+	return Variables

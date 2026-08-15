@@ -32,7 +32,7 @@ func pick_random_materials(seed:int):
 func pick_random_objects(seed:int):
 	RNG.seed = seed
 	if RNG.randf_range(0,100) <= 30:
-		var Objects: Array = []
+		var Objects: Array[Array] = []
 		var Dir = DirAccess.open("res://Objects/ObjectsLibrary/")
 		
 		if Dir:
@@ -42,13 +42,13 @@ func pick_random_objects(seed:int):
 			while FileName != "":
 				if !Dir.current_is_dir() and FileName.ends_with(".tscn"):
 					var FullPath = "res://Objects/ObjectsLibrary/" + FileName
-					var resource = load(FullPath)
-					if resource:
-						Objects.append(resource)
+					var ObjectScene = load(FullPath)
+					var ObjectNode = ObjectScene.instantiate()
+					if ObjectNode is StaticObject:
+						Objects.append([ObjectScene,ObjectNode.objectVariablesComponent.GetObjectVariables()])
 					
 				FileName = Dir.get_next()
 			Dir.list_dir_end()
-	
 		var ObjectsNumber = RNG.randi_range(1,Objects.size()-1)
 		for i in range(1,ObjectsNumber):
 			Objects.pop_at(RNG.randi() % Objects.size())

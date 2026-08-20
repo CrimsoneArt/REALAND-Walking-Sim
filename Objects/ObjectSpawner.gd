@@ -11,4 +11,6 @@ func spawn_object(Seed:int,ObjectScene:PackedScene,Position:Vector3,ObjectVariab
 		ObjectNode.rotation_degrees.y = RNG.randf_range(-360,360)
 		for key in ObjectVariables:
 			ObjectNode.SetObjectVariable(key,ObjectVariables[key])
+		if ObjectVariables == {}:
+			ObjectNode._generateRandomVariables(Seed)
 	get_parent().add_child(ObjectNode)

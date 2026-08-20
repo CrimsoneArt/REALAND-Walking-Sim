@@ -1,6 +1,7 @@
 class_name ObjectVariablesComponent extends Node
 
 @export var Variables := {}
+@export var VariableRules : Array[ObjectVariableRule] = []
 
 func SetObjectVariable(key:String, Value):
 	Variables[key] = Value

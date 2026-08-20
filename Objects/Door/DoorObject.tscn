@@ -4,6 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://44rudu2fw800" path="res://Objects/Door/DoorPlaceHolder.png" id="2_k8bb4"]
 [ext_resource type="Script" uid="uid://cbgpvmrkx1dw3" path="res://Objects/ObjectVariablesComponent.gd" id="3_sd2m6"]
 [ext_resource type="PackedScene" uid="uid://cdnf6l5oawl3i" path="res://Objects/InteractabilityComponent.tscn" id="4_b613f"]
+[ext_resource type="Script" uid="uid://bjokdxs5441sl" path="res://Objects/ObjectVariableRules.gd" id="4_bfh6f"]
+
+[sub_resource type="Resource" id="Resource_bfh6f"]
+script = ExtResource("4_bfh6f")
+variable_name = "Seed"
+metadata/_custom_type_script = "uid://bjokdxs5441sl"
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k8bb4"]
 radius = 1.0
@@ -21,6 +27,10 @@ texture = ExtResource("2_k8bb4")
 
 [node name="ObjectVariablesComponent" type="Node" parent="." unique_id=1539516392]
 script = ExtResource("3_sd2m6")
+Variables = {
+"Seed": 0
+}
+VariableRules = Array[ExtResource("4_bfh6f")]([SubResource("Resource_bfh6f")])
 metadata/_custom_type_script = "uid://cbgpvmrkx1dw3"
 
 [node name="InteractabilityComponent" parent="." unique_id=500345398 instance=ExtResource("4_b613f")]

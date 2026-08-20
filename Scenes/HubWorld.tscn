@@ -3,6 +3,7 @@
 [ext_resource type="Material" uid="uid://qdrroywmlg5l" path="res://Materials/Bricks1.tres" id="1_ruj7l"]
 [ext_resource type="PackedScene" uid="uid://igw0ct71j4e2" path="res://Player/Player.tscn" id="2_fxrh3"]
 [ext_resource type="PackedScene" uid="uid://dwqol8w28tgyb" path="res://Objects/Door/DoorObject.tscn" id="3_fxrh3"]
+[ext_resource type="PackedScene" uid="uid://p6mtwgnviw1d" path="res://Objects/ObjectVariablesComponent.tscn" id="4_avdaa"]
 
 [node name="HubWorld" type="Node3D" unique_id=31661345]
 
@@ -24,5 +25,11 @@ material = ExtResource("1_ruj7l")
 [node name="Player" parent="." unique_id=1083039947 instance=ExtResource("2_fxrh3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.062366, 0)
 
-[node name="DoorObject" parent="." unique_id=1515677631 instance=ExtResource("3_fxrh3")]
+[node name="DoorObject" parent="." unique_id=1515677631 node_paths=PackedStringArray("objectVariablesComponent") instance=ExtResource("3_fxrh3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.7999997)
+objectVariablesComponent = NodePath("ObjectVariablesComponent2")
+
+[node name="ObjectVariablesComponent2" parent="DoorObject" unique_id=504571316 instance=ExtResource("4_avdaa")]
+Variables = {
+"Seed": 11
+}

@@ -26,13 +26,11 @@ func _generate_dimension(Seed:int):
 	
 	var Objects = pick_random_objects(Seed)
 	
-	
 	for Count in range(1,RNG.randi_range(2,10)):
-		ObjectSpawner.spawn_object(Seed,DoorObjectScene,generate_position(FloorSizeX,FloorSizeZ),{"Seed":RNG.randi()})
+		ObjectSpawner.spawn_object(RNG,DoorObjectScene,generate_position(FloorSizeX,FloorSizeZ))
 	for ObjectScene in Objects:
-		
 		for Count in range(1,RNG.randi_range(2,10)):
-			ObjectSpawner.spawn_object(Seed,ObjectScene[0],generate_position(FloorSizeX,FloorSizeZ))
+			ObjectSpawner.spawn_object(RNG,ObjectScene[0],generate_position(FloorSizeX,FloorSizeZ))
 
 	var Materials = pick_random_materials(Seed)
 	Floor.material = Materials[RNG.randi() % Materials.size()]

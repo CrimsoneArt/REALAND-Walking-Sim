@@ -31,5 +31,5 @@ objectVariablesComponent = NodePath("ObjectVariablesComponent2")
 
 [node name="ObjectVariablesComponent2" parent="DoorObject" unique_id=504571316 instance=ExtResource("4_avdaa")]
 Variables = {
-"Seed": 11
+"Seed": 0
 }

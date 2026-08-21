@@ -1,5 +1,7 @@
 class_name Dimension extends Node3D
 
+#this is the scene in which the dimension type is loaded
+
 var seed : int
 
 @export var DimensionTypes : Array[PackedScene]

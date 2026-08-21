@@ -3,6 +3,14 @@
 [ext_resource type="Script" uid="uid://w20ux2inkv7" path="res://Objects/ObjectsLibrary/Tree3Object.gd" id="1_t7m3n"]
 [ext_resource type="Script" uid="uid://cbgpvmrkx1dw3" path="res://Objects/ObjectVariablesComponent.gd" id="2_qx8yh"]
 [ext_resource type="Material" uid="uid://sekd3gokx0bq" path="res://Materials/Patterns1.tres" id="3_ieyam"]
+[ext_resource type="Script" uid="uid://bjokdxs5441sl" path="res://Objects/ObjectVariableRule.gd" id="3_qx8yh"]
+
+[sub_resource type="Resource" id="Resource_t7m3n"]
+script = ExtResource("3_qx8yh")
+variable_name = "Height"
+min_float = 1.0
+max_float = 15.0
+metadata/_custom_type_script = "uid://bjokdxs5441sl"
 
 [node name="TreeObject" type="StaticBody3D" unique_id=1515677631 node_paths=PackedStringArray("objectVariablesComponent")]
 script = ExtResource("1_t7m3n")
@@ -12,8 +20,9 @@ metadata/_custom_type_script = "uid://dfaoiafl3jaxa"
 [node name="ObjectVariablesComponent" type="Node" parent="." unique_id=1539516392]
 script = ExtResource("2_qx8yh")
 Variables = {
-"Height": 8
+"Height": 0.0
 }
+VariableRules = Array[ExtResource("3_qx8yh")]([SubResource("Resource_t7m3n")])
 metadata/_custom_type_script = "uid://cbgpvmrkx1dw3"
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=209282406]

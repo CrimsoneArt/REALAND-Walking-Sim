@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c2w0chr38six8" path="res://Scenes/DimensionTypes/TerrainDimensionType.gd" id="1_lcvlq"]
 [ext_resource type="PackedScene" uid="uid://dt4tf0ha4ff1m" path="res://Scenes/DimensionTypes/TerrainMesh.tscn" id="2_g1aip"]
 [ext_resource type="PackedScene" uid="uid://igw0ct71j4e2" path="res://Player/Player.tscn" id="3_ssi84"]
+[ext_resource type="PackedScene" uid="uid://d0xiyv8g8ittm" path="res://Objects/ObjectSpawner.tscn" id="4_qg4mo"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ssi84"]
 _surfaces = [{
@@ -37,3 +38,5 @@ height = 40.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 81.12, 0)
 
 [node name="DoorNodes" type="Node" parent="." unique_id=1393209234]
+
+[node name="ObjectSpawner" parent="." unique_id=1297487218 instance=ExtResource("4_qg4mo")]

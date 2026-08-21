@@ -3,6 +3,7 @@ extends DimensionType
 @onready var TerrainMesh = $TerrainMesh
 @onready var objectSpawner = $ObjectSpawner
 @onready var DoorNodesContainer = $DoorNodes
+@onready var Player = $Player
 
 func _generate_dimension(seed:int):
 	RNG.seed = seed
@@ -17,14 +18,11 @@ func _generate_dimension(seed:int):
 	
 	var Materials = pick_random_materials(seed)
 	TerrainMesh.material_override = Materials[RNG.randi() % Materials.size()]
+	var Objects = pick_random_objects(RNG.seed)
+	spawn_objects(objectSpawner,Objects,generate_position,Materials)
+	spawn_objects(objectSpawner,[DoorObjectScene],generate_position,Materials)
 
-	var Objects = pick_random_objects(seed)
-	
-	for Count in range(1,RNG.randi_range(2,10)):
-		objectSpawner.spawn_object(RNG,DoorObjectScene,generate_position())
-	for ObjectScene in Objects:
-		for Count in range(1,RNG.randi_range(2,10)):
-			objectSpawner.spawn_object(RNG,ObjectScene[0],generate_position())
+	Player.position = Vector3(0,TerrainMesh.get_height_at(Vector2(0,0))+0.5,0)
 
 func generate_position():
 	var Position = Vector3(RNG.randf_range(-124,124),0,RNG.randf_range(-124,124))

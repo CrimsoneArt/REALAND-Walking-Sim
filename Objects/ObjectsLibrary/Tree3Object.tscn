@@ -12,17 +12,27 @@ min_float = 1.0
 max_float = 15.0
 metadata/_custom_type_script = "uid://bjokdxs5441sl"
 
+[sub_resource type="Resource" id="Resource_qx8yh"]
+script = ExtResource("3_qx8yh")
+variable_name = "MaterialIndex"
+type = 1
+generate_random_int = true
+metadata/_custom_type_script = "uid://bjokdxs5441sl"
+
 [node name="TreeObject" type="StaticBody3D" unique_id=1515677631 node_paths=PackedStringArray("objectVariablesComponent")]
 script = ExtResource("1_t7m3n")
 objectVariablesComponent = NodePath("ObjectVariablesComponent")
+amount_min = 10
+amount_max = 40
 metadata/_custom_type_script = "uid://dfaoiafl3jaxa"
 
 [node name="ObjectVariablesComponent" type="Node" parent="." unique_id=1539516392]
 script = ExtResource("2_qx8yh")
 Variables = {
-"Height": 0.0
+"Height": 0.0,
+"MaterialIndex": 0
 }
-VariableRules = Array[ExtResource("3_qx8yh")]([SubResource("Resource_t7m3n")])
+VariableRules = Array[ExtResource("3_qx8yh")]([SubResource("Resource_t7m3n"), SubResource("Resource_qx8yh")])
 metadata/_custom_type_script = "uid://cbgpvmrkx1dw3"
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=209282406]

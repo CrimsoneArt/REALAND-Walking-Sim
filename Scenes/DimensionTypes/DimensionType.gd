@@ -6,8 +6,15 @@ var DoorObjectScene = preload("res://Objects/Door/DoorObject.tscn")
 func _generate_dimension(seed:int):
 	assert(false, "_generate_dimension() must be overridden by the subclass.")
 
+func spawn_objects(objectSpawner,Objects:Array[PackedScene],generate_position:Callable,Materials):
+	for ObjectScene in Objects:
+		var ObjectNode = ObjectScene.instantiate()
+		var AmountMinAndMax = Vector2(ObjectNode.amount_min,ObjectNode.amount_max)
+		for Count in range(AmountMinAndMax.x,AmountMinAndMax.y):
+			objectSpawner.spawn_object(RNG,ObjectScene,generate_position.call(),Materials)
+
 func pick_random_materials(seed:int):
-	var Materials: Array = []
+	var Materials: Array[Material] = []
 	var Dir = DirAccess.open("res://Materials/")
 	
 	if Dir:
@@ -27,12 +34,13 @@ func pick_random_materials(seed:int):
 	var MaterialNumber = RNG.randi_range(1,Materials.size()-1)
 	for i in range(1,MaterialNumber):
 		Materials.pop_at(RNG.randi() % Materials.size())
+	
 	return Materials
 	
-func pick_random_objects(seed:int):
+func pick_random_objects(seed:int) -> Array[PackedScene]:
 	RNG.seed = seed
 	if RNG.randf_range(0,100) <= 30:
-		var Objects: Array[Array] = []
+		var Objects: Array[PackedScene] = []
 		var Dir = DirAccess.open("res://Objects/ObjectsLibrary/")
 		
 		if Dir:
@@ -45,7 +53,7 @@ func pick_random_objects(seed:int):
 					var ObjectScene = load(FullPath)
 					var ObjectNode = ObjectScene.instantiate()
 					if ObjectNode is StaticObject:
-						Objects.append([ObjectScene,ObjectNode.objectVariablesComponent.GetObjectVariables()])
+						Objects.append(ObjectScene)
 					
 				FileName = Dir.get_next()
 			Dir.list_dir_end()

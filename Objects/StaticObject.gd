@@ -1,6 +1,8 @@
 class_name StaticObject extends StaticBody3D
 
 @export var objectVariablesComponent : ObjectVariablesComponent
+@export var amount_min := 0
+@export var amount_max := 0
 
 func SetObjectVariable(key:String, Value):
 	objectVariablesComponent.SetObjectVariable(key, Value)

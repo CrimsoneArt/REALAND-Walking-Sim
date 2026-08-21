@@ -3,13 +3,17 @@ extends DimensionType
 @onready var Floor = $CSGCombiner3D/Floor
 @onready var CeilingRemover = $CSGCombiner3D/Floor/CeilingRemover
 @onready var Player = $Player
-@onready var ObjectSpawner = $ObjectSpawner
+@onready var objectSpawner = $ObjectSpawner
+
+var FloorSizeX
+var FloorSizeZ
+var FloorSizeY
 
 func _generate_dimension(Seed:int):
 	RNG.seed = Seed
-	var FloorSizeX = RNG.randi_range(20,250)
-	var FloorSizeZ = RNG.randi_range(20,250)
-	var FloorSizeY = RNG.randi_range(5.0,15.0)
+	FloorSizeX = RNG.randi_range(20,250)
+	FloorSizeZ = RNG.randi_range(20,250)
+	FloorSizeY = RNG.randi_range(5.0,15.0)
 	
 	Floor.size.x = FloorSizeX
 	Floor.size.z = FloorSizeZ
@@ -26,15 +30,13 @@ func _generate_dimension(Seed:int):
 	
 	var Objects = pick_random_objects(Seed)
 	
-	for Count in range(1,RNG.randi_range(2,10)):
-		ObjectSpawner.spawn_object(RNG,DoorObjectScene,generate_position(FloorSizeX,FloorSizeZ))
-	for ObjectScene in Objects:
-		for Count in range(1,RNG.randi_range(2,10)):
-			ObjectSpawner.spawn_object(RNG,ObjectScene[0],generate_position(FloorSizeX,FloorSizeZ))
-
 	var Materials = pick_random_materials(Seed)
+	
+	spawn_objects(objectSpawner,Objects,generate_position,Materials)
+	spawn_objects(objectSpawner,[DoorObjectScene],generate_position,Materials)
+	
 	Floor.material = Materials[RNG.randi() % Materials.size()]
 	CeilingRemover.material = Materials[RNG.randi() % Materials.size()]
 
-func generate_position(FloorSizeX:float,FloorSizeZ:float) -> Vector3:
+func generate_position() -> Vector3:
 	return Vector3(RNG.randi_range((-FloorSizeX/2.0)+2.5,(FloorSizeX/2.0)-2.5),0,RNG.randi_range((-FloorSizeZ/2.0)+2.5,(FloorSizeZ/2.0)-2.5))

@@ -4,7 +4,6 @@ enum Type { FLOAT, INT, BOOL, COLOR_RANGE, VECTOR3_RANGE, STRING_ARRAY }
 
 @export var variable_name: String = ""
 @export var type: Type = Type.FLOAT
-@export var seed: int = 0
 
 @export_group("Numeric / Vector Ranges")
 @export var min_float: float = 0.0

@@ -11,6 +11,8 @@ height = 3.125
 [node name="TreeObject" type="StaticBody3D" unique_id=1515677631 node_paths=PackedStringArray("objectVariablesComponent")]
 script = ExtResource("1_ohtt6")
 objectVariablesComponent = NodePath("ObjectVariablesComponent")
+amount_min = 10
+amount_max = 60
 metadata/_custom_type_script = "uid://dfaoiafl3jaxa"
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=2081312377]

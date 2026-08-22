@@ -22,7 +22,7 @@ func _generate_dimension(seed:int):
 	spawn_objects(objectSpawner,Objects,generate_position,Materials)
 	spawn_objects(objectSpawner,[DoorObjectScene],generate_position,Materials)
 
-	Player.position = Vector3(0,TerrainMesh.get_height_at(Vector2(0,0))+0.5,0)
+	Player.position = Vector3(0,TerrainMesh.get_height_at(Vector2(0,0))+2.0,0)
 
 func generate_position():
 	var Position = Vector3(RNG.randf_range(-124,124),0,RNG.randf_range(-124,124))

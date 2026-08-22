@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d3l1uywy8qcau" path="res://Scenes/DimensionTypes/Maze1DimensionType.gd" id="1_h31ln"]
 [ext_resource type="PackedScene" uid="uid://igw0ct71j4e2" path="res://Player/Player.tscn" id="2_10llp"]
+[ext_resource type="PackedScene" uid="uid://d0xiyv8g8ittm" path="res://Objects/ObjectSpawner.tscn" id="3_lcsob"]
 
 [node name="Maze1DimensionType" type="Node3D" unique_id=350958786]
 script = ExtResource("1_h31ln")
@@ -9,4 +10,4 @@ script = ExtResource("1_h31ln")
 [node name="Player" parent="." unique_id=1083039947 instance=ExtResource("2_10llp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.96, 0)
 
-[node name="DoorNodes" type="Node" parent="." unique_id=642045064]
+[node name="ObjectSpawner" parent="." unique_id=1297487218 instance=ExtResource("3_lcsob")]

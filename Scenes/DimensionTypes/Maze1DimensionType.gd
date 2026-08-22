@@ -14,9 +14,9 @@ enum MaterialTypes {Mixed,Ordered}
 var MaterialType
 var MaterialsForWalls = []
 
-@onready var DoorNodesContainer = $DoorNodes
-
 var Grid: Dictionary = {} # Vector2i -> Cell
+
+@onready var objectSpawner = $ObjectSpawner
 
 const Directions = {
 	Vector2i(0, -1): Vector2i(0, 1),
@@ -42,19 +42,15 @@ func _generate_dimension(seed: int) -> void:
 	carve_maze(Vector2i.ZERO)
 	$Player.position = Grid[Vector2i(RNG.randi_range(0, Width - 1), RNG.randi_range(0, Depth - 1))].position
 	$Player.position.y = 0.96
-	for i in range(1,RNG.randi_range(2,10)):
-		generate_door()
 	
-	
-	
+	var Objects = pick_random_objects(seed)
+	spawn_objects(objectSpawner,Objects,generate_position,Materials)
+	spawn_objects(objectSpawner,[DoorObjectScene],generate_position,Materials)
 
-func generate_door():
-	var DoorNode = DoorScene.instantiate()
-	DoorNode.position = Grid[Vector2i(RNG.randi_range(0, Width - 1), RNG.randi_range(0, Depth - 1))].position
-	DoorNode.position.y = 0
-	DoorNode.seed = RNG.randi()
-	DoorNode.rotation.y = RNG.randf_range(-360,360)
-	DoorNodesContainer.add_child(DoorNode)
+func generate_position():
+	var ObjectPosition = Grid[Vector2i(RNG.randi_range(0, Width - 1), RNG.randi_range(0, Depth - 1))].position
+	ObjectPosition.y = 0
+	return ObjectPosition
 
 func clear_maze() -> void:
 	for CellInstance in Grid.values():

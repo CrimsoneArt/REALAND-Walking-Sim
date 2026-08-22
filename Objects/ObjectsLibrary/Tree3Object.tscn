@@ -28,10 +28,10 @@ metadata/_custom_type_script = "uid://dfaoiafl3jaxa"
 
 [node name="ObjectVariablesComponent" type="Node" parent="." unique_id=1539516392]
 script = ExtResource("2_qx8yh")
-Variables = {
+Variables = Dictionary[String, Variant]({
 "Height": 0.0,
 "MaterialIndex": 0
-}
+})
 VariableRules = Array[ExtResource("3_qx8yh")]([SubResource("Resource_t7m3n"), SubResource("Resource_qx8yh")])
 metadata/_custom_type_script = "uid://cbgpvmrkx1dw3"
 

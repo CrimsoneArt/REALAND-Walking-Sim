@@ -31,7 +31,7 @@ func pick_random_materials(seed:int):
 			FileName = Dir.get_next()
 		Dir.list_dir_end()
 	RNG.seed = seed
-	var MaterialNumber = RNG.randi_range(1,Materials.size()-1)
+	var MaterialNumber = RNG.randi_range(1,6)
 	for i in range(1,MaterialNumber):
 		Materials.pop_at(RNG.randi() % Materials.size())
 	

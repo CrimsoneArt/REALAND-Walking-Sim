@@ -1,10 +1,11 @@
 class_name Dimension extends Node3D
 
+#this is the scene in which the dimension type is loaded
+
 var seed : int
 
 @export var DimensionTypes : Array[PackedScene]
 
-@onready var DoorNodesContainer = $DoorNodes
 @onready var World =  $WorldEnvironment
 
 var RNG
@@ -22,7 +23,23 @@ func _ready() -> void:
 	
 	DimensionTypeNode._generate_dimension(seed)
 	
-	World.environment.sky.sky_material.set("shader_parameter/sky_texture", load("res://Scenes/SkyBoxes/SkyBox"+str(RNG.randi_range(1,7))+".png"))
+	var SkyBoxes: Array = []
+	var Dir = DirAccess.open("res://Scenes/SkyBoxes/")
+	
+	if Dir:
+		Dir.list_dir_begin()
+		var FileName = Dir.get_next()
+		
+		while FileName != "":
+			if !Dir.current_is_dir() and FileName.ends_with(".png"): #make sure the file is a material
+				var FullPath = "res://Scenes/SkyBoxes/" + FileName
+				
+				SkyBoxes.append(FullPath)
+					
+			FileName = Dir.get_next()
+		Dir.list_dir_end()
+	
+	World.environment.sky.sky_material.set("shader_parameter/sky_texture", load(SkyBoxes[RNG.randi()%SkyBoxes.size()]))
 	
 	if RNG.randi_range(1,100) <= 55.67:
 		World.environment.fog_enabled = true

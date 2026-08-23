@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://dwqol8w28tgyb"]
+
+[ext_resource type="Script" uid="uid://cwj3o1iactmbr" path="res://Objects/Door/DoorObject.gd" id="1_k8bb4"]
+[ext_resource type="Texture2D" uid="uid://44rudu2fw800" path="res://Objects/Door/DoorPlaceHolder.png" id="2_k8bb4"]
+[ext_resource type="Script" uid="uid://cbgpvmrkx1dw3" path="res://Objects/ObjectComponents/ObjectVariablesComponent.gd" id="3_sd2m6"]
+[ext_resource type="PackedScene" uid="uid://cdnf6l5oawl3i" path="res://Objects/ObjectComponents/InteractabilityComponent.tscn" id="4_b613f"]
+[ext_resource type="Script" uid="uid://bjokdxs5441sl" path="res://Objects/ObjectComponents/ObjectVariableRule.gd" id="4_bfh6f"]
+
+[sub_resource type="Resource" id="Resource_bfh6f"]
+script = ExtResource("4_bfh6f")
+variable_name = "Seed"
+type = 1
+generate_random_int = true
+metadata/_custom_type_script = "uid://bjokdxs5441sl"
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k8bb4"]
+radius = 1.0
+height = 2.625
+
+[node name="DoorObject" type="Node3D" unique_id=322964604 node_paths=PackedStringArray("objectVariablesComponent")]
+script = ExtResource("1_k8bb4")
+objectVariablesComponent = NodePath("StaticBody3D/ObjectVariablesComponent")
+amount_min = 2
+amount_max = 10
+metadata/_custom_type_script = "uid://dpoxk86q0vc0o"
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1308453124]
+
+[node name="Sprite3D" type="Sprite3D" parent="StaticBody3D" unique_id=2081312377]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4396656, 0)
+texture_filter = 0
+texture = ExtResource("2_k8bb4")
+
+[node name="ObjectVariablesComponent" type="Node" parent="StaticBody3D" unique_id=1539516392]
+script = ExtResource("3_sd2m6")
+Variables = Dictionary[String, Variant]({
+"Seed": 0
+})
+VariableRules = Array[ExtResource("4_bfh6f")]([SubResource("Resource_bfh6f")])
+metadata/_custom_type_script = "uid://cbgpvmrkx1dw3"
+
+[node name="InteractabilityComponent" parent="StaticBody3D" unique_id=500345398 instance=ExtResource("4_b613f")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D/InteractabilityComponent" unique_id=2068898764]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4375, 0)
+shape = SubResource("CapsuleShape3D_k8bb4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=587665654]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+shape = SubResource("CapsuleShape3D_k8bb4")
+
+[connection signal="Interacted" from="StaticBody3D/InteractabilityComponent" to="." method="_on_interactability_component_interacted"]

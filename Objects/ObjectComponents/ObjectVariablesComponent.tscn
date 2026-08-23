@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://p6mtwgnviw1d"]
 
-[ext_resource type="Script" uid="uid://cbgpvmrkx1dw3" path="res://Objects/ObjectVariablesComponent.gd" id="1_rpok4"]
+[ext_resource type="Script" uid="uid://cbgpvmrkx1dw3" path="res://Objects/ObjectComponents/ObjectVariablesComponent.gd" id="1_rpok4"]
 
 [node name="ObjectVariablesComponent" type="Node" unique_id=504571316]
 script = ExtResource("1_rpok4")

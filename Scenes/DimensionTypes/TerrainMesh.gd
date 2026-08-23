@@ -37,6 +37,9 @@ func get_normal(x: float, y: float) -> Vector3:
 func set_seed(seed:int):
 	noise.seed = seed
 
+func get_height_at(position:Vector2):
+	return noise.get_noise_2d(position.x, position.y) * height
+
 func update_mesh() -> void:
 	var plane := PlaneMesh.new()
 	plane.subdivide_depth = resolution

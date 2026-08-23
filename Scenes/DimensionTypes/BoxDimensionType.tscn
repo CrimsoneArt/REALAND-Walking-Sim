@@ -4,6 +4,7 @@
 [ext_resource type="Material" uid="uid://bvs8plnqls81j" path="res://Materials/Fence1.tres" id="2_i6ang"]
 [ext_resource type="Material" uid="uid://qdrroywmlg5l" path="res://Materials/Bricks1.tres" id="2_wnxm8"]
 [ext_resource type="PackedScene" uid="uid://igw0ct71j4e2" path="res://Player/Player.tscn" id="3_tt7km"]
+[ext_resource type="PackedScene" uid="uid://d0xiyv8g8ittm" path="res://Objects/ObjectSpawner.tscn" id="5_34no7"]
 
 [node name="BoxDimensionType" type="Node3D" unique_id=11375313]
 script = ExtResource("1_0qrrk")
@@ -26,3 +27,5 @@ material = ExtResource("2_wnxm8")
 
 [node name="Player" parent="." unique_id=1083039947 instance=ExtResource("3_tt7km")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.062366, 0)
+
+[node name="ObjectSpawner" parent="." unique_id=1297487218 instance=ExtResource("5_34no7")]

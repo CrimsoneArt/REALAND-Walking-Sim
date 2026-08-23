@@ -52,7 +52,7 @@ func pick_random_objects(seed:int) -> Array[PackedScene]:
 					var FullPath = "res://Objects/ObjectsLibrary/" + FileName
 					var ObjectScene = load(FullPath)
 					var ObjectNode = ObjectScene.instantiate()
-					if ObjectNode is StaticObject:
+					if ObjectNode is GameObject:
 						Objects.append(ObjectScene)
 					
 				FileName = Dir.get_next()

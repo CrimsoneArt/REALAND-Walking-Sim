@@ -19,12 +19,13 @@ type = 1
 generate_random_int = true
 metadata/_custom_type_script = "uid://bjokdxs5441sl"
 
-[node name="TreeObject" type="StaticBody3D" unique_id=1515677631 node_paths=PackedStringArray("objectVariablesComponent")]
+[node name="TreeObject" type="Node3D" unique_id=1312126065 node_paths=PackedStringArray("objectVariablesComponent", "MovementNode")]
 script = ExtResource("1_t7m3n")
 objectVariablesComponent = NodePath("ObjectVariablesComponent")
+MovementNode = NodePath("CSGCombiner3D")
 amount_min = 10
 amount_max = 40
-metadata/_custom_type_script = "uid://dfaoiafl3jaxa"
+metadata/_custom_type_script = "uid://dpoxk86q0vc0o"
 
 [node name="ObjectVariablesComponent" type="Node" parent="." unique_id=1539516392]
 script = ExtResource("2_qx8yh")
@@ -36,6 +37,7 @@ VariableRules = Array[ExtResource("3_qx8yh")]([SubResource("Resource_t7m3n"), Su
 metadata/_custom_type_script = "uid://cbgpvmrkx1dw3"
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=209282406]
+use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1114149144]
 size = Vector3(1, 4.75, 1)

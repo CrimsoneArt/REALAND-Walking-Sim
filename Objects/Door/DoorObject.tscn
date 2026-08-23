@@ -17,34 +17,36 @@ metadata/_custom_type_script = "uid://bjokdxs5441sl"
 radius = 1.0
 height = 2.625
 
-[node name="DoorObject" type="StaticBody3D" unique_id=1515677631 node_paths=PackedStringArray("objectVariablesComponent")]
+[node name="DoorObject" type="Node3D" unique_id=322964604 node_paths=PackedStringArray("objectVariablesComponent")]
 script = ExtResource("1_k8bb4")
-objectVariablesComponent = NodePath("ObjectVariablesComponent")
+objectVariablesComponent = NodePath("StaticBody3D/ObjectVariablesComponent")
 amount_min = 2
 amount_max = 10
-metadata/_custom_type_script = "uid://dfaoiafl3jaxa"
+metadata/_custom_type_script = "uid://dpoxk86q0vc0o"
 
-[node name="Sprite3D" type="Sprite3D" parent="." unique_id=2081312377]
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1308453124]
+
+[node name="Sprite3D" type="Sprite3D" parent="StaticBody3D" unique_id=2081312377]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4396656, 0)
 texture_filter = 0
 texture = ExtResource("2_k8bb4")
 
-[node name="ObjectVariablesComponent" type="Node" parent="." unique_id=1539516392]
+[node name="ObjectVariablesComponent" type="Node" parent="StaticBody3D" unique_id=1539516392]
 script = ExtResource("3_sd2m6")
-Variables = {
+Variables = Dictionary[String, Variant]({
 "Seed": 0
-}
+})
 VariableRules = Array[ExtResource("4_bfh6f")]([SubResource("Resource_bfh6f")])
 metadata/_custom_type_script = "uid://cbgpvmrkx1dw3"
 
-[node name="InteractabilityComponent" parent="." unique_id=500345398 instance=ExtResource("4_b613f")]
+[node name="InteractabilityComponent" parent="StaticBody3D" unique_id=500345398 instance=ExtResource("4_b613f")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractabilityComponent" unique_id=2068898764]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D/InteractabilityComponent" unique_id=2068898764]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4375, 0)
 shape = SubResource("CapsuleShape3D_k8bb4")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=587665654]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=587665654]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 shape = SubResource("CapsuleShape3D_k8bb4")
 
-[connection signal="Interacted" from="InteractabilityComponent" to="." method="_on_interactability_component_interacted"]
+[connection signal="Interacted" from="StaticBody3D/InteractabilityComponent" to="." method="_on_interactability_component_interacted"]

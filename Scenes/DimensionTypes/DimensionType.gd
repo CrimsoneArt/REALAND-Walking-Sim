@@ -6,7 +6,7 @@ var DoorObjectScene = preload("res://Objects/Door/DoorObject.tscn")
 func _generate_dimension(seed:int):
 	assert(false, "_generate_dimension() must be overridden by the subclass.")
 
-func spawn_objects(objectSpawner,Objects:Array[PackedScene],generate_position:Callable,Materials):
+func spawn_objects(objectSpawner:ObjectSpawner,Objects:Array[PackedScene],generate_position:Callable,Materials):
 	for ObjectScene in Objects:
 		var ObjectNode = ObjectScene.instantiate()
 		var AmountMinAndMax = Vector2(ObjectNode.amount_min,ObjectNode.amount_max)

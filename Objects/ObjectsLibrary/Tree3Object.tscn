@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://ljtmm1uduay8"]
 
 [ext_resource type="Script" uid="uid://w20ux2inkv7" path="res://Objects/ObjectsLibrary/Tree3Object.gd" id="1_t7m3n"]
-[ext_resource type="Script" uid="uid://cbgpvmrkx1dw3" path="res://Objects/ObjectVariablesComponent.gd" id="2_qx8yh"]
+[ext_resource type="Script" uid="uid://cbgpvmrkx1dw3" path="res://Objects/ObjectComponents/ObjectVariablesComponent.gd" id="2_qx8yh"]
 [ext_resource type="Material" uid="uid://sekd3gokx0bq" path="res://Materials/Patterns1.tres" id="3_ieyam"]
-[ext_resource type="Script" uid="uid://bjokdxs5441sl" path="res://Objects/ObjectVariableRule.gd" id="3_qx8yh"]
+[ext_resource type="Script" uid="uid://bjokdxs5441sl" path="res://Objects/ObjectComponents/ObjectVariableRule.gd" id="3_qx8yh"]
 
 [sub_resource type="Resource" id="Resource_t7m3n"]
 script = ExtResource("3_qx8yh")
@@ -19,10 +19,9 @@ type = 1
 generate_random_int = true
 metadata/_custom_type_script = "uid://bjokdxs5441sl"
 
-[node name="TreeObject" type="Node3D" unique_id=1312126065 node_paths=PackedStringArray("objectVariablesComponent", "MovementNode")]
+[node name="TreeObject" type="Node3D" unique_id=1312126065 node_paths=PackedStringArray("objectVariablesComponent")]
 script = ExtResource("1_t7m3n")
 objectVariablesComponent = NodePath("ObjectVariablesComponent")
-MovementNode = NodePath("CSGCombiner3D")
 amount_min = 10
 amount_max = 40
 metadata/_custom_type_script = "uid://dpoxk86q0vc0o"

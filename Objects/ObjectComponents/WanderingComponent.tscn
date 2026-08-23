@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cns6liybukkun"]
+
+[ext_resource type="Script" uid="uid://dl3v7yp1te08c" path="res://Objects/ObjectComponents/WanderingComponent.gd" id="1_iskv5"]
+[ext_resource type="Script" uid="uid://buom1dm7hnqqu" path="res://Objects/ObjectComponents/NPCObjectAnimationState.gd" id="2_sv32b"]
+
+[sub_resource type="Resource" id="Resource_iskv5"]
+script = ExtResource("2_sv32b")
+metadata/_custom_type_script = "uid://buom1dm7hnqqu"
+
+[sub_resource type="Resource" id="Resource_sv32b"]
+script = ExtResource("2_sv32b")
+State = 1
+metadata/_custom_type_script = "uid://buom1dm7hnqqu"
+
+[node name="WanderingComponent" type="Node" unique_id=2005606164]
+script = ExtResource("1_iskv5")
+States = Array[ExtResource("2_sv32b")]([SubResource("Resource_iskv5"), SubResource("Resource_sv32b")])
+metadata/_custom_type_script = "uid://bfxb3q0xqewkc"

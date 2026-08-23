@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dexhnwru7tdhn"]
 
-[ext_resource type="Script" uid="uid://dpoxk86q0vc0o" path="res://Objects/GameObject.gd" id="1_x0kn2"]
+[ext_resource type="Script" uid="uid://dpoxk86q0vc0o" path="res://Objects/AbstractObjectClasses/GameObject.gd" id="1_x0kn2"]
 [ext_resource type="Texture2D" uid="uid://d00vfegkaijor" path="res://Objects/ObjectsLibrary/Tree1.png" id="2_ohtt6"]
-[ext_resource type="Script" uid="uid://cbgpvmrkx1dw3" path="res://Objects/ObjectVariablesComponent.gd" id="3_mrs3s"]
+[ext_resource type="Script" uid="uid://cbgpvmrkx1dw3" path="res://Objects/ObjectComponents/ObjectVariablesComponent.gd" id="3_mrs3s"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ohtt6"]
 radius = 0.625

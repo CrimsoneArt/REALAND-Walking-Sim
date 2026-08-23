@@ -3,7 +3,7 @@
 [ext_resource type="Material" uid="uid://qdrroywmlg5l" path="res://Materials/Bricks1.tres" id="1_ruj7l"]
 [ext_resource type="PackedScene" uid="uid://igw0ct71j4e2" path="res://Player/Player.tscn" id="2_fxrh3"]
 [ext_resource type="PackedScene" uid="uid://dwqol8w28tgyb" path="res://Objects/Door/DoorObject.tscn" id="3_fxrh3"]
-[ext_resource type="PackedScene" uid="uid://p6mtwgnviw1d" path="res://Objects/ObjectVariablesComponent.tscn" id="4_avdaa"]
+[ext_resource type="PackedScene" uid="uid://p6mtwgnviw1d" path="res://Objects/ObjectComponents/ObjectVariablesComponent.tscn" id="4_avdaa"]
 
 [node name="HubWorld" type="Node3D" unique_id=31661345]
 
@@ -31,7 +31,7 @@ objectVariablesComponent = NodePath("ObjectVariablesComponent2")
 
 [node name="ObjectVariablesComponent2" parent="DoorObject1" unique_id=504571316 instance=ExtResource("4_avdaa")]
 Variables = Dictionary[String, Variant]({
-"Seed": 3
+"Seed": 481145777
 })
 
 [node name="DoorObject2" parent="." unique_id=2112717054 node_paths=PackedStringArray("objectVariablesComponent") instance=ExtResource("3_fxrh3")]
@@ -40,7 +40,7 @@ objectVariablesComponent = NodePath("ObjectVariablesComponent2")
 
 [node name="ObjectVariablesComponent2" parent="DoorObject2" unique_id=1542822623 instance=ExtResource("4_avdaa")]
 Variables = Dictionary[String, Variant]({
-"Seed": 2763
+"Seed": 3128969490
 })
 
 [node name="DoorObject3" parent="." unique_id=884683491 node_paths=PackedStringArray("objectVariablesComponent") instance=ExtResource("3_fxrh3")]

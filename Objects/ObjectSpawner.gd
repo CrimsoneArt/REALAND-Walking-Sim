@@ -8,5 +8,6 @@ func spawn_object(RNG,ObjectScene:PackedScene,Position:Vector3,Materials:Array[M
 		ObjectNode.position = Position
 		ObjectNode.rotation_degrees.y = RNG.randf_range(-360,360)
 		ObjectNode.SetRandomVariables(RNG)
-		ObjectNode.objectVariablesComponent.MaterialsList = Materials
+		if ObjectNode.objectVariablesComponent != null:
+			ObjectNode.objectVariablesComponent.MaterialsList = Materials
 	get_parent().add_child(ObjectNode)

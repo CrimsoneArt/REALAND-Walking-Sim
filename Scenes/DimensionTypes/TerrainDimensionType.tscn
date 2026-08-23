@@ -23,6 +23,10 @@ seed = 22
 frequency = 0.015
 fractal_gain = 0.0
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4um1j"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0)
+
 [node name="TerrainDimensionType" type="Node3D" unique_id=1894736106]
 script = ExtResource("1_lcvlq")
 
@@ -40,3 +44,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 81.12, 0)
 [node name="DoorNodes" type="Node" parent="." unique_id=1393209234]
 
 [node name="ObjectSpawner" parent="." unique_id=1297487218 instance=ExtResource("4_qg4mo")]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=711793531]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1720857911]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -32.180004, 0)
+flip_faces = true
+size = Vector3(247.2, 281.28, 250.08)
+material = SubResource("StandardMaterial3D_4um1j")

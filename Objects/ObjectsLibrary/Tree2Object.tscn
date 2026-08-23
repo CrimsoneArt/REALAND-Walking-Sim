@@ -1,17 +1,16 @@
 [gd_scene format=3 uid="uid://b4lrbmi1pu8sa"]
 
-[ext_resource type="Script" uid="uid://dpoxk86q0vc0o" path="res://Objects/GameObject.gd" id="1_y6wmv"]
+[ext_resource type="Script" uid="uid://dpoxk86q0vc0o" path="res://Objects/AbstractObjectClasses/GameObject.gd" id="1_y6wmv"]
 [ext_resource type="Texture2D" uid="uid://d1hxun7aqtor1" path="res://Objects/ObjectsLibrary/Tree2.png" id="2_mnqly"]
-[ext_resource type="Script" uid="uid://cbgpvmrkx1dw3" path="res://Objects/ObjectVariablesComponent.gd" id="3_4v2xk"]
+[ext_resource type="Script" uid="uid://cbgpvmrkx1dw3" path="res://Objects/ObjectComponents/ObjectVariablesComponent.gd" id="3_4v2xk"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kfyr8"]
 radius = 0.625
 height = 5.5
 
-[node name="TreeObject" type="Node3D" unique_id=1524021052 node_paths=PackedStringArray("objectVariablesComponent", "MovementNode")]
+[node name="TreeObject" type="Node3D" unique_id=1524021052 node_paths=PackedStringArray("objectVariablesComponent")]
 script = ExtResource("1_y6wmv")
 objectVariablesComponent = NodePath("StaticBody3D/ObjectVariablesComponent")
-MovementNode = NodePath("StaticBody3D")
 amount_min = 10
 amount_max = 50
 metadata/_custom_type_script = "uid://dpoxk86q0vc0o"

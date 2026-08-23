@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://dud8gopm3hsxe"]
+
+[ext_resource type="Script" uid="uid://dkxweyao0waoj" path="res://Objects/AbstractObjectClasses/NPCObject.gd" id="1_r3m8u"]
+[ext_resource type="Texture2D" uid="uid://bthgsay5kuhgq" path="res://Objects/ObjectsLibrary/ParrotCreature.png" id="2_jbgls"]
+[ext_resource type="PackedScene" uid="uid://dgnbip1xxg2e" path="res://Objects/ObjectComponents/NPCObjectAnimationStatePlayerComponent.tscn" id="3_14jhm"]
+[ext_resource type="PackedScene" uid="uid://cns6liybukkun" path="res://Objects/ObjectComponents/WanderingComponent.tscn" id="3_ryk0n"]
+[ext_resource type="Script" uid="uid://buom1dm7hnqqu" path="res://Objects/ObjectComponents/NPCObjectAnimationState.gd" id="5_sk8uq"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xrivr"]
+radius = 0.75
+height = 2.75
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ryk0n"]
+atlas = ExtResource("2_jbgls")
+region = Rect2(0, 0, 69, 83)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14jhm"]
+atlas = ExtResource("2_jbgls")
+region = Rect2(69, 0, 69, 83)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sk8uq"]
+atlas = ExtResource("2_jbgls")
+region = Rect2(0, 0, 69, 83)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dlhfy"]
+atlas = ExtResource("2_jbgls")
+region = Rect2(138, 0, 69, 83)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_14jhm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ryk0n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_14jhm")
+}],
+"loop": 1,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sk8uq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dlhfy")
+}],
+"loop": 1,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[sub_resource type="Resource" id="Resource_dlhfy"]
+script = ExtResource("5_sk8uq")
+metadata/_custom_type_script = "uid://buom1dm7hnqqu"
+
+[sub_resource type="Resource" id="Resource_14jhm"]
+script = ExtResource("5_sk8uq")
+State = 1
+metadata/_custom_type_script = "uid://buom1dm7hnqqu"
+
+[node name="ParrotNPCObject" type="Node3D" unique_id=721190811 node_paths=PackedStringArray("MovementNode", "ActiveComponent")]
+script = ExtResource("1_r3m8u")
+MovementNode = NodePath("CharacterBody3D")
+ActiveComponent = NodePath("WanderingComponent")
+amount_min = 1
+amount_max = 8
+metadata/_custom_type_script = "uid://dkxweyao0waoj"
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=498723523]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1499411318]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.375, 0)
+shape = SubResource("CapsuleShape3D_xrivr")
+
+[node name="NPCObjectAnimationStatePlayerComponent" parent="CharacterBody3D" unique_id=1765613814 node_paths=PackedStringArray("movementComponent") instance=ExtResource("3_14jhm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.661495, 0)
+pixel_size = 0.04
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_14jhm")
+animation = &"Idle"
+movementComponent = NodePath("../../WanderingComponent")
+
+[node name="WanderingComponent" parent="." unique_id=2005606164 node_paths=PackedStringArray("MovementNode") instance=ExtResource("3_ryk0n")]
+max_walk_time = 6.0
+max_wait_time = 6.0
+MovementNode = NodePath("../CharacterBody3D")
+States = Array[ExtResource("5_sk8uq")]([SubResource("Resource_dlhfy"), SubResource("Resource_14jhm")])

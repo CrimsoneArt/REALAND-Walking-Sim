@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://cwj3o1iactmbr" path="res://Objects/Door/DoorObject.gd" id="1_k8bb4"]
 [ext_resource type="Texture2D" uid="uid://44rudu2fw800" path="res://Objects/Door/DoorPlaceHolder.png" id="2_k8bb4"]
-[ext_resource type="Script" uid="uid://cbgpvmrkx1dw3" path="res://Objects/ObjectVariablesComponent.gd" id="3_sd2m6"]
-[ext_resource type="PackedScene" uid="uid://cdnf6l5oawl3i" path="res://Objects/InteractabilityComponent.tscn" id="4_b613f"]
-[ext_resource type="Script" uid="uid://bjokdxs5441sl" path="res://Objects/ObjectVariableRule.gd" id="4_bfh6f"]
+[ext_resource type="Script" uid="uid://cbgpvmrkx1dw3" path="res://Objects/ObjectComponents/ObjectVariablesComponent.gd" id="3_sd2m6"]
+[ext_resource type="PackedScene" uid="uid://cdnf6l5oawl3i" path="res://Objects/ObjectComponents/InteractabilityComponent.tscn" id="4_b613f"]
+[ext_resource type="Script" uid="uid://bjokdxs5441sl" path="res://Objects/ObjectComponents/ObjectVariableRule.gd" id="4_bfh6f"]
 
 [sub_resource type="Resource" id="Resource_bfh6f"]
 script = ExtResource("4_bfh6f")

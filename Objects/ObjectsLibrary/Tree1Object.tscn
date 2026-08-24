@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dexhnwru7tdhn"]
 
-[ext_resource type="Script" uid="uid://dpoxk86q0vc0o" path="res://Objects/AbstractObjectClasses/GameObject.gd" id="1_x0kn2"]
+[ext_resource type="Script" uid="uid://dpoxk86q0vc0o" path="res://Objects/GameObject.gd" id="1_x0kn2"]
 [ext_resource type="Texture2D" uid="uid://d00vfegkaijor" path="res://Objects/ObjectsLibrary/Tree1.png" id="2_ohtt6"]
 [ext_resource type="Script" uid="uid://cbgpvmrkx1dw3" path="res://Objects/ObjectComponents/ObjectVariablesComponent.gd" id="3_mrs3s"]
 
@@ -8,11 +8,11 @@
 radius = 0.625
 height = 3.125
 
-[node name="TreeObject" type="Node3D" unique_id=642269173 node_paths=PackedStringArray("objectVariablesComponent")]
+[node name="TreeObject" type="Node3D" unique_id=1358014396 node_paths=PackedStringArray("objectVariablesComponent")]
 script = ExtResource("1_x0kn2")
 objectVariablesComponent = NodePath("StaticBody3D/ObjectVariablesComponent")
-amount_min = 10
-amount_max = 60
+amount_min = 17
+amount_max = 63
 metadata/_custom_type_script = "uid://dpoxk86q0vc0o"
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=879917293]

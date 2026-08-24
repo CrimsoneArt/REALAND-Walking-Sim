@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dll78a7wxajsh"]
 
-[ext_resource type="Script" uid="uid://dkxweyao0waoj" path="res://Objects/AbstractObjectClasses/NPCObject.gd" id="1_n0huf"]
+[ext_resource type="Script" uid="uid://dkxweyao0waoj" path="res://Objects/NPCObject.gd" id="1_m53s3"]
 
 [node name="NPCObject" type="Node3D" unique_id=1954499958]
-script = ExtResource("1_n0huf")
+script = ExtResource("1_m53s3")
 metadata/_custom_type_script = "uid://dpoxk86q0vc0o"

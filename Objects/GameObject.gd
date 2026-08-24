@@ -1,4 +1,4 @@
-@abstract class_name GameObject extends Node3D
+class_name GameObject extends Node3D
 
 @export var objectVariablesComponent : ObjectVariablesComponent
 @export var amount_min := 0

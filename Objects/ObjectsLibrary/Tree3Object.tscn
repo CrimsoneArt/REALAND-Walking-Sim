@@ -19,7 +19,7 @@ type = 1
 generate_random_int = true
 metadata/_custom_type_script = "uid://bjokdxs5441sl"
 
-[node name="TreeObject" type="Node3D" unique_id=1312126065 node_paths=PackedStringArray("objectVariablesComponent")]
+[node name="TreeObject" type="Node3D" unique_id=255021489 node_paths=PackedStringArray("objectVariablesComponent")]
 script = ExtResource("1_t7m3n")
 objectVariablesComponent = NodePath("ObjectVariablesComponent")
 amount_min = 10

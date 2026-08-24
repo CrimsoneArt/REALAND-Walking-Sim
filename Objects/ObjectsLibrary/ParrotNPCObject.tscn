@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dud8gopm3hsxe"]
 
-[ext_resource type="Script" uid="uid://dkxweyao0waoj" path="res://Objects/AbstractObjectClasses/NPCObject.gd" id="1_r3m8u"]
+[ext_resource type="Script" uid="uid://dkxweyao0waoj" path="res://Objects/NPCObject.gd" id="1_r3m8u"]
 [ext_resource type="Texture2D" uid="uid://bthgsay5kuhgq" path="res://Objects/ObjectsLibrary/ParrotCreature.png" id="2_jbgls"]
 [ext_resource type="PackedScene" uid="uid://dgnbip1xxg2e" path="res://Objects/ObjectComponents/NPCObjectAnimationStatePlayerComponent.tscn" id="3_14jhm"]
 [ext_resource type="PackedScene" uid="uid://cns6liybukkun" path="res://Objects/ObjectComponents/WanderingComponent.tscn" id="3_ryk0n"]

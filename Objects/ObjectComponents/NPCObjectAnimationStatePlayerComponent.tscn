@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dgnbip1xxg2e"]
 
-[ext_resource type="Script" uid="uid://dn7olex1h6kds" path="res://NPCObjectAnimationStatePlayer.gd" id="1_yoqkm"]
+[ext_resource type="Script" uid="uid://dn7olex1h6kds" path="res://Objects/ObjectComponents/NPCObjectAnimationStatePlayer.gd" id="1_yoqkm"]
 
 [node name="NPCObjectAnimationStatePlayerComponent" type="AnimatedSprite3D" unique_id=1765613814]
 script = ExtResource("1_yoqkm")

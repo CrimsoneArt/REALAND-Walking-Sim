@@ -12,7 +12,7 @@ signal Interacted
 
 func interact():
 	$AudioStreamPlayer3D.stream = SoundEffect
-	$AudioStreamPlayer3D.pitch_scale = randf_range(0.8,1.4)
+	$AudioStreamPlayer3D.pitch_scale = randf_range(Pitch_Min,Pitch_Max)
 	$AudioStreamPlayer3D.play()
 	if TargetScene:
 		get_node("/root/SceneLoader").load_regular_scene(TargetScene.resource_path)

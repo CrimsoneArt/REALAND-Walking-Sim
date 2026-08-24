@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dcnxmcd02wof3"]
+
+[ext_resource type="Script" uid="uid://cijvcj7nvg8ev" path="res://Objects/ObjectComponents/FlappyMovementComponent.gd" id="1_op6b7"]
+[ext_resource type="Script" uid="uid://buom1dm7hnqqu" path="res://Objects/ObjectComponents/NPCObjectAnimationState.gd" id="2_g36qt"]
+
+[sub_resource type="Resource" id="Resource_op6b7"]
+script = ExtResource("2_g36qt")
+State = 2
+metadata/_custom_type_script = "uid://buom1dm7hnqqu"
+
+[node name="FlappyMovementComponent" type="Node" unique_id=2051407080]
+script = ExtResource("1_op6b7")
+jump_strengh = 2.5
+States = Array[ExtResource("2_g36qt")]([SubResource("Resource_op6b7")])
+metadata/_custom_type_script = "uid://bfxb3q0xqewkc"

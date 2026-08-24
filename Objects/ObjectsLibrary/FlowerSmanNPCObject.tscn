@@ -94,7 +94,7 @@ MovementNode = NodePath("CharacterBody3D")
 ActiveComponent = NodePath("WanderingComponent")
 amount_min = 1
 amount_max = 3
-ChanceOfAppearing = 9.0
+ChanceOfAppearing = 34.5
 metadata/_custom_type_script = "uid://dkxweyao0waoj"
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1761015290]
@@ -107,6 +107,7 @@ shape = SubResource("CapsuleShape3D_uua4x")
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="CharacterBody3D" unique_id=1981464735]
 pixel_size = 0.045
 texture_filter = 0
+render_priority = 1
 sprite_frames = SubResource("SpriteFrames_xrivr")
 autoplay = "default"
 frame_progress = 0.5770235
@@ -114,7 +115,7 @@ frame_progress = 0.5770235
 [node name="AnimatedSprite3D2" type="AnimatedSprite3D" parent="CharacterBody3D" unique_id=1653627446]
 pixel_size = 0.045
 texture_filter = 0
-render_priority = 1
+render_priority = 2
 sprite_frames = SubResource("SpriteFrames_opoc0")
 autoplay = "default"
 frame_progress = 0.7370612

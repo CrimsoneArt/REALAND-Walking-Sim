@@ -65,7 +65,7 @@ script = ExtResource("1_r3m8u")
 MovementNode = NodePath("CharacterBody3D")
 ActiveComponent = NodePath("WanderingComponent")
 amount_min = 1
-amount_max = 8
+amount_max = 100
 metadata/_custom_type_script = "uid://dkxweyao0waoj"
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=498723523]

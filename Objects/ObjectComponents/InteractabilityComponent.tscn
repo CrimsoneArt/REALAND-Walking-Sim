@@ -6,3 +6,5 @@
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_10f4v")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=601431763]

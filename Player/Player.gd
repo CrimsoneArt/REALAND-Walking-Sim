@@ -17,7 +17,8 @@ const Sensitivity = 0.03
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	PlayerUI.update_seed_label(get_node("/root/SceneLoader").get_dimension_seed())
+	if get_node("/root/SceneLoader"):
+		PlayerUI.update_seed_label(get_node("/root/SceneLoader").get_dimension_seed())
 
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("Left"):

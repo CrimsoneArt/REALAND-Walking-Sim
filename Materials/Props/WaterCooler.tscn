@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://royje8y7hp6f"]
+
+[ext_resource type="Texture2D" uid="uid://buu02owrea4di" path="res://Materials/Props/WaterCooler-Sheet.png" id="1_w81ah"]
+[ext_resource type="PackedScene" uid="uid://cdnf6l5oawl3i" path="res://Objects/ObjectComponents/InteractabilityComponent.tscn" id="2_wqs8a"]
+[ext_resource type="AudioStream" uid="uid://bqfkpw8ll1xyb" path="res://SFX/WaterCooler1.mp3" id="3_awu33"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6b3gm"]
+radius = 0.65625
+height = 2.3125
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqs8a"]
+atlas = ExtResource("1_w81ah")
+region = Rect2(0, 0, 90, 138)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awu33"]
+atlas = ExtResource("1_w81ah")
+region = Rect2(90, 0, 90, 138)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wqs8a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wqs8a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_awu33")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="WaterCooler" type="StaticBody3D" unique_id=1256976886]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07151246, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=635721948]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.28125, 0)
+shape = SubResource("CapsuleShape3D_6b3gm")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1572921927]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.154176, 0)
+pixel_size = 0.02
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_wqs8a")
+autoplay = "default"
+frame_progress = 0.6045804
+
+[node name="InteractabilityComponent" parent="." unique_id=500345398 instance=ExtResource("2_wqs8a")]
+SoundEffect = ExtResource("3_awu33")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractabilityComponent" unique_id=1610005195]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.28125, 0)
+shape = SubResource("CapsuleShape3D_6b3gm")

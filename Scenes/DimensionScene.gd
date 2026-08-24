@@ -24,7 +24,7 @@ func _ready() -> void:
 	DimensionTypeNode._generate_dimension(seed)
 	
 	var SkyBoxes: Array = []
-	var Dir = DirAccess.open("res://Scenes/SkyBoxes/")
+	var Dir = DirAccess.open("res://Scenes/SkyBoxes/DimensionSkyBoxes/")
 	
 	if Dir:
 		Dir.list_dir_begin()
@@ -32,7 +32,7 @@ func _ready() -> void:
 		
 		while FileName != "":
 			if !Dir.current_is_dir() and FileName.ends_with(".png"): #make sure the file is a material
-				var FullPath = "res://Scenes/SkyBoxes/" + FileName
+				var FullPath = "res://Scenes/SkyBoxes/DimensionSkyBoxes/" + FileName
 				
 				SkyBoxes.append(FullPath)
 					

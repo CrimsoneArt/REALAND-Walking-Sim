@@ -15,7 +15,7 @@ func spawn_objects(objectSpawner:ObjectSpawner,Objects:Array[PackedScene],genera
 
 func pick_random_materials(seed:int):
 	var Materials: Array[Material] = []
-	var Dir = DirAccess.open("res://Materials/")
+	var Dir = DirAccess.open("res://Materials/DimensionMaterials/")
 	
 	if Dir:
 		Dir.list_dir_begin()
@@ -23,7 +23,7 @@ func pick_random_materials(seed:int):
 		
 		while FileName != "":
 			if !Dir.current_is_dir() and FileName.ends_with(".tres"): #make sure the file is a material
-				var FullPath = "res://Materials/" + FileName
+				var FullPath = "res://Materials/DimensionMaterials/" + FileName
 				var resource = load(FullPath)
 				if resource:
 					Materials.append(resource)

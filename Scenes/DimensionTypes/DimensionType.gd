@@ -49,6 +49,7 @@ func pick_random_objects(seed:int) -> Array[PackedScene]:
 			
 			while FileName != "":
 				if !Dir.current_is_dir() and FileName.ends_with(".tscn"):
+					print(FileName)
 					var FullPath = "res://Objects/ObjectsLibrary/" + FileName
 					var ObjectScene = load(FullPath)
 					var ObjectNode = ObjectScene.instantiate()
@@ -58,6 +59,7 @@ func pick_random_objects(seed:int) -> Array[PackedScene]:
 				FileName = Dir.get_next()
 			Dir.list_dir_end()
 		var ObjectsNumber = RNG.randi_range(1,Objects.size()-1)
+		print(Objects)
 		for i in range(1,ObjectsNumber):
 			Objects.pop_at(RNG.randi() % Objects.size())
 		return Objects

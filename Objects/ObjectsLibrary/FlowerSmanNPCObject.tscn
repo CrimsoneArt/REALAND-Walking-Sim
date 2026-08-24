@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://15i6gnmd0lpu"]
 
-[ext_resource type="Script" uid="uid://dkxweyao0waoj" path="res://Objects/AbstractObjectClasses/NPCObject.gd" id="1_uua4x"]
+[ext_resource type="Script" uid="uid://dkxweyao0waoj" path="res://Objects/NPCObject.gd" id="1_uua4x"]
 [ext_resource type="Texture2D" uid="uid://i5hmqv02glhr" path="res://Objects/ObjectsLibrary/FlowerSman-Sheet.png" id="2_f2i1q"]
 [ext_resource type="PackedScene" uid="uid://cns6liybukkun" path="res://Objects/ObjectComponents/WanderingComponent.tscn" id="3_f2i1q"]
 [ext_resource type="PackedScene" uid="uid://cdnf6l5oawl3i" path="res://Objects/ObjectComponents/InteractabilityComponent.tscn" id="4_xe875"]
@@ -94,7 +94,7 @@ MovementNode = NodePath("CharacterBody3D")
 ActiveComponent = NodePath("WanderingComponent")
 amount_min = 1
 amount_max = 3
-ChanceOfAppearing = 34.5
+ChanceOfAppearing = 25.0
 metadata/_custom_type_script = "uid://dkxweyao0waoj"
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1761015290]

@@ -54,3 +54,39 @@ objectVariablesComponent = NodePath("ObjectVariablesComponent2")
 Variables = Dictionary[String, Variant]({
 "Seed": 2185861363
 })
+
+[node name="DoorObject5" parent="." unique_id=322964604 node_paths=PackedStringArray("objectVariablesComponent") instance=ExtResource("3_fxrh3")]
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 3.3941123, 0, -3.394112)
+objectVariablesComponent = NodePath("ObjectVariablesComponent2")
+
+[node name="ObjectVariablesComponent2" parent="DoorObject5" unique_id=2041228826 instance=ExtResource("4_avdaa")]
+Variables = Dictionary[String, Variant]({
+"Seed": 2166156850
+})
+
+[node name="DoorObject6" parent="." unique_id=308938857 node_paths=PackedStringArray("objectVariablesComponent") instance=ExtResource("3_fxrh3")]
+transform = Transform3D(0.7071067, 0, 0.7071068, 0, 1, 0, -0.7071068, 0, 0.7071067, -3.3941126, 0, -3.3941126)
+objectVariablesComponent = NodePath("ObjectVariablesComponent2")
+
+[node name="ObjectVariablesComponent2" parent="DoorObject6" unique_id=1678271069 instance=ExtResource("4_avdaa")]
+Variables = Dictionary[String, Variant]({
+"Seed": 2419142381
+})
+
+[node name="DoorObject7" parent="." unique_id=307514217 node_paths=PackedStringArray("objectVariablesComponent") instance=ExtResource("3_fxrh3")]
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, -3.3941126, 0, 3.3941126)
+objectVariablesComponent = NodePath("ObjectVariablesComponent2")
+
+[node name="ObjectVariablesComponent2" parent="DoorObject7" unique_id=1461495963 instance=ExtResource("4_avdaa")]
+Variables = Dictionary[String, Variant]({
+"Seed": 1638685595
+})
+
+[node name="DoorObject8" parent="." unique_id=1495840329 node_paths=PackedStringArray("objectVariablesComponent") instance=ExtResource("3_fxrh3")]
+transform = Transform3D(0.7071067, 0, 0.7071068, 0, 1, 0, -0.7071068, 0, 0.7071067, 3.3941126, 0, 3.3941126)
+objectVariablesComponent = NodePath("ObjectVariablesComponent2")
+
+[node name="ObjectVariablesComponent2" parent="DoorObject8" unique_id=1616993463 instance=ExtResource("4_avdaa")]
+Variables = Dictionary[String, Variant]({
+"Seed": 3129200072
+})

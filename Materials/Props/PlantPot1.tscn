@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://crh8560aeg54i"]
+
+[ext_resource type="Texture2D" uid="uid://c5xqhoyrb5i8s" path="res://Materials/Props/PlantPot1-Sheet.png" id="1_mtt0s"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6b3gm"]
+height = 2.125
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ih4i6"]
+atlas = ExtResource("1_mtt0s")
+region = Rect2(0, 0, 48, 117)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0mbs"]
+atlas = ExtResource("1_mtt0s")
+region = Rect2(48, 0, 48, 117)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cmhf3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ih4i6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0mbs")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="PlantPot1_" type="StaticBody3D" unique_id=1256976886]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07151246, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=635721948]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1875, 0)
+shape = SubResource("CapsuleShape3D_6b3gm")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1572921927]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.154176, 0)
+pixel_size = 0.02
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_cmhf3")
+autoplay = "default"
+frame_progress = 0.7235434

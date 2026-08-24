@@ -3,6 +3,7 @@
 @export var objectVariablesComponent : ObjectVariablesComponent
 @export var amount_min := 0
 @export var amount_max := 0
+@export_range(0.0, 100.0, 0.001, "suffix:%") var ChanceOfAppearing = 100.0
 
 func _ready() -> void:
 	if amount_max == 0 or amount_min == 0:

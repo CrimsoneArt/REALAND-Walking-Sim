@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cew3wwjvvnui1"]
 
-[ext_resource type="Material" uid="uid://qdrroywmlg5l" path="res://Materials/Bricks1.tres" id="1_ruj7l"]
+[ext_resource type="Material" uid="uid://bmyaigc8rtvx" path="res://Materials/Star.tres" id="1_avdaa"]
 [ext_resource type="PackedScene" uid="uid://igw0ct71j4e2" path="res://Player/Player.tscn" id="2_fxrh3"]
 [ext_resource type="PackedScene" uid="uid://dwqol8w28tgyb" path="res://Objects/Door/DoorObject.tscn" id="3_fxrh3"]
 [ext_resource type="PackedScene" uid="uid://p6mtwgnviw1d" path="res://Objects/ObjectComponents/ObjectVariablesComponent.tscn" id="4_avdaa"]
@@ -14,13 +14,7 @@ use_collision = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.028, 3.3594997, 0.011)
 flip_faces = true
 size = Vector3(12.48, 6.72, 13.44)
-material = ExtResource("1_ruj7l")
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1022053527]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02812481, 6.7783227, -0.15119123)
-operation = 2
-size = Vector3(14.4, 1.92, 15.36)
-material = ExtResource("1_ruj7l")
+material = ExtResource("1_avdaa")
 
 [node name="Player" parent="." unique_id=1083039947 instance=ExtResource("2_fxrh3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.062366, 0)
@@ -40,7 +34,7 @@ objectVariablesComponent = NodePath("ObjectVariablesComponent2")
 
 [node name="ObjectVariablesComponent2" parent="DoorObject2" unique_id=1542822623 instance=ExtResource("4_avdaa")]
 Variables = Dictionary[String, Variant]({
-"Seed": 3128969490
+"Seed": 4122479323
 })
 
 [node name="DoorObject3" parent="." unique_id=884683491 node_paths=PackedStringArray("objectVariablesComponent") instance=ExtResource("3_fxrh3")]
@@ -49,7 +43,7 @@ objectVariablesComponent = NodePath("ObjectVariablesComponent2")
 
 [node name="ObjectVariablesComponent2" parent="DoorObject3" unique_id=378948574 instance=ExtResource("4_avdaa")]
 Variables = Dictionary[String, Variant]({
-"Seed": 11
+"Seed": 1786118722
 })
 
 [node name="DoorObject4" parent="." unique_id=1799772799 node_paths=PackedStringArray("objectVariablesComponent") instance=ExtResource("3_fxrh3")]

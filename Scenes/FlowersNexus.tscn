@@ -1,0 +1,160 @@
+[gd_scene format=3 uid="uid://c01cbt28qgpm4"]
+
+[ext_resource type="Material" uid="uid://ci8inu8v7uus2" path="res://Materials/Flower.tres" id="1_11qvv"]
+[ext_resource type="PackedScene" uid="uid://igw0ct71j4e2" path="res://Player/Player.tscn" id="1_sq8vd"]
+[ext_resource type="Texture2D" uid="uid://bfsd8e8dmbsnc" path="res://Materials/Star.png" id="2_qql3o"]
+[ext_resource type="Shader" uid="uid://gxbeh60sgorq" path="res://Scenes/SkyBoxes/SkyBoxShaderFlat.gdshader" id="4_sd3w8"]
+[ext_resource type="Texture2D" uid="uid://dr5ko72lcl5nl" path="res://Scenes/SkyBoxes/FlowersSkybox.png" id="5_sd3w8"]
+[ext_resource type="PackedScene" uid="uid://crh8560aeg54i" path="res://Materials/Props/PlantPot1.tscn" id="6_6b3gm"]
+[ext_resource type="PackedScene" uid="uid://royje8y7hp6f" path="res://Materials/Props/WaterCooler.tscn" id="7_x22fe"]
+[ext_resource type="PackedScene" uid="uid://dwqol8w28tgyb" path="res://Objects/Door/DoorObject.tscn" id="8_x8bku"]
+[ext_resource type="Script" uid="uid://cbgpvmrkx1dw3" path="res://Objects/ObjectComponents/ObjectVariablesComponent.gd" id="9_q53a6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u285j"]
+shading_mode = 0
+albedo_texture = ExtResource("2_qql3o")
+uv1_scale = Vector3(0.25, 0.25, 0.25)
+uv1_offset = Vector3(0.5, 0, 0)
+uv1_triplanar = true
+texture_filter = 0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sd3w8"]
+shader = ExtResource("4_sd3w8")
+shader_parameter/sky_texture = ExtResource("5_sd3w8")
+shader_parameter/texture_scale = Vector2(1, 1)
+
+[sub_resource type="Sky" id="Sky_6b3gm"]
+sky_material = SubResource("ShaderMaterial_sd3w8")
+
+[sub_resource type="Environment" id="Environment_x22fe"]
+background_mode = 2
+sky = SubResource("Sky_6b3gm")
+glow_enabled = true
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 1.0
+fog_sky_affect = 0.0
+fog_depth_curve = 8.0
+fog_depth_end = 50.0
+
+[node name="FlowersNexus" type="Node3D" unique_id=1015677674]
+
+[node name="Floor" type="CSGBox3D" parent="." unique_id=495706260]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0615001, -9)
+use_collision = true
+size = Vector3(22.25, 1.875, 25.125)
+material = SubResource("StandardMaterial3D_u285j")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=646848893]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1694309630]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7505, 2)
+size = Vector3(5.125, 2.125, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1117204763]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1.7505, -17.375)
+size = Vector3(1.625, 2.125, 4.25)
+
+[node name="Walls" type="CSGBox3D" parent="CSGCombiner3D" unique_id=435340796]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0005, -9)
+use_collision = true
+flip_faces = true
+size = Vector3(5.625, 5.25, 22.25)
+material = ExtResource("1_11qvv")
+
+[node name="Walls2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1417482658]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.875, 1.0005, -7.25)
+use_collision = true
+flip_faces = true
+size = Vector3(4.125, 5.25, 3)
+material = ExtResource("1_11qvv")
+
+[node name="Walls3" type="CSGBox3D" parent="CSGCombiner3D" unique_id=473438687]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.875, 1.0005, -12.25)
+use_collision = true
+flip_faces = true
+size = Vector3(4.125, 5.25, 3)
+material = ExtResource("1_11qvv")
+
+[node name="Walls4" type="CSGBox3D" parent="CSGCombiner3D" unique_id=533605337]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.875, 1.0005, -17.5)
+use_collision = true
+flip_faces = true
+size = Vector3(4.125, 5.25, 3)
+material = ExtResource("1_11qvv")
+
+[node name="Walls5" type="CSGBox3D" parent="CSGCombiner3D" unique_id=2025484818]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.625, 1.0005, -17.5)
+use_collision = true
+flip_faces = true
+size = Vector3(4.125, 5.25, 3)
+material = ExtResource("1_11qvv")
+
+[node name="Walls6" type="CSGBox3D" parent="CSGCombiner3D" unique_id=2112583221]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.375, 1.0005, -17.5)
+use_collision = true
+flip_faces = true
+size = Vector3(5.375, 5.25, 5.125)
+material = ExtResource("1_11qvv")
+
+[node name="Player" parent="." unique_id=1083039947 instance=ExtResource("1_sq8vd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.125, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=952948249]
+environment = SubResource("Environment_x22fe")
+
+[node name="PlantPot1_" parent="." unique_id=1780492629 instance=ExtResource("6_6b3gm")]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -2, -0.25446284, -19)
+
+[node name="PlantPot1_3" parent="." unique_id=1256976886 instance=ExtResource("6_6b3gm")]
+transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3711385e-08, -2, -0.25446284, -15)
+
+[node name="PlantPot1_4" parent="." unique_id=335600109 instance=ExtResource("6_6b3gm")]
+transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3711385e-08, -2, -0.25446284, -9.875)
+
+[node name="PlantPot1_5" parent="." unique_id=2085115308 instance=ExtResource("6_6b3gm")]
+transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3711385e-08, -2, -0.25446284, -5)
+
+[node name="PlantPot1_2" parent="." unique_id=282136645 instance=ExtResource("6_6b3gm")]
+transform = Transform3D(0.7071067, 0, -0.7071067, 0, 1, 0, 0.7071067, 0, 0.7071067, 2, -0.25446284, -19)
+
+[node name="PlantPot1_6" parent="." unique_id=1885140315 instance=ExtResource("6_6b3gm")]
+transform = Transform3D(0.7071067, 0, -0.7071067, 0, 1, 0, 0.7071067, 0, 0.7071067, 9, -0.25446284, -19.25)
+
+[node name="WaterCooler" parent="." unique_id=1048937586 instance=ExtResource("7_x22fe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.75, -0.07151246, -15.625)
+
+[node name="DoorObject" parent="." unique_id=322964604 node_paths=PackedStringArray("objectVariablesComponent") instance=ExtResource("8_x8bku")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5.5, 0, -7.375)
+objectVariablesComponent = NodePath("ObjectVariablesComponent")
+
+[node name="ObjectVariablesComponent" type="Node" parent="DoorObject" unique_id=1519912101]
+script = ExtResource("9_q53a6")
+Variables = Dictionary[String, Variant]({
+"Seed": 3238798147
+})
+metadata/_custom_type_script = "uid://cbgpvmrkx1dw3"
+
+[node name="DoorObject2" parent="." unique_id=1459225530 node_paths=PackedStringArray("objectVariablesComponent") instance=ExtResource("8_x8bku")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5.5, 0, -12.25)
+objectVariablesComponent = NodePath("ObjectVariablesComponent")
+
+[node name="ObjectVariablesComponent" type="Node" parent="DoorObject2" unique_id=504850894]
+script = ExtResource("9_q53a6")
+Variables = Dictionary[String, Variant]({
+"Seed": 1399057779
+})
+metadata/_custom_type_script = "uid://cbgpvmrkx1dw3"
+
+[node name="DoorObject3" parent="." unique_id=1976388311 node_paths=PackedStringArray("objectVariablesComponent") instance=ExtResource("8_x8bku")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5.5, 0, -17.375)
+objectVariablesComponent = NodePath("ObjectVariablesComponent")
+
+[node name="ObjectVariablesComponent" type="Node" parent="DoorObject3" unique_id=1142562638]
+script = ExtResource("9_q53a6")
+Variables = Dictionary[String, Variant]({
+"Seed": 3948793713
+})
+metadata/_custom_type_script = "uid://cbgpvmrkx1dw3"

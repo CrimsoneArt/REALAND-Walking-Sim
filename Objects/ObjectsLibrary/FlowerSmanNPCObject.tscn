@@ -1,0 +1,136 @@
+[gd_scene format=3 uid="uid://15i6gnmd0lpu"]
+
+[ext_resource type="Script" uid="uid://dkxweyao0waoj" path="res://Objects/AbstractObjectClasses/NPCObject.gd" id="1_uua4x"]
+[ext_resource type="Texture2D" uid="uid://i5hmqv02glhr" path="res://Objects/ObjectsLibrary/FlowerSman-Sheet.png" id="2_f2i1q"]
+[ext_resource type="PackedScene" uid="uid://cns6liybukkun" path="res://Objects/ObjectComponents/WanderingComponent.tscn" id="3_f2i1q"]
+[ext_resource type="PackedScene" uid="uid://cdnf6l5oawl3i" path="res://Objects/ObjectComponents/InteractabilityComponent.tscn" id="4_xe875"]
+[ext_resource type="PackedScene" uid="uid://c01cbt28qgpm4" path="res://Scenes/FlowersNexus.tscn" id="5_wkcil"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uua4x"]
+radius = 1.5234375
+height = 4.0722656
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xe875"]
+atlas = ExtResource("2_f2i1q")
+region = Rect2(0, 0, 117, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wkcil"]
+atlas = ExtResource("2_f2i1q")
+region = Rect2(117, 0, 117, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l4ak8"]
+atlas = ExtResource("2_f2i1q")
+region = Rect2(234, 0, 117, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4khp"]
+atlas = ExtResource("2_f2i1q")
+region = Rect2(351, 0, 117, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gum8v"]
+atlas = ExtResource("2_f2i1q")
+region = Rect2(468, 0, 117, 90)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xrivr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xe875")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wkcil")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l4ak8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4khp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gum8v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4khp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l4ak8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wkcil")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtpov"]
+atlas = ExtResource("2_f2i1q")
+region = Rect2(0, 90, 117, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0wrr8"]
+atlas = ExtResource("2_f2i1q")
+region = Rect2(117, 90, 117, 90)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_opoc0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtpov")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0wrr8")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wkcil"]
+radius = 1.5234375
+height = 4.0722656
+
+[node name="FlowerSmanNPCObject" type="Node3D" unique_id=619945823 node_paths=PackedStringArray("MovementNode", "ActiveComponent")]
+script = ExtResource("1_uua4x")
+MovementNode = NodePath("CharacterBody3D")
+ActiveComponent = NodePath("WanderingComponent")
+amount_min = 1
+amount_max = 3
+ChanceOfAppearing = 9.0
+metadata/_custom_type_script = "uid://dkxweyao0waoj"
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1761015290]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0031157, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1789295512]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06298828, 0)
+shape = SubResource("CapsuleShape3D_uua4x")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="CharacterBody3D" unique_id=1981464735]
+pixel_size = 0.045
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_xrivr")
+autoplay = "default"
+frame_progress = 0.5770235
+
+[node name="AnimatedSprite3D2" type="AnimatedSprite3D" parent="CharacterBody3D" unique_id=1653627446]
+pixel_size = 0.045
+texture_filter = 0
+render_priority = 1
+sprite_frames = SubResource("SpriteFrames_opoc0")
+autoplay = "default"
+frame_progress = 0.7370612
+
+[node name="InteractabilityComponent" parent="CharacterBody3D" unique_id=500345398 instance=ExtResource("4_xe875")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.010338068, 0)
+TargetScene = ExtResource("5_wkcil")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D/InteractabilityComponent" unique_id=181612431]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06298828, 0)
+shape = SubResource("CapsuleShape3D_wkcil")
+
+[node name="WanderingComponent" parent="." unique_id=2005606164 node_paths=PackedStringArray("MovementNode") instance=ExtResource("3_f2i1q")]
+min_walk_time = 7.0
+max_walk_time = 37.5
+min_wait_time = 0.5
+max_wait_time = 2.5
+walking_speed = 1.0
+MovementNode = NodePath("../CharacterBody3D")

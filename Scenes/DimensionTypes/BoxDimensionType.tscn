@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dyf6cgigv8kqe"]
 
 [ext_resource type="Script" uid="uid://cva2ivf7wj2n8" path="res://Scenes/DimensionTypes/BoxDimensionType.gd" id="1_0qrrk"]
-[ext_resource type="Material" uid="uid://bvs8plnqls81j" path="res://Materials/Fence1.tres" id="2_i6ang"]
-[ext_resource type="Material" uid="uid://qdrroywmlg5l" path="res://Materials/Bricks1.tres" id="2_wnxm8"]
+[ext_resource type="Material" uid="uid://bvs8plnqls81j" path="res://Materials/DimensionMaterials/Fence1.tres" id="2_i6ang"]
+[ext_resource type="Material" uid="uid://qdrroywmlg5l" path="res://Materials/DimensionMaterials/Bricks1.tres" id="2_wnxm8"]
 [ext_resource type="PackedScene" uid="uid://igw0ct71j4e2" path="res://Player/Player.tscn" id="3_tt7km"]
 [ext_resource type="PackedScene" uid="uid://d0xiyv8g8ittm" path="res://Objects/ObjectSpawner.tscn" id="5_34no7"]
 

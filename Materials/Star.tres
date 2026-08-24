@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bmyaigc8rtvx"]
+
+[ext_resource type="Texture2D" uid="uid://bfsd8e8dmbsnc" path="res://Materials/Star.png" id="1_f7d2i"]
+
+[resource]
+shading_mode = 0
+albedo_texture = ExtResource("1_f7d2i")
+texture_filter = 0

@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://sekd3gokx0bq"]
+
+[ext_resource type="Texture2D" uid="uid://dmb2cmmv3vjwi" path="res://Materials/DimensionMaterials/Patterns1.png" id="1_m7jd4"]
+
+[resource]
+shading_mode = 0
+albedo_texture = ExtResource("1_m7jd4")
+uv1_triplanar = true
+texture_filter = 0

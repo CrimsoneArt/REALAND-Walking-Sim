@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dyveir2wh5n0p"]
 
-[ext_resource type="Material" uid="uid://qdrroywmlg5l" path="res://Materials/Bricks1.tres" id="1_p5j8r"]
+[ext_resource type="Material" uid="uid://qdrroywmlg5l" path="res://Materials/DimensionMaterials/Bricks1.tres" id="1_p5j8r"]
 [ext_resource type="Script" uid="uid://bojjlhwam21fl" path="res://Scenes/DimensionTypes/Maze1Cell.gd" id="1_ysl6p"]
 
 [node name="Maze1Cell" type="Node3D" unique_id=1576416744]

@@ -212,7 +212,7 @@ animations = [{
 }]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_mscwe"]
-radius = 3.864457
+radius = 3.453524
 
 [sub_resource type="Resource" id="Resource_8onrp"]
 script = ExtResource("5_8onrp")

@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cafvlgwj0supo"
-path.s3tc="res://.godot/imported/Patterns6.png-58bcf672b01abd76ca6593aac33225cd.s3tc.ctex"
+path="res://.godot/imported/Patterns6.png-58bcf672b01abd76ca6593aac33225cd.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Materials/DimensionMaterials/Patterns6.png"
-dest_files=["res://.godot/imported/Patterns6.png-58bcf672b01abd76ca6593aac33225cd.s3tc.ctex"]
+dest_files=["res://.godot/imported/Patterns6.png-58bcf672b01abd76ca6593aac33225cd.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

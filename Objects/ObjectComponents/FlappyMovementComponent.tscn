@@ -3,13 +3,21 @@
 [ext_resource type="Script" uid="uid://cijvcj7nvg8ev" path="res://Objects/ObjectComponents/FlappyMovementComponent.gd" id="1_op6b7"]
 [ext_resource type="Script" uid="uid://buom1dm7hnqqu" path="res://Objects/ObjectComponents/NPCObjectAnimationState.gd" id="2_g36qt"]
 
-[sub_resource type="Resource" id="Resource_op6b7"]
+[sub_resource type="Resource" id="Resource_sv32b"]
+script = ExtResource("2_g36qt")
+metadata/_custom_type_script = "uid://buom1dm7hnqqu"
+
+[sub_resource type="Resource" id="Resource_gk7d5"]
+script = ExtResource("2_g36qt")
+State = 1
+metadata/_custom_type_script = "uid://buom1dm7hnqqu"
+
+[sub_resource type="Resource" id="Resource_hoaus"]
 script = ExtResource("2_g36qt")
 State = 2
 metadata/_custom_type_script = "uid://buom1dm7hnqqu"
 
-[node name="FlappyMovementComponent" type="Node" unique_id=2051407080]
+[node name="FlappyMovementComponent" type="Node" unique_id=424461509]
 script = ExtResource("1_op6b7")
-jump_strengh = 2.5
-States = Array[ExtResource("2_g36qt")]([SubResource("Resource_op6b7")])
-metadata/_custom_type_script = "uid://bfxb3q0xqewkc"
+States = Array[ExtResource("2_g36qt")]([SubResource("Resource_sv32b"), SubResource("Resource_gk7d5"), SubResource("Resource_hoaus")])
+metadata/_custom_type_script = "uid://dl3v7yp1te08c"

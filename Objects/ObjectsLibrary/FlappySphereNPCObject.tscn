@@ -20,7 +20,7 @@ script = ExtResource("1_m1ldl")
 MovementNode = NodePath("CharacterBody3D")
 ActiveComponent = NodePath("FlappyMovementComponent")
 amount_min = 10
-amount_max = 70
+amount_max = 50
 metadata/_custom_type_script = "uid://dkxweyao0waoj"
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1257144249]
@@ -34,7 +34,6 @@ material_override = SubResource("StandardMaterial3D_xu2wu")
 mesh = SubResource("SphereMesh_xrivr")
 
 [node name="FlappyMovementComponent" parent="." unique_id=2051407080 node_paths=PackedStringArray("MovementNode") instance=ExtResource("3_70ssn")]
-min_timer_wait_time = 0.25
-max_timer_wait_time = 0.75
-jump_strengh = 3.5
+min_wait_time = 0.0
+max_wait_time = 0.0
 MovementNode = NodePath("../CharacterBody3D")

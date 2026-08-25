@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bv86wwf0grrc1"
-path.s3tc="res://.godot/imported/Flowers1.png-4efd703add6b84d55aa67a4cee10cb5b.s3tc.ctex"
+path="res://.godot/imported/Flowers1.png-4efd703add6b84d55aa67a4cee10cb5b.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Materials/DimensionMaterials/Flowers1.png"
-dest_files=["res://.godot/imported/Flowers1.png-4efd703add6b84d55aa67a4cee10cb5b.s3tc.ctex"]
+dest_files=["res://.godot/imported/Flowers1.png-4efd703add6b84d55aa67a4cee10cb5b.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

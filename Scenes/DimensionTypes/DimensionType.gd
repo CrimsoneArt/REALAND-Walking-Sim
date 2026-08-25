@@ -57,7 +57,11 @@ func pick_random_objects(seed:int) -> Array[PackedScene]:
 					
 				FileName = Dir.get_next()
 			Dir.list_dir_end()
-		var ObjectsNumber = RNG.randi_range(1,Objects.size()-1)
+		var ObjectsNumber : int
+		if Objects.size() > 4:
+			ObjectsNumber = Objects.size() - RNG.randi_range(1,5)
+		else:
+			ObjectsNumber = RNG.randi_range(1,3)
 		for i in range(1,ObjectsNumber):
 			Objects.pop_at(RNG.randi() % Objects.size())
 		return Objects

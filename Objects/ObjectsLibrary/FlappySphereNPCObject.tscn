@@ -34,6 +34,8 @@ material_override = SubResource("StandardMaterial3D_xu2wu")
 mesh = SubResource("SphereMesh_xrivr")
 
 [node name="FlappyMovementComponent" parent="." unique_id=2051407080 node_paths=PackedStringArray("MovementNode") instance=ExtResource("3_70ssn")]
+min_walk_time = 0.25
+max_walk_time = 1.5
 min_wait_time = 0.0
 max_wait_time = 0.0
 MovementNode = NodePath("../CharacterBody3D")

@@ -4,7 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://bthgsay5kuhgq" path="res://Objects/ObjectsLibrary/ParrotCreature.png" id="2_jbgls"]
 [ext_resource type="PackedScene" uid="uid://dgnbip1xxg2e" path="res://Objects/ObjectComponents/NPCObjectAnimationStatePlayerComponent.tscn" id="3_14jhm"]
 [ext_resource type="PackedScene" uid="uid://cns6liybukkun" path="res://Objects/ObjectComponents/WanderingComponent.tscn" id="3_ryk0n"]
+[ext_resource type="PackedScene" uid="uid://dpsbpsqjc40vf" path="res://Objects/ObjectComponents/RandomAudioPlayer.tscn" id="4_dlhfy"]
 [ext_resource type="Script" uid="uid://buom1dm7hnqqu" path="res://Objects/ObjectComponents/NPCObjectAnimationState.gd" id="5_sk8uq"]
+[ext_resource type="AudioStream" uid="uid://d0ieip3s0qe1g" path="res://SFX/ParrotCreature1.mp3" id="5_xnj4b"]
+[ext_resource type="AudioStream" uid="uid://be4vbuef3yogv" path="res://SFX/ParrotCreature2.mp3" id="6_txtu7"]
+[ext_resource type="AudioStream" uid="uid://bnwr36bhnm2tw" path="res://SFX/ParrotCreature3.mp3" id="7_iyaj1"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xrivr"]
 radius = 0.75
@@ -81,6 +85,13 @@ texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_14jhm")
 animation = &"Idle"
 movementComponent = NodePath("../../WanderingComponent")
+
+[node name="RandomAudioPlayer" parent="CharacterBody3D" unique_id=1452292652 instance=ExtResource("4_dlhfy")]
+SoundEffects = Array[AudioStream]([ExtResource("5_xnj4b"), ExtResource("6_txtu7"), ExtResource("7_iyaj1")])
+MinPitch = 0.8
+MaxPitch = 1.2
+MinWaitTime = 0.0
+MaxWaitTime = 3.0
 
 [node name="WanderingComponent" parent="." unique_id=2005606164 node_paths=PackedStringArray("MovementNode") instance=ExtResource("3_ryk0n")]
 max_walk_time = 6.0

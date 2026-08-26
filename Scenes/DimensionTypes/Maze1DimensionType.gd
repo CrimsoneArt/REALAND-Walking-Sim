@@ -32,21 +32,25 @@ func _generate_dimension(seed: int) -> void:
 	CellSize = RNG.randf_range(7, 15)
 	WallWidth = 6.0
 	RoofType = RoofTypes.values()[RNG.randi_range(0, RoofTypes.size() - 1)]
+	
 	Materials = pick_random_materials(seed)
 	MaterialType = MaterialTypes.values()[RNG.randi_range(0, MaterialTypes.size() - 1)]
 	if MaterialType == MaterialTypes.Ordered:
 		for i in range(0,4):
 			MaterialsForWalls.append(Materials[RNG.randi() % Materials.size()])
+	
 	clear_maze()
 	spawn_cells()
 	carve_maze(Vector2i.ZERO)
+	
+	spawn_objects(objectSpawner,[DoorObjectScene],generate_position,[])
+	
 	$Player.position = Grid[Vector2i(RNG.randi_range(0, Width - 1), RNG.randi_range(0, Depth - 1))].position
 	$Player.position.y = 0.96
 	
 	var Objects = pick_random_objects(seed)
 	spawn_objects(objectSpawner,Objects,generate_position,Materials)
-	spawn_objects(objectSpawner,[DoorObjectScene],generate_position,Materials)
-
+	
 func generate_position():
 	var ObjectPosition = Grid[Vector2i(RNG.randi_range(0, Width - 1), RNG.randi_range(0, Depth - 1))].position
 	ObjectPosition.y = 0

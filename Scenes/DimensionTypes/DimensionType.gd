@@ -6,12 +6,14 @@ var DoorObjectScene = preload("res://Objects/Door/DoorObject.tscn")
 func _generate_dimension(seed:int):
 	assert(false, "_generate_dimension() must be overridden by the subclass.")
 
-func spawn_objects(objectSpawner:ObjectSpawner,Objects:Array[PackedScene],generate_position:Callable,Materials):
+func spawn_objects(objectSpawner:ObjectSpawner,Objects:Array[PackedScene],generate_position:Callable,Materials:Array):
 	for ObjectScene in Objects:
 		var ObjectNode = ObjectScene.instantiate()
-		var AmountMinAndMax = Vector2(ObjectNode.amount_min,ObjectNode.amount_max)
-		for Count in range(AmountMinAndMax.x,AmountMinAndMax.y):
-			objectSpawner.spawn_object(RNG,ObjectScene,generate_position.call(),Materials)
+		if ObjectNode is GameObject:
+			var AmountMinAndMax = Vector2(ObjectNode.amount_min,ObjectNode.amount_max)
+			if RNG.randf_range(0,100) <= ObjectNode.ChanceOfAppearing:
+				for Count in range(AmountMinAndMax.x,AmountMinAndMax.y):
+					objectSpawner.spawn_object(RNG,ObjectScene,generate_position.call(),Materials)
 
 func pick_random_materials(seed:int):
 	var Materials: Array[Material] = []
@@ -58,11 +60,11 @@ func pick_random_objects(seed:int) -> Array[PackedScene]:
 				FileName = Dir.get_next()
 			Dir.list_dir_end()
 		var ObjectsNumber : int
-		if Objects.size() > 4:
+		if Objects.size() > 5:
 			ObjectsNumber = Objects.size() - RNG.randi_range(1,5)
 		else:
 			ObjectsNumber = RNG.randi_range(1,3)
-		for i in range(1,ObjectsNumber):
+		for i in range(1,ObjectsNumber+1):
 			Objects.pop_at(RNG.randi() % Objects.size())
 		return Objects
 	else:

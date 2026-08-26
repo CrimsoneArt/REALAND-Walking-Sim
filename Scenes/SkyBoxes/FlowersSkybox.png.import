@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dr5ko72lcl5nl"
-path.s3tc="res://.godot/imported/FlowersSkybox.png-ef9b10157ca10a502dc3b2cc48115f4c.s3tc.ctex"
+path="res://.godot/imported/FlowersSkybox.png-ef9b10157ca10a502dc3b2cc48115f4c.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Scenes/SkyBoxes/FlowersSkybox.png"
-dest_files=["res://.godot/imported/FlowersSkybox.png-ef9b10157ca10a502dc3b2cc48115f4c.s3tc.ctex"]
+dest_files=["res://.godot/imported/FlowersSkybox.png-ef9b10157ca10a502dc3b2cc48115f4c.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

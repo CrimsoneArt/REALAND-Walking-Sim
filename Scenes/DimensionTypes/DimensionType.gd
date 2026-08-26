@@ -56,8 +56,8 @@ func pick_random_objects(rng:RandomNumberGenerator) -> Array[PackedScene]:
 				FileName = Dir.get_next()
 			Dir.list_dir_end()
 		var ObjectsNumber : int
-		if Objects.size() > 5:
-			ObjectsNumber = Objects.size() - rng.randi_range(1,5)
+		if Objects.size() > 4:
+			ObjectsNumber = Objects.size() - rng.randi_range(1,4)
 		else:
 			ObjectsNumber = rng.randi_range(1,3)
 		for i in range(1,ObjectsNumber+1):
@@ -84,7 +84,7 @@ func pick_rare_objects(rng:RandomNumberGenerator):
 					
 			FileName = Dir.get_next()
 		Dir.list_dir_end()
-	for i in range(0,Objects.size()-1):
+	for i in range(0,(Objects.size()-1) if Objects.size() > 1 else 1):
 		var ObjectNode = Objects[i].instantiate()
 		if ObjectNode is GameObject:
 			if ObjectNode.ChanceOfAppearing >= rng.randf_range(0,100):

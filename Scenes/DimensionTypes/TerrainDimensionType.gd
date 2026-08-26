@@ -17,12 +17,13 @@ func _generate_dimension(seed:int):
 	
 	spawn_objects(objectSpawner,[DoorObjectScene],generate_position,[])
 	
-	var Materials = pick_random_materials(seed)
+	var Materials = pick_random_materials(RNG)
 	TerrainMesh.material_override = Materials[RNG.randi() % Materials.size()]
-	var Objects = pick_random_objects(RNG.seed)
+	var Objects = pick_random_objects(RNG)
 	
 	spawn_objects(objectSpawner,Objects,generate_position,Materials)
-	
+	var RareObjects = pick_rare_objects(RNG)
+	spawn_objects(objectSpawner,RareObjects,generate_position,Materials)
 
 	Player.position = Vector3(0,TerrainMesh.get_height_at(Vector2(0,0))+2.0,0)
 

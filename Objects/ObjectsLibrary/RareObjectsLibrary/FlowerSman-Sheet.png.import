@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://i5hmqv02glhr"
-path="res://.godot/imported/FlowerSman-Sheet.png-8c8a9420abd27dbb93a0315bfe944205.ctex"
+path="res://.godot/imported/FlowerSman-Sheet.png-fa640906ffead650ec73460c0598ef50.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Objects/ObjectsLibrary/FlowerSman-Sheet.png"
-dest_files=["res://.godot/imported/FlowerSman-Sheet.png-8c8a9420abd27dbb93a0315bfe944205.ctex"]
+source_file="res://Objects/ObjectsLibrary/RareObjectsLibrary/FlowerSman-Sheet.png"
+dest_files=["res://.godot/imported/FlowerSman-Sheet.png-fa640906ffead650ec73460c0598ef50.ctex"]
 
 [params]
 

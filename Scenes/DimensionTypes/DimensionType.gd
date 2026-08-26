@@ -10,12 +10,10 @@ func spawn_objects(objectSpawner:ObjectSpawner,Objects:Array[PackedScene],genera
 	for ObjectScene in Objects:
 		var ObjectNode = ObjectScene.instantiate()
 		if ObjectNode is GameObject:
-			var AmountMinAndMax = Vector2(ObjectNode.amount_min,ObjectNode.amount_max)
-			if RNG.randf_range(0,100) <= ObjectNode.ChanceOfAppearing:
-				for Count in range(AmountMinAndMax.x,AmountMinAndMax.y):
-					objectSpawner.spawn_object(RNG,ObjectScene,generate_position.call(),Materials)
+			for Count in range(ObjectNode.amount_min,ObjectNode.amount_max):
+				objectSpawner.spawn_object(RNG,ObjectScene,generate_position.call(),Materials)
 
-func pick_random_materials(seed:int):
+func pick_random_materials(rng:RandomNumberGenerator):
 	var Materials: Array[Material] = []
 	var Dir = DirAccess.open("res://Materials/DimensionMaterials/")
 	
@@ -32,16 +30,14 @@ func pick_random_materials(seed:int):
 					
 			FileName = Dir.get_next()
 		Dir.list_dir_end()
-	RNG.seed = seed
-	var MaterialNumber = RNG.randi_range(1,6)
+	var MaterialNumber = rng.randi_range(1,6)
 	for i in range(1,MaterialNumber):
-		Materials.pop_at(RNG.randi() % Materials.size())
+		Materials.pop_at(rng.randi() % Materials.size())
 	
 	return Materials
 	
-func pick_random_objects(seed:int) -> Array[PackedScene]:
-	RNG.seed = seed
-	if RNG.randf_range(0,100) <= 30:
+func pick_random_objects(rng:RandomNumberGenerator) -> Array[PackedScene]:
+	if rng.randf_range(0,100) <= 30:
 		var Objects: Array[PackedScene] = []
 		var Dir = DirAccess.open("res://Objects/ObjectsLibrary/")
 		
@@ -61,11 +57,40 @@ func pick_random_objects(seed:int) -> Array[PackedScene]:
 			Dir.list_dir_end()
 		var ObjectsNumber : int
 		if Objects.size() > 5:
-			ObjectsNumber = Objects.size() - RNG.randi_range(1,5)
+			ObjectsNumber = Objects.size() - rng.randi_range(1,5)
 		else:
-			ObjectsNumber = RNG.randi_range(1,3)
+			ObjectsNumber = rng.randi_range(1,3)
 		for i in range(1,ObjectsNumber+1):
-			Objects.pop_at(RNG.randi() % Objects.size())
+			Objects.pop_at(rng.randi() % Objects.size())
 		return Objects
 	else:
 		return []
+
+func pick_rare_objects(rng:RandomNumberGenerator):
+	var Objects: Array[PackedScene] = []
+	var Dir = DirAccess.open("res://Objects/ObjectsLibrary/RareObjectsLibrary/")
+	
+	if Dir:
+		Dir.list_dir_begin()
+		var FileName = Dir.get_next()
+				
+		while FileName != "":
+			if !Dir.current_is_dir() and FileName.ends_with(".tscn"):
+				var FullPath = "res://Objects/ObjectsLibrary/RareObjectsLibrary/" + FileName
+				var ObjectScene = load(FullPath)
+				var ObjectNode = ObjectScene.instantiate()
+				if ObjectNode is GameObject:
+					Objects.append(ObjectScene)
+					
+			FileName = Dir.get_next()
+		Dir.list_dir_end()
+	for i in range(0,Objects.size()-1):
+		var ObjectNode = Objects[i].instantiate()
+		if ObjectNode is GameObject:
+			if ObjectNode.ChanceOfAppearing >= rng.randf_range(0,100):
+				pass
+			else:
+				Objects.pop_at(i)
+		else:
+			Objects.pop_at(i)
+	return Objects

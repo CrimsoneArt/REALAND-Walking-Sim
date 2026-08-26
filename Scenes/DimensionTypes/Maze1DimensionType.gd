@@ -33,7 +33,7 @@ func _generate_dimension(seed: int) -> void:
 	WallWidth = 6.0
 	RoofType = RoofTypes.values()[RNG.randi_range(0, RoofTypes.size() - 1)]
 	
-	Materials = pick_random_materials(seed)
+	Materials = pick_random_materials(RNG)
 	MaterialType = MaterialTypes.values()[RNG.randi_range(0, MaterialTypes.size() - 1)]
 	if MaterialType == MaterialTypes.Ordered:
 		for i in range(0,4):
@@ -48,8 +48,10 @@ func _generate_dimension(seed: int) -> void:
 	$Player.position = Grid[Vector2i(RNG.randi_range(0, Width - 1), RNG.randi_range(0, Depth - 1))].position
 	$Player.position.y = 0.96
 	
-	var Objects = pick_random_objects(seed)
+	var Objects = pick_random_objects(RNG)
 	spawn_objects(objectSpawner,Objects,generate_position,Materials)
+	var RareObjects = pick_rare_objects(RNG)
+	spawn_objects(objectSpawner,RareObjects,generate_position,Materials)
 	
 func generate_position():
 	var ObjectPosition = Grid[Vector2i(RNG.randi_range(0, Width - 1), RNG.randi_range(0, Depth - 1))].position

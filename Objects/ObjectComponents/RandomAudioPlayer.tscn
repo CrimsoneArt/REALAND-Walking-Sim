@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dpsbpsqjc40vf"]
+
+[ext_resource type="Script" uid="uid://dg5oebam2e0fc" path="res://Objects/ObjectComponents/RandomAudioPlayer.gd" id="1_jmxrf"]
+
+[node name="RandomAudioPlayer" type="AudioStreamPlayer3D" unique_id=1452292652]
+unit_size = 1.6
+script = ExtResource("1_jmxrf")

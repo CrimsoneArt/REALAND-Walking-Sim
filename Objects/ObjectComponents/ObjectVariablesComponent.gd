@@ -2,7 +2,7 @@ class_name ObjectVariablesComponent extends Node
 
 @export var Variables: Dictionary[String, Variant] = {}
 @export var VariableRules : Array[ObjectVariableRule] = []
-@export var MaterialsList : Array[Material] = []
+@export var MaterialsList : Array = []
 
 func SetObjectVariable(key:String, Value):
 	Variables[key] = Value

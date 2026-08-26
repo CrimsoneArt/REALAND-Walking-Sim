@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://76ra4rksq1dv"]
+
+[ext_resource type="Texture2D" uid="uid://cw12xqnaxatbl" path="res://Objects/ObjectsLibrary/FlappySphere.png" id="1_hev5r"]
+[ext_resource type="Script" uid="uid://dkxweyao0waoj" path="res://Objects/NPCObject.gd" id="1_m1ldl"]
+[ext_resource type="PackedScene" uid="uid://dcnxmcd02wof3" path="res://Objects/ObjectComponents/FlappyMovementComponent.tscn" id="3_70ssn"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_xrivr"]
+radius = 0.7559032
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xu2wu"]
+shading_mode = 0
+albedo_texture = ExtResource("1_hev5r")
+uv1_scale = Vector3(3, 3, 3)
+texture_filter = 0
+
+[sub_resource type="SphereMesh" id="SphereMesh_xrivr"]
+
+[node name="FlappySphereNPCObject" type="Node3D" unique_id=1803131332 node_paths=PackedStringArray("MovementNode", "ActiveComponent")]
+script = ExtResource("1_m1ldl")
+MovementNode = NodePath("CharacterBody3D")
+ActiveComponent = NodePath("FlappyMovementComponent")
+amount_min = 10
+amount_max = 50
+metadata/_custom_type_script = "uid://dkxweyao0waoj"
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1257144249]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=2032059144]
+shape = SubResource("SphereShape3D_xrivr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D" unique_id=2063130292]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_xu2wu")
+mesh = SubResource("SphereMesh_xrivr")
+
+[node name="FlappyMovementComponent" parent="." unique_id=2051407080 node_paths=PackedStringArray("MovementNode") instance=ExtResource("3_70ssn")]
+min_walk_time = 0.25
+max_walk_time = 1.5
+min_wait_time = 0.0
+max_wait_time = 0.0
+MovementNode = NodePath("../CharacterBody3D")

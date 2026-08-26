@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c2w0chr38six8" path="res://Scenes/DimensionTypes/TerrainDimensionType.gd" id="1_lcvlq"]
 [ext_resource type="PackedScene" uid="uid://dt4tf0ha4ff1m" path="res://Scenes/DimensionTypes/TerrainMesh.tscn" id="2_g1aip"]
+[ext_resource type="Material" uid="uid://qdrroywmlg5l" path="res://Materials/DimensionMaterials/Bricks1.tres" id="3_4um1j"]
 [ext_resource type="PackedScene" uid="uid://igw0ct71j4e2" path="res://Player/Player.tscn" id="3_ssi84"]
 [ext_resource type="PackedScene" uid="uid://d0xiyv8g8ittm" path="res://Objects/ObjectSpawner.tscn" id="4_qg4mo"]
 
@@ -31,6 +32,7 @@ albedo_color = Color(1, 1, 1, 0)
 script = ExtResource("1_lcvlq")
 
 [node name="TerrainMesh" parent="." unique_id=1108510478 instance=ExtResource("2_g1aip")]
+material_override = ExtResource("3_4um1j")
 mesh = SubResource("ArrayMesh_qg4mo")
 resolution = 28
 noise = SubResource("FastNoiseLite_8g7ko")

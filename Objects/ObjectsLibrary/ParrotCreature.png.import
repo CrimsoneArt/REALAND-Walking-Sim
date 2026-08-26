@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bthgsay5kuhgq"
-path.s3tc="res://.godot/imported/ParrotCreature.png-f1ff0c44d132c25b5806ea88a70b2c1c.s3tc.ctex"
+path="res://.godot/imported/ParrotCreature.png-f1ff0c44d132c25b5806ea88a70b2c1c.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Objects/ObjectsLibrary/ParrotCreature.png"
-dest_files=["res://.godot/imported/ParrotCreature.png-f1ff0c44d132c25b5806ea88a70b2c1c.s3tc.ctex"]
+dest_files=["res://.godot/imported/ParrotCreature.png-f1ff0c44d132c25b5806ea88a70b2c1c.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

@@ -28,15 +28,15 @@ func _generate_dimension(Seed:int):
 	if RNG.randi_range(0,4) == 0:
 		CeilingRemover.queue_free()
 	
-	var Objects = pick_random_objects(Seed)
-	
-	var Materials = pick_random_materials(Seed)
-	
-	spawn_objects(objectSpawner,Objects,generate_position,Materials)
-	spawn_objects(objectSpawner,[DoorObjectScene],generate_position,Materials)
-	
+	spawn_objects(objectSpawner,[DoorObjectScene],generate_position,[])
+	var Materials = pick_random_materials(RNG)
 	Floor.material = Materials[RNG.randi() % Materials.size()]
 	CeilingRemover.material = Materials[RNG.randi() % Materials.size()]
+	var Objects = pick_random_objects(RNG)
+	
+	var RareObjects = pick_rare_objects(RNG)
+	spawn_objects(objectSpawner,RareObjects,generate_position,Materials)
+	spawn_objects(objectSpawner,Objects,generate_position,Materials)
 
 func generate_position() -> Vector3:
 	return Vector3(RNG.randi_range((-FloorSizeX/2.0)+2.5,(FloorSizeX/2.0)-2.5),0,RNG.randi_range((-FloorSizeZ/2.0)+2.5,(FloorSizeZ/2.0)-2.5))

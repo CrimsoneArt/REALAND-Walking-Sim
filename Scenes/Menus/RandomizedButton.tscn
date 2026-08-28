@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://glnssl8bcg2t"]
+
+[ext_resource type="Texture2D" uid="uid://cx0uji5f1kuoj" path="res://Scenes/Menus/RandomizedButtonSprites/RandomizedButtonSprite4.png" id="1_ho6rl"]
+[ext_resource type="Script" uid="uid://biowloyrts2i8" path="res://Scenes/Menus/RandomizedButton.gd" id="1_yc4fn"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yc4fn"]
+texture = ExtResource("1_ho6rl")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ho6rl"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="RandomizedButton" type="Button" unique_id=1019148459]
+texture_filter = 1
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_yc4fn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ho6rl")
+text = "Lorem Ipsum"
+script = ExtResource("1_yc4fn")
+
+[node name="ChangeTextureTimer" type="Timer" parent="." unique_id=545846842]
+autostart = true
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="timeout" from="ChangeTextureTimer" to="." method="_on_change_texture_timer_timeout"]

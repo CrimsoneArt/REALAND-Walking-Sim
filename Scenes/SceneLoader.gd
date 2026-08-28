@@ -4,7 +4,7 @@ const DimensionScene = preload("res://Scenes/DimensionScene.tscn")
 var DimensionNode
 
 func _ready() -> void:
-	load_regular_scene("res://Scenes/HubWorld.tscn")
+	load_regular_scene("res://Scenes/Menus/MainMenu.tscn")
 
 func load_regular_scene(ScenePath:String):
 	kill_all_children()

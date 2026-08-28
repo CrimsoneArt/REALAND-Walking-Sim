@@ -133,7 +133,9 @@ objectVariablesComponent = NodePath("ObjectVariablesComponent")
 [node name="ObjectVariablesComponent" type="Node" parent="DoorObject" unique_id=1519912101]
 script = ExtResource("9_q53a6")
 Variables = Dictionary[String, Variant]({
-"Seed": 3238798147
+"Seed": 3238798147,
+"SpriteHeight": 2.88,
+"SpriteNumber": 1
 })
 metadata/_custom_type_script = "uid://cbgpvmrkx1dw3"
 
@@ -144,7 +146,9 @@ objectVariablesComponent = NodePath("ObjectVariablesComponent")
 [node name="ObjectVariablesComponent" type="Node" parent="DoorObject2" unique_id=504850894]
 script = ExtResource("9_q53a6")
 Variables = Dictionary[String, Variant]({
-"Seed": 1399057779
+"Seed": 1399057779,
+"SpriteHeight": 2.88,
+"SpriteNumber": 1
 })
 metadata/_custom_type_script = "uid://cbgpvmrkx1dw3"
 
@@ -155,6 +159,8 @@ objectVariablesComponent = NodePath("ObjectVariablesComponent")
 [node name="ObjectVariablesComponent" type="Node" parent="DoorObject3" unique_id=1142562638]
 script = ExtResource("9_q53a6")
 Variables = Dictionary[String, Variant]({
-"Seed": 3948793713
+"Seed": 3948793713,
+"SpriteHeight": 2.88,
+"SpriteNumber": 1
 })
 metadata/_custom_type_script = "uid://cbgpvmrkx1dw3"

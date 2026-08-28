@@ -25,68 +25,84 @@ objectVariablesComponent = NodePath("ObjectVariablesComponent2")
 
 [node name="ObjectVariablesComponent2" parent="DoorObject1" unique_id=504571316 instance=ExtResource("4_avdaa")]
 Variables = Dictionary[String, Variant]({
-"Seed": 2763
+"Seed": 2763,
+"SpriteHeight": 2.88,
+"SpriteNumber": 1
 })
 
-[node name="DoorObject2" parent="." unique_id=2112717054 node_paths=PackedStringArray("objectVariablesComponent") instance=ExtResource("3_fxrh3")]
+[node name="DoorObject2" parent="." unique_id=322964604 node_paths=PackedStringArray("objectVariablesComponent") instance=ExtResource("3_fxrh3")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.8, 0, 0)
+objectVariablesComponent = NodePath("ObjectVariablesComponent2")
+
+[node name="ObjectVariablesComponent2" parent="DoorObject2" unique_id=1245640058 instance=ExtResource("4_avdaa")]
+Variables = Dictionary[String, Variant]({
+"Seed": 2764,
+"SpriteHeight": 2.88,
+"SpriteNumber": 2
+})
+
+[node name="DoorObject3" parent="." unique_id=1822355878 node_paths=PackedStringArray("objectVariablesComponent") instance=ExtResource("3_fxrh3")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 4.8)
+objectVariablesComponent = NodePath("ObjectVariablesComponent2")
+
+[node name="ObjectVariablesComponent2" parent="DoorObject3" unique_id=1102101361 instance=ExtResource("4_avdaa")]
+Variables = Dictionary[String, Variant]({
+"Seed": 2762,
+"SpriteHeight": 2.88,
+"SpriteNumber": 3
+})
+
+[node name="DoorObject4" parent="." unique_id=703466626 node_paths=PackedStringArray("objectVariablesComponent") instance=ExtResource("3_fxrh3")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.8, 0, 0)
 objectVariablesComponent = NodePath("ObjectVariablesComponent2")
 
-[node name="ObjectVariablesComponent2" parent="DoorObject2" unique_id=1542822623 instance=ExtResource("4_avdaa")]
+[node name="ObjectVariablesComponent2" parent="DoorObject4" unique_id=1343287779 instance=ExtResource("4_avdaa")]
 Variables = Dictionary[String, Variant]({
-"Seed": 4122479323
+"Seed": 68,
+"SpriteHeight": 2.88,
+"SpriteNumber": 4
 })
 
-[node name="DoorObject3" parent="." unique_id=884683491 node_paths=PackedStringArray("objectVariablesComponent") instance=ExtResource("3_fxrh3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.8)
-objectVariablesComponent = NodePath("ObjectVariablesComponent2")
-
-[node name="ObjectVariablesComponent2" parent="DoorObject3" unique_id=378948574 instance=ExtResource("4_avdaa")]
-Variables = Dictionary[String, Variant]({
-"Seed": 1786118722
-})
-
-[node name="DoorObject4" parent="." unique_id=1799772799 node_paths=PackedStringArray("objectVariablesComponent") instance=ExtResource("3_fxrh3")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.8, 0, 0)
-objectVariablesComponent = NodePath("ObjectVariablesComponent2")
-
-[node name="ObjectVariablesComponent2" parent="DoorObject4" unique_id=1800843091 instance=ExtResource("4_avdaa")]
-Variables = Dictionary[String, Variant]({
-"Seed": 2185861363
-})
-
-[node name="DoorObject5" parent="." unique_id=322964604 node_paths=PackedStringArray("objectVariablesComponent") instance=ExtResource("3_fxrh3")]
+[node name="DoorObject5" parent="." unique_id=636760879 node_paths=PackedStringArray("objectVariablesComponent") instance=ExtResource("3_fxrh3")]
 transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 3.3941123, 0, -3.394112)
 objectVariablesComponent = NodePath("ObjectVariablesComponent2")
 
-[node name="ObjectVariablesComponent2" parent="DoorObject5" unique_id=2041228826 instance=ExtResource("4_avdaa")]
+[node name="ObjectVariablesComponent2" parent="DoorObject5" unique_id=555461677 instance=ExtResource("4_avdaa")]
 Variables = Dictionary[String, Variant]({
-"Seed": 2166156850
+"Seed": 666,
+"SpriteHeight": 2.88,
+"SpriteNumber": 5
 })
 
-[node name="DoorObject6" parent="." unique_id=308938857 node_paths=PackedStringArray("objectVariablesComponent") instance=ExtResource("3_fxrh3")]
+[node name="DoorObject6" parent="." unique_id=1244573429 node_paths=PackedStringArray("objectVariablesComponent") instance=ExtResource("3_fxrh3")]
+transform = Transform3D(-0.7071068, 0, -0.7071067, 0, 1, 0, 0.7071067, 0, -0.7071068, 3.3941126, 0, 3.3941126)
+objectVariablesComponent = NodePath("ObjectVariablesComponent2")
+
+[node name="ObjectVariablesComponent2" parent="DoorObject6" unique_id=1471131145 instance=ExtResource("4_avdaa")]
+Variables = Dictionary[String, Variant]({
+"Seed": 1,
+"SpriteHeight": 2.88,
+"SpriteNumber": 6
+})
+
+[node name="DoorObject7" parent="." unique_id=410905089 node_paths=PackedStringArray("objectVariablesComponent") instance=ExtResource("3_fxrh3")]
+transform = Transform3D(-0.7071068, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, -0.7071068, -3.3941126, 0, 3.3941126)
+objectVariablesComponent = NodePath("ObjectVariablesComponent2")
+
+[node name="ObjectVariablesComponent2" parent="DoorObject7" unique_id=408172297 instance=ExtResource("4_avdaa")]
+Variables = Dictionary[String, Variant]({
+"Seed": 45674,
+"SpriteHeight": 2.88,
+"SpriteNumber": 7
+})
+
+[node name="DoorObject8" parent="." unique_id=189603617 node_paths=PackedStringArray("objectVariablesComponent") instance=ExtResource("3_fxrh3")]
 transform = Transform3D(0.7071067, 0, 0.7071068, 0, 1, 0, -0.7071068, 0, 0.7071067, -3.3941126, 0, -3.3941126)
 objectVariablesComponent = NodePath("ObjectVariablesComponent2")
 
-[node name="ObjectVariablesComponent2" parent="DoorObject6" unique_id=1678271069 instance=ExtResource("4_avdaa")]
+[node name="ObjectVariablesComponent2" parent="DoorObject8" unique_id=273549066 instance=ExtResource("4_avdaa")]
 Variables = Dictionary[String, Variant]({
-"Seed": 2419142381
-})
-
-[node name="DoorObject7" parent="." unique_id=307514217 node_paths=PackedStringArray("objectVariablesComponent") instance=ExtResource("3_fxrh3")]
-transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, -3.3941126, 0, 3.3941126)
-objectVariablesComponent = NodePath("ObjectVariablesComponent2")
-
-[node name="ObjectVariablesComponent2" parent="DoorObject7" unique_id=1461495963 instance=ExtResource("4_avdaa")]
-Variables = Dictionary[String, Variant]({
-"Seed": 1638685595
-})
-
-[node name="DoorObject8" parent="." unique_id=1495840329 node_paths=PackedStringArray("objectVariablesComponent") instance=ExtResource("3_fxrh3")]
-transform = Transform3D(0.7071067, 0, 0.7071068, 0, 1, 0, -0.7071068, 0, 0.7071067, 3.3941126, 0, 3.3941126)
-objectVariablesComponent = NodePath("ObjectVariablesComponent2")
-
-[node name="ObjectVariablesComponent2" parent="DoorObject8" unique_id=1616993463 instance=ExtResource("4_avdaa")]
-Variables = Dictionary[String, Variant]({
-"Seed": 3129200072
+"Seed": 989,
+"SpriteHeight": 2.88,
+"SpriteNumber": 8
 })

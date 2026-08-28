@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://44rudu2fw800"
-path.s3tc="res://.godot/imported/DoorPlaceHolder.png-d7d67cad995ee8fc9144acad1067be77.s3tc.ctex"
+uid="uid://dji3t4ndy3lki"
+path="res://.godot/imported/Door7.png-3b8c67dd84e8d5650fc0bee9cc152850.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://Objects/Door/DoorPlaceHolder.png"
-dest_files=["res://.godot/imported/DoorPlaceHolder.png-d7d67cad995ee8fc9144acad1067be77.s3tc.ctex"]
+source_file="res://Objects/Door/DoorSprites/Door7.png"
+dest_files=["res://.godot/imported/Door7.png-3b8c67dd84e8d5650fc0bee9cc152850.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

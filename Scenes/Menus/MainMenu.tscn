@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://bd3fq1otx3ud6"]
+
+[ext_resource type="Shader" uid="uid://cxl5m7cwrixg5" path="res://Scenes/Menus/Scroll.gdshader" id="1_hqtmt"]
+[ext_resource type="PackedScene" uid="uid://glnssl8bcg2t" path="res://Scenes/Menus/RandomizedButton.tscn" id="1_v3fht"]
+[ext_resource type="Texture2D" uid="uid://d2easpdp2w8s7" path="res://Scenes/Menus/BGMneu.png" id="2_b42ut"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b42ut"]
+shader = ExtResource("1_hqtmt")
+shader_parameter/scroll_speed = Vector2(-0.3, 0.3)
+shader_parameter/color1 = Color(0, 0, 0, 1)
+shader_parameter/is_silhuoted = false
+shader_parameter/intensity = 0.70000001043084
+
+[node name="MainMenu" type="Control" unique_id=588403170]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1049389154]
+material = SubResource("ShaderMaterial_b42ut")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_b42ut")
+stretch_mode = 1
+
+[node name="RandomizedButton" parent="." unique_id=1019148459 instance=ExtResource("1_v3fht")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -108.0
+offset_top = 66.0
+offset_right = 108.0
+offset_bottom = 148.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "Play"
+EnterTargetScene = true
+TargetScenePath = "res://Scenes/HubWorld.tscn"
+
+[node name="RandomizedButton2" parent="." unique_id=680655530 instance=ExtResource("1_v3fht")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -108.0
+offset_top = 167.0
+offset_right = 108.0
+offset_bottom = 249.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "Exit"
+ForceQuit = true
+
+[node name="RandomizedButton3" parent="." unique_id=671396378 instance=ExtResource("1_v3fht")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -299.0
+offset_top = -245.0
+offset_right = 299.0
+offset_bottom = -129.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 74
+text = "REA LAND"
+ForceQuit = true
+
+[node name="RandomizedButton4" parent="." unique_id=93331285 instance=ExtResource("1_v3fht")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -105.0
+offset_top = -115.5
+offset_right = 105.0
+offset_bottom = -40.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 30
+text = "Walking Sim"
+ForceQuit = true

@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://dnkqq7a64apra"]
+
+[ext_resource type="Texture2D" uid="uid://bw4jsns6kbk8f" path="res://Materials/Props/SmokingGuy-Sheet.png" id="1_xpfjw"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6b3gm"]
+radius = 0.81152344
+height = 1.6230469
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7lpo8"]
+atlas = ExtResource("1_xpfjw")
+region = Rect2(0, 0, 81, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iaokt"]
+atlas = ExtResource("1_xpfjw")
+region = Rect2(81, 0, 81, 58)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7lpo8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7lpo8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iaokt")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="SmokingGuy" type="StaticBody3D" unique_id=1256976886]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07151246, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=635721948]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.93652344, 0)
+shape = SubResource("CapsuleShape3D_6b3gm")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1572921927]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9463769, 0)
+pixel_size = 0.03
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_7lpo8")
+autoplay = "default"
+frame = 1
+frame_progress = 0.022482192

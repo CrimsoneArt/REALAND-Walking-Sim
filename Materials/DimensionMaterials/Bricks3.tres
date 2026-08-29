@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dds6phg6f6tm0"]
+
+[ext_resource type="Texture2D" uid="uid://6rommk8l5b62" path="res://Materials/DimensionMaterials/Bricks3.png" id="1_1wrfc"]
+
+[resource]
+shading_mode = 0
+albedo_texture = ExtResource("1_1wrfc")
+uv1_triplanar = true
+texture_filter = 0

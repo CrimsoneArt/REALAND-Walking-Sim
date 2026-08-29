@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://dwxyaybeumu5l" path="res://Materials/Props/ParrotNPCObject(Chill).tscn" id="5_r0oln"]
 [ext_resource type="PackedScene" uid="uid://royje8y7hp6f" path="res://Materials/Props/WaterCooler.tscn" id="6_e66bt"]
 [ext_resource type="PackedScene" uid="uid://dnkqq7a64apra" path="res://Materials/Props/SmokingGuy.tscn" id="7_odyps"]
+[ext_resource type="Texture2D" uid="uid://b2tvr74xtaw4x" path="res://Materials/SmokingSign.png" id="8_xna5b"]
+[ext_resource type="PackedScene" uid="uid://7kk7mje4ksul" path="res://Materials/Props/ShitCum.tscn" id="9_m0gko"]
+[ext_resource type="PackedScene" uid="uid://c254xj3vwsk0s" path="res://Materials/Props/StarProp.tscn" id="10_j0mrm"]
 
 [node name="BathHouseScene" type="Node3D" unique_id=223852037]
 
@@ -86,8 +89,23 @@ transform = Transform3D(0.58214575, 0, -0.8130845, 0, 1, 0, 0.8130845, 0, 0.5821
 [node name="ParrotNPCObject2" parent="." unique_id=2133562135 instance=ExtResource("5_r0oln")]
 transform = Transform3D(-0.3925165, 0, -0.91974497, 0, 1, 0, 0.91974497, 0, -0.3925165, 10.25685, -2.4393299, 3.0593023)
 
+[node name="ParrotNPCObject3" parent="." unique_id=310580810 instance=ExtResource("5_r0oln")]
+transform = Transform3D(-0.3925165, 0, -0.91974497, 0, 1, 0, 0.91974497, 0, -0.3925165, 5.0216, -2.4393299, 17.295511)
+
 [node name="WaterCooler" parent="." unique_id=1256976886 instance=ExtResource("6_e66bt")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -11, -0.28181452, 2)
 
 [node name="SmokingGuy" parent="." unique_id=2067788786 instance=ExtResource("7_odyps")]
 transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -10, -0.5846398, -2)
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=699697447]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -11.312725, 2.7370076, 0)
+pixel_size = 0.04
+texture_filter = 0
+texture = ExtResource("8_xna5b")
+
+[node name="ShitCum" parent="." unique_id=1925477673 instance=ExtResource("9_m0gko")]
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 10.326633, -1.324444, 9.896635)
+
+[node name="StarProp" parent="." unique_id=1364720575 instance=ExtResource("10_j0mrm")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 11.445033, -1.5264597, 12.489588)

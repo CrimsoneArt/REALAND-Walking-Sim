@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://c254xj3vwsk0s"]
+
+[ext_resource type="Texture2D" uid="uid://br256phvmen5" path="res://Materials/Props/StarProp.png" id="1_mqk6v"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6b3gm"]
+radius = 0.69384766
+height = 1.3876953
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_obnov"]
+atlas = ExtResource("1_mqk6v")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mqk6v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_obnov")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="StarProp" type="StaticBody3D" unique_id=1256976886]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07151246, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=635721948]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.56103516, 0)
+shape = SubResource("CapsuleShape3D_6b3gm")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1572921927]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.56402504, 0)
+pixel_size = 0.06
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_mqk6v")
+autoplay = "default"

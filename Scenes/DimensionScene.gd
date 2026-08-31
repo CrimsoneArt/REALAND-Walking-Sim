@@ -25,7 +25,7 @@ func _ready() -> void:
 	
 	var SkyBoxes: Array = []
 	var Loader = FileLoader.new()
-	SkyBoxes = Loader.get_file_paths_from_folder("res://Scenes/SkyBoxes/DimensionSkyboxes/",".png")
+	SkyBoxes = Loader.get_file_paths_from_folder("res://Scenes/SkyBoxes/DimensionSkyboxes/",".png.import",".import")
 	SkyBoxes = Loader.load_files_in_array(SkyBoxes)
 	
 	World.environment.sky.sky_material.set("shader_parameter/sky_texture", SkyBoxes[RNG.randi()%SkyBoxes.size()])

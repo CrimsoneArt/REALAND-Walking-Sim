@@ -8,6 +8,7 @@ func _generate_dimension(seed:int):
 
 func spawn_objects(objectSpawner:ObjectSpawner,Objects:Array,generate_position:Callable,Materials:Array):
 	for ObjectScene in Objects:
+		
 		var ObjectNode = ObjectScene.instantiate()
 		if ObjectNode is GameObject:
 			for Count in range(ObjectNode.amount_min,ObjectNode.amount_max):
@@ -60,13 +61,12 @@ func pick_rare_objects(rng:RandomNumberGenerator):
 	
 	Objects = Loader.load_files_in_array(Objects)
 	
-	for i in range(0,(Objects.size()-1) if Objects.size() > 1 else 1):
+	var OutPutObjects = []
+	
+	for i in range(0,Objects.size()):
 		var ObjectNode = Objects[i].instantiate()
 		if ObjectNode is GameObject:
-			if ObjectNode.ChanceOfAppearing >= rng.randf_range(0,100):
-				pass
-			else:
-				Objects.pop_at(i)
-		else:
-			Objects.pop_at(i)
-	return Objects
+			if ObjectNode.ChanceOfAppearing >= rng.randf_range(0.0,100.0):
+				OutPutObjects.append(Objects[i])
+	
+	return OutPutObjects

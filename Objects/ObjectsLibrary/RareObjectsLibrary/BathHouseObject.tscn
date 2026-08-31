@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://b7rpom4eqe633"]
+
+[ext_resource type="Script" uid="uid://dpoxk86q0vc0o" path="res://Objects/GameObject.gd" id="1_62teo"]
+[ext_resource type="PackedScene" uid="uid://cdnf6l5oawl3i" path="res://Objects/ObjectComponents/InteractabilityComponent.tscn" id="2_riu32"]
+[ext_resource type="Texture2D" uid="uid://c0fwbwnjvsbtr" path="res://Objects/ObjectsLibrary/RareObjectsLibrary/BathHouse-export.png" id="3_qch84"]
+[ext_resource type="PackedScene" uid="uid://nv5ka4nmaan1" path="res://Scenes/BathHouseScene.tscn" id="3_riu32"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_d87e6"]
+radius = 2.636733
+
+[node name="BathHouse" type="Node3D" unique_id=725498789]
+script = ExtResource("1_62teo")
+amount_min = 1
+amount_max = 2
+ChanceOfAppearing = 12.0
+metadata/_custom_type_script = "uid://dpoxk86q0vc0o"
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1631419393]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.6146097, 0)
+
+[node name="InteractabilityComponent" parent="StaticBody3D" unique_id=500345398 instance=ExtResource("2_riu32")]
+Pitch_Min = 0.0
+Pitch_Max = 0.0
+TargetScene = ExtResource("3_riu32")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D/InteractabilityComponent" unique_id=484728957]
+shape = SubResource("SphereShape3D_d87e6")
+
+[node name="Sprite3D" type="Sprite3D" parent="StaticBody3D" unique_id=1765028906]
+pixel_size = 0.05
+texture_filter = 0
+texture = ExtResource("3_qch84")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1737361978]
+shape = SubResource("SphereShape3D_d87e6")

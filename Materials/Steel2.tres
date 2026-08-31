@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bo7m8nb6elmrx"]
+
+[ext_resource type="Texture2D" uid="uid://ba0mu0lpr3vj0" path="res://Materials/Steel1.png" id="1_2ct3l"]
+
+[resource]
+shading_mode = 0
+albedo_texture = ExtResource("1_2ct3l")
+texture_filter = 0

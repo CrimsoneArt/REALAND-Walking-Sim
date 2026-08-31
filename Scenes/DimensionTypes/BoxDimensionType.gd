@@ -35,6 +35,7 @@ func _generate_dimension(Seed:int):
 	var Objects = pick_random_objects(RNG)
 	
 	var RareObjects = pick_rare_objects(RNG)
+	
 	spawn_objects(objectSpawner,RareObjects,generate_position,Materials)
 	spawn_objects(objectSpawner,Objects,generate_position,Materials)
 

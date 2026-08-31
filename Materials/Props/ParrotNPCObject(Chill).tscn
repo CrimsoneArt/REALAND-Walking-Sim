@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://dwxyaybeumu5l"]
+
+[ext_resource type="Script" uid="uid://dkxweyao0waoj" path="res://Objects/NPCObject.gd" id="1_arcwp"]
+[ext_resource type="PackedScene" uid="uid://dgnbip1xxg2e" path="res://Objects/ObjectComponents/NPCObjectAnimationStatePlayerComponent.tscn" id="2_41u6v"]
+[ext_resource type="Texture2D" uid="uid://bthgsay5kuhgq" path="res://Objects/ObjectsLibrary/ParrotCreature.png" id="3_up84x"]
+[ext_resource type="PackedScene" uid="uid://dpsbpsqjc40vf" path="res://Objects/ObjectComponents/RandomAudioPlayer.tscn" id="4_vmc0e"]
+[ext_resource type="AudioStream" uid="uid://d0ieip3s0qe1g" path="res://SFX/ParrotCreature1.mp3" id="5_2prfb"]
+[ext_resource type="AudioStream" uid="uid://be4vbuef3yogv" path="res://SFX/ParrotCreature2.mp3" id="6_f4ifb"]
+[ext_resource type="AudioStream" uid="uid://bnwr36bhnm2tw" path="res://SFX/ParrotCreature3.mp3" id="7_7bo45"]
+[ext_resource type="PackedScene" uid="uid://cns6liybukkun" path="res://Objects/ObjectComponents/WanderingComponent.tscn" id="8_linip"]
+[ext_resource type="Script" uid="uid://buom1dm7hnqqu" path="res://Objects/ObjectComponents/NPCObjectAnimationState.gd" id="9_0l25f"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xrivr"]
+radius = 0.75
+height = 2.75
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ryk0n"]
+atlas = ExtResource("3_up84x")
+region = Rect2(0, 0, 69, 83)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14jhm"]
+atlas = ExtResource("3_up84x")
+region = Rect2(69, 0, 69, 83)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sk8uq"]
+atlas = ExtResource("3_up84x")
+region = Rect2(0, 0, 69, 83)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dlhfy"]
+atlas = ExtResource("3_up84x")
+region = Rect2(138, 0, 69, 83)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_14jhm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ryk0n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_14jhm")
+}],
+"loop": 1,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sk8uq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dlhfy")
+}],
+"loop": 1,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[sub_resource type="Resource" id="Resource_dlhfy"]
+script = ExtResource("9_0l25f")
+metadata/_custom_type_script = "uid://buom1dm7hnqqu"
+
+[sub_resource type="Resource" id="Resource_14jhm"]
+script = ExtResource("9_0l25f")
+State = 1
+metadata/_custom_type_script = "uid://buom1dm7hnqqu"
+
+[node name="ParrotNPCObject" type="Node3D" unique_id=721190811 node_paths=PackedStringArray("MovementNode", "ActiveComponent")]
+script = ExtResource("1_arcwp")
+MovementNode = NodePath("CharacterBody3D")
+ActiveComponent = NodePath("WanderingComponent")
+amount_min = 1
+amount_max = 100
+metadata/_custom_type_script = "uid://dkxweyao0waoj"
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=498723523]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1499411318]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.375, 0)
+shape = SubResource("CapsuleShape3D_xrivr")
+
+[node name="NPCObjectAnimationStatePlayerComponent" parent="CharacterBody3D" unique_id=1765613814 node_paths=PackedStringArray("movementComponent") instance=ExtResource("2_41u6v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.661495, 0)
+pixel_size = 0.04
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_14jhm")
+animation = &"Idle"
+movementComponent = NodePath("../../WanderingComponent")
+
+[node name="RandomAudioPlayer" parent="CharacterBody3D" unique_id=1452292652 instance=ExtResource("4_vmc0e")]
+SoundEffects = Array[AudioStream]([ExtResource("5_2prfb"), ExtResource("6_f4ifb"), ExtResource("7_7bo45")])
+MinPitch = 0.8
+MaxPitch = 1.2
+MinWaitTime = 0.0
+MaxWaitTime = 11.0
+
+[node name="WanderingComponent" parent="." unique_id=2005606164 node_paths=PackedStringArray("MovementNode") instance=ExtResource("8_linip")]
+min_walk_time = 0.5
+max_wait_time = 13.0
+walking_speed = 1.0
+MovementNode = NodePath("../CharacterBody3D")
+States = Array[ExtResource("9_0l25f")]([SubResource("Resource_dlhfy"), SubResource("Resource_14jhm")])

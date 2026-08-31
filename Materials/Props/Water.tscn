@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://d1ksqf1x4ne3g"]
+
+[ext_resource type="Shader" uid="uid://dgmeqfesgnwiu" path="res://Materials/PerlinNoise.gdshader" id="1_4ro30"]
+[ext_resource type="Script" uid="uid://bhhyy5x50owt0" path="res://Materials/Props/Water.gd" id="2_1a23l"]
+[ext_resource type="Texture2D" uid="uid://ch1pnmolsitq8" path="res://Materials/BayerMatrix.png" id="2_sjgb8"]
+[ext_resource type="AudioStream" uid="uid://pk2mpuid0fo4" path="res://SFX/Water1.wav" id="4_jb2eq"]
+
+[sub_resource type="Gradient" id="Gradient_r0oln"]
+colors = PackedColorArray(1, 1, 1, 1, 0.6392157, 0.8627451, 0.8509804, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_b74tl"]
+frequency = 0.0238
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_b74tl"]
+noise = SubResource("FastNoiseLite_b74tl")
+color_ramp = SubResource("Gradient_r0oln")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lj2xx"]
+render_priority = 0
+shader = ExtResource("1_4ro30")
+shader_parameter/base_texture = ExtResource("2_sjgb8")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_b74tl")
+shader_parameter/noise_speed = 0.2
+shader_parameter/noise_scale = 2.0
+shader_parameter/texture_scale = 32.0
+shader_parameter/texture_opacity = 0.2150000102125
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_b74tl"]
+material = SubResource("ShaderMaterial_lj2xx")
+size = Vector2(10, 12)
+
+[node name="Water" type="MeshInstance3D" unique_id=698693545]
+mesh = SubResource("PlaneMesh_b74tl")
+script = ExtResource("2_1a23l")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=298552988]
+stream = ExtResource("4_jb2eq")
+unit_size = 3.0
+max_db = -1.5
+autoplay = true

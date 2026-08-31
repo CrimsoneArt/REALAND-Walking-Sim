@@ -10,6 +10,28 @@
 radius = 1.5234375
 height = 4.0722656
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtpov"]
+atlas = ExtResource("2_ahd6q")
+region = Rect2(0, 90, 117, 90)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0wrr8"]
+atlas = ExtResource("2_ahd6q")
+region = Rect2(117, 90, 117, 90)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_opoc0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtpov")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0wrr8")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 2.0
+}]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_xe875"]
 atlas = ExtResource("2_ahd6q")
 region = Rect2(0, 0, 117, 90)
@@ -62,28 +84,6 @@ animations = [{
 "speed": 6.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vtpov"]
-atlas = ExtResource("2_ahd6q")
-region = Rect2(0, 90, 117, 90)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0wrr8"]
-atlas = ExtResource("2_ahd6q")
-region = Rect2(117, 90, 117, 90)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_opoc0"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vtpov")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0wrr8")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 2.0
-}]
-
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wkcil"]
 radius = 1.5234375
 height = 4.0722656
@@ -94,7 +94,7 @@ MovementNode = NodePath("CharacterBody3D")
 ActiveComponent = NodePath("WanderingComponent")
 amount_min = 1
 amount_max = 2
-ChanceOfAppearing = 7.5
+ChanceOfAppearing = 7.75
 metadata/_custom_type_script = "uid://dkxweyao0waoj"
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1761015290]
@@ -104,21 +104,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0031157, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06298828, 0)
 shape = SubResource("CapsuleShape3D_uua4x")
 
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="CharacterBody3D" unique_id=1981464735]
-pixel_size = 0.045
-texture_filter = 0
-render_priority = 1
-sprite_frames = SubResource("SpriteFrames_xrivr")
-autoplay = "default"
-frame_progress = 0.5770235
-
 [node name="AnimatedSprite3D2" type="AnimatedSprite3D" parent="CharacterBody3D" unique_id=1653627446]
 pixel_size = 0.045
 texture_filter = 0
-render_priority = 2
 sprite_frames = SubResource("SpriteFrames_opoc0")
 autoplay = "default"
 frame_progress = 0.7370612
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="CharacterBody3D" unique_id=1981464735]
+pixel_size = 0.045
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_xrivr")
+autoplay = "default"
+frame_progress = 0.5770235
 
 [node name="InteractabilityComponent" parent="CharacterBody3D" unique_id=500345398 instance=ExtResource("3_0bbjv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.010338068, 0)

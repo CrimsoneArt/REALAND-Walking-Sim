@@ -31,6 +31,7 @@ func _process(delta: float) -> void:
 	scale = lerp(scale,target_scale,delta*4.0)
 
 func _on_mouse_entered() -> void:
+	get_parent().move_child(self, -1) 
 	target_scale = Vector2(2.0,2.0)
 
 func _on_mouse_exited() -> void:

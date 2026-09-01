@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c254xj3vwsk0s"]
 
 [ext_resource type="Texture2D" uid="uid://br256phvmen5" path="res://Materials/Props/StarProp.png" id="1_mqk6v"]
+[ext_resource type="PackedScene" uid="uid://cdnf6l5oawl3i" path="res://Objects/ObjectComponents/InteractabilityComponent.tscn" id="2_obnov"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6b3gm"]
 radius = 0.69384766
@@ -21,6 +22,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_jy1xx"]
+radius = 1.3083162
+
 [node name="StarProp" type="StaticBody3D" unique_id=1256976886]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07151246, 0)
 
@@ -34,3 +38,11 @@ pixel_size = 0.06
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_mqk6v")
 autoplay = "default"
+
+[node name="InteractabilityComponent" parent="." unique_id=500345398 instance=ExtResource("2_obnov")]
+Dialouge = "I love this guy, he's like an
+uncle to me"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractabilityComponent" unique_id=318021734]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.56103516, 0)
+shape = SubResource("SphereShape3D_jy1xx")

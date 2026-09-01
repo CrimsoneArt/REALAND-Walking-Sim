@@ -10,10 +10,16 @@ signal Interacted(PlayerNode:Player)
 @export_category("Target Scene")
 @export var TargetScene : PackedScene
 
+@export_category("Dialouge")
+@export_multiline var Dialouge : String
+@export var DialougeDuration := 5.0
+
 func interact(PlayerNode:Player):
 	$AudioStreamPlayer3D.stream = SoundEffect
 	$AudioStreamPlayer3D.pitch_scale = randf_range(Pitch_Min,Pitch_Max)
 	$AudioStreamPlayer3D.play()
 	if TargetScene:
 		get_node("/root/SceneLoader").load_regular_scene(TargetScene.resource_path)
+	if Dialouge != "":
+		PlayerNode.show_dialouge(Dialouge,DialougeDuration)
 	Interacted.emit(PlayerNode)

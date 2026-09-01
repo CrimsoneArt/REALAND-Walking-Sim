@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://7kk7mje4ksul"]
 
 [ext_resource type="Texture2D" uid="uid://bman35mlty8j3" path="res://Materials/Props/ShitCum-Sheet.png" id="1_rq88h"]
+[ext_resource type="PackedScene" uid="uid://cdnf6l5oawl3i" path="res://Objects/ObjectComponents/InteractabilityComponent.tscn" id="2_888sc"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6b3gm"]
 radius = 0.91552734
@@ -42,3 +43,11 @@ texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_888sc")
 autoplay = "default"
 frame_progress = 0.14399236
+
+[node name="InteractabilityComponent" parent="." unique_id=500345398 instance=ExtResource("2_888sc")]
+Dialouge = "Damn... finally taking a break 
+from all the war and stuff..."
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractabilityComponent" unique_id=785503812]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.56103516, 0)
+shape = SubResource("CapsuleShape3D_6b3gm")

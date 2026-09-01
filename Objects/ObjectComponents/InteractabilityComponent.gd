@@ -1,6 +1,6 @@
 class_name InteractabilityComponent extends Area3D
 
-signal Interacted
+signal Interacted(PlayerNode:Player)
 
 @export_category("Sound Effect")
 @export var SoundEffect : AudioStream
@@ -10,10 +10,10 @@ signal Interacted
 @export_category("Target Scene")
 @export var TargetScene : PackedScene
 
-func interact():
+func interact(PlayerNode:Player):
 	$AudioStreamPlayer3D.stream = SoundEffect
 	$AudioStreamPlayer3D.pitch_scale = randf_range(Pitch_Min,Pitch_Max)
 	$AudioStreamPlayer3D.play()
 	if TargetScene:
 		get_node("/root/SceneLoader").load_regular_scene(TargetScene.resource_path)
-	emit_signal("Interacted")
+	Interacted.emit(PlayerNode)

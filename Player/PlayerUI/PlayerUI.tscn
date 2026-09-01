@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://hqoe6ybdt4yw" path="res://Player/PlayerUI/PlayerUI.gd" id="1_tts8b"]
 [ext_resource type="Texture2D" uid="uid://bb5g8lv7qbwdv" path="res://Player/PlayerUI/CrossHair1.png" id="2_eai1t"]
+[ext_resource type="PackedScene" uid="uid://glnssl8bcg2t" path="res://Scenes/Menus/RandomizedButton.tscn" id="3_m40nq"]
 
 [node name="PlayerUI" type="Control" unique_id=676471365]
 layout_mode = 3
@@ -35,3 +36,22 @@ offset_bottom = 23.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 12
 text = "Seed : "
+
+[node name="DialougeBox" parent="." unique_id=1019148459 instance=ExtResource("3_m40nq")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -108.314514
+offset_top = 157.75
+offset_right = 107.685486
+offset_bottom = 217.75
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(108, 30)
+mouse_filter = 2
+theme_override_font_sizes/font_size = 24
+StartingTargetScale = Vector2(0, 0)

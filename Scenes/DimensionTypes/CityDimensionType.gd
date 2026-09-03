@@ -1,4 +1,4 @@
-extends DimensionType
+class_name CityDimensionType extends DimensionType
 
 @onready var objectSpawner = $ObjectSpawner
 @onready var Floor = $CSGCombiner3D/Floor
@@ -12,13 +12,16 @@ func _generate_dimension(seed:int):
 	
 	Floor.material = Materials[RNG.randi()%Materials.size()]
 	
-	for i in range(0,randi_range(40,120)):
+	var size_y_min = RNG.randf_range(1,20)
+	var size_y_max = RNG.randf_range(20.2,60.0)
+	
+	for i in range(0,RNG.randi_range(40,120)):
 		var CityDimensionBuildingNode = CityDimensionBuilding.instantiate()
 		CityDimensionBuildingNode.position = generate_position()
 		CityDimensionBuildingNode.material = Materials[RNG.randi()%Materials.size()]
-		CityDimensionBuildingNode.size.y = randi_range(5,25)
-		CityDimensionBuildingNode.size.x = randi_range(5,25)
-		CityDimensionBuildingNode.size.z = randi_range(5,25)
+		CityDimensionBuildingNode.size.y = RNG.randf_range(size_y_min,size_y_max)
+		CityDimensionBuildingNode.size.x = RNG.randf_range(5,28)
+		CityDimensionBuildingNode.size.z = RNG.randf_range(5,28)
 		$CSGCombiner3D.add_child(CityDimensionBuildingNode)
 	
 	spawn_objects(objectSpawner,[DoorObjectScene],generate_position,[])

@@ -1,11 +1,9 @@
 [gd_scene format=3 uid="uid://vmsidq7ltgr1"]
 
 [ext_resource type="Script" uid="uid://dlvmhyhmxr2j3" path="res://Scenes/DimensionScene.gd" id="1_bn105"]
-[ext_resource type="PackedScene" uid="uid://dyf6cgigv8kqe" path="res://Scenes/DimensionTypes/BoxDimensionType.tscn" id="2_1afs0"]
 [ext_resource type="Shader" uid="uid://gxbeh60sgorq" path="res://Scenes/SkyBoxes/SkyBoxShaderFlat.gdshader" id="2_mamau"]
 [ext_resource type="Texture2D" uid="uid://cwhr4h8qum244" path="res://Scenes/SkyBoxes/DimensionSkyboxes/SkyBox1.png" id="3_1afs0"]
-[ext_resource type="PackedScene" uid="uid://do8d4b4rwllus" path="res://Scenes/DimensionTypes/TerrainDimensionType.tscn" id="3_hu4u8"]
-[ext_resource type="PackedScene" uid="uid://66jhr2whqlto" path="res://Scenes/DimensionTypes/Maze1DimensionType.tscn" id="4_hu4u8"]
+[ext_resource type="PackedScene" uid="uid://nnsr2403hff6" path="res://Scenes/DimensionTypes/CityDimensionType.tscn" id="5_eo2la"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1afs0"]
 shader = ExtResource("2_mamau")
@@ -29,7 +27,7 @@ fog_depth_end = 50.0
 
 [node name="DimensionScene" type="Node3D" unique_id=2104069537]
 script = ExtResource("1_bn105")
-DimensionTypes = Array[PackedScene]([ExtResource("2_1afs0"), ExtResource("3_hu4u8"), ExtResource("4_hu4u8")])
+DimensionTypes = Array[PackedScene]([ExtResource("5_eo2la")])
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1921660473]
 environment = SubResource("Environment_1afs0")

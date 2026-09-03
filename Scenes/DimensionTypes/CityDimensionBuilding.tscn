@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://cvw8fjgb0g25"]
+
+[node name="CityDimensionBuilding" type="CSGBox3D" unique_id=19698223]
+size = Vector3(2.5, 10, 2.5)

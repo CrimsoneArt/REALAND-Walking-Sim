@@ -1,4 +1,4 @@
-extends CharacterBody3D
+class_name Player extends CharacterBody3D
 
 const CrossHair1 = preload("res://Player/PlayerUI/CrossHair1.png")
 const CrossHair2 = preload("res://Player/PlayerUI/CrossHair2.png")
@@ -31,7 +31,7 @@ func _process(delta: float) -> void:
 		PlayerUI.change_cross_hair(CrossHair2)
 		if Input.is_action_just_pressed("Enter"):
 			if Collider is InteractabilityComponent:
-				Collider.interact()
+				Collider.interact(self)
 	else:
 		PlayerUI.change_cross_hair(CrossHair1)
 
@@ -47,3 +47,6 @@ func _physics_process(delta: float) -> void:
 	position += Speed * delta * -Head.global_transform.basis.z.normalized() * moving_forward_or_backward
 
 	move_and_slide()
+
+func show_dialouge(Text:String,Duration:float):
+	PlayerUI.show_dialouge(Text,Duration)

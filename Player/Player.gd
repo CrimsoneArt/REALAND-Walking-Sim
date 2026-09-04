@@ -48,5 +48,5 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-func show_dialouge(Text:String,Duration:float):
-	PlayerUI.show_dialouge(Text,Duration)
+func show_dialouge(Text:String,Duration:float,FakeLand:=false):
+	PlayerUI.show_dialouge(Text,Duration,FakeLand)

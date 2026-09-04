@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://gwi0f2u68ldl"]
+
+[ext_resource type="PackedScene" uid="uid://igw0ct71j4e2" path="res://Player/Player.tscn" id="1_3qpf4"]
+[ext_resource type="Material" uid="uid://cxp5hsnyjmr1m" path="res://Materials/DimensionMaterials/FakeLand1.tres" id="2_g28tc"]
+[ext_resource type="Material" uid="uid://l4ro33mu0bdc" path="res://Materials/DimensionMaterials/FakeLand2.tres" id="3_1i74k"]
+[ext_resource type="PackedScene" uid="uid://cfqcueih77i7x" path="res://Materials/Props/FakeLandCitizen.tscn" id="4_vnagb"]
+[ext_resource type="Texture2D" uid="uid://bys01w76yycms" path="res://Materials/Props/WelcomeToFakeLandSign.png" id="5_ljt7t"]
+
+[sub_resource type="Environment" id="Environment_xrivr"]
+background_mode = 1
+background_color = Color(0.49747366, 0.49747366, 0.49747366, 1)
+
+[node name="FakeLandScene" type="Node3D" unique_id=645542727]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=259606310]
+environment = SubResource("Environment_xrivr")
+
+[node name="Player" parent="." unique_id=1083039947 instance=ExtResource("1_3qpf4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8164628, 0)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=480609631]
+use_collision = true
+
+[node name="Floor" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1002067795]
+size = Vector3(100, 0, 100)
+material = ExtResource("3_1i74k")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1102806589]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.552246, 3.2225952, -16.368073)
+size = Vector3(12.104492, 7.4451904, 6.6748047)
+material = ExtResource("2_g28tc")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D" unique_id=872746621]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.541008, 5.0710144, -14.548878)
+size = Vector3(12.104492, 11.142029, 6.6748047)
+material = ExtResource("2_g28tc")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D" unique_id=2113579931]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.541008, 3.2132416, 18.05597)
+size = Vector3(12.104492, 7.426483, 7.765625)
+material = ExtResource("2_g28tc")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1928423898]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9145107, 3.2132416, 18.05597)
+size = Vector3(12.104492, 7.426483, 7.765625)
+material = ExtResource("2_g28tc")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D" unique_id=38853770]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.509485, 3.2132416, 18.05597)
+size = Vector3(12.104492, 7.426483, 7.765625)
+material = ExtResource("2_g28tc")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="CSGCombiner3D" unique_id=718853010]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.59982, 3.2132416, 18.05597)
+size = Vector3(12.104492, 7.426483, 7.765625)
+material = ExtResource("2_g28tc")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1877060133]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.164272, 10.144707, -19.177559)
+size = Vector3(5.2333984, 21.289413, 5.2407227)
+material = ExtResource("2_g28tc")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1480043437]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0003986, 1.7340307, -10.021034)
+size = Vector3(9.8984375, 4.4680614, 0.001)
+material = ExtResource("2_g28tc")
+
+[node name="FakeLandCitizens" type="Node" parent="." unique_id=716920321]
+
+[node name="FakeLandCitizen" parent="FakeLandCitizens" unique_id=95732470 instance=ExtResource("4_vnagb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.224394, 0, 0)
+
+[node name="FakeLandCitizen2" parent="FakeLandCitizens" unique_id=1774104671 instance=ExtResource("4_vnagb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.833977, 0, -7.158909)
+
+[node name="FakeLandCitizen3" parent="FakeLandCitizens" unique_id=837058121 instance=ExtResource("4_vnagb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.157389, 0, -16.81983)
+
+[node name="FakeLandCitizen4" parent="FakeLandCitizens" unique_id=1722724173 instance=ExtResource("4_vnagb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.157389, 0, 5.4002476)
+
+[node name="FakeLandCitizen5" parent="FakeLandCitizens" unique_id=1494594572 instance=ExtResource("4_vnagb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.738016, 0, 5.4002476)
+
+[node name="FakeLandCitizen6" parent="FakeLandCitizens" unique_id=1504944375 instance=ExtResource("4_vnagb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.738016, 0, -4.0676174)
+
+[node name="FakeLandCitizen7" parent="FakeLandCitizens" unique_id=1620808087 instance=ExtResource("4_vnagb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.450628, 0, -4.0676174)
+
+[node name="FakeLandCitizen8" parent="FakeLandCitizens" unique_id=193991129 instance=ExtResource("4_vnagb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.450628, 0, 1.7899342)
+
+[node name="FakeLandCitizen9" parent="FakeLandCitizens" unique_id=1566337493 instance=ExtResource("4_vnagb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.68736, 0, -11.630098)
+
+[node name="FakeLandCitizen10" parent="FakeLandCitizens" unique_id=1632638556 instance=ExtResource("4_vnagb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.13402, 0, -11.630098)
+
+[node name="FakeLandCitizen11" parent="FakeLandCitizens" unique_id=1262673739 instance=ExtResource("4_vnagb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.57035, 0, -11.630098)
+
+[node name="FakeLandCitizen12" parent="FakeLandCitizens" unique_id=718820401 instance=ExtResource("4_vnagb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.071972, 0, -1.8301449)
+
+[node name="Sign" type="Sprite3D" parent="." unique_id=1408914272]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2, -10)
+pixel_size = 0.25
+texture_filter = 0
+texture = ExtResource("5_ljt7t")

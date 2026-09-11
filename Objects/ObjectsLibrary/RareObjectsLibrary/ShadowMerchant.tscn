@@ -1,0 +1,191 @@
+[gd_scene format=3 uid="uid://qta03ohkh1rp"]
+
+[ext_resource type="Script" uid="uid://pkc21ljc8ty4" path="res://Objects/ObjectsLibrary/RareObjectsLibrary/ShadowMerchant.gd" id="1_bctn8"]
+[ext_resource type="Texture2D" uid="uid://nwxrdef0hy5n" path="res://Objects/ObjectsLibrary/RareObjectsLibrary/ShadowMerchant-Sheet.png" id="2_0e4hf"]
+[ext_resource type="Script" uid="uid://dl3v7yp1te08c" path="res://Objects/ObjectComponents/WanderingComponent.gd" id="2_2wcfr"]
+[ext_resource type="PackedScene" uid="uid://cdnf6l5oawl3i" path="res://Objects/ObjectComponents/InteractabilityComponent.tscn" id="3_bctn8"]
+[ext_resource type="PackedScene" uid="uid://dpsbpsqjc40vf" path="res://Objects/ObjectComponents/RandomAudioPlayer.tscn" id="4_3b26h"]
+[ext_resource type="Script" uid="uid://buom1dm7hnqqu" path="res://Objects/ObjectComponents/NPCObjectAnimationState.gd" id="4_e8fqh"]
+[ext_resource type="AudioStream" uid="uid://bfniog7kggc6q" path="res://SFX/ShadowMerchant1.wav" id="5_3cqj0"]
+[ext_resource type="AudioStream" uid="uid://b4dr4b7h3mqow" path="res://SFX/ShadowMerchant2.wav" id="6_j1hv5"]
+[ext_resource type="AudioStream" uid="uid://dfmkvo0iivdkw" path="res://SFX/ShadowMerchant3.wav" id="7_kcv73"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8fqh"]
+atlas = ExtResource("2_0e4hf")
+region = Rect2(0, 0, 164, 312)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bctn8"]
+atlas = ExtResource("2_0e4hf")
+region = Rect2(164, 0, 164, 312)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3b26h"]
+atlas = ExtResource("2_0e4hf")
+region = Rect2(328, 0, 164, 312)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cqj0"]
+atlas = ExtResource("2_0e4hf")
+region = Rect2(492, 0, 164, 312)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4xb2"]
+atlas = ExtResource("2_0e4hf")
+region = Rect2(656, 0, 164, 312)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j1hv5"]
+atlas = ExtResource("2_0e4hf")
+region = Rect2(820, 0, 164, 312)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcv73"]
+atlas = ExtResource("2_0e4hf")
+region = Rect2(984, 0, 164, 312)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qi13q"]
+atlas = ExtResource("2_0e4hf")
+region = Rect2(1148, 0, 164, 312)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d50hf"]
+atlas = ExtResource("2_0e4hf")
+region = Rect2(1312, 0, 164, 312)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_38pvv"]
+atlas = ExtResource("2_0e4hf")
+region = Rect2(1476, 0, 164, 312)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k3j2e"]
+atlas = ExtResource("2_0e4hf")
+region = Rect2(1640, 0, 164, 312)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gf75u"]
+atlas = ExtResource("2_0e4hf")
+region = Rect2(1804, 0, 164, 312)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2iskc"]
+atlas = ExtResource("2_0e4hf")
+region = Rect2(1968, 0, 164, 312)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojrsi"]
+atlas = ExtResource("2_0e4hf")
+region = Rect2(2132, 0, 164, 312)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o0ysg"]
+atlas = ExtResource("2_0e4hf")
+region = Rect2(2296, 0, 164, 312)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k02m4"]
+atlas = ExtResource("2_0e4hf")
+region = Rect2(2460, 0, 164, 312)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2wcfr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e8fqh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bctn8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3b26h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3cqj0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4xb2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j1hv5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kcv73")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qi13q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d50hf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_38pvv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k3j2e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gf75u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2iskc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ojrsi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o0ysg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k02m4")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0e4hf"]
+radius = 0.7128906
+height = 3.4765625
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j1hv5"]
+radius = 1.3647461
+height = 3.4765625
+
+[sub_resource type="Resource" id="Resource_0e4hf"]
+script = ExtResource("4_e8fqh")
+metadata/_custom_type_script = "uid://buom1dm7hnqqu"
+
+[sub_resource type="Resource" id="Resource_bctn8"]
+script = ExtResource("4_e8fqh")
+State = 1
+metadata/_custom_type_script = "uid://buom1dm7hnqqu"
+
+[node name="ShadowMerchant" type="Node3D" unique_id=507874447 node_paths=PackedStringArray("MovementNode", "ActiveComponent")]
+script = ExtResource("1_bctn8")
+MovementNode = NodePath("CharacterBody3D")
+ActiveComponent = NodePath("WanderComponent")
+amount_min = 1
+amount_max = 2
+ChanceOfAppearing = 10.0
+metadata/_custom_type_script = "uid://dkxweyao0waoj"
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1141911591]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3278894, 0)
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="CharacterBody3D" unique_id=2050543557]
+pixel_size = 0.015
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_2wcfr")
+autoplay = "default"
+frame_progress = 0.6596206
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1171255170]
+shape = SubResource("CapsuleShape3D_0e4hf")
+
+[node name="InteractabilityComponent" parent="CharacterBody3D" unique_id=500345398 instance=ExtResource("3_bctn8")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D/InteractabilityComponent" unique_id=504875241]
+shape = SubResource("CapsuleShape3D_j1hv5")
+
+[node name="RandomAudioPlayer" parent="CharacterBody3D" unique_id=1452292652 instance=ExtResource("4_3b26h")]
+volume_db = -5.0
+SoundEffects = Array[AudioStream]([ExtResource("5_3cqj0"), ExtResource("6_j1hv5"), ExtResource("7_kcv73")])
+MinPitch = 0.75
+MaxPitch = 1.25
+MinWaitTime = 0.25
+MaxWaitTime = 4.25
+
+[node name="WanderComponent" type="Node" parent="." unique_id=1953035069 node_paths=PackedStringArray("MovementNode")]
+script = ExtResource("2_2wcfr")
+MovementNode = NodePath("../CharacterBody3D")
+States = Array[ExtResource("4_e8fqh")]([SubResource("Resource_0e4hf"), SubResource("Resource_bctn8")])
+metadata/_custom_type_script = "uid://dl3v7yp1te08c"
+
+[connection signal="Interacted" from="CharacterBody3D/InteractabilityComponent" to="." method="_on_interactability_component_interacted"]

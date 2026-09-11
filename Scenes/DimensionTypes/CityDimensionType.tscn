@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://nnsr2403hff6"]
+
+[ext_resource type="Script" uid="uid://cuifx3egudh2c" path="res://Scenes/DimensionTypes/CityDimensionType.gd" id="1_bpouc"]
+[ext_resource type="PackedScene" uid="uid://d0xiyv8g8ittm" path="res://Objects/ObjectSpawner.tscn" id="2_ym1rp"]
+[ext_resource type="PackedScene" uid="uid://igw0ct71j4e2" path="res://Player/Player.tscn" id="3_ymcn2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ymcn2"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0)
+
+[node name="CityDimensionType" type="Node3D" unique_id=797881114]
+script = ExtResource("1_bpouc")
+metadata/_custom_type_script = "uid://bepr8n1natohq"
+
+[node name="ObjectSpawner" parent="." unique_id=1297487218 instance=ExtResource("2_ym1rp")]
+
+[node name="Player" parent="." unique_id=1083039947 instance=ExtResource("3_ymcn2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30.399443, 0)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=1139186135]
+use_collision = true
+
+[node name="Floor" type="CSGBox3D" parent="CSGCombiner3D" unique_id=113495966]
+size = Vector3(200, 0, 200)
+
+[node name="InvisibleWalls" type="CSGBox3D" parent="." unique_id=1190572714]
+use_collision = true
+flip_faces = true
+size = Vector3(198, 99.07324, 198)
+material = SubResource("StandardMaterial3D_ymcn2")

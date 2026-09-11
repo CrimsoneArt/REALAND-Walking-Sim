@@ -37,6 +37,8 @@ func _ready() -> void:
 		World.environment.fog_depth_begin = RNG.randf_range(0.0,10.0)
 		World.environment.fog_depth_end = RNG.randf_range(10.001,RNG.randf_range(10.011,75.0))
 		World.environment.fog_sky_affect = RNG.randi_range(0,1)
-		World.environment.fog_density = RNG.randf_range(0.1,1.0)
+		World.environment.fog_density = RNG.randf_range(0.0,1.0) 
+		if DimensionTypeNode is CityDimensionType:
+			World.environment.fog_density = RNG.randf_range(0.0,1.0) if RNG.randi()%2 == 1 else 1.0
 	else:
 		World.environment.fog_enabled = false

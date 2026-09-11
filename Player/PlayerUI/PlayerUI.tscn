@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://hqoe6ybdt4yw" path="res://Player/PlayerUI/PlayerUI.gd" id="1_tts8b"]
 [ext_resource type="Texture2D" uid="uid://bb5g8lv7qbwdv" path="res://Player/PlayerUI/CrossHair1.png" id="2_eai1t"]
 [ext_resource type="PackedScene" uid="uid://glnssl8bcg2t" path="res://Scenes/Menus/RandomizedButton.tscn" id="3_m40nq"]
+[ext_resource type="Texture2D" uid="uid://1a7oparhcias" path="res://Objects/ObjectsLibrary/NeonCreatures.png" id="4_fxite"]
 
 [node name="PlayerUI" type="Control" unique_id=676471365]
 layout_mode = 3
@@ -55,3 +56,10 @@ pivot_offset = Vector2(108, 30)
 mouse_filter = 2
 theme_override_font_sizes/font_size = 24
 StartingTargetScale = Vector2(0, 0)
+
+[node name="FlappySphere" type="Sprite2D" parent="." unique_id=1186922447]
+visible = false
+texture_filter = 1
+position = Vector2(353.5, 347)
+scale = Vector2(2.953125, 4.1875)
+texture = ExtResource("4_fxite")

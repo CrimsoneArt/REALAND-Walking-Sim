@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://cfqcueih77i7x"]
+
+[ext_resource type="Script" uid="uid://t1exmeq4701v" path="res://Materials/Props/FakeLandCitizen.gd" id="1_2qdhy"]
+[ext_resource type="Script" uid="uid://dl3v7yp1te08c" path="res://Objects/ObjectComponents/WanderingComponent.gd" id="2_fsa7d"]
+[ext_resource type="Script" uid="uid://buom1dm7hnqqu" path="res://Objects/ObjectComponents/NPCObjectAnimationState.gd" id="3_7cb4d"]
+[ext_resource type="Texture2D" uid="uid://c3fdr0voyeqx0" path="res://Materials/Props/FakeLandCitizen-Sheet.png" id="3_16qk3"]
+[ext_resource type="PackedScene" uid="uid://cdnf6l5oawl3i" path="res://Objects/ObjectComponents/InteractabilityComponent.tscn" id="6_sjq0l"]
+
+[sub_resource type="Resource" id="Resource_vnagb"]
+script = ExtResource("3_7cb4d")
+metadata/_custom_type_script = "uid://buom1dm7hnqqu"
+
+[sub_resource type="Resource" id="Resource_ljt7t"]
+script = ExtResource("3_7cb4d")
+State = 1
+metadata/_custom_type_script = "uid://buom1dm7hnqqu"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7cb4d"]
+atlas = ExtResource("3_16qk3")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2qdhy"]
+atlas = ExtResource("3_16qk3")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fsa7d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7cb4d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2qdhy")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_16qk3"]
+radius = 1.0685362
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_xrivr"]
+radius = 1.5349985
+
+[node name="FakeLandCitizen" type="Node3D" unique_id=95732470 node_paths=PackedStringArray("MovementNode", "ActiveComponent")]
+script = ExtResource("1_2qdhy")
+MovementNode = NodePath("CharacterBody3D")
+ActiveComponent = NodePath("WanderComponent")
+metadata/_custom_type_script = "uid://dkxweyao0waoj"
+
+[node name="WanderComponent" type="Node" parent="." unique_id=1794781819 node_paths=PackedStringArray("MovementNode")]
+script = ExtResource("2_fsa7d")
+min_walk_time = 3.0
+max_walk_time = 8.0
+min_wait_time = 0.5
+max_wait_time = 1.5
+MovementNode = NodePath("../CharacterBody3D")
+States = Array[ExtResource("3_7cb4d")]([SubResource("Resource_vnagb"), SubResource("Resource_ljt7t")])
+metadata/_custom_type_script = "uid://dl3v7yp1te08c"
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1149344872]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0373056, 0)
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="CharacterBody3D" unique_id=2073024134]
+sorting_offset = 10.0
+pixel_size = 0.25
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_fsa7d")
+autoplay = "default"
+frame_progress = 0.6440091
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=606378894]
+shape = SubResource("SphereShape3D_16qk3")
+
+[node name="InteractabilityComponent" parent="CharacterBody3D" unique_id=500345398 instance=ExtResource("6_sjq0l")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D/InteractabilityComponent" unique_id=669045682]
+shape = SubResource("SphereShape3D_xrivr")
+
+[connection signal="Interacted" from="CharacterBody3D/InteractabilityComponent" to="." method="_on_interactability_component_interacted"]

@@ -1,9 +1,16 @@
-extends Button
+class_name RandomizedButton extends Button
 
 @export var ForceQuit := false
 @export var EnterTargetScene := false
 @export var TargetScenePath : String
 @export var StartingTargetScale := Vector2(1.0,1.0)
+@export var FakeLand := false:
+	set(value):
+		FakeLand = value
+		if value:
+			set_to_fakeland()
+		else:
+			unset_to_fakeland()
 
 var target_scale : Vector2
 
@@ -19,15 +26,16 @@ func _on_pressed() -> void:
 		get_node("/root/SceneLoader").load_regular_scene(TargetScenePath)
 
 func _on_change_texture_timer_timeout() -> void:
-	get_theme_stylebox("normal").texture = load("res://Scenes/Menus/RandomizedButtonSprites/RandomizedButtonSprite"+str(randi_range(1,5))+".png")
-	set("theme_override_colors/font_color", Color(randf(), randf(), randf(), 1.0))
-	set("theme_override_colors/font_outline_color", Color(randf(), randf(), randf(), 1.0))
-	set("theme_override_constants/outline_size", randi_range(0,12))
-	var font_number = randi_range(1,7)
-	var font = load("res://Scenes/Menus/Fonts/"+str(font_number)+".otf")
-	if font == null:
-		font = load("res://Scenes/Menus/Fonts/"+str(font_number)+".ttf")
-	set("theme_override_fonts/font", font)
+	if not FakeLand:
+		get_theme_stylebox("normal").texture = load("res://Scenes/Menus/RandomizedButtonSprites/RandomizedButtonSprite"+str(randi_range(1,5))+".png")
+		set("theme_override_colors/font_color", Color(randf(), randf(), randf(), 1.0))
+		set("theme_override_colors/font_outline_color", Color(randf(), randf(), randf(), 1.0))
+		set("theme_override_constants/outline_size", randi_range(0,12))
+		var font_number = randi_range(1,7)
+		var font = load("res://Scenes/Menus/Fonts/"+str(font_number)+".otf")
+		if font == null:
+			font = load("res://Scenes/Menus/Fonts/"+str(font_number)+".ttf")
+		set("theme_override_fonts/font", font)
 
 func _process(delta: float) -> void:
 	scale = lerp(scale,target_scale,delta*4.0)
@@ -52,3 +60,14 @@ func dissappear():
 	pivot_offset = size/2.0
 	scale = Vector2(1.0,1.0)
 	target_scale = Vector2(0.0,0.0)
+
+func set_to_fakeland():
+	set("theme_override_styles/normal",load("res://Scenes/Menus/FakeLandButton.tres"))
+	set("theme_override_colors/font_color", Color(1.0, 1.0, 1.0, 1.0))
+	set("theme_override_constants/outline_size", 0.0)
+	var font = load("res://Scenes/Menus/Fonts/6.ttf")
+	set("theme_override_fonts/font", font)
+	
+func unset_to_fakeland():
+	_on_change_texture_timer_timeout()
+	set("theme_override_styles/normal",StyleBoxTexture.new())

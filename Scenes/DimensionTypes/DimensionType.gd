@@ -10,7 +10,7 @@ func spawn_objects(objectSpawner:ObjectSpawner,Objects:Array,generate_position:C
 	for ObjectScene in Objects:
 		var ObjectNode = ObjectScene.instantiate()
 		if ObjectNode is GameObject:
-			for Count in range(ObjectNode.amount_min*(3 if self is CityDimensionType else 1),ObjectNode.amount_max*(3 if self is CityDimensionType else 1)):
+			for Count in range(ObjectNode.amount_min*(2 if self is CityDimensionType else 1),ObjectNode.amount_max*(3 if self is CityDimensionType else 1)):
 				objectSpawner.spawn_object(RNG,ObjectScene,generate_position.call(),Materials)
 
 func pick_random_materials(rng:RandomNumberGenerator):

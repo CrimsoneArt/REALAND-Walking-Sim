@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://gwi0f2u68ldl"]
 
 [ext_resource type="PackedScene" uid="uid://igw0ct71j4e2" path="res://Player/Player.tscn" id="1_3qpf4"]
-[ext_resource type="Material" uid="uid://cxp5hsnyjmr1m" path="res://Materials/DimensionMaterials/FakeLand1.tres" id="2_g28tc"]
-[ext_resource type="Material" uid="uid://l4ro33mu0bdc" path="res://Materials/DimensionMaterials/FakeLand2.tres" id="3_1i74k"]
+[ext_resource type="Material" uid="uid://cxp5hsnyjmr1m" path="res://Materials/FakeLand1.tres" id="2_g28tc"]
+[ext_resource type="Material" uid="uid://l4ro33mu0bdc" path="res://Materials/FakeLand2.tres" id="3_1i74k"]
 [ext_resource type="PackedScene" uid="uid://cfqcueih77i7x" path="res://Materials/Props/FakeLandCitizen.tscn" id="4_vnagb"]
 [ext_resource type="Texture2D" uid="uid://bys01w76yycms" path="res://Materials/Props/WelcomeToFakeLandSign.png" id="5_ljt7t"]
 

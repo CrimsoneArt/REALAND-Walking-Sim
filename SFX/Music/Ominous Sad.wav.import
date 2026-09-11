@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cena7oa655ska"
+path="res://.godot/imported/Ominous Sad.wav-f809b8564234e5ba734822ab16c5842f.sample"
+
+[deps]
+
+source_file="res://SFX/Music/Ominous Sad.wav"
+dest_files=["res://.godot/imported/Ominous Sad.wav-f809b8564234e5ba734822ab16c5842f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

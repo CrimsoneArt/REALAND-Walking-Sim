@@ -6,4 +6,3 @@
 script = ExtResource("1_jgsyn")
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=350585579]
-volume_db = -10.0

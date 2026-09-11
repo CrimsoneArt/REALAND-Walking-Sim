@@ -42,3 +42,5 @@ func _ready() -> void:
 			World.environment.fog_density = RNG.randf_range(0.0,1.0) if RNG.randi()%2 == 1 else 1.0
 	else:
 		World.environment.fog_enabled = false
+		
+	

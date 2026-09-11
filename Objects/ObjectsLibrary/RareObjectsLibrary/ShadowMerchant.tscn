@@ -134,6 +134,10 @@ animations = [{
 radius = 0.7128906
 height = 3.4765625
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j1hv5"]
+radius = 1.3647461
+height = 3.4765625
+
 [sub_resource type="Resource" id="Resource_0e4hf"]
 script = ExtResource("4_e8fqh")
 metadata/_custom_type_script = "uid://buom1dm7hnqqu"
@@ -160,7 +164,7 @@ pixel_size = 0.015
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_2wcfr")
 autoplay = "default"
-frame_progress = 0.75278836
+frame_progress = 0.6596206
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1171255170]
 shape = SubResource("CapsuleShape3D_0e4hf")
@@ -168,7 +172,7 @@ shape = SubResource("CapsuleShape3D_0e4hf")
 [node name="InteractabilityComponent" parent="CharacterBody3D" unique_id=500345398 instance=ExtResource("3_bctn8")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D/InteractabilityComponent" unique_id=504875241]
-shape = SubResource("CapsuleShape3D_0e4hf")
+shape = SubResource("CapsuleShape3D_j1hv5")
 
 [node name="RandomAudioPlayer" parent="CharacterBody3D" unique_id=1452292652 instance=ExtResource("4_3b26h")]
 volume_db = -5.0

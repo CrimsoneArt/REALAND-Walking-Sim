@@ -5,7 +5,7 @@ class_name CityDimensionType extends DimensionType
 var CityDimensionBuilding = preload("res://Scenes/DimensionTypes/CityDimensionBuilding.tscn")
 
 func _generate_dimension(seed:int):
-	
+	RNG.seed = seed
 	var Objects = pick_random_objects(RNG)
 	
 	var Materials = pick_random_materials(RNG)

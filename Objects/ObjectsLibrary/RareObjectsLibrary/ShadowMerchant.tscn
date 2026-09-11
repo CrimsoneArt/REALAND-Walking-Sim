@@ -153,7 +153,7 @@ MovementNode = NodePath("CharacterBody3D")
 ActiveComponent = NodePath("WanderComponent")
 amount_min = 1
 amount_max = 2
-ChanceOfAppearing = 10.0
+ChanceOfAppearing = 7.5
 metadata/_custom_type_script = "uid://dkxweyao0waoj"
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1141911591]
@@ -175,7 +175,7 @@ shape = SubResource("CapsuleShape3D_0e4hf")
 shape = SubResource("CapsuleShape3D_j1hv5")
 
 [node name="RandomAudioPlayer" parent="CharacterBody3D" unique_id=1452292652 instance=ExtResource("4_3b26h")]
-volume_db = -5.0
+volume_db = -10.0
 SoundEffects = Array[AudioStream]([ExtResource("5_3cqj0"), ExtResource("6_j1hv5"), ExtResource("7_kcv73")])
 MinPitch = 0.75
 MaxPitch = 1.25

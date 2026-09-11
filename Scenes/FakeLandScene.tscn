@@ -10,6 +10,10 @@
 background_mode = 1
 background_color = Color(0.49747366, 0.49747366, 0.49747366, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ljt7t"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0)
+
 [node name="FakeLandScene" type="Node3D" unique_id=645542727]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=259606310]
@@ -108,3 +112,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2, -10)
 pixel_size = 0.25
 texture_filter = 0
 texture = ExtResource("5_ljt7t")
+
+[node name="CSGCombiner3D2" type="CSGCombiner3D" parent="." unique_id=707781927]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D2" unique_id=349939556]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.120941, 0)
+flip_faces = true
+size = Vector3(96.305664, 36.648987, 97.0979)
+material = SubResource("StandardMaterial3D_ljt7t")

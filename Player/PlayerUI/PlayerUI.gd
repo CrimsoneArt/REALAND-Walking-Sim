@@ -17,8 +17,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		visible = not visible
 
 func _process(delta: float) -> void:
-	if DialougeBox.get_theme_stylebox("normal").texture == null:
-		DialougeBox._on_change_texture_timer_timeout()
+	if DialougeBox.get_theme_stylebox("normal") is StyleBoxTexture:
+		if DialougeBox.get_theme_stylebox("normal").texture == null:
+			DialougeBox._on_change_texture_timer_timeout()
 
 func show_dialouge(Text:String,Duration:float,FakeLand:=false):
 	if DialougeBox is RandomizedButton:

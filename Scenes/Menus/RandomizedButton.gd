@@ -69,5 +69,5 @@ func set_to_fakeland():
 	set("theme_override_fonts/font", font)
 	
 func unset_to_fakeland():
-	_on_change_texture_timer_timeout()
 	set("theme_override_styles/normal",StyleBoxTexture.new())
+	_on_change_texture_timer_timeout()

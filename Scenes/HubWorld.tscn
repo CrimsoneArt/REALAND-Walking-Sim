@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://cew3wwjvvnui1"]
 
+[ext_resource type="Script" uid="uid://dxavp2383f4hg" path="res://Scenes/hub_world.gd" id="1_3jcx2"]
 [ext_resource type="Material" uid="uid://bmyaigc8rtvx" path="res://Materials/Star.tres" id="1_avdaa"]
 [ext_resource type="PackedScene" uid="uid://igw0ct71j4e2" path="res://Player/Player.tscn" id="2_fxrh3"]
 [ext_resource type="PackedScene" uid="uid://dwqol8w28tgyb" path="res://Objects/Door/DoorObject.tscn" id="3_fxrh3"]
 [ext_resource type="PackedScene" uid="uid://p6mtwgnviw1d" path="res://Objects/ObjectComponents/ObjectVariablesComponent.tscn" id="4_avdaa"]
 
 [node name="HubWorld" type="Node3D" unique_id=31661345]
+script = ExtResource("1_3jcx2")
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=291160429]
 use_collision = true

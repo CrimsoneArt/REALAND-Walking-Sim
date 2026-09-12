@@ -19,8 +19,6 @@ func load_regular_scene(ScenePath:String):
 	
 	var Scene = load(ScenePath)
 	add_child(Scene.instantiate())
-	
-	MusicPlayer.stop()
 
 func kill_all_children(): #mwuahahahha
 	for child in get_children():
@@ -37,9 +35,16 @@ func load_dimension_scene(DimensionSeed:int):
 	DimensionNode.seed = DimensionSeed
 	add_child(DimensionNode)
 	
-	MusicPlayer.stream = Songs[RNG.randi()%Songs.size()]
-	MusicPlayer.stop()
-	MusicPlayer.play()
+	stop_music()
+	play_music(Songs[RNG.randi()%Songs.size()])
 
 func get_dimension_seed():
 	return DimensionNode.seed if DimensionNode != null else null
+
+func play_music(stream:AudioStream,volume_db:=-10):
+	MusicPlayer.stream = stream
+	MusicPlayer.volume_db = volume_db
+	MusicPlayer.play()
+
+func stop_music():
+	MusicPlayer.stop()

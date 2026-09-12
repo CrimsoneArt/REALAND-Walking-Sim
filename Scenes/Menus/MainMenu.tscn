@@ -3,7 +3,6 @@
 [ext_resource type="Shader" uid="uid://cxl5m7cwrixg5" path="res://Materials/Scroll.gdshader" id="1_hqtmt"]
 [ext_resource type="PackedScene" uid="uid://glnssl8bcg2t" path="res://Scenes/Menus/RandomizedButton.tscn" id="1_v3fht"]
 [ext_resource type="Texture2D" uid="uid://d2easpdp2w8s7" path="res://Scenes/Menus/BGMneu.png" id="2_b42ut"]
-[ext_resource type="AudioStream" uid="uid://pe3ucbyyn2ck" path="res://SFX/Music/MainMenuOST.wav" id="4_tfrft"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b42ut"]
 shader = ExtResource("1_hqtmt")
@@ -100,8 +99,3 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_font_sizes/font_size = 30
 text = "Walking Sim"
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=287370545]
-stream = ExtResource("4_tfrft")
-volume_db = -3.0
-autoplay = true

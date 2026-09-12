@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cudvux3hcwx3r"
-path="res://.godot/imported/Weird Shepard Tone.wav-90301882474228769ca6d6261ab4b1c6.sample"
+path="res://.godot/imported/Weird Shepard Tone.wav-0f844c1f5561cbfd3631ff3c7ed67ab2.sample"
 
 [deps]
 
-source_file="res://SFX/Music/Weird Shepard Tone.wav"
-dest_files=["res://.godot/imported/Weird Shepard Tone.wav-90301882474228769ca6d6261ab4b1c6.sample"]
+source_file="res://SFX/Music/MusicLibrary/Weird Shepard Tone.wav"
+dest_files=["res://.godot/imported/Weird Shepard Tone.wav-0f844c1f5561cbfd3631ff3c7ed67ab2.sample"]
 
 [params]
 

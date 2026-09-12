@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://chwmtrhhigvku"
-path="res://.godot/imported/Ominous Technological.wav-14faa6e8c55cb9975e9ee33c5e6fb462.sample"
+path="res://.godot/imported/Ominous Technological.wav-04da32a110d4d3bf17bcad2daceff75a.sample"
 
 [deps]
 
-source_file="res://SFX/Music/Ominous Technological.wav"
-dest_files=["res://.godot/imported/Ominous Technological.wav-14faa6e8c55cb9975e9ee33c5e6fb462.sample"]
+source_file="res://SFX/Music/MusicLibrary/Ominous Technological.wav"
+dest_files=["res://.godot/imported/Ominous Technological.wav-04da32a110d4d3bf17bcad2daceff75a.sample"]
 
 [params]
 

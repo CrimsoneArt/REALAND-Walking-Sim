@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cena7oa655ska"
-path="res://.godot/imported/Ominous Sad.wav-f809b8564234e5ba734822ab16c5842f.sample"
+path="res://.godot/imported/Ominous Sad.wav-e4ce47fd172cb8818f461652fc874730.sample"
 
 [deps]
 
-source_file="res://SFX/Music/Ominous Sad.wav"
-dest_files=["res://.godot/imported/Ominous Sad.wav-f809b8564234e5ba734822ab16c5842f.sample"]
+source_file="res://SFX/Music/MusicLibrary/Ominous Sad.wav"
+dest_files=["res://.godot/imported/Ominous Sad.wav-e4ce47fd172cb8818f461652fc874730.sample"]
 
 [params]
 

@@ -8,11 +8,11 @@ var DimensionNode
 var Songs: Array = []
 
 func _ready() -> void:
-	load_regular_scene("res://Scenes/Menus/MainMenu.tscn")
+	load_regular_scene("res://Scenes/Menus/Intro.tscn")
 	
 	var Loader = FileLoader.new()
 	
-	Songs = Loader.load_files_in_array(Loader.get_file_paths_from_folder("res://SFX/Music/",".wav"))
+	Songs = Loader.load_files_in_array(Loader.get_file_paths_from_folder("res://SFX/Music/MusicLibrary/",".wav"))
 
 func load_regular_scene(ScenePath:String):
 	kill_all_children()

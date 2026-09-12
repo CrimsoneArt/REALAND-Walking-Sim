@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://yqwvgi2nh2wu"
-path="res://.godot/imported/Happy Tech 2.wav-a0860e72c28989a5fb37f7ff66784f98.sample"
+path="res://.godot/imported/Happy Tech 2.wav-91e134c11c2c3603a9dbff83153483e7.sample"
 
 [deps]
 
-source_file="res://SFX/Music/Happy Tech 2.wav"
-dest_files=["res://.godot/imported/Happy Tech 2.wav-a0860e72c28989a5fb37f7ff66784f98.sample"]
+source_file="res://SFX/Music/MusicLibrary/Happy Tech 2.wav"
+dest_files=["res://.godot/imported/Happy Tech 2.wav-91e134c11c2c3603a9dbff83153483e7.sample"]
 
 [params]
 

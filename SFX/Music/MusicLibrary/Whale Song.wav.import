@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dt0a2my72dl6d"
-path="res://.godot/imported/Whale Song.wav-42262920566d27247bdca7d572bb7207.sample"
+path="res://.godot/imported/Whale Song.wav-f09f736c2a53e37387d96ed152150f51.sample"
 
 [deps]
 
-source_file="res://SFX/Music/Whale Song.wav"
-dest_files=["res://.godot/imported/Whale Song.wav-42262920566d27247bdca7d572bb7207.sample"]
+source_file="res://SFX/Music/MusicLibrary/Whale Song.wav"
+dest_files=["res://.godot/imported/Whale Song.wav-f09f736c2a53e37387d96ed152150f51.sample"]
 
 [params]
 

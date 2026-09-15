@@ -25,3 +25,7 @@ func _on_timer_timeout() -> void:
 		get_node("/root/SceneLoader").load_regular_scene("res://Scenes/Menus/MainMenu.tscn")
 	else:
 		$TextureRect.visible = false
+
+func _unhandled_input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("SkipCutscene"):
+		get_node("/root/SceneLoader").load_regular_scene("res://Scenes/Menus/MainMenu.tscn")

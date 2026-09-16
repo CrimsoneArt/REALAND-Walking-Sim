@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://cfqcueih77i7x"]
 
-[ext_resource type="Script" uid="uid://t1exmeq4701v" path="res://Materials/Props/FakeLandCitizen.gd" id="1_2qdhy"]
+[ext_resource type="Script" uid="uid://dkxweyao0waoj" path="res://Objects/NPCObject.gd" id="1_sjq0l"]
 [ext_resource type="Script" uid="uid://dl3v7yp1te08c" path="res://Objects/ObjectComponents/WanderingComponent.gd" id="2_fsa7d"]
 [ext_resource type="Script" uid="uid://buom1dm7hnqqu" path="res://Objects/ObjectComponents/NPCObjectAnimationState.gd" id="3_7cb4d"]
 [ext_resource type="Texture2D" uid="uid://c3fdr0voyeqx0" path="res://Materials/Props/FakeLandCitizen-Sheet.png" id="3_16qk3"]
+[ext_resource type="Script" uid="uid://co4mkbnsfso8p" path="res://Objects/ObjectComponents/DialougeText.gd" id="6_r8wdy"]
 [ext_resource type="PackedScene" uid="uid://cdnf6l5oawl3i" path="res://Objects/ObjectComponents/InteractabilityComponent.tscn" id="6_sjq0l"]
 
 [sub_resource type="Resource" id="Resource_vnagb"]
@@ -40,11 +41,67 @@ animations = [{
 [sub_resource type="SphereShape3D" id="SphereShape3D_16qk3"]
 radius = 1.0685362
 
+[sub_resource type="Resource" id="Resource_2qdhy"]
+script = ExtResource("6_r8wdy")
+Dialouge = "Hello? What do you want from me?"
+Duration = 4.5
+FakeLand = true
+metadata/_custom_type_script = "uid://co4mkbnsfso8p"
+
+[sub_resource type="Resource" id="Resource_sjq0l"]
+script = ExtResource("6_r8wdy")
+Dialouge = "Leave me alone"
+Duration = 3.5
+FakeLand = true
+metadata/_custom_type_script = "uid://co4mkbnsfso8p"
+
+[sub_resource type="Resource" id="Resource_r8wdy"]
+script = ExtResource("6_r8wdy")
+Dialouge = "Get lost"
+Duration = 3.0
+FakeLand = true
+metadata/_custom_type_script = "uid://co4mkbnsfso8p"
+
+[sub_resource type="Resource" id="Resource_js7ad"]
+script = ExtResource("6_r8wdy")
+Dialouge = "Do you need something?"
+Duration = 4.0
+FakeLand = true
+metadata/_custom_type_script = "uid://co4mkbnsfso8p"
+
+[sub_resource type="Resource" id="Resource_3h1su"]
+script = ExtResource("6_r8wdy")
+Dialouge = "Please get away"
+Duration = 3.5
+FakeLand = true
+metadata/_custom_type_script = "uid://co4mkbnsfso8p"
+
+[sub_resource type="Resource" id="Resource_qjfto"]
+script = ExtResource("6_r8wdy")
+Dialouge = "I got things to do"
+Duration = 3.5
+FakeLand = true
+metadata/_custom_type_script = "uid://co4mkbnsfso8p"
+
+[sub_resource type="Resource" id="Resource_tyioy"]
+script = ExtResource("6_r8wdy")
+Dialouge = "Mind your own buisness"
+Duration = 4.5
+FakeLand = true
+metadata/_custom_type_script = "uid://co4mkbnsfso8p"
+
+[sub_resource type="Resource" id="Resource_ev35s"]
+script = ExtResource("6_r8wdy")
+Dialouge = "...wierdo"
+Duration = 3.0
+FakeLand = true
+metadata/_custom_type_script = "uid://co4mkbnsfso8p"
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_xrivr"]
 radius = 1.5349985
 
 [node name="FakeLandCitizen" type="Node3D" unique_id=95732470 node_paths=PackedStringArray("MovementNode", "ActiveComponent")]
-script = ExtResource("1_2qdhy")
+script = ExtResource("1_sjq0l")
 MovementNode = NodePath("CharacterBody3D")
 ActiveComponent = NodePath("WanderComponent")
 metadata/_custom_type_script = "uid://dkxweyao0waoj"
@@ -74,6 +131,7 @@ frame_progress = 0.6440091
 shape = SubResource("SphereShape3D_16qk3")
 
 [node name="InteractabilityComponent" parent="CharacterBody3D" unique_id=500345398 instance=ExtResource("6_sjq0l")]
+Dialouge = Array[ExtResource("6_r8wdy")]([SubResource("Resource_2qdhy"), SubResource("Resource_sjq0l"), SubResource("Resource_r8wdy"), SubResource("Resource_js7ad"), SubResource("Resource_3h1su"), SubResource("Resource_qjfto"), SubResource("Resource_tyioy"), SubResource("Resource_ev35s")])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D/InteractabilityComponent" unique_id=669045682]
 shape = SubResource("SphereShape3D_xrivr")

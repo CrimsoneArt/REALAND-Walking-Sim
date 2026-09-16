@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://fi1wllgkl106"]
+
+[ext_resource type="Texture2D" uid="uid://refplyl0few4" path="res://Materials/BricksTrain.png" id="1_l6ptb"]
+
+[resource]
+shading_mode = 0
+albedo_texture = ExtResource("1_l6ptb")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+texture_filter = 0

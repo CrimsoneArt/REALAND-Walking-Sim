@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bman35mlty8j3" path="res://Materials/Props/ShitCum-Sheet.png" id="1_rq88h"]
 [ext_resource type="PackedScene" uid="uid://cdnf6l5oawl3i" path="res://Objects/ObjectComponents/InteractabilityComponent.tscn" id="2_888sc"]
+[ext_resource type="Script" uid="uid://co4mkbnsfso8p" path="res://Objects/ObjectComponents/DialougeText.gd" id="3_c5vo7"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6b3gm"]
 radius = 0.91552734
@@ -29,6 +30,19 @@ animations = [{
 "speed": 2.0
 }]
 
+[sub_resource type="Resource" id="Resource_888sc"]
+script = ExtResource("3_c5vo7")
+Dialouge = "Damn... getting away from all the 
+war and stuff is nice...."
+Duration = 4.75
+metadata/_custom_type_script = "uid://co4mkbnsfso8p"
+
+[sub_resource type="Resource" id="Resource_bd2tg"]
+script = ExtResource("3_c5vo7")
+Dialouge = "wonder what happened to that guy....."
+Duration = 3.55
+metadata/_custom_type_script = "uid://co4mkbnsfso8p"
+
 [node name="ShitCum" type="StaticBody3D" unique_id=1256976886]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07151246, 0)
 
@@ -45,8 +59,8 @@ autoplay = "default"
 frame_progress = 0.14399236
 
 [node name="InteractabilityComponent" parent="." unique_id=500345398 instance=ExtResource("2_888sc")]
-Dialouge = "Damn... finally taking a break 
-from all the war and stuff..."
+Dialouge = Array[ExtResource("3_c5vo7")]([SubResource("Resource_888sc"), SubResource("Resource_bd2tg")])
+DialougeType = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractabilityComponent" unique_id=785503812]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.56103516, 0)

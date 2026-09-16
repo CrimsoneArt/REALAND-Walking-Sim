@@ -23,12 +23,12 @@ shader = ExtResource("4_sd3w8")
 shader_parameter/sky_texture = ExtResource("5_sd3w8")
 shader_parameter/texture_scale = Vector2(1, 1)
 
-[sub_resource type="Sky" id="Sky_6b3gm"]
+[sub_resource type="Sky" id="Sky_q53a6"]
 sky_material = SubResource("ShaderMaterial_sd3w8")
 
 [sub_resource type="Environment" id="Environment_x22fe"]
 background_mode = 2
-sky = SubResource("Sky_6b3gm")
+sky = SubResource("Sky_q53a6")
 glow_enabled = true
 fog_enabled = true
 fog_mode = 1

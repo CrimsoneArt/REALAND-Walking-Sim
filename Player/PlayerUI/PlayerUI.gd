@@ -21,18 +21,18 @@ func _process(delta: float) -> void:
 		if DialougeBox.get_theme_stylebox("normal").texture == null:
 			DialougeBox._on_change_texture_timer_timeout()
 
-func show_dialouge(Text:String,Duration:float,FakeLand:=false):
+func show_dialouge(Dialouge:DialougeText):
 	if DialougeBox is RandomizedButton:
 		if timer:
 			timer.queue_free()
-		DialougeBox.text = Text
+		DialougeBox.text = Dialouge.Dialouge
 		DialougeBox.appear()
 		timer = Timer.new()
-		timer.wait_time = Duration
+		timer.wait_time = Dialouge.Duration
 		timer.one_shot = true
 		timer.autostart = true
 		timer.timeout.connect(hide_dialouge)
-		DialougeBox.FakeLand = FakeLand
+		DialougeBox.FakeLand = Dialouge.FakeLand
 		add_child(timer)
 
 func hide_dialouge():

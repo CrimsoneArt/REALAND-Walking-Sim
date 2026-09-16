@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://br256phvmen5" path="res://Materials/Props/StarProp.png" id="1_mqk6v"]
 [ext_resource type="PackedScene" uid="uid://cdnf6l5oawl3i" path="res://Objects/ObjectComponents/InteractabilityComponent.tscn" id="2_obnov"]
+[ext_resource type="Script" uid="uid://co4mkbnsfso8p" path="res://Objects/ObjectComponents/DialougeText.gd" id="3_jy1xx"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6b3gm"]
 radius = 0.69384766
@@ -22,6 +23,11 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Resource" id="Resource_obnov"]
+script = ExtResource("3_jy1xx")
+Dialouge = "I love this guy, he is like an uncle to me"
+metadata/_custom_type_script = "uid://co4mkbnsfso8p"
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_jy1xx"]
 radius = 1.3083162
 
@@ -40,8 +46,8 @@ sprite_frames = SubResource("SpriteFrames_mqk6v")
 autoplay = "default"
 
 [node name="InteractabilityComponent" parent="." unique_id=500345398 instance=ExtResource("2_obnov")]
-Dialouge = "I love this guy, he's like an
-uncle to me"
+Dialouge = Array[ExtResource("3_jy1xx")]([SubResource("Resource_obnov")])
+DialougeType = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractabilityComponent" unique_id=318021734]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.56103516, 0)

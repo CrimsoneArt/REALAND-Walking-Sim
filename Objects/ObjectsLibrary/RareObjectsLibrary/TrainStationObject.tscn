@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://dxrh8q4m8g7gn"]
+
+[ext_resource type="Script" uid="uid://dpoxk86q0vc0o" path="res://Objects/GameObject.gd" id="1_hwbb2"]
+[ext_resource type="Material" uid="uid://fi1wllgkl106" path="res://Materials/BricksTrain.tres" id="2_l4b6c"]
+[ext_resource type="Material" uid="uid://dt7yu3w74pb3l" path="res://Materials/Black.tres" id="3_5v78q"]
+[ext_resource type="PackedScene" uid="uid://cdnf6l5oawl3i" path="res://Objects/ObjectComponents/InteractabilityComponent.tscn" id="3_wre6d"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wre6d"]
+size = Vector3(2.3674316, 2.5475187, 1.8494873)
+
+[node name="TrainStationObject" type="Node3D" unique_id=1848920187]
+script = ExtResource("1_hwbb2")
+amount_min = 1
+amount_max = 8
+ChanceOfAppearing = 7.0
+metadata/_custom_type_script = "uid://dpoxk86q0vc0o"
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=818450194]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=657168258]
+size = Vector3(4.5, 0.25, 4.5)
+material = ExtResource("2_l4b6c")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1769564565]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3249512, -0.5)
+size = Vector3(3, 3.1586914, 2)
+material = ExtResource("2_l4b6c")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D" unique_id=504354356]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2792969, 0)
+operation = 2
+size = Vector3(2, 2.3085938, 2)
+material = ExtResource("2_l4b6c")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1941133948]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1604004, -0.5)
+size = Vector3(2, 2.5688477, 1)
+material = ExtResource("3_5v78q")
+
+[node name="InteractabilityComponent" parent="." unique_id=500345398 instance=ExtResource("3_wre6d")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractabilityComponent" unique_id=19839891]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13195801, 1.3873283, -0.42474365)
+shape = SubResource("BoxShape3D_wre6d")

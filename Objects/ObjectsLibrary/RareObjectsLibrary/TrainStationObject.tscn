@@ -4,6 +4,7 @@
 [ext_resource type="Material" uid="uid://fi1wllgkl106" path="res://Materials/BricksTrain.tres" id="2_l4b6c"]
 [ext_resource type="Material" uid="uid://dt7yu3w74pb3l" path="res://Materials/Black.tres" id="3_5v78q"]
 [ext_resource type="PackedScene" uid="uid://cdnf6l5oawl3i" path="res://Objects/ObjectComponents/InteractabilityComponent.tscn" id="3_wre6d"]
+[ext_resource type="PackedScene" uid="uid://d30h2s0h6d0r1" path="res://Scenes/TrainStationScene.tscn" id="5_8cbf7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wre6d"]
 size = Vector3(2.3674316, 2.5475187, 1.8494873)
@@ -12,7 +13,7 @@ size = Vector3(2.3674316, 2.5475187, 1.8494873)
 script = ExtResource("1_hwbb2")
 amount_min = 1
 amount_max = 8
-ChanceOfAppearing = 7.0
+ChanceOfAppearing = 7.5
 metadata/_custom_type_script = "uid://dpoxk86q0vc0o"
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=818450194]
@@ -39,6 +40,7 @@ size = Vector3(2, 2.5688477, 1)
 material = ExtResource("3_5v78q")
 
 [node name="InteractabilityComponent" parent="." unique_id=500345398 instance=ExtResource("3_wre6d")]
+TargetScene = ExtResource("5_8cbf7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractabilityComponent" unique_id=19839891]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13195801, 1.3873283, -0.42474365)

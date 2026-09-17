@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://d30h2s0h6d0r1"]
 
 [ext_resource type="Material" uid="uid://fi1wllgkl106" path="res://Materials/BricksTrain.tres" id="1_6h0kx"]
+[ext_resource type="Script" uid="uid://j3yu2l6txrjm" path="res://Scenes/TrainStationScene.gd" id="1_wo1um"]
 [ext_resource type="PackedScene" uid="uid://igw0ct71j4e2" path="res://Player/Player.tscn" id="2_cmwcn"]
 [ext_resource type="Material" uid="uid://dt7yu3w74pb3l" path="res://Materials/Black.tres" id="2_hiuxt"]
 [ext_resource type="Material" uid="uid://bvs8plnqls81j" path="res://Materials/DimensionMaterials/Fence1.tres" id="3_q8uk8"]
 [ext_resource type="Shader" uid="uid://gxbeh60sgorq" path="res://Scenes/SkyBoxes/SkyBoxShaderFlat.gdshader" id="4_bbg6n"]
 [ext_resource type="Material" uid="uid://cpk0t0a2ohu4q" path="res://Materials/Steel1.tres" id="4_pykj2"]
+[ext_resource type="Texture2D" uid="uid://cmii0au2hmyua" path="res://Materials/Props/TrainPoster1.png" id="4_qkbcf"]
 [ext_resource type="Texture2D" uid="uid://refplyl0few4" path="res://Materials/BricksTrain.png" id="5_bbg6n"]
 [ext_resource type="Material" uid="uid://dds6phg6f6tm0" path="res://Materials/DimensionMaterials/Bricks3.tres" id="5_d320u"]
 [ext_resource type="Texture2D" uid="uid://cwhr4h8qum244" path="res://Scenes/SkyBoxes/DimensionSkyboxes/SkyBox1.png" id="8_23km6"]
@@ -13,6 +15,20 @@
 [ext_resource type="Script" uid="uid://co4mkbnsfso8p" path="res://Objects/ObjectComponents/DialougeText.gd" id="11_hm42e"]
 [ext_resource type="Texture2D" uid="uid://bd72rsf8sey57" path="res://Materials/Props/TreeLover-Sheet.png" id="12_ctrkt"]
 [ext_resource type="PackedScene" uid="uid://royje8y7hp6f" path="res://Materials/Props/WaterCooler.tscn" id="12_e0b0d"]
+[ext_resource type="Texture2D" uid="uid://8nfqc68jc7wg" path="res://Materials/Props/ApronFemboy-Sheet.png" id="14_do4o0"]
+[ext_resource type="PackedScene" uid="uid://dwxyaybeumu5l" path="res://Materials/Props/ParrotNPCObject(Chill).tscn" id="15_1jpcv"]
+[ext_resource type="PackedScene" uid="uid://dqcwk2shu761l" path="res://Materials/Props/StoneFishModel.glb" id="16_046lf"]
+[ext_resource type="Texture2D" uid="uid://kwj7jwufhwqj" path="res://Materials/Props/TrainPoster2.png" id="18_buyyv"]
+[ext_resource type="Texture2D" uid="uid://bs2in56c0vemi" path="res://Materials/Props/TrainModelTexture1.png" id="20_ay0ib"]
+[ext_resource type="Texture2D" uid="uid://jupwijswvre" path="res://Materials/Props/TrainModelTexture2.png" id="21_h2qrk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_buyyv"]
+albedo_texture = ExtResource("4_qkbcf")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_do4o0"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0, 1, 1, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pykj2"]
 albedo_color = Color(0.3764706, 0.3764706, 0.14509805, 1)
@@ -51,7 +67,7 @@ fog_depth_end = 50.0
 
 [sub_resource type="Resource" id="Resource_rajsn"]
 script = ExtResource("11_hm42e")
-Dialouge = "Trees... theophanobsies
+Dialouge = "Trees... theophanies
 of carbon..."
 Duration = 4.5
 metadata/_custom_type_script = "uid://co4mkbnsfso8p"
@@ -252,7 +268,112 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_amyo3"]
+atlas = ExtResource("14_do4o0")
+region = Rect2(0, 0, 84, 162)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2q1p"]
+atlas = ExtResource("14_do4o0")
+region = Rect2(84, 0, 84, 162)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1mx20"]
+atlas = ExtResource("14_do4o0")
+region = Rect2(168, 0, 84, 162)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ao4gd"]
+atlas = ExtResource("14_do4o0")
+region = Rect2(252, 0, 84, 162)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0bow"]
+atlas = ExtResource("14_do4o0")
+region = Rect2(336, 0, 84, 162)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ctrkt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_amyo3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2q1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1mx20")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ao4gd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0bow")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 7.5
+}]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_do4o0"]
+height = 3.2895508
+
+[sub_resource type="Resource" id="Resource_do4o0"]
+script = ExtResource("11_hm42e")
+Dialouge = "I'm the guy who installs all
+these water coolers"
+Duration = 4.5
+metadata/_custom_type_script = "uid://co4mkbnsfso8p"
+
+[sub_resource type="Resource" id="Resource_1jpcv"]
+script = ExtResource("11_hm42e")
+Dialouge = "The pipe guys are the ones
+that put something in the water"
+metadata/_custom_type_script = "uid://co4mkbnsfso8p"
+
+[sub_resource type="Resource" id="Resource_qkbcf"]
+script = ExtResource("11_hm42e")
+Dialouge = "What was it? I forgot..."
+Duration = 3.75
+metadata/_custom_type_script = "uid://co4mkbnsfso8p"
+
+[sub_resource type="Resource" id="Resource_046lf"]
+script = ExtResource("11_hm42e")
+Dialouge = "Shouldn't have drank it,
+Frog!!!"
+Duration = 3.75
+metadata/_custom_type_script = "uid://co4mkbnsfso8p"
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_do4o0"]
+radius = 1.3687304
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_046lf"]
+radius = 2.081464
+
+[sub_resource type="Resource" id="Resource_buyyv"]
+script = ExtResource("11_hm42e")
+Dialouge = "."
+Duration = 3.0
+metadata/_custom_type_script = "uid://co4mkbnsfso8p"
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_buyyv"]
+radius = 2.2700195
+height = 6.4035645
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_buyyv"]
+size = Vector3(14.677734, 5.75, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wo1um"]
+shading_mode = 0
+albedo_texture = ExtResource("20_ay0ib")
+uv1_scale = Vector3(0.5, 0.25, 1)
+uv1_offset = Vector3(0, -0.5, 0)
+uv1_triplanar = true
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cnani"]
+shading_mode = 0
+albedo_texture = ExtResource("21_h2qrk")
+texture_filter = 0
+
 [node name="TrainStationScene" type="Node3D" unique_id=976321024]
+script = ExtResource("1_wo1um")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=155538598]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1660037, 1.625, 0)
@@ -294,6 +415,7 @@ material = ExtResource("1_6h0kx")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D" unique_id=975998345]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, -1, 7.25)
+material_override = SubResource("StandardMaterial3D_buyyv")
 flip_faces = true
 size = Vector3(12.25, 4.5, 19)
 material = ExtResource("1_6h0kx")
@@ -303,6 +425,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, -1.125, 12.75)
 flip_faces = true
 size = Vector3(18.5, 5.75, 8)
 material = ExtResource("4_pykj2")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="CSGCombiner3D" unique_id=574725069]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, -1.125, 8.5005)
+operation = 2
+size = Vector3(18.5, 5.75, 0.001)
+material = SubResource("StandardMaterial3D_do4o0")
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D" unique_id=255548776]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.75, 0.125, 0)
@@ -330,10 +458,10 @@ size = Vector3(2.5, 0.66845703, 2.5)
 material = ExtResource("3_q8uk8")
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D" unique_id=902325110]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.807728, -1.375, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.807728, -1.4375, 0)
 operation = 2
 flip_faces = true
-height = 3.25
+height = 3.375
 material = SubResource("StandardMaterial3D_pykj2")
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="CSGCombiner3D" unique_id=1712160381]
@@ -421,7 +549,7 @@ radius = 0.75
 material = SubResource("StandardMaterial3D_23km6")
 
 [node name="Player" parent="." unique_id=1083039947 instance=ExtResource("2_cmwcn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 1.1552184, 0)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.75, 1.1552184, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1387164243]
 environment = SubResource("Environment_pykj2")
@@ -429,21 +557,21 @@ environment = SubResource("Environment_pykj2")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=327159854]
 transform = Transform3D(0.70710677, 0.49999997, -0.49999997, 0, 0.70710677, 0.70710677, 0.70710677, -0.49999997, 0.49999997, 40.25, 3.5, 4.5)
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=102902463]
+[node name="TreeLover" type="CharacterBody3D" parent="." unique_id=102902463]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.909977, -2.3309119, -1.75)
 
-[node name="InteractabilityComponent" parent="CharacterBody3D" unique_id=500345398 instance=ExtResource("10_rajsn")]
+[node name="InteractabilityComponent" parent="TreeLover" unique_id=500345398 instance=ExtResource("10_rajsn")]
 Dialouge = Array[ExtResource("11_hm42e")]([SubResource("Resource_rajsn"), SubResource("Resource_hm42e"), SubResource("Resource_e0b0d")])
 DialougeType = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D/InteractabilityComponent" unique_id=2081414316]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TreeLover/InteractabilityComponent" unique_id=2081414316]
 shape = SubResource("SphereShape3D_rajsn")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1977752014]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TreeLover" unique_id=1977752014]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19213867, 0)
 shape = SubResource("CapsuleShape3D_ctrkt")
 
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="CharacterBody3D" unique_id=16984497]
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="TreeLover" unique_id=16984497]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.5, 0)
 pixel_size = 0.03
 texture_filter = 0
@@ -452,3 +580,84 @@ autoplay = "default"
 
 [node name="WaterCooler" parent="." unique_id=1256976886 instance=ExtResource("12_e0b0d")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 21.25, -3.0715125, 4)
+
+[node name="ApronFemboy" type="CharacterBody3D" parent="." unique_id=868500417]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.21669, -2.5, 4.2693024)
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="ApronFemboy" unique_id=1622278248]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0.848, 0)
+pixel_size = 0.02
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_ctrkt")
+autoplay = "default"
+frame_progress = 0.5848101
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ApronFemboy" unique_id=34678399]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6447754, 0)
+shape = SubResource("CapsuleShape3D_do4o0")
+
+[node name="InteractabilityComponent" parent="ApronFemboy" unique_id=1037054948 instance=ExtResource("10_rajsn")]
+Dialouge = Array[ExtResource("11_hm42e")]([SubResource("Resource_do4o0"), SubResource("Resource_1jpcv"), SubResource("Resource_qkbcf"), SubResource("Resource_046lf")])
+DialougeType = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ApronFemboy/InteractabilityComponent" unique_id=1077750661]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+shape = SubResource("SphereShape3D_do4o0")
+
+[node name="ParrotNPCObject" parent="." unique_id=721190811 instance=ExtResource("15_1jpcv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.75, -2.75, -3)
+
+[node name="StoneFish" type="CharacterBody3D" parent="." unique_id=192448579]
+transform = Transform3D(0.25980762, 0, -0.14999999, 0, 0.29999998, 0, 0.14999999, 0, 0.25980762, 48.536644, -2.7509744, 3.3464835)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StoneFish" unique_id=1037094882]
+transform = Transform3D(1, 0, 0, 0, 0.9999992, 0, 0, 0, 1, -1.0961609, 0, -0.11306763)
+shape = SubResource("SphereShape3D_046lf")
+
+[node name="StoneFishModel" parent="StoneFish" unique_id=619468787 instance=ExtResource("16_046lf")]
+transform = Transform3D(1, 0, 0, 0, 0.9999998, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="InteractabilityComponent" parent="StoneFish" unique_id=736205330 instance=ExtResource("10_rajsn")]
+Dialouge = Array[ExtResource("11_hm42e")]([SubResource("Resource_buyyv")])
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StoneFish/InteractabilityComponent" unique_id=269115023]
+transform = Transform3D(1, 0, 0, 0, 0.99997777, 0, 0, 0, 1, -1.1382904, 2.2017684, -0.30504608)
+shape = SubResource("CapsuleShape3D_buyyv")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1130041492]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.360764, -1.5, -2.2415717)
+pixel_size = 0.015
+texture_filter = 0
+texture = ExtResource("4_qkbcf")
+
+[node name="Sprite3D2" type="Sprite3D" parent="." unique_id=522287182]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 20.904392, -0.75, 6.5084286)
+pixel_size = 0.015
+texture_filter = 0
+texture = ExtResource("18_buyyv")
+
+[node name="InteractabilityComponent" parent="." unique_id=1391763811 instance=ExtResource("10_rajsn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.091322, 0, 2.2916787)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractabilityComponent" unique_id=1039135979]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9914341, 0, 8.218427)
+shape = SubResource("BoxShape3D_buyyv")
+
+[node name="Train" type="Node3D" parent="." unique_id=605635751]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -3.25, 13.5)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Train" unique_id=271063406]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.75, 1.5, -0.625)
+size = Vector3(20, 4, 4.5)
+material = SubResource("StandardMaterial3D_wo1um")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Train" unique_id=883609380]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 1.5, -0.625)
+size = Vector3(0.5, 3.5, 4)
+material = SubResource("StandardMaterial3D_cnani")
+
+[node name="TrainTimer" type="Timer" parent="." unique_id=1572140085]
+wait_time = 7.75
+
+[connection signal="Interacted" from="InteractabilityComponent" to="." method="_on_interactability_component_interacted"]
+[connection signal="timeout" from="TrainTimer" to="." method="_on_train_timer_timeout"]

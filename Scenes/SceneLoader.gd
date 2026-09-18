@@ -7,6 +7,13 @@ var DimensionNode
 
 var Songs: Array = []
 
+func readJSON(json_file_path:String):
+	var file = FileAccess.open(json_file_path, FileAccess.READ)
+	var content = file.get_as_text()
+	var json = JSON.new()
+	var finish = json.parse_string(content)
+	return finish
+
 func _ready() -> void:
 	load_regular_scene("res://Scenes/Menus/Intro.tscn")
 	
@@ -32,11 +39,56 @@ func load_dimension_scene(DimensionSeed:int):
 	RNG.seed = DimensionSeed
 	
 	DimensionNode = DimensionScene.instantiate()
-	DimensionNode.seed = DimensionSeed
 	add_child(DimensionNode)
+	DimensionNode.seed = DimensionSeed
+	
+	#Picking a song with a fitting mood :
+	
+	var AssetsChosen = DimensionNode.generate_dimension()
 	
 	stop_music()
-	play_music(Songs[RNG.randi()%Songs.size()])
+	
+	var MoodData = readJSON("res://MoodData.json")
+	
+	var SkyMood : Array[float]
+	for i in range(0,5):
+		SkyMood.append(MoodData["SkyBoxes"][AssetsChosen["SkyBoxes"]][i])
+	
+	
+	
+	var Mood : Array[float] = SkyMood
+	if AssetsChosen["Fog"]["SkyEffect"]:
+		Mood = [0.0,1.0,1.0,0.5,1.0]
+	Mood[0] = lerp(Mood[0],0.0,AssetsChosen["Fog"]["Density"]/3.0)
+	Mood[1] = lerp(Mood[1],1.0,AssetsChosen["Fog"]["Density"]/3.0)
+	Mood[2] = lerp(Mood[2],1.0,AssetsChosen["Fog"]["Density"]/3.0)
+	Mood[3] = lerp(Mood[3],0.5,AssetsChosen["Fog"]["Density"]/3.0)
+	Mood[4] = lerp(Mood[4],1.0,AssetsChosen["Fog"]["Density"]/3.0)
+	
+	var Song = find_most_similar(MoodData["Music"],Mood)
+	
+	print(Mood)
+	print(MoodData["Music"][Song])
+	print("-----")
+	play_music(load(Song))
+
+func find_most_similar(dict: Dictionary, target: Array[float]) -> String:
+	var best_key: String = ""
+	var lowest_distance: float = INF
+	
+	for key in dict:
+		var current_array: Array = dict[key]
+		var distance: float = 0.0
+		
+		for i in range(target.size()):
+			var diff: float = target[i] - current_array[i]
+			distance += diff * diff # Squared distance
+			
+		if distance < lowest_distance:
+			lowest_distance = distance
+			best_key = str(key)
+			
+	return best_key
 
 func get_dimension_seed():
 	return DimensionNode.seed if DimensionNode != null else null

@@ -2,6 +2,9 @@ extends Node3D
 
 var target_train_x_position = 10.75
 
+func _ready() -> void:
+	get_node("/root/SceneLoader").stop_music() #dont forget to delete this when music system is reworked
+
 func _on_interactability_component_interacted(PlayerNode: Player) -> void:
 	if $Train.position.x <= 10.75:
 		target_train_x_position = 33.5

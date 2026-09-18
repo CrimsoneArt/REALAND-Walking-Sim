@@ -2,15 +2,14 @@ extends Node3D
 
 #this is the scene in which the dimension type is loaded
 
-var seed : int
-
 @export var DimensionTypes : Array[PackedScene]
 
 @onready var World =  $WorldEnvironment
+var seed: int
 
 var RNG
 
-func _ready() -> void:
+func generate_dimension() -> Dictionary:
 	RNG = RandomNumberGenerator.new()
 	
 	RNG.seed = seed
@@ -26,9 +25,8 @@ func _ready() -> void:
 	var SkyBoxes: Array = []
 	var Loader = FileLoader.new()
 	SkyBoxes = Loader.get_file_paths_from_folder("res://Scenes/SkyBoxes/DimensionSkyboxes/",".png.import",".import")
-	SkyBoxes = Loader.load_files_in_array(SkyBoxes)
-	
-	World.environment.sky.sky_material.set("shader_parameter/sky_texture", SkyBoxes[RNG.randi()%SkyBoxes.size()])
+	var SkyBox = SkyBoxes[RNG.randi()%SkyBoxes.size()]
+	World.environment.sky.sky_material.set("shader_parameter/sky_texture",load(SkyBox))
 	
 	if RNG.randi_range(1,100) <= 55.67:
 		World.environment.fog_enabled = true
@@ -43,4 +41,14 @@ func _ready() -> void:
 	else:
 		World.environment.fog_enabled = false
 		
+	var AssetsChosen = {
+		"SkyBoxes":SkyBox,
+		"Fog":{
+			"Enabled":World.environment.fog_enabled,
+			"SkyEffect":(true if World.environment.fog_sky_affect == 1.0 else false),
+			"Density":World.environment.fog_density,
+			"Begin":World.environment.fog_depth_begin,
+		}
+	}
 	
+	return AssetsChosen

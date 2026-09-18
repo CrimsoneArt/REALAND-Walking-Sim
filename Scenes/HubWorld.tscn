@@ -108,3 +108,12 @@ Variables = Dictionary[String, Variant]({
 "SpriteHeight": 2.88,
 "SpriteNumber": 8
 })
+
+[connection signal="opened" from="DoorObject1" to="." method="door_opened"]
+[connection signal="opened" from="DoorObject2" to="." method="door_opened"]
+[connection signal="opened" from="DoorObject3" to="." method="door_opened"]
+[connection signal="opened" from="DoorObject4" to="." method="door_opened"]
+[connection signal="opened" from="DoorObject5" to="." method="door_opened"]
+[connection signal="opened" from="DoorObject6" to="." method="door_opened"]
+[connection signal="opened" from="DoorObject7" to="." method="door_opened"]
+[connection signal="opened" from="DoorObject8" to="." method="door_opened"]

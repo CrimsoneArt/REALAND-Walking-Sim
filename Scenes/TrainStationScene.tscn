@@ -8,9 +8,10 @@
 [ext_resource type="Shader" uid="uid://gxbeh60sgorq" path="res://Scenes/SkyBoxes/SkyBoxShaderFlat.gdshader" id="4_bbg6n"]
 [ext_resource type="Material" uid="uid://cpk0t0a2ohu4q" path="res://Materials/Steel1.tres" id="4_pykj2"]
 [ext_resource type="Texture2D" uid="uid://cmii0au2hmyua" path="res://Materials/Props/TrainPoster1.png" id="4_qkbcf"]
-[ext_resource type="Texture2D" uid="uid://refplyl0few4" path="res://Materials/BricksTrain.png" id="5_bbg6n"]
 [ext_resource type="Material" uid="uid://dds6phg6f6tm0" path="res://Materials/DimensionMaterials/Bricks3.tres" id="5_d320u"]
 [ext_resource type="Texture2D" uid="uid://cwhr4h8qum244" path="res://Scenes/SkyBoxes/DimensionSkyboxes/SkyBox1.png" id="8_23km6"]
+[ext_resource type="Material" uid="uid://co5r0ik8mplah" path="res://Materials/Tree1.tres" id="8_cnani"]
+[ext_resource type="Material" uid="uid://ckvg41id7fwto" path="res://Materials/Tree2.tres" id="9_cnani"]
 [ext_resource type="PackedScene" uid="uid://cdnf6l5oawl3i" path="res://Objects/ObjectComponents/InteractabilityComponent.tscn" id="10_rajsn"]
 [ext_resource type="Script" uid="uid://co4mkbnsfso8p" path="res://Objects/ObjectComponents/DialougeText.gd" id="11_hm42e"]
 [ext_resource type="Texture2D" uid="uid://bd72rsf8sey57" path="res://Materials/Props/TreeLover-Sheet.png" id="12_ctrkt"]
@@ -29,22 +30,6 @@ albedo_texture = ExtResource("4_qkbcf")
 transparency = 1
 shading_mode = 0
 albedo_color = Color(0, 1, 1, 0)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pykj2"]
-albedo_color = Color(0.3764706, 0.3764706, 0.14509805, 1)
-metallic = 0.52
-roughness = 0.2
-normal_texture = ExtResource("5_bbg6n")
-refraction_scale = 0.28
-refraction_texture = ExtResource("5_bbg6n")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_23km6"]
-albedo_color = Color(0, 0.5686275, 0, 1)
-metallic = 0.52
-roughness = 0.2
-normal_texture = ExtResource("5_bbg6n")
-refraction_scale = 0.28
-refraction_texture = ExtResource("5_bbg6n")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bbg6n"]
 shader = ExtResource("4_bbg6n")
@@ -462,91 +447,91 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.807728, -1.4375, 0)
 operation = 2
 flip_faces = true
 height = 3.375
-material = SubResource("StandardMaterial3D_pykj2")
+material = ExtResource("8_cnani")
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="CSGCombiner3D" unique_id=1712160381]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.807728, 0.537217, 0)
 operation = 2
 flip_faces = true
 radius = 0.75
-material = SubResource("StandardMaterial3D_23km6")
+material = ExtResource("9_cnani")
 
 [node name="CSGSphere3D2" type="CSGSphere3D" parent="CSGCombiner3D" unique_id=502786577]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.557728, 0.03721702, -0.75)
 operation = 2
 flip_faces = true
 radius = 0.75
-material = SubResource("StandardMaterial3D_23km6")
+material = ExtResource("9_cnani")
 
 [node name="CSGSphere3D7" type="CSGSphere3D" parent="CSGCombiner3D" unique_id=1105310448]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.057728, -0.712783, -0.5)
 operation = 2
 flip_faces = true
 radius = 0.75
-material = SubResource("StandardMaterial3D_23km6")
+material = ExtResource("9_cnani")
 
 [node name="CSGSphere3D3" type="CSGSphere3D" parent="CSGCombiner3D" unique_id=1135194423]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.057728, -0.712783, 0.5)
 operation = 2
 flip_faces = true
 radius = 0.75
-material = SubResource("StandardMaterial3D_23km6")
+material = ExtResource("9_cnani")
 
 [node name="CSGSphere3D4" type="CSGSphere3D" parent="CSGCombiner3D" unique_id=1602737851]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.057728, -0.712783, -0.5)
 operation = 2
 flip_faces = true
 radius = 0.75
-material = SubResource("StandardMaterial3D_23km6")
+material = ExtResource("9_cnani")
 
 [node name="CSGSphere3D5" type="CSGSphere3D" parent="CSGCombiner3D" unique_id=217573059]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.557728, 0.03721702, -0.25)
 operation = 2
 flip_faces = true
 radius = 0.75
-material = SubResource("StandardMaterial3D_23km6")
+material = ExtResource("9_cnani")
 
 [node name="CSGSphere3D6" type="CSGSphere3D" parent="CSGCombiner3D" unique_id=252432181]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.307728, 0.03721702, 0.25)
 operation = 2
 flip_faces = true
 radius = 0.75
-material = SubResource("StandardMaterial3D_23km6")
+material = ExtResource("9_cnani")
 
 [node name="CSGSphere3D8" type="CSGSphere3D" parent="CSGCombiner3D" unique_id=1423309317]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.807728, 0.03721702, 0.75)
 operation = 2
 flip_faces = true
 radius = 0.75
-material = SubResource("StandardMaterial3D_23km6")
+material = ExtResource("9_cnani")
 
 [node name="CSGSphere3D9" type="CSGSphere3D" parent="CSGCombiner3D" unique_id=1790768657]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.807728, -0.46278298, -1)
 operation = 2
 flip_faces = true
 radius = 0.75
-material = SubResource("StandardMaterial3D_23km6")
+material = ExtResource("9_cnani")
 
 [node name="CSGSphere3D10" type="CSGSphere3D" parent="CSGCombiner3D" unique_id=1762266715]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.807728, -0.962783, 1)
 operation = 2
 flip_faces = true
 radius = 0.75
-material = SubResource("StandardMaterial3D_23km6")
+material = ExtResource("9_cnani")
 
 [node name="CSGSphere3D12" type="CSGSphere3D" parent="CSGCombiner3D" unique_id=1130970247]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.807728, -0.21278298, 0.25)
 operation = 2
 flip_faces = true
 radius = 0.75
-material = SubResource("StandardMaterial3D_23km6")
+material = ExtResource("9_cnani")
 
 [node name="CSGSphere3D11" type="CSGSphere3D" parent="CSGCombiner3D" unique_id=1639624163]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.057728, -0.962783, 0)
 operation = 2
 flip_faces = true
 radius = 0.75
-material = SubResource("StandardMaterial3D_23km6")
+material = ExtResource("9_cnani")
 
 [node name="Player" parent="." unique_id=1083039947 instance=ExtResource("2_cmwcn")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.75, 1.1552184, 0)

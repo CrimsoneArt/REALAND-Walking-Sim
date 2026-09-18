@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dyhvbpkf7uiu8"]
+
+[ext_resource type="Texture2D" uid="uid://refplyl0few4" path="res://Materials/BricksTrain.png" id="1_2y8gy"]
+
+[resource]
+albedo_color = Color(1, 0, 0.5686275, 1)
+metallic = 0.52
+roughness = 0.2
+normal_texture = ExtResource("1_2y8gy")
+refraction_scale = 0.28
+refraction_texture = ExtResource("1_2y8gy")

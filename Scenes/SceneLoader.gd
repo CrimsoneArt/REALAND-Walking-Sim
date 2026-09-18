@@ -65,6 +65,12 @@ func load_dimension_scene(DimensionSeed:int):
 	Mood[3] = lerp(Mood[3],0.5,AssetsChosen["Fog"]["Density"]/3.0)
 	Mood[4] = lerp(Mood[4],1.0,AssetsChosen["Fog"]["Density"]/3.0)
 	
+	print(Mood)
+	
+	for material in AssetsChosen["Materials"]:
+		for i in range(0,5):
+			Mood[i] = lerp(Mood[i],MoodData["Materials"][material][i],0.2	)
+	
 	var Song = find_most_similar(MoodData["Music"],Mood)
 	
 	print(Mood)

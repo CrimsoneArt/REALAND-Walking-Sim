@@ -9,6 +9,8 @@ var seed: int
 
 var RNG
 
+var materials_chosen : Array
+
 func generate_dimension() -> Dictionary:
 	RNG = RandomNumberGenerator.new()
 	
@@ -20,6 +22,7 @@ func generate_dimension() -> Dictionary:
 	
 	add_child(DimensionTypeNode)
 	
+	DimensionTypeNode.materials_chosen.connect(MaterialsChosen)
 	DimensionTypeNode._generate_dimension(seed)
 	
 	var SkyBoxes: Array = []
@@ -48,7 +51,10 @@ func generate_dimension() -> Dictionary:
 			"SkyEffect":(true if World.environment.fog_sky_affect == 1.0 else false),
 			"Density":World.environment.fog_density,
 			"Begin":World.environment.fog_depth_begin,
-		}
+		},
+		"Materials":materials_chosen
 	}
-	
 	return AssetsChosen
+
+func MaterialsChosen(Materials:Array):
+	materials_chosen = Materials

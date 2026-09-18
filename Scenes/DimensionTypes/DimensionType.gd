@@ -3,6 +3,8 @@ class_name DimensionType extends Node3D
 var RNG = RandomNumberGenerator.new()
 var DoorObjectScene = preload("res://Objects/Door/DoorObject.tscn")
 
+signal materials_chosen(Materials:Array)
+
 func _generate_dimension(seed:int):
 	assert(false, "_generate_dimension() must be overridden by the subclass.")
 
@@ -25,7 +27,9 @@ func pick_random_materials(rng:RandomNumberGenerator):
 	var MaterialNumber = rng.randi_range(1,6)
 	for i in range(1,Materials.size()-MaterialNumber):
 		Materials.pop_at(rng.randi() % Materials.size())
-		
+	
+	materials_chosen.emit(Materials)
+	
 	return Loader.load_files_in_array(Materials)
 	
 func pick_random_objects(rng:RandomNumberGenerator) -> Array[PackedScene]:

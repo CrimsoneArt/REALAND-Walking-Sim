@@ -13,9 +13,9 @@ script = ExtResource("1_3jcx2")
 use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=529124882]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.028, 3.3594997, 0.011)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4989996, 0)
 flip_faces = true
-size = Vector3(12.48, 6.72, 13.44)
+size = Vector3(13.44, 7, 13.44)
 material = ExtResource("1_avdaa")
 
 [node name="Player" parent="." unique_id=1083039947 instance=ExtResource("2_fxrh3")]

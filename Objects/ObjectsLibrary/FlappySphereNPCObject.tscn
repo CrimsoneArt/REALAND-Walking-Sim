@@ -1,22 +1,22 @@
 [gd_scene format=3 uid="uid://76ra4rksq1dv"]
 
-[ext_resource type="Texture2D" uid="uid://cw12xqnaxatbl" path="res://Objects/ObjectsLibrary/FlappySphere.png" id="1_hev5r"]
-[ext_resource type="Script" uid="uid://dkxweyao0waoj" path="res://Objects/NPCObject.gd" id="1_m1ldl"]
-[ext_resource type="PackedScene" uid="uid://dcnxmcd02wof3" path="res://Objects/ObjectComponents/FlappyMovementComponent.tscn" id="3_70ssn"]
+[ext_resource type="Script" uid="uid://dkxweyao0waoj" path="res://Objects/NPCObject.gd" id="1_82i23"]
+[ext_resource type="Texture2D" uid="uid://cw12xqnaxatbl" path="res://Objects/ObjectsLibrary/FlappySphere.png" id="2_5xut6"]
+[ext_resource type="PackedScene" uid="uid://dcnxmcd02wof3" path="res://Objects/ObjectComponents/FlappyMovementComponent.tscn" id="3_gngwf"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_xrivr"]
 radius = 0.7559032
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xu2wu"]
 shading_mode = 0
-albedo_texture = ExtResource("1_hev5r")
+albedo_texture = ExtResource("2_5xut6")
 uv1_scale = Vector3(3, 3, 3)
 texture_filter = 0
 
 [sub_resource type="SphereMesh" id="SphereMesh_xrivr"]
 
 [node name="FlappySphereNPCObject" type="Node3D" unique_id=1803131332 node_paths=PackedStringArray("MovementNode", "ActiveComponent")]
-script = ExtResource("1_m1ldl")
+script = ExtResource("1_82i23")
 MovementNode = NodePath("CharacterBody3D")
 ActiveComponent = NodePath("FlappyMovementComponent")
 amount_min = 10
@@ -33,7 +33,7 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_xu2wu")
 mesh = SubResource("SphereMesh_xrivr")
 
-[node name="FlappyMovementComponent" parent="." unique_id=2051407080 node_paths=PackedStringArray("MovementNode") instance=ExtResource("3_70ssn")]
+[node name="FlappyMovementComponent" parent="." unique_id=2051407080 node_paths=PackedStringArray("MovementNode") instance=ExtResource("3_gngwf")]
 min_walk_time = 0.25
 max_walk_time = 1.5
 min_wait_time = 0.0

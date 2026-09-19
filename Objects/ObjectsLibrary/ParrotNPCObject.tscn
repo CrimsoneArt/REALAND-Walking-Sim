@@ -1,33 +1,33 @@
 [gd_scene format=3 uid="uid://dud8gopm3hsxe"]
 
-[ext_resource type="Script" uid="uid://dkxweyao0waoj" path="res://Objects/NPCObject.gd" id="1_r3m8u"]
-[ext_resource type="Texture2D" uid="uid://bthgsay5kuhgq" path="res://Objects/ObjectsLibrary/ParrotCreature.png" id="2_jbgls"]
-[ext_resource type="PackedScene" uid="uid://dgnbip1xxg2e" path="res://Objects/ObjectComponents/NPCObjectAnimationStatePlayerComponent.tscn" id="3_14jhm"]
-[ext_resource type="PackedScene" uid="uid://cns6liybukkun" path="res://Objects/ObjectComponents/WanderingComponent.tscn" id="3_ryk0n"]
-[ext_resource type="PackedScene" uid="uid://dpsbpsqjc40vf" path="res://Objects/ObjectComponents/RandomAudioPlayer.tscn" id="4_dlhfy"]
-[ext_resource type="Script" uid="uid://buom1dm7hnqqu" path="res://Objects/ObjectComponents/NPCObjectAnimationState.gd" id="5_sk8uq"]
-[ext_resource type="AudioStream" uid="uid://d0ieip3s0qe1g" path="res://SFX/ParrotCreature1.mp3" id="5_xnj4b"]
-[ext_resource type="AudioStream" uid="uid://be4vbuef3yogv" path="res://SFX/ParrotCreature2.mp3" id="6_txtu7"]
-[ext_resource type="AudioStream" uid="uid://bnwr36bhnm2tw" path="res://SFX/ParrotCreature3.mp3" id="7_iyaj1"]
+[ext_resource type="Script" uid="uid://dkxweyao0waoj" path="res://Objects/NPCObject.gd" id="1_4v71v"]
+[ext_resource type="PackedScene" uid="uid://dgnbip1xxg2e" path="res://Objects/ObjectComponents/NPCObjectAnimationStatePlayerComponent.tscn" id="2_kee6j"]
+[ext_resource type="Texture2D" uid="uid://bthgsay5kuhgq" path="res://Objects/ObjectsLibrary/ParrotCreature.png" id="3_g6vnv"]
+[ext_resource type="PackedScene" uid="uid://dpsbpsqjc40vf" path="res://Objects/ObjectComponents/RandomAudioPlayer.tscn" id="4_mog21"]
+[ext_resource type="AudioStream" uid="uid://d0ieip3s0qe1g" path="res://SFX/ParrotCreature1.mp3" id="5_4km7s"]
+[ext_resource type="AudioStream" uid="uid://be4vbuef3yogv" path="res://SFX/ParrotCreature2.mp3" id="6_fvq0l"]
+[ext_resource type="AudioStream" uid="uid://bnwr36bhnm2tw" path="res://SFX/ParrotCreature3.mp3" id="7_dn33w"]
+[ext_resource type="PackedScene" uid="uid://cns6liybukkun" path="res://Objects/ObjectComponents/WanderingComponent.tscn" id="8_a6bnu"]
+[ext_resource type="Script" uid="uid://buom1dm7hnqqu" path="res://Objects/ObjectComponents/NPCObjectAnimationState.gd" id="9_fjjv5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xrivr"]
 radius = 0.75
 height = 2.75
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ryk0n"]
-atlas = ExtResource("2_jbgls")
+atlas = ExtResource("3_g6vnv")
 region = Rect2(0, 0, 69, 83)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_14jhm"]
-atlas = ExtResource("2_jbgls")
+atlas = ExtResource("3_g6vnv")
 region = Rect2(69, 0, 69, 83)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sk8uq"]
-atlas = ExtResource("2_jbgls")
+atlas = ExtResource("3_g6vnv")
 region = Rect2(0, 0, 69, 83)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dlhfy"]
-atlas = ExtResource("2_jbgls")
+atlas = ExtResource("3_g6vnv")
 region = Rect2(138, 0, 69, 83)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_14jhm"]
@@ -56,16 +56,16 @@ animations = [{
 }]
 
 [sub_resource type="Resource" id="Resource_dlhfy"]
-script = ExtResource("5_sk8uq")
+script = ExtResource("9_fjjv5")
 metadata/_custom_type_script = "uid://buom1dm7hnqqu"
 
 [sub_resource type="Resource" id="Resource_14jhm"]
-script = ExtResource("5_sk8uq")
+script = ExtResource("9_fjjv5")
 State = 1
 metadata/_custom_type_script = "uid://buom1dm7hnqqu"
 
 [node name="ParrotNPCObject" type="Node3D" unique_id=721190811 node_paths=PackedStringArray("MovementNode", "ActiveComponent")]
-script = ExtResource("1_r3m8u")
+script = ExtResource("1_4v71v")
 MovementNode = NodePath("CharacterBody3D")
 ActiveComponent = NodePath("WanderingComponent")
 amount_min = 1
@@ -78,7 +78,7 @@ metadata/_custom_type_script = "uid://dkxweyao0waoj"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.375, 0)
 shape = SubResource("CapsuleShape3D_xrivr")
 
-[node name="NPCObjectAnimationStatePlayerComponent" parent="CharacterBody3D" unique_id=1765613814 node_paths=PackedStringArray("movementComponent") instance=ExtResource("3_14jhm")]
+[node name="NPCObjectAnimationStatePlayerComponent" parent="CharacterBody3D" unique_id=1765613814 node_paths=PackedStringArray("movementComponent") instance=ExtResource("2_kee6j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.661495, 0)
 pixel_size = 0.04
 texture_filter = 0
@@ -86,15 +86,15 @@ sprite_frames = SubResource("SpriteFrames_14jhm")
 animation = &"Idle"
 movementComponent = NodePath("../../WanderingComponent")
 
-[node name="RandomAudioPlayer" parent="CharacterBody3D" unique_id=1452292652 instance=ExtResource("4_dlhfy")]
-SoundEffects = Array[AudioStream]([ExtResource("5_xnj4b"), ExtResource("6_txtu7"), ExtResource("7_iyaj1")])
+[node name="RandomAudioPlayer" parent="CharacterBody3D" unique_id=1452292652 instance=ExtResource("4_mog21")]
+SoundEffects = Array[AudioStream]([ExtResource("5_4km7s"), ExtResource("6_fvq0l"), ExtResource("7_dn33w")])
 MinPitch = 0.8
 MaxPitch = 1.2
 MinWaitTime = 0.0
 MaxWaitTime = 3.0
 
-[node name="WanderingComponent" parent="." unique_id=2005606164 node_paths=PackedStringArray("MovementNode") instance=ExtResource("3_ryk0n")]
+[node name="WanderingComponent" parent="." unique_id=2005606164 node_paths=PackedStringArray("MovementNode") instance=ExtResource("8_a6bnu")]
 max_walk_time = 6.0
 max_wait_time = 6.0
 MovementNode = NodePath("../CharacterBody3D")
-States = Array[ExtResource("5_sk8uq")]([SubResource("Resource_dlhfy"), SubResource("Resource_14jhm")])
+States = Array[ExtResource("9_fjjv5")]([SubResource("Resource_dlhfy"), SubResource("Resource_14jhm")])

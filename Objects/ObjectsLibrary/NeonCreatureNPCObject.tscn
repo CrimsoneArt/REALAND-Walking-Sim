@@ -1,109 +1,109 @@
 [gd_scene format=3 uid="uid://dd4aeaicji5c"]
 
-[ext_resource type="Script" uid="uid://d26oatdjeane1" path="res://Objects/ObjectsLibrary/NeonCreatureNPCObject.gd" id="1_8nhep"]
-[ext_resource type="Texture2D" uid="uid://1a7oparhcias" path="res://Objects/ObjectsLibrary/NeonCreatures.png" id="2_b07ps"]
-[ext_resource type="PackedScene" uid="uid://cns6liybukkun" path="res://Objects/ObjectComponents/WanderingComponent.tscn" id="3_8nhep"]
-[ext_resource type="PackedScene" uid="uid://cdnf6l5oawl3i" path="res://Objects/ObjectComponents/InteractabilityComponent.tscn" id="3_mscwe"]
-[ext_resource type="PackedScene" uid="uid://p6mtwgnviw1d" path="res://Objects/ObjectComponents/ObjectVariablesComponent.tscn" id="4_vc1qa"]
-[ext_resource type="Script" uid="uid://bjokdxs5441sl" path="res://Objects/ObjectComponents/ObjectVariableRule.gd" id="5_8onrp"]
+[ext_resource type="Script" uid="uid://d26oatdjeane1" path="res://Objects/ObjectsLibrary/NeonCreatureNPCObject.gd" id="1_ebppv"]
+[ext_resource type="Texture2D" uid="uid://1a7oparhcias" path="res://Objects/ObjectsLibrary/NeonCreatures.png" id="2_rbkt4"]
+[ext_resource type="PackedScene" uid="uid://cdnf6l5oawl3i" path="res://Objects/ObjectComponents/InteractabilityComponent.tscn" id="3_sl458"]
+[ext_resource type="PackedScene" uid="uid://cns6liybukkun" path="res://Objects/ObjectComponents/WanderingComponent.tscn" id="4_4rpaq"]
+[ext_resource type="PackedScene" uid="uid://p6mtwgnviw1d" path="res://Objects/ObjectComponents/ObjectVariablesComponent.tscn" id="5_0li4b"]
+[ext_resource type="Script" uid="uid://bjokdxs5441sl" path="res://Objects/ObjectComponents/ObjectVariableRule.gd" id="6_qkm74"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b07ps"]
 height = 2.2175293
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8nhep"]
-atlas = ExtResource("2_b07ps")
+atlas = ExtResource("2_rbkt4")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vc1qa"]
-atlas = ExtResource("2_b07ps")
+atlas = ExtResource("2_rbkt4")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8onrp"]
-atlas = ExtResource("2_b07ps")
+atlas = ExtResource("2_rbkt4")
 region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mscwe"]
-atlas = ExtResource("2_b07ps")
+atlas = ExtResource("2_rbkt4")
 region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b07ps"]
-atlas = ExtResource("2_b07ps")
+atlas = ExtResource("2_rbkt4")
 region = Rect2(0, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2uj6a"]
-atlas = ExtResource("2_b07ps")
+atlas = ExtResource("2_rbkt4")
 region = Rect2(16, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ty0aj"]
-atlas = ExtResource("2_b07ps")
+atlas = ExtResource("2_rbkt4")
 region = Rect2(32, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5u0bu"]
-atlas = ExtResource("2_b07ps")
+atlas = ExtResource("2_rbkt4")
 region = Rect2(48, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ve6c1"]
-atlas = ExtResource("2_b07ps")
+atlas = ExtResource("2_rbkt4")
 region = Rect2(0, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ffy0n"]
-atlas = ExtResource("2_b07ps")
+atlas = ExtResource("2_rbkt4")
 region = Rect2(16, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ngf0s"]
-atlas = ExtResource("2_b07ps")
+atlas = ExtResource("2_rbkt4")
 region = Rect2(32, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_er7y6"]
-atlas = ExtResource("2_b07ps")
+atlas = ExtResource("2_rbkt4")
 region = Rect2(48, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lvqwk"]
-atlas = ExtResource("2_b07ps")
+atlas = ExtResource("2_rbkt4")
 region = Rect2(0, 48, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lor3k"]
-atlas = ExtResource("2_b07ps")
+atlas = ExtResource("2_rbkt4")
 region = Rect2(16, 48, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pb7ar"]
-atlas = ExtResource("2_b07ps")
+atlas = ExtResource("2_rbkt4")
 region = Rect2(32, 48, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pkdr0"]
-atlas = ExtResource("2_b07ps")
+atlas = ExtResource("2_rbkt4")
 region = Rect2(48, 48, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1vbno"]
-atlas = ExtResource("2_b07ps")
+atlas = ExtResource("2_rbkt4")
 region = Rect2(0, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tprv5"]
-atlas = ExtResource("2_b07ps")
+atlas = ExtResource("2_rbkt4")
 region = Rect2(16, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xuf4g"]
-atlas = ExtResource("2_b07ps")
+atlas = ExtResource("2_rbkt4")
 region = Rect2(32, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_564de"]
-atlas = ExtResource("2_b07ps")
+atlas = ExtResource("2_rbkt4")
 region = Rect2(48, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2fa34"]
-atlas = ExtResource("2_b07ps")
+atlas = ExtResource("2_rbkt4")
 region = Rect2(0, 80, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p10qc"]
-atlas = ExtResource("2_b07ps")
+atlas = ExtResource("2_rbkt4")
 region = Rect2(16, 80, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_verbm"]
-atlas = ExtResource("2_b07ps")
+atlas = ExtResource("2_rbkt4")
 region = Rect2(32, 80, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h04fe"]
-atlas = ExtResource("2_b07ps")
+atlas = ExtResource("2_rbkt4")
 region = Rect2(48, 80, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xrivr"]
@@ -215,7 +215,7 @@ animations = [{
 radius = 3.453524
 
 [sub_resource type="Resource" id="Resource_8onrp"]
-script = ExtResource("5_8onrp")
+script = ExtResource("6_qkm74")
 variable_name = "NeonID"
 type = 1
 min_int = 1
@@ -223,7 +223,7 @@ max_int = 6
 metadata/_custom_type_script = "uid://bjokdxs5441sl"
 
 [node name="NeonCreatureNPCObject" type="Node3D" unique_id=1501179329 node_paths=PackedStringArray("MovementNode", "ActiveComponent", "objectVariablesComponent")]
-script = ExtResource("1_8nhep")
+script = ExtResource("1_ebppv")
 MovementNode = NodePath("CharacterBody3D")
 ActiveComponent = NodePath("WanderingComponent")
 objectVariablesComponent = NodePath("ObjectVariablesComponent")
@@ -246,14 +246,14 @@ texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_xrivr")
 animation = &"1"
 
-[node name="InteractabilityComponent" parent="CharacterBody3D" unique_id=500345398 instance=ExtResource("3_mscwe")]
+[node name="InteractabilityComponent" parent="CharacterBody3D" unique_id=500345398 instance=ExtResource("3_sl458")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D/InteractabilityComponent" unique_id=1386262179]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.10876465, 0)
 shape = SubResource("SphereShape3D_mscwe")
 debug_color = Color(0, 0, 0.69803923, 1)
 
-[node name="WanderingComponent" parent="." unique_id=2005606164 node_paths=PackedStringArray("MovementNode") instance=ExtResource("3_8nhep")]
+[node name="WanderingComponent" parent="." unique_id=2005606164 node_paths=PackedStringArray("MovementNode") instance=ExtResource("4_4rpaq")]
 min_walk_time = 5.0
 max_walk_time = 15.0
 min_wait_time = 0.01
@@ -261,8 +261,8 @@ max_wait_time = 0.1
 walking_speed = 3.9
 MovementNode = NodePath("../CharacterBody3D")
 
-[node name="ObjectVariablesComponent" parent="." unique_id=504571316 instance=ExtResource("4_vc1qa")]
+[node name="ObjectVariablesComponent" parent="." unique_id=504571316 instance=ExtResource("5_0li4b")]
 Variables = Dictionary[String, Variant]({
 "NeonID": 0
 })
-VariableRules = Array[ExtResource("5_8onrp")]([SubResource("Resource_8onrp")])
+VariableRules = Array[ExtResource("6_qkm74")]([SubResource("Resource_8onrp")])

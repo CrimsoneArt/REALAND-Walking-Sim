@@ -13,12 +13,12 @@ const Sensitivity = 0.03
 @onready var Head = $Head
 @onready var Camera = $Head/Camera3D
 @onready var InteractableChecker = $Head/RayCast3D
-@onready var PlayerUI = $PlayerUI
+@onready var PlayerUi = $PlayerUI
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	if get_node("/root/SceneLoader"):
-		PlayerUI.update_seed_label(get_node("/root/SceneLoader").get_dimension_seed())
+		PlayerUi.update_seed_label(get_node("/root/SceneLoader").get_dimension_seed())
 
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("Left"):
@@ -28,12 +28,12 @@ func _process(delta: float) -> void:
 	
 	if InteractableChecker.is_colliding():
 		var Collider = InteractableChecker.get_collider()
-		PlayerUI.change_cross_hair(CrossHair2)
+		PlayerUi.change_cross_hair(CrossHair2)
 		if Input.is_action_just_pressed("Enter"):
 			if Collider is InteractabilityComponent:
 				Collider.interact(self)
 	else:
-		PlayerUI.change_cross_hair(CrossHair1)
+		PlayerUi.change_cross_hair(CrossHair1)
 
 	if Input.is_action_just_pressed("PinchCheek"):
 		get_node("/root/SceneLoader").stop_music()
@@ -50,4 +50,10 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func show_dialouge(Dialouge:DialougeText):
-	PlayerUI.show_dialouge(Dialouge)
+	PlayerUi.show_dialouge(Dialouge)
+
+func gain_coin():
+	get_tree().paused = true
+	ColorBander.get_node("Control/AnimationPlayer").play("GainCoin")
+	await ColorBander.get_node("Control/AnimationPlayer").animation_finished
+	get_tree().paused = false

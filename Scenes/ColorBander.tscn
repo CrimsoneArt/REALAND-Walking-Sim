@@ -6,7 +6,21 @@
 shader = ExtResource("1_3fj5s")
 shader_parameter/step_size = 0.50000002375
 
+[sub_resource type="Animation" id="Animation_m40nq"]
+resource_name = "GainCoin"
+length = 2.0
+
+[sub_resource type="Animation" id="Animation_fxite"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vgfy0"]
+_data = {
+&"GainCoin": SubResource("Animation_m40nq"),
+&"RESET": SubResource("Animation_fxite")
+}
+
 [node name="CanvasLayer" type="CanvasLayer" unique_id=2026648265]
+process_mode = 3
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1416179095]
 material = SubResource("ShaderMaterial_e4b1c")
@@ -16,3 +30,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="Control" type="Control" parent="." unique_id=1164504233]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control" unique_id=1337575679]
+libraries/ = SubResource("AnimationLibrary_vgfy0")

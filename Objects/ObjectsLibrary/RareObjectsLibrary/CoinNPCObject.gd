@@ -7,3 +7,7 @@ func _on_timer_timeout() -> void:
 	$CharacterBody3D/MeshInstance3D.material_override.albedo_texture = load("res://Objects/ObjectsLibrary/RareObjectsLibrary/CoinNPCBall"+str(frames[frame])+".png")
 	frame += 1
 	frame = frame % frames.size()
+
+func _on_interactability_component_interacted(PlayerNode: Player) -> void:
+	$CharacterBody3D.look_at(PlayerNode.position)
+	PlayerNode.gain_coin()

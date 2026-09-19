@@ -38,3 +38,6 @@ func show_dialouge(Dialouge:DialougeText):
 func hide_dialouge():
 	DialougeBox.dissappear()
 	timer.queue_free()
+
+func play_coin_animation():
+	$AnimationPlayer.play("GainCoin")

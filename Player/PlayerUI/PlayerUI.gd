@@ -6,6 +6,9 @@ extends Control
 
 var timer: Timer
 
+func _ready() -> void:
+	update_coin_counter()
+
 func change_cross_hair(texture: Texture):
 	CrossHair.texture = texture
 
@@ -41,3 +44,15 @@ func hide_dialouge():
 
 func play_coin_animation():
 	$AnimationPlayer.play("GainCoin")
+
+func gain_coin():
+	get_node("/root/SceneLoader").Coins += 1
+	update_coin_counter()
+
+func update_coin_counter():
+	if get_node("/root/SceneLoader").Coins > 0:
+		$CoinLabel.text = "  x " + str(get_node("/root/SceneLoader").Coins)
+		$Coin.visible = true
+	else:
+		$CoinLabel.text = ""
+		$Coin.visible = false

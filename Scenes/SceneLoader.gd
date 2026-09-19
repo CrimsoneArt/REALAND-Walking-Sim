@@ -7,6 +7,8 @@ var DimensionNode
 
 var Songs: Array = []
 
+var Coins = 0
+
 func readJSON(json_file_path:String):
 	var file = FileAccess.open(json_file_path, FileAccess.READ)
 	var content = file.get_as_text()

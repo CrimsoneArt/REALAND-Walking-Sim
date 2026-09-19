@@ -53,6 +53,7 @@ func show_dialouge(Dialouge:DialougeText):
 	PlayerUi.show_dialouge(Dialouge)
 
 func gain_coin():
+	$PlayerUI.gain_coin()
 	get_tree().paused = true
 	ColorBander.get_node("Control/AnimationPlayer").play("GainCoin")
 	await ColorBander.get_node("Control/AnimationPlayer").animation_finished

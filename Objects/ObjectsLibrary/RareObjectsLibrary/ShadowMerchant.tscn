@@ -196,7 +196,6 @@ MovementNode = NodePath("CharacterBody3D")
 ActiveComponent = NodePath("WanderComponent")
 amount_min = 1
 amount_max = 2
-ChanceOfAppearing = 8.0
 metadata/_custom_type_script = "uid://dkxweyao0waoj"
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1141911591]
@@ -207,7 +206,7 @@ pixel_size = 0.015
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_2wcfr")
 autoplay = "default"
-frame_progress = 0.6596206
+frame_progress = 0.78618985
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1171255170]
 shape = SubResource("CapsuleShape3D_0e4hf")

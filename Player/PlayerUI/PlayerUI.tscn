@@ -3,8 +3,11 @@
 [ext_resource type="Script" uid="uid://hqoe6ybdt4yw" path="res://Player/PlayerUI/PlayerUI.gd" id="1_tts8b"]
 [ext_resource type="Texture2D" uid="uid://bb5g8lv7qbwdv" path="res://Player/PlayerUI/CrossHair1.png" id="2_eai1t"]
 [ext_resource type="PackedScene" uid="uid://glnssl8bcg2t" path="res://Scenes/Menus/RandomizedButton.tscn" id="3_m40nq"]
+[ext_resource type="FontFile" uid="uid://bj5tahtxfui2r" path="res://Scenes/Menus/Fonts/1.otf" id="4_fxite"]
+[ext_resource type="Texture2D" uid="uid://cojkoavikuhpl" path="res://Scenes/CoinAnimation.png" id="5_oykui"]
 
 [node name="PlayerUI" type="Control" unique_id=676471365]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -29,14 +32,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_eai1t")
 
-[node name="SeedLabel" type="Label" parent="." unique_id=1230725323]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 12
-text = "Seed : "
-
 [node name="DialougeBox" parent="." unique_id=1019148459 instance=ExtResource("3_m40nq")]
 layout_mode = 1
 anchors_preset = 8
@@ -55,3 +50,45 @@ pivot_offset = Vector2(108, 30)
 mouse_filter = 2
 theme_override_font_sizes/font_size = 24
 StartingTargetScale = Vector2(0, 0)
+
+[node name="SeedLabel" type="Label" parent="." unique_id=1230725323]
+texture_filter = 1
+layout_mode = 1
+offset_right = 133.0
+offset_bottom = 36.0
+offset_transform_enabled = true
+offset_transform_position = Vector2(15, 0)
+theme_override_colors/font_shadow_color = Color(0, 0, 0.5686275, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("4_fxite")
+theme_override_font_sizes/font_size = 12
+text = "Seed : "
+vertical_alignment = 1
+
+[node name="CoinLabel" type="Label" parent="." unique_id=1967227474]
+texture_filter = 1
+layout_mode = 1
+offset_top = 31.0
+offset_right = 133.0
+offset_bottom = 67.0
+offset_transform_enabled = true
+offset_transform_position = Vector2(30, 0)
+theme_override_colors/font_shadow_color = Color(0, 0, 0.5686275, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("4_fxite")
+theme_override_font_sizes/font_size = 12
+text = "  x 1"
+vertical_alignment = 1
+
+[node name="Coin" type="Sprite2D" parent="." unique_id=999245376]
+visible = false
+texture_filter = 1
+position = Vector2(28.000002, 49)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("5_oykui")

@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://d347byqx522x5" path="res://Materials/Props/WaterCooler1Sided.tscn" id="5_h3f5y"]
 [ext_resource type="PackedScene" uid="uid://cdnf6l5oawl3i" path="res://Objects/ObjectComponents/InteractabilityComponent.tscn" id="6_xp681"]
 [ext_resource type="PackedScene" uid="uid://cew3wwjvvnui1" path="res://Scenes/HubWorld.tscn" id="7_du3ut"]
+[ext_resource type="PackedScene" uid="uid://c1fxuilteqida" path="res://Scenes/AutomaticMusicPlayer.tscn" id="8_abl07"]
+[ext_resource type="AudioStream" uid="uid://cyneg1qkct1di" path="res://SFX/Music/man.wav" id="9_buc60"]
 
 [sub_resource type="Environment" id="Environment_ghvkk"]
 background_mode = 2
@@ -138,3 +140,6 @@ TargetScene = ExtResource("7_du3ut")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractabilityComponent" unique_id=42359531]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, 5.5)
 shape = SubResource("BoxShape3D_xp681")
+
+[node name="AutomaticMusicPlayer" parent="." unique_id=177518372 instance=ExtResource("8_abl07")]
+Song = ExtResource("9_buc60")

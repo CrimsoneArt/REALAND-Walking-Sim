@@ -22,6 +22,8 @@
 [ext_resource type="Texture2D" uid="uid://kwj7jwufhwqj" path="res://Materials/Props/TrainPoster2.png" id="18_buyyv"]
 [ext_resource type="Texture2D" uid="uid://bs2in56c0vemi" path="res://Materials/Props/TrainModelTexture1.png" id="20_ay0ib"]
 [ext_resource type="Texture2D" uid="uid://jupwijswvre" path="res://Materials/Props/TrainModelTexture2.png" id="21_h2qrk"]
+[ext_resource type="PackedScene" uid="uid://c1fxuilteqida" path="res://Scenes/AutomaticMusicPlayer.tscn" id="23_4gxbs"]
+[ext_resource type="AudioStream" uid="uid://idyejc60dc45" path="res://SFX/Music/TrainStation.wav" id="24_3luxp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_buyyv"]
 albedo_texture = ExtResource("4_qkbcf")
@@ -643,6 +645,9 @@ material = SubResource("StandardMaterial3D_cnani")
 
 [node name="TrainTimer" type="Timer" parent="." unique_id=1572140085]
 wait_time = 7.75
+
+[node name="AutomaticMusicPlayer" parent="." unique_id=177518372 instance=ExtResource("23_4gxbs")]
+Song = ExtResource("24_3luxp")
 
 [connection signal="Interacted" from="InteractabilityComponent" to="." method="_on_interactability_component_interacted"]
 [connection signal="timeout" from="TrainTimer" to="." method="_on_train_timer_timeout"]

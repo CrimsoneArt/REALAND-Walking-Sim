@@ -71,7 +71,13 @@ func load_dimension_scene(DimensionSeed:int):
 	
 	for material in AssetsChosen["Materials"]:
 		for i in range(0,5):
-			Mood[i] = lerp(Mood[i],MoodData["Materials"][material][i],0.2	)
+			Mood[i] = lerp(Mood[i],MoodData["Materials"][material][i],0.2)
+	
+	Mood[0] *= 1.13
+	Mood[1] *= 1.13
+	Mood[2] *= 0.99
+	Mood[3] *= 1.13
+	Mood[4] *= 0.99
 	
 	var Song = find_most_similar(MoodData["Music"],Mood)
 	
@@ -95,7 +101,7 @@ func find_most_similar(dict: Dictionary, target: Array[float]) -> String:
 		if distance < lowest_distance:
 			lowest_distance = distance
 			best_key = str(key)
-			
+	
 	return best_key
 
 func get_dimension_seed():

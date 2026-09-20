@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c1fxuilteqida"]
+
+[ext_resource type="Script" uid="uid://b6x27iiomaeer" path="res://Scenes/AutomaticMusicPlayer.gd" id="1_xpo3v"]
+
+[node name="AutomaticMusicPlayer" type="Node" unique_id=177518372]
+script = ExtResource("1_xpo3v")

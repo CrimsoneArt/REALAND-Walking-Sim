@@ -73,10 +73,10 @@ func load_dimension_scene(DimensionSeed:int):
 		for i in range(0,5):
 			Mood[i] = lerp(Mood[i],MoodData["Materials"][material][i],0.2)
 	
-	Mood[0] *= 1.13
-	Mood[1] *= 1.13
-	Mood[2] *= 0.99
-	Mood[3] *= 1.13
+	Mood[0] *= 1.15
+	Mood[1] *= 1.12
+	Mood[2] *= 0.98
+	Mood[3] *= 1.11
 	Mood[4] *= 0.99
 	
 	var Song = find_most_similar(MoodData["Music"],Mood)

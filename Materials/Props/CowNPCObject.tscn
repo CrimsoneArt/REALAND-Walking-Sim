@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d3xcho72e4ggt"]
 
-[ext_resource type="Script" uid="uid://dw1fuyj7jasj0" path="res://Objects/ObjectsLibrary/CowNPCObject.gd" id="1_3f6tu"]
+[ext_resource type="Script" uid="uid://dw1fuyj7jasj0" path="res://Materials/Props/CowNPCObject.gd" id="1_3f6tu"]
 [ext_resource type="Texture2D" uid="uid://bv86wwf0grrc1" path="res://Materials/DimensionMaterials/Flowers1.png" id="2_xnf6v"]
 [ext_resource type="PackedScene" uid="uid://cns6liybukkun" path="res://Objects/ObjectComponents/WanderingComponent.tscn" id="3_03cy6"]
 

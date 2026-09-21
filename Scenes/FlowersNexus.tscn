@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://royje8y7hp6f" path="res://Materials/Props/WaterCooler.tscn" id="7_x22fe"]
 [ext_resource type="PackedScene" uid="uid://dwqol8w28tgyb" path="res://Objects/Door/DoorObject.tscn" id="8_x8bku"]
 [ext_resource type="Script" uid="uid://cbgpvmrkx1dw3" path="res://Objects/ObjectComponents/ObjectVariablesComponent.gd" id="9_q53a6"]
+[ext_resource type="PackedScene" uid="uid://c1fxuilteqida" path="res://Scenes/AutomaticMusicPlayer.tscn" id="10_0hpjf"]
+[ext_resource type="AudioStream" uid="uid://dt2r68st6uvpv" path="res://SFX/Music/Nexus.wav" id="11_2brqd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u285j"]
 shading_mode = 0
@@ -164,3 +166,7 @@ Variables = Dictionary[String, Variant]({
 "SpriteNumber": 1
 })
 metadata/_custom_type_script = "uid://cbgpvmrkx1dw3"
+
+[node name="AutomaticMusicPlayer" parent="." unique_id=177518372 instance=ExtResource("10_0hpjf")]
+Song = ExtResource("11_2brqd")
+VolumeDB = 4.0

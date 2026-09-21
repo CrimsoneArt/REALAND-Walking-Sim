@@ -114,6 +114,7 @@ albedo_color = Color(1, 1, 1, 0)
 
 [node name="AutomaticMusicPlayer" parent="." unique_id=177518372 instance=ExtResource("1_g8hmk")]
 Song = ExtResource("2_7bvn5")
+VolumeDB = -12.5
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=226985734]
 use_collision = true

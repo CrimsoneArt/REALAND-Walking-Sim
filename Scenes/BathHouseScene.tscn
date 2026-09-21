@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://dgxc0wvrxksyd" path="res://Materials/Props/Paintings2.png" id="11_uu1jy"]
 [ext_resource type="Texture2D" uid="uid://bgujast7hwk2e" path="res://Materials/Props/Paintings3.png" id="12_pybu5"]
 [ext_resource type="Script" uid="uid://cbgpvmrkx1dw3" path="res://Objects/ObjectComponents/ObjectVariablesComponent.gd" id="12_rqume"]
+[ext_resource type="PackedScene" uid="uid://c1fxuilteqida" path="res://Scenes/AutomaticMusicPlayer.tscn" id="17_am5ux"]
 
 [node name="BathHouseScene" type="Node3D" unique_id=223852037]
 
@@ -323,3 +324,5 @@ Variables = Dictionary[String, Variant]({
 "SpriteNumber": 8
 })
 metadata/_custom_type_script = "uid://cbgpvmrkx1dw3"
+
+[node name="AutomaticMusicPlayer" parent="." unique_id=177518372 instance=ExtResource("17_am5ux")]

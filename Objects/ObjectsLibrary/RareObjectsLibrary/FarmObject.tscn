@@ -20,7 +20,7 @@ metadata/_custom_type_script = "uid://dpoxk86q0vc0o"
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1588478968]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 use_collision = true
-size = Vector3(4, 3, 4)
+size = Vector3(4, 3, 5)
 material = ExtResource("2_vnx46")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1198738667]
@@ -40,5 +40,5 @@ shape = SubResource("SphereShape3D_oiocr")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 stream = ExtResource("5_yisqf")
 volume_db = 8.972
-unit_size = 2.53
+unit_size = 1.0
 autoplay = true

@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://igw0ct71j4e2" path="res://Player/Player.tscn" id="2_fxrh3"]
 [ext_resource type="PackedScene" uid="uid://dwqol8w28tgyb" path="res://Objects/Door/DoorObject.tscn" id="3_fxrh3"]
 [ext_resource type="PackedScene" uid="uid://p6mtwgnviw1d" path="res://Objects/ObjectComponents/ObjectVariablesComponent.tscn" id="4_avdaa"]
+[ext_resource type="PackedScene" uid="uid://c1fxuilteqida" path="res://Scenes/AutomaticMusicPlayer.tscn" id="6_e4i4x"]
+[ext_resource type="AudioStream" uid="uid://dt2r68st6uvpv" path="res://SFX/Music/Nexus.wav" id="7_5k8fv"]
 
 [node name="HubWorld" type="Node3D" unique_id=31661345]
 script = ExtResource("1_3jcx2")
@@ -108,6 +110,10 @@ Variables = Dictionary[String, Variant]({
 "SpriteHeight": 2.88,
 "SpriteNumber": 8
 })
+
+[node name="AutomaticMusicPlayer" parent="." unique_id=177518372 instance=ExtResource("6_e4i4x")]
+Song = ExtResource("7_5k8fv")
+VolumeDB = 4.0
 
 [connection signal="opened" from="DoorObject1" to="." method="door_opened"]
 [connection signal="opened" from="DoorObject2" to="." method="door_opened"]

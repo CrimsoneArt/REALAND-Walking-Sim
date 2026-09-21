@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://q23anu70r6xo"]
+
+[ext_resource type="Texture2D" uid="uid://bv86wwf0grrc1" path="res://Materials/DimensionMaterials/Flowers1.png" id="1_1soe8"]
+
+[resource]
+shading_mode = 0
+albedo_color = Color(0.39607844, 0.21176471, 0.48235294, 1)
+albedo_texture = ExtResource("1_1soe8")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+texture_filter = 0

@@ -22,8 +22,12 @@
 [ext_resource type="Texture2D" uid="uid://kwj7jwufhwqj" path="res://Materials/Props/TrainPoster2.png" id="18_buyyv"]
 [ext_resource type="Texture2D" uid="uid://bs2in56c0vemi" path="res://Materials/Props/TrainModelTexture1.png" id="20_ay0ib"]
 [ext_resource type="Texture2D" uid="uid://jupwijswvre" path="res://Materials/Props/TrainModelTexture2.png" id="21_h2qrk"]
+[ext_resource type="Texture2D" uid="uid://dk5x8aatqkwev" path="res://Materials/Props/TrainPoster3.png" id="21_op5cx"]
 [ext_resource type="PackedScene" uid="uid://c1fxuilteqida" path="res://Scenes/AutomaticMusicPlayer.tscn" id="23_4gxbs"]
 [ext_resource type="AudioStream" uid="uid://idyejc60dc45" path="res://SFX/Music/TrainStation.wav" id="24_3luxp"]
+[ext_resource type="Script" uid="uid://dkxweyao0waoj" path="res://Objects/NPCObject.gd" id="25_6pxvm"]
+[ext_resource type="Texture2D" uid="uid://80i37a5wj7kx" path="res://Materials/Props/BirthdayBoy-Sheet.png" id="25_x0k48"]
+[ext_resource type="PackedScene" uid="uid://cns6liybukkun" path="res://Objects/ObjectComponents/WanderingComponent.tscn" id="26_hl2xk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_buyyv"]
 albedo_texture = ExtResource("4_qkbcf")
@@ -359,6 +363,38 @@ shading_mode = 0
 albedo_texture = ExtResource("21_h2qrk")
 texture_filter = 0
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_x0k48"]
+radius = 1.2075568
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lkm8w"]
+atlas = ExtResource("25_x0k48")
+region = Rect2(0, 0, 156, 154)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q11jm"]
+atlas = ExtResource("25_x0k48")
+region = Rect2(156, 0, 156, 154)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjj4u"]
+atlas = ExtResource("25_x0k48")
+region = Rect2(312, 0, 156, 154)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xrivr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lkm8w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q11jm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjj4u")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 8.0
+}]
+
 [node name="TrainStationScene" type="Node3D" unique_id=976321024]
 script = ExtResource("1_wo1um")
 
@@ -623,6 +659,11 @@ pixel_size = 0.015
 texture_filter = 0
 texture = ExtResource("18_buyyv")
 
+[node name="Sprite3D3" type="Sprite3D" parent="." unique_id=1237138876]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9043922, 1.842062, -2.2216806)
+texture_filter = 0
+texture = ExtResource("21_op5cx")
+
 [node name="InteractabilityComponent" parent="." unique_id=1391763811 instance=ExtResource("10_rajsn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.091322, 0, 2.2916787)
 
@@ -648,6 +689,29 @@ wait_time = 7.75
 
 [node name="AutomaticMusicPlayer" parent="." unique_id=177518372 instance=ExtResource("23_4gxbs")]
 Song = ExtResource("24_3luxp")
+
+[node name="BirthdayBoy" type="Node3D" parent="." unique_id=343730063 node_paths=PackedStringArray("MovementNode", "ActiveComponent")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29, -1, 3)
+script = ExtResource("25_6pxvm")
+MovementNode = NodePath("CharacterBody3D")
+ActiveComponent = NodePath("CharacterBody3D/WanderingComponent")
+metadata/_custom_type_script = "uid://dkxweyao0waoj"
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="BirthdayBoy" unique_id=2118283612]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BirthdayBoy/CharacterBody3D" unique_id=366652288]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.26512837, 0)
+shape = SubResource("SphereShape3D_x0k48")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="BirthdayBoy/CharacterBody3D" unique_id=892092331]
+pixel_size = 0.02
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_xrivr")
+autoplay = "default"
+frame_progress = 0.22936504
+
+[node name="WanderingComponent" parent="BirthdayBoy/CharacterBody3D" unique_id=2005606164 node_paths=PackedStringArray("MovementNode") instance=ExtResource("26_hl2xk")]
+MovementNode = NodePath("..")
 
 [connection signal="Interacted" from="InteractabilityComponent" to="." method="_on_interactability_component_interacted"]
 [connection signal="timeout" from="TrainTimer" to="." method="_on_train_timer_timeout"]

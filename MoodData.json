@@ -11,7 +11,7 @@
 		"res://SFX/Music/MusicLibrary/Scary Forest.wav":[0.0,0.6,0.9,0.1,0.9],
 		"res://SFX/Music/MusicLibrary/Scary Snowy.wav":[0.0,1.0,0.5,0.0,1.0],
 		"res://SFX/Music/MusicLibrary/Weird Shepard Tone.wav":[0.5,0.0,0.0,0.8,0.5],
-		"res://SFX/Music/MusicLibrary/Whale Song.wav":[0.5,0.0,0.1,0.0,0.75],
+		"res://SFX/Music/MusicLibrary/Whale Song.wav":[0.5,0.8,0.2,0.0,0.6],
 	},
 	"SkyBoxes":{
 		"res://Scenes/SkyBoxes/DimensionSkyboxes/SkyBox1.png":[0.9,0.0,0.0,1.0,0.0],
@@ -37,5 +37,7 @@
 		"res://Materials/DimensionMaterials/Patterns5.tres":[0.0,0.0,0.0,1.0,0.9],
 		"res://Materials/DimensionMaterials/Patterns6.tres":[0.5,0.5,0.1,1.0,0.9],
 		"res://Materials/DimensionMaterials/Patterns7.tres":[1.0,1.0,0.0,1.0,0.0],
+		"res://Materials/DimensionMaterials/Wing Ding Uboa Im Scared 1225 CBA ARG Doctor Nowhere Cataloge Slender Basics.tres":[1.0,1.0,1.0,1.0,1.0],
+		"res://Materials/DimensionMaterials/Water1.tres":[0.5,0.5,0.1,0.1,0.1],
 	}
 }

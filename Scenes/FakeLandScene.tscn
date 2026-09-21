@@ -5,6 +5,7 @@
 [ext_resource type="Material" uid="uid://l4ro33mu0bdc" path="res://Materials/FakeLand2.tres" id="3_1i74k"]
 [ext_resource type="PackedScene" uid="uid://cfqcueih77i7x" path="res://Materials/Props/FakeLandCitizen.tscn" id="4_vnagb"]
 [ext_resource type="Texture2D" uid="uid://bys01w76yycms" path="res://Materials/Props/WelcomeToFakeLandSign.png" id="5_ljt7t"]
+[ext_resource type="PackedScene" uid="uid://c1fxuilteqida" path="res://Scenes/AutomaticMusicPlayer.tscn" id="6_n7c0g"]
 
 [sub_resource type="Environment" id="Environment_xrivr"]
 background_mode = 1
@@ -121,3 +122,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.120941, 0)
 flip_faces = true
 size = Vector3(96.305664, 36.648987, 97.0979)
 material = SubResource("StandardMaterial3D_ljt7t")
+
+[node name="AutomaticMusicPlayer" parent="." unique_id=177518372 instance=ExtResource("6_n7c0g")]

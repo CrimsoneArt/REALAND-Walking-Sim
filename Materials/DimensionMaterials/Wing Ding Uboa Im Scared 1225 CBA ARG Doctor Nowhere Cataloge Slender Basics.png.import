@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ch0io2masgpgt"
-path.s3tc="res://.godot/imported/SkyBox3.png-5cafa1950457d9264eed36614842e116.s3tc.ctex"
+uid="uid://dxqwfqob8udsy"
+path="res://.godot/imported/Wing Ding Uboa Im Scared 1225 CBA ARG Doctor Nowhere Cataloge Slender Basics.png-913235abf60ff034f7aeac584a5de30b.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/SkyBoxes/DimensionSkyboxes/SkyBox3.png"
-dest_files=["res://.godot/imported/SkyBox3.png-5cafa1950457d9264eed36614842e116.s3tc.ctex"]
+source_file="res://Materials/DimensionMaterials/Wing Ding Uboa Im Scared 1225 CBA ARG Doctor Nowhere Cataloge Slender Basics.png"
+dest_files=["res://.godot/imported/Wing Ding Uboa Im Scared 1225 CBA ARG Doctor Nowhere Cataloge Slender Basics.png-913235abf60ff034f7aeac584a5de30b.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

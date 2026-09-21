@@ -1,15 +1,8 @@
 [gd_scene format=3 uid="uid://d3xcho72e4ggt"]
 
 [ext_resource type="Script" uid="uid://dw1fuyj7jasj0" path="res://Materials/Props/CowNPCObject.gd" id="1_3f6tu"]
-[ext_resource type="Texture2D" uid="uid://bv86wwf0grrc1" path="res://Materials/DimensionMaterials/Flowers1.png" id="2_xnf6v"]
+[ext_resource type="Material" uid="uid://baynts4is41jn" path="res://Materials/Cow.tres" id="2_eljkc"]
 [ext_resource type="PackedScene" uid="uid://cns6liybukkun" path="res://Objects/ObjectComponents/WanderingComponent.tscn" id="3_03cy6"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wuutn"]
-shading_mode = 0
-albedo_color = Color(0.39607844, 0.21176471, 0.48235294, 1)
-albedo_texture = ExtResource("2_xnf6v")
-uv1_scale = Vector3(0.5, 0.5, 0.5)
-texture_filter = 0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_idy7w"]
 size = Vector3(4.5, 4.25, 4.25)
@@ -27,7 +20,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5807843, 0)
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="CharacterBody3D" unique_id=1261537088]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, -1.5807844, 0)
-material_override = SubResource("StandardMaterial3D_wuutn")
+material_override = ExtResource("2_eljkc")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CharacterBody3D/CSGCombiner3D" unique_id=741004586]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.375, 0)

@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ch0io2masgpgt"
-path.s3tc="res://.godot/imported/SkyBox3.png-5cafa1950457d9264eed36614842e116.s3tc.ctex"
+uid="uid://c0dcwkg2p0rs"
+path="res://.godot/imported/Farmer1.png-f436a080e63a2ad1fdca0823efee0628.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/SkyBoxes/DimensionSkyboxes/SkyBox3.png"
-dest_files=["res://.godot/imported/SkyBox3.png-5cafa1950457d9264eed36614842e116.s3tc.ctex"]
+source_file="res://Materials/Props/Farmer1.png"
+dest_files=["res://.godot/imported/Farmer1.png-f436a080e63a2ad1fdca0823efee0628.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

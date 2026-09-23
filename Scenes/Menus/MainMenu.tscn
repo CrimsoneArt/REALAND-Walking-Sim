@@ -3,6 +3,8 @@
 [ext_resource type="Shader" uid="uid://cxl5m7cwrixg5" path="res://Materials/Scroll.gdshader" id="1_hqtmt"]
 [ext_resource type="PackedScene" uid="uid://glnssl8bcg2t" path="res://Scenes/Menus/RandomizedButton.tscn" id="1_v3fht"]
 [ext_resource type="Texture2D" uid="uid://d2easpdp2w8s7" path="res://Scenes/Menus/BGMneu.png" id="2_b42ut"]
+[ext_resource type="PackedScene" uid="uid://c1fxuilteqida" path="res://Scenes/AutomaticMusicPlayer.tscn" id="4_tfrft"]
+[ext_resource type="AudioStream" uid="uid://bvkx1u3rm4xq" path="res://SFX/Music/MainMenuOST2.wav" id="5_uv623"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b42ut"]
 shader = ExtResource("1_hqtmt")
@@ -30,41 +32,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_b42ut")
 stretch_mode = 1
-
-[node name="RandomizedButton" parent="." unique_id=1019148459 instance=ExtResource("1_v3fht")]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -108.0
-offset_top = 66.0
-offset_right = 108.0
-offset_bottom = 148.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 48
-text = "Play"
-EnterTargetScene = true
-TargetScenePath = "res://Scenes/HubWorld.tscn"
-
-[node name="RandomizedButton2" parent="." unique_id=680655530 instance=ExtResource("1_v3fht")]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -108.0
-offset_top = 167.0
-offset_right = 108.0
-offset_bottom = 249.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 48
-text = "Exit"
-ForceQuit = true
 
 [node name="RandomizedButton3" parent="." unique_id=671396378 instance=ExtResource("1_v3fht")]
 layout_mode = 1
@@ -99,3 +66,46 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_font_sizes/font_size = 30
 text = "Walking Sim"
+
+[node name="RandomizedButton" parent="." unique_id=1019148459 instance=ExtResource("1_v3fht")]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 0
+offset_left = 471.0
+offset_top = 360.5
+offset_right = 681.0
+offset_bottom = 435.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "Play"
+EnterTargetScene = true
+TargetScenePath = "res://Scenes/HubWorld.tscn"
+
+[node name="RandomizedButton2" parent="." unique_id=680655530 instance=ExtResource("1_v3fht")]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 0
+offset_left = 471.0
+offset_top = 439.5
+offset_right = 681.0
+offset_bottom = 514.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "Help"
+EnterTargetScene = true
+TargetScenePath = "res://Scenes/Menus/HelpMenu1.tscn"
+
+[node name="RandomizedButton5" parent="." unique_id=549826396 instance=ExtResource("1_v3fht")]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 0
+offset_left = 471.0
+offset_top = 518.5
+offset_right = 681.0
+offset_bottom = 593.5
+theme_override_font_sizes/font_size = 48
+text = "Exit"
+ForceQuit = true
+
+[node name="AutomaticMusicPlayer" parent="." unique_id=177518372 instance=ExtResource("4_tfrft")]
+Song = ExtResource("5_uv623")
+VolumeDB = -2.5

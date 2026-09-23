@@ -1,10 +1,21 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://dqbgfrsl3k6io"]
 
 [ext_resource type="Texture2D" uid="uid://bfa64uolou3qh" path="res://Materials/DimensionMaterials/Water1.png" id="1_ji50x"]
+[ext_resource type="Shader" uid="uid://t6kw7ja7s2st" path="res://Materials/3DScroll.gdshader" id="2_tgxew"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tjk1n"]
+render_priority = 0
+shader = ExtResource("2_tgxew")
+shader_parameter/albedo_texture = ExtResource("1_ji50x")
+shader_parameter/scroll_speed = Vector2(0.4, 0.4)
+shader_parameter/uv_scale = Vector3(1, 1, 1)
 
 [resource]
+next_pass = SubResource("ShaderMaterial_tjk1n")
 shading_mode = 0
 albedo_texture = ExtResource("1_ji50x")
 uv1_scale = Vector3(0.5, 0.5, 0.5)
 uv1_triplanar = true
 texture_filter = 0
+grow = true
+grow_amount = -0.66

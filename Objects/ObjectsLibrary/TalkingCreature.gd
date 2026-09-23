@@ -17,10 +17,11 @@ const Words = [
 	"End",
 	"We",
 	"I",
-	"You",
+	"Xolotl",
 	"Land",
 	"Fake",
 	"Real",
+	"Have",
 ]
 
 func _on_interactability_component_interacted(PlayerNode: Player) -> void:

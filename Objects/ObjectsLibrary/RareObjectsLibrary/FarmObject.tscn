@@ -13,7 +13,7 @@ radius = 6.0
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 script = ExtResource("1_hlyco")
 amount_min = 4
-amount_max = 6
+amount_max = 7
 ChanceOfAppearing = 4.5
 metadata/_custom_type_script = "uid://dpoxk86q0vc0o"
 

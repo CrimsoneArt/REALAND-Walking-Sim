@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://cdlkso2oolsbt"]
+
+[ext_resource type="Theme" uid="uid://b7kflq6d2hgvi" path="res://Scenes/Menus/HelpMenuStyle/HelpMenuTheme.tres" id="1_1ktfo"]
+[ext_resource type="PackedScene" uid="uid://glnssl8bcg2t" path="res://Scenes/Menus/RandomizedButton.tscn" id="1_anil8"]
+[ext_resource type="AudioStream" uid="uid://dqicr3kdbg0bu" path="res://SFX/Twinkle1.wav" id="2_inpae"]
+[ext_resource type="PackedScene" uid="uid://c1fxuilteqida" path="res://Scenes/AutomaticMusicPlayer.tscn" id="3_5hjj6"]
+
+[node name="HelpMenu1" type="Control" unique_id=443272670]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_1ktfo")
+
+[node name="RandomizedButton" parent="." unique_id=1019148459 instance=ExtResource("1_anil8")]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 0
+offset_left = 471.0
+offset_top = 360.5
+offset_right = 681.0
+offset_bottom = 435.5
+pivot_offset = Vector2(105, 37.5)
+theme = ExtResource("1_1ktfo")
+text = "Next"
+EnterTargetScene = true
+TargetScenePath = "res://Scenes/Menus/HelpMenu2.tscn"
+CustomThemeOverride = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1784018341]
+stream = ExtResource("2_inpae")
+volume_db = 5.0
+autoplay = true
+
+[node name="Label" type="Label" parent="." unique_id=905836961]
+layout_mode = 0
+offset_left = 290.0
+offset_top = 59.0
+offset_right = 965.0
+offset_bottom = 301.0
+text = "W - Move forwards
+S - Move backwards
+A - Rotate camera left
+D - Rotate camera right
+
+T - Return to nexus
+
+Enter - Interact "
+
+[node name="AutomaticMusicPlayer" parent="." unique_id=177518372 instance=ExtResource("3_5hjj6")]

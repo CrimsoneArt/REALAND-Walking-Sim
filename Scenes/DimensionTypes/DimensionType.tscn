@@ -1,12 +1,6 @@
 [gd_scene format=3 uid="uid://b6qsxup4bxtof"]
 
 [ext_resource type="Script" uid="uid://bepr8n1natohq" path="res://Scenes/DimensionTypes/DimensionType.gd" id="1_tjk1n"]
-[ext_resource type="Material" uid="uid://dqbgfrsl3k6io" path="res://Materials/DimensionMaterials/Water1.tres" id="2_t21e8"]
 
 [node name="DimensionType" type="Node3D" unique_id=1288631717]
 script = ExtResource("1_tjk1n")
-
-[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=267508685]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1, 0)
-size = Vector3(4, 3, 1)
-material = ExtResource("2_t21e8")

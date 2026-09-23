@@ -1,7 +1,7 @@
 shader_type spatial;
 uniform float scroll_speed = 0.08;
 
-uniform sampler2D image : source_color;
+uniform sampler2D image : hint_screen_texture;
 
 void fragment()
 {

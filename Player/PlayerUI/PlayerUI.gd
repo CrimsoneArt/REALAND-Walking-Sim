@@ -50,9 +50,10 @@ func gain_coin():
 	update_coin_counter()
 
 func update_coin_counter():
-	if get_node("/root/SceneLoader").Coins > 0:
-		$CoinLabel.text = "  x " + str(get_node("/root/SceneLoader").Coins)
-		$Coin.visible = true
-	else:
-		$CoinLabel.text = ""
-		$Coin.visible = false
+	if get_node("/root/SceneLoader") != null:
+		if get_node("/root/SceneLoader").Coins > 0:
+			$CoinLabel.text = "  x " + str(get_node("/root/SceneLoader").Coins)
+			$Coin.visible = true
+		else:
+			$CoinLabel.text = ""
+			$Coin.visible = false

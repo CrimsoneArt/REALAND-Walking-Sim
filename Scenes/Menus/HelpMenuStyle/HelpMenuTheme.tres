@@ -1,0 +1,21 @@
+[gd_resource type="Theme" format=3 uid="uid://b7kflq6d2hgvi"]
+
+[ext_resource type="Texture2D" uid="uid://bm07qmmn18y3b" path="res://Scenes/Menus/RandomizedButtonSprites/RandomizedButtonSprite3.png" id="1_24vnn"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1ktfo"]
+content_margin_left = 19.0
+content_margin_top = 19.0
+content_margin_right = 19.0
+content_margin_bottom = 19.0
+texture = ExtResource("1_24vnn")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(0, 0, 248, 152)
+
+[resource]
+Button/styles/hover = SubResource("StyleBoxTexture_1ktfo")
+Button/styles/normal = SubResource("StyleBoxTexture_1ktfo")

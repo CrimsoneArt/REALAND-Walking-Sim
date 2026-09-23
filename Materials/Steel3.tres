@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ry42vi77246q"]
+
+[ext_resource type="Texture2D" uid="uid://ba0mu0lpr3vj0" path="res://Materials/Steel1.png" id="1_0e7dm"]
+
+[resource]
+shading_mode = 0
+albedo_color = Color(0.5254902, 0.49803922, 1, 1)
+albedo_texture = ExtResource("1_0e7dm")
+uv1_scale = Vector3(0.3, 0.3, 0.3)
+uv1_triplanar = true
+texture_filter = 0

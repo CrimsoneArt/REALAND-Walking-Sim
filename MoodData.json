@@ -3,8 +3,8 @@
 	"Music":{
 		"res://SFX/Music/MusicLibrary/Evil Hell.wav":[0.0,0.25,0.9,0.1,1.0],
 		"res://SFX/Music/MusicLibrary/Happy Snow.wav":[0.75,1.0,0.0,0.3,0.2],
-		"res://SFX/Music/MusicLibrary/Happy Space.wav":[0.9,0.8,0.0,0.9,0.0],
-		"res://SFX/Music/MusicLibrary/Happy Tech 2.wav":[0.9,0.3,0.0,0.9,0.0],
+		"res://SFX/Music/MusicLibrary/Happy Space.wav":[0.9,0.8,0.1,0.9,0.1],
+		"res://SFX/Music/MusicLibrary/Happy Tech 2.wav":[0.9,0.3,0.1,0.9,0.1],
 		"res://SFX/Music/MusicLibrary/Happy Technological.wav":[0.9,0.2,0.1,0.9,0.0],
 		"res://SFX/Music/MusicLibrary/Ominous Sad.wav":[0.0,0.28,0.9,0.35,1.0],
 		"res://SFX/Music/MusicLibrary/Ominous Technological.wav":[0.0,0.1,0.25,1.0,0.55],

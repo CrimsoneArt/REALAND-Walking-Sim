@@ -38,6 +38,9 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("PinchCheek"):
 		get_node("/root/SceneLoader").stop_music()
 		get_node("/root/SceneLoader").load_regular_scene("res://Scenes/HubWorld.tscn")
+	
+	if global_position.y <= -47.5:
+		get_node("/root/SceneLoader").load_regular_scene("res://Scenes/BackRoomsScene.tscn")
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():

@@ -17,7 +17,7 @@ func readJSON(json_file_path:String):
 	return finish
 
 func _ready() -> void:
-	load_regular_scene("res://Scenes/Menus/Intro.tscn")
+	load_regular_scene("res://Scenes/Menus/AgreementMenu.tscn")
 	
 	var Loader = FileLoader.new()
 	

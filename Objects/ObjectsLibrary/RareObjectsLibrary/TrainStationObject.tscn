@@ -13,7 +13,7 @@ size = Vector3(2.3674316, 2.5475187, 1.8494873)
 script = ExtResource("1_hwbb2")
 amount_min = 1
 amount_max = 8
-ChanceOfAppearing = 7.57
+ChanceOfAppearing = 7.47
 metadata/_custom_type_script = "uid://dpoxk86q0vc0o"
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=818450194]

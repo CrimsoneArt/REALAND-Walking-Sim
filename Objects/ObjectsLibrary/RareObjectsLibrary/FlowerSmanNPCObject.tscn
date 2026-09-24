@@ -94,7 +94,7 @@ MovementNode = NodePath("CharacterBody3D")
 ActiveComponent = NodePath("WanderingComponent")
 amount_min = 1
 amount_max = 2
-ChanceOfAppearing = 3.875
+ChanceOfAppearing = 3.775
 metadata/_custom_type_script = "uid://dkxweyao0waoj"
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1761015290]

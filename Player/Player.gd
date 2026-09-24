@@ -3,7 +3,7 @@ class_name Player extends CharacterBody3D
 const CrossHair1 = preload("res://Player/PlayerUI/CrossHair1.png")
 const CrossHair2 = preload("res://Player/PlayerUI/CrossHair2.png")
 
-const Speed = 5.0
+const Speed = 4.0
 const JumpVelocity = 4.5
 
 const Gravity = 9.8

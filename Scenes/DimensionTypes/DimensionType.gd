@@ -33,7 +33,7 @@ func pick_random_materials(rng:RandomNumberGenerator):
 	return Loader.load_files_in_array(Materials)
 	
 func pick_random_objects(rng:RandomNumberGenerator) -> Array[PackedScene]:
-	if rng.randf_range(0,100) <= 30:
+	if rng.randf_range(0,100) <= 28:
 		var Objects: Array = []
 		
 		var Loader = FileLoader.new()

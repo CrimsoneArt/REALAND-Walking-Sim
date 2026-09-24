@@ -12,7 +12,7 @@ radius = 2.636733
 script = ExtResource("1_62teo")
 amount_min = 1
 amount_max = 2
-ChanceOfAppearing = 5.0
+ChanceOfAppearing = 4.9
 metadata/_custom_type_script = "uid://dpoxk86q0vc0o"
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1631419393]

@@ -28,18 +28,31 @@ text = "Next"
 EnterTargetScene = true
 TargetScenePath = "res://Scenes/Menus/HelpMenu2.tscn"
 CustomThemeOverride = true
+MaxHoverSize = Vector2(1.5, 1.5)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1784018341]
 stream = ExtResource("2_inpae")
 volume_db = 5.0
 autoplay = true
 
-[node name="Label" type="Label" parent="." unique_id=905836961]
-layout_mode = 0
-offset_left = 290.0
-offset_top = 59.0
-offset_right = 965.0
-offset_bottom = 301.0
+[node name="AutomaticMusicPlayer" parent="." unique_id=177518372 instance=ExtResource("3_5hjj6")]
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=171144248]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -205.0
+offset_top = -245.0
+offset_right = 205.0
+offset_bottom = -67.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="PanelContainer" unique_id=965770035]
+layout_mode = 2
 text = "W - Move forwards
 S - Move backwards
 A - Rotate camera left
@@ -48,5 +61,4 @@ D - Rotate camera right
 T - Return to nexus
 
 Enter - Interact "
-
-[node name="AutomaticMusicPlayer" parent="." unique_id=177518372 instance=ExtResource("3_5hjj6")]
+autowrap_mode = 2

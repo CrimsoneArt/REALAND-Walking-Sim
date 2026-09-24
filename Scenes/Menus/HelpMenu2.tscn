@@ -1,21 +1,19 @@
 [gd_scene format=3 uid="uid://cq4ga0m507bgo"]
 
+[ext_resource type="Theme" uid="uid://b7kflq6d2hgvi" path="res://Scenes/Menus/HelpMenuStyle/HelpMenuTheme.tres" id="1_fb5rn"]
 [ext_resource type="PackedScene" uid="uid://glnssl8bcg2t" path="res://Scenes/Menus/RandomizedButton.tscn" id="1_iombf"]
-[ext_resource type="FontFile" uid="uid://dcgamcja6cb5a" path="res://Scenes/Menus/Fonts/7.ttf" id="2_15pcw"]
-[ext_resource type="Texture2D" uid="uid://cx0uji5f1kuoj" path="res://Scenes/Menus/RandomizedButtonSprites/RandomizedButtonSprite4.png" id="2_fb5rn"]
 [ext_resource type="AudioStream" uid="uid://7jawqpq3jk25" path="res://SFX/Twinkle2.wav" id="2_iombf"]
 [ext_resource type="PackedScene" uid="uid://c1fxuilteqida" path="res://Scenes/AutomaticMusicPlayer.tscn" id="3_15pcw"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uf82n"]
-texture = ExtResource("2_fb5rn")
-
 [node name="HelpMenu1" type="Control" unique_id=443272670]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_fb5rn")
 
 [node name="RandomizedButton" parent="." unique_id=1019148459 instance=ExtResource("1_iombf")]
 custom_minimum_size = Vector2(0, 75)
@@ -27,30 +25,37 @@ offset_bottom = 435.5
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(105, 37.5)
-theme_override_colors/font_color = Color(0.22624418, 0.63986, 0.36197513, 1)
-theme_override_colors/font_outline_color = Color(0.15160477, 0.29924518, 0.5415891, 1)
-theme_override_fonts/font = ExtResource("2_15pcw")
-theme_override_font_sizes/font_size = 48
-theme_override_styles/normal = SubResource("StyleBoxTexture_uf82n")
+theme_override_font_sizes/font_size = 16
 text = "Next"
 EnterTargetScene = true
 TargetScenePath = "res://Scenes/Menus/HelpMenu3.tscn"
+CustomThemeOverride = true
+MaxHoverSize = Vector2(1.5, 1.5)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1784018341]
 stream = ExtResource("2_iombf")
 volume_db = 5.0
 autoplay = true
 
-[node name="Label" type="Label" parent="." unique_id=905836961]
-layout_mode = 0
-offset_left = 290.0
-offset_top = 59.0
-offset_right = 965.0
-offset_bottom = 301.0
+[node name="AutomaticMusicPlayer" parent="." unique_id=177518372 instance=ExtResource("3_15pcw")]
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1992362129]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -205.0
+offset_top = -245.0
+offset_right = 205.0
+offset_bottom = -67.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="PanelContainer" unique_id=1056073359]
+layout_mode = 2
 text = "How to play :
 
-Enter nexus -> Open Door -> Enter Dimension -> Get stuck
-          ^                           ^-----------------------v                         v
-            \\-------------------------------------------------------------------/"
-
-[node name="AutomaticMusicPlayer" parent="." unique_id=177518372 instance=ExtResource("3_15pcw")]
+Enter nexus -> Open Door -> Enter Dimension -> Get stuck"
+autowrap_mode = 2

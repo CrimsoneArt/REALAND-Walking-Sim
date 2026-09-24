@@ -23,10 +23,14 @@ func _ready() -> void:
 	
 	Songs = Loader.load_files_in_array(Loader.get_file_paths_from_folder("res://SFX/Music/MusicLibrary/",".wav"))
 
-func load_regular_scene(ScenePath:String):
-	kill_all_children()
+func load_regular_scene(ScenePath:String,TransitionAnimation:="FadeInOutBlack"):
 	
+	ColorBander.get_node("Control/AnimationPlayer").play("FadeInOutBlack")
 	var Scene = load(ScenePath)
+	get_tree().paused = true
+	await ColorBander.get_node("SignalEmitter").texture_changed
+	get_tree().paused = false
+	kill_all_children()
 	add_child(Scene.instantiate())
 
 func kill_all_children(): #mwuahahahha
@@ -34,12 +38,16 @@ func kill_all_children(): #mwuahahahha
 		if child != MusicPlayer:
 			child.queue_free()
 
-func load_dimension_scene(DimensionSeed:int):
-	kill_all_children()
+func load_dimension_scene(DimensionSeed:int,TransitionAnimation:="FadeInOutBlack"):
 	
 	var RNG = RandomNumberGenerator.new()
 	RNG.seed = DimensionSeed
 	
+	ColorBander.get_node("Control/AnimationPlayer").play("FadeInOutBlack")
+	get_tree().paused = true
+	await ColorBander.get_node("SignalEmitter").texture_changed
+	get_tree().paused = false
+	kill_all_children()
 	DimensionNode = DimensionScene.instantiate()
 	add_child(DimensionNode)
 	DimensionNode.seed = DimensionSeed
@@ -67,8 +75,6 @@ func load_dimension_scene(DimensionSeed:int):
 	Mood[3] = lerp(Mood[3],0.5,AssetsChosen["Fog"]["Density"]/3.0)
 	Mood[4] = lerp(Mood[4],1.0,AssetsChosen["Fog"]["Density"]/3.0)
 	
-	print(Mood)
-	
 	for material in AssetsChosen["Materials"]:
 		for i in range(0,5):
 			Mood[i] = lerp(Mood[i],MoodData["Materials"][material][i],0.2)
@@ -81,9 +87,6 @@ func load_dimension_scene(DimensionSeed:int):
 	
 	var Song = find_most_similar(MoodData["Music"],Mood)
 	
-	print(Mood)
-	print(MoodData["Music"][Song])
-	print("-----")
 	play_music(load(Song))
 
 func find_most_similar(dict: Dictionary, target: Array[float]) -> String:

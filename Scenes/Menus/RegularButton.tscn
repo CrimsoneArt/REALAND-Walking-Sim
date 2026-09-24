@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://ccskaif1g8s43"]
+
+[ext_resource type="Script" uid="uid://dipemnfa8c7hf" path="res://Scenes/Menus/RegularButton.gd" id="1_hupqy"]
+
+[node name="RegularButton" type="Button" unique_id=315962111]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Lorem Ipsum"
+script = ExtResource("1_hupqy")

@@ -3,8 +3,15 @@
 [ext_resource type="Shader" uid="uid://cxl5m7cwrixg5" path="res://Materials/Scroll.gdshader" id="1_hqtmt"]
 [ext_resource type="PackedScene" uid="uid://glnssl8bcg2t" path="res://Scenes/Menus/RandomizedButton.tscn" id="1_v3fht"]
 [ext_resource type="Texture2D" uid="uid://d2easpdp2w8s7" path="res://Scenes/Menus/BGMneu.png" id="2_b42ut"]
+[ext_resource type="FontFile" uid="uid://dun4oml8pwdwe" path="res://Scenes/Menus/Fonts/2.ttf" id="4_mb40c"]
+[ext_resource type="FontFile" uid="uid://di475omylqbbs" path="res://Scenes/Menus/Fonts/4.ttf" id="4_mdbg0"]
 [ext_resource type="PackedScene" uid="uid://c1fxuilteqida" path="res://Scenes/AutomaticMusicPlayer.tscn" id="4_tfrft"]
 [ext_resource type="AudioStream" uid="uid://bvkx1u3rm4xq" path="res://SFX/Music/MainMenuOST2.wav" id="5_uv623"]
+[ext_resource type="FontFile" uid="uid://dbavb7pa4n48j" path="res://Scenes/Menus/Fonts/3.otf" id="6_mdbg0"]
+[ext_resource type="Texture2D" uid="uid://y66kkjuu1sq2" path="res://Scenes/Menus/RandomizedButtonSprites/RandomizedButtonSprite5.png" id="7_5re3m"]
+[ext_resource type="Texture2D" uid="uid://c8cskdyuriw47" path="res://Scenes/Menus/RandomizedButtonSprites/RandomizedButtonSprite1.png" id="8_7r21k"]
+[ext_resource type="FontFile" uid="uid://bj38nuw1ttt86" path="res://Scenes/Menus/Fonts/5.ttf" id="8_h6abm"]
+[ext_resource type="Texture2D" uid="uid://cx0uji5f1kuoj" path="res://Scenes/Menus/RandomizedButtonSprites/RandomizedButtonSprite4.png" id="9_7seun"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b42ut"]
 shader = ExtResource("1_hqtmt")
@@ -12,6 +19,24 @@ shader_parameter/scroll_speed = Vector2(-0.3, 0.3)
 shader_parameter/color1 = Color(0, 0, 0, 1)
 shader_parameter/is_silhuoted = false
 shader_parameter/intensity = 0.70000001043084
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_acty6"]
+texture = ExtResource("7_5re3m")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dgmqu"]
+texture = ExtResource("7_5re3m")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1slb4"]
+texture = ExtResource("8_7r21k")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dghsp"]
+texture = ExtResource("9_7seun")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_60h5f"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s7c5i"]
+texture = ExtResource("8_7r21k")
 
 [node name="MainMenu" type="Control" unique_id=588403170]
 texture_filter = 1
@@ -46,8 +71,14 @@ offset_right = 299.0
 offset_bottom = -129.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(299, 58)
 mouse_filter = 2
+theme_override_colors/font_color = Color(0.5858066, 0.3481072, 0.6303401, 1)
+theme_override_colors/font_outline_color = Color(0.96968704, 0.3105723, 0.3395001, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_mb40c")
 theme_override_font_sizes/font_size = 74
+theme_override_styles/normal = SubResource("StyleBoxTexture_acty6")
 text = "REA LAND"
 
 [node name="RandomizedButton4" parent="." unique_id=93331285 instance=ExtResource("1_v3fht")]
@@ -63,8 +94,14 @@ offset_right = 105.0
 offset_bottom = -40.5
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(155, 37.5)
 mouse_filter = 2
+theme_override_colors/font_color = Color(0.19264567, 0.70539445, 0.85259104, 1)
+theme_override_colors/font_outline_color = Color(0.51585656, 0.75051063, 0.3645122, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("6_mdbg0")
 theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_dgmqu")
 text = "Walking Sim"
 
 [node name="RandomizedButton" parent="." unique_id=1019148459 instance=ExtResource("1_v3fht")]
@@ -76,7 +113,13 @@ offset_right = 681.0
 offset_bottom = 435.5
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(105, 37.5)
+theme_override_colors/font_color = Color(0.028248105, 0.32769126, 0.86241204, 1)
+theme_override_colors/font_outline_color = Color(0.44245917, 0.5489372, 0.33955568, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("4_mdbg0")
 theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxTexture_1slb4")
 text = "Play"
 EnterTargetScene = true
 TargetScenePath = "res://Scenes/HubWorld.tscn"
@@ -90,7 +133,14 @@ offset_right = 681.0
 offset_bottom = 514.5
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(105, 37.5)
+theme_override_colors/font_color = Color(0.5204943, 0.39810005, 0.8670679, 1)
+theme_override_colors/font_outline_color = Color(0.7543018, 0.22757952, 0.8089002, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("8_h6abm")
 theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxTexture_dghsp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_60h5f")
 text = "Help"
 EnterTargetScene = true
 TargetScenePath = "res://Scenes/Menus/HelpMenu1.tscn"
@@ -102,7 +152,13 @@ offset_left = 471.0
 offset_top = 518.5
 offset_right = 681.0
 offset_bottom = 593.5
+pivot_offset = Vector2(105, 37.5)
+theme_override_colors/font_color = Color(0.92402077, 0.12643255, 0.39337885, 1)
+theme_override_colors/font_outline_color = Color(0.5849788, 0.2544254, 0.1871843, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = ExtResource("6_mdbg0")
 theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxTexture_s7c5i")
 text = "Exit"
 ForceQuit = true
 

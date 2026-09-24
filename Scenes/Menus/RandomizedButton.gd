@@ -21,6 +21,7 @@ class_name RandomizedButton extends Button
 			add_theme_stylebox_override("normal", stylebox_normal.duplicate())
 			add_theme_stylebox_override("hover", stylebox_hover.duplicate())
 			_on_change_texture_timer_timeout()
+@export var MaxHoverSize := Vector2(2.0,2.0)
 
 func _remove_theme_override():
 	remove_theme_stylebox_override("normal")
@@ -69,7 +70,7 @@ func _process(delta: float) -> void:
 func _on_mouse_entered() -> void:
 	pivot_offset = size/2.0
 	get_parent().move_child(self, -1) 
-	target_scale = Vector2(2.0,2.0)
+	target_scale = MaxHoverSize
 
 func _on_mouse_exited() -> void:
 	pivot_offset = size/2.0

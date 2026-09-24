@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cei1asx8hq7ft"]
 
 [ext_resource type="Shader" uid="uid://dxdbwru0y4u47" path="res://Scenes/ColorBandingShader.gdshader" id="1_3fj5s"]
+[ext_resource type="Texture2D" uid="uid://c3ga84a0hlrbd" path="res://Scenes/SkyBoxes/DimensionSkyboxes/SkyBox7.png" id="1_j4xt4"]
 [ext_resource type="Texture2D" uid="uid://cojkoavikuhpl" path="res://Scenes/CoinAnimation.png" id="2_tnwnk"]
 [ext_resource type="Shader" uid="uid://cxl5m7cwrixg5" path="res://Materials/Scroll.gdshader" id="2_vgfy0"]
 [ext_resource type="Texture2D" uid="uid://d2easpdp2w8s7" path="res://Scenes/Menus/BGMneu.png" id="4_rjimg"]
@@ -12,6 +13,33 @@ shader_parameter/scroll_speed = Vector2(0.1, 0.1)
 shader_parameter/color1 = Color(0, 0, 0, 1)
 shader_parameter/is_silhuoted = true
 shader_parameter/intensity = 1.0
+
+[sub_resource type="Animation" id="Animation_rjimg"]
+resource_name = "FadeInOutBlack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../TextureRect:material:shader_parameter/intensity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.0, 0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../SignalEmitter:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("1_j4xt4"), null]
+}
 
 [sub_resource type="Animation" id="Animation_m40nq"]
 resource_name = "GainCoin"
@@ -140,9 +168,22 @@ tracks/4/keys = {
 "update": 1,
 "values": []
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../SignalEmitter:texture")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vgfy0"]
 _data = {
+&"FadeInOutBlack": SubResource("Animation_rjimg"),
 &"GainCoin": SubResource("Animation_m40nq"),
 &"RESET": SubResource("Animation_fxite")
 }
@@ -183,10 +224,12 @@ grow_vertical = 2
 libraries/ = SubResource("AnimationLibrary_vgfy0")
 
 [node name="Coin" type="Sprite2D" parent="Control" unique_id=306998058]
+texture_filter = 1
 position = Vector2(1000, 0)
 texture = ExtResource("2_tnwnk")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1416179095]
+texture_filter = 1
 material = SubResource("ShaderMaterial_e4b1c")
 anchors_preset = 15
 anchor_right = 1.0
@@ -198,3 +241,7 @@ mouse_filter = 2
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=84612468]
 stream = ExtResource("5_rjimg")
 volume_db = 5.0
+
+[node name="SignalEmitter" type="Sprite2D" parent="." unique_id=135617488]
+position = Vector2(0, -126)
+scale = Vector2(0.025, 0.025)

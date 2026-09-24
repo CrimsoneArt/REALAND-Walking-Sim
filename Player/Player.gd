@@ -36,7 +36,6 @@ func _process(delta: float) -> void:
 		PlayerUi.change_cross_hair(CrossHair1)
 
 	if Input.is_action_just_pressed("PinchCheek"):
-		get_node("/root/SceneLoader").stop_music()
 		get_node("/root/SceneLoader").load_regular_scene("res://Scenes/HubWorld.tscn")
 	
 	if global_position.y <= -47.5:

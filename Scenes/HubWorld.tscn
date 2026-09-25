@@ -106,7 +106,7 @@ objectVariablesComponent = NodePath("ObjectVariablesComponent2")
 
 [node name="ObjectVariablesComponent2" parent="DoorObject8" unique_id=273549066 instance=ExtResource("4_avdaa")]
 Variables = Dictionary[String, Variant]({
-"Seed": 989,
+"Seed": 2464195387,
 "SpriteHeight": 2.88,
 "SpriteNumber": 8
 })

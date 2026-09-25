@@ -25,7 +25,8 @@ func _ready() -> void:
 
 func load_regular_scene(ScenePath:String,TransitionAnimation:="FadeInOutBlack"):
 	
-	ColorBander.get_node("Control/AnimationPlayer").play("FadeInOutBlack")
+	ColorBander.get_node("Control/AnimationPlayer").play(TransitionAnimation)
+	stop_music()
 	var Scene = load(ScenePath)
 	get_tree().paused = true
 	await ColorBander.get_node("SignalEmitter").texture_changed

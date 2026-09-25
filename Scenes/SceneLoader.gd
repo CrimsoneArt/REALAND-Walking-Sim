@@ -8,6 +8,7 @@ var DimensionNode
 var Songs: Array = []
 
 var Coins = 0
+var fullscreen = true
 
 func readJSON(json_file_path:String):
 	var file = FileAccess.open(json_file_path, FileAccess.READ)
@@ -88,6 +89,8 @@ func load_dimension_scene(DimensionSeed:int,TransitionAnimation:="FadeInOutBlack
 	
 	var Song = find_most_similar(MoodData["Music"],Mood)
 	
+	print(Mood)
+	
 	play_music(load(Song))
 
 func find_most_similar(dict: Dictionary, target: Array[float]) -> String:
@@ -118,3 +121,8 @@ func play_music(stream:AudioStream,volume_db:=-10):
 
 func stop_music():
 	MusicPlayer.stop()
+
+func _unhandled_key_input(event: InputEvent) -> void:
+	if event.is_action_pressed("FullScreen"):
+		fullscreen = not fullscreen
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN if fullscreen else DisplayServer.WINDOW_MODE_WINDOWED)

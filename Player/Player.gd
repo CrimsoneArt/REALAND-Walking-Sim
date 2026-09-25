@@ -60,3 +60,8 @@ func gain_coin():
 	ColorBander.get_node("Control/AnimationPlayer").play("GainCoin")
 	await ColorBander.get_node("Control/AnimationPlayer").animation_finished
 	get_tree().paused = false
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("ReturnToMainMenu"):
+		get_node("/root/SceneLoader").load_regular_scene("res://Scenes/Menus/MainMenu.tscn")
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE

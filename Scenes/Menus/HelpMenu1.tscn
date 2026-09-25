@@ -44,10 +44,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -205.0
-offset_top = -245.0
-offset_right = 205.0
-offset_bottom = -67.0
+offset_left = -253.5
+offset_top = -283.5
+offset_right = 253.5
+offset_bottom = -20.5
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -58,7 +58,10 @@ S - Move backwards
 A - Rotate camera left
 D - Rotate camera right
 
-T - Return to Nexus
+Enter - Interact 
 
-Enter - Interact "
+T - Return to Nexus
+ESC - Return to Main Menu
+
+F11 - Fullscreen toggle"
 autowrap_mode = 2

@@ -14,7 +14,7 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 script = ExtResource("1_hlyco")
 amount_min = 4
 amount_max = 7
-ChanceOfAppearing = 4.4
+ChanceOfAppearing = 3.4
 metadata/_custom_type_script = "uid://dpoxk86q0vc0o"
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1588478968]

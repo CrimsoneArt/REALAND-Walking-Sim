@@ -4,6 +4,8 @@ class_name FlappyMovementComponent extends WanderComponent
 @export var max_height := 7.0
 @export var min_jump_strength := 5.0
 @export var max_jump_strengh := 15.0
+@export var min_jump_wait_time := 0.1
+@export var max_jump_wait_time := 1.5
 
 var flapping_timer := Timer.new()
 
@@ -15,11 +17,12 @@ func _ready() -> void:
 func flap() -> void:
 	var current_y: float = MovementNode.global_position.y
 	var height_factor: float = clampf((current_y - min_height) / (max_height - min_height), 0.0, 1.0)
-	flapping_timer.wait_time = lerp(0.1, 1.5, height_factor)
+	flapping_timer.wait_time = lerp(min_jump_wait_time, max_jump_wait_time, height_factor)
 	flapping_timer.start()
 	
 	var target_strength: float = lerp(max_jump_strengh, min_jump_strength, height_factor)
 	MovementNode.velocity.y = target_strength * randf_range(0.8, 1.2)
+	State = States[2]
 
 func _update_movement(delta: float) -> void:
 	update_walking_timer(delta)

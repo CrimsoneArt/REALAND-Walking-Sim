@@ -97,9 +97,8 @@ metadata/_custom_type_script = "uid://co4mkbnsfso8p"
 
 [sub_resource type="Resource" id="Resource_fp0hy"]
 script = ExtResource("19_lvdy7")
-Dialouge = "You need to return to
-your land, the people need
-your fire, death and lightning."
+Dialouge = "Follow the psychopomp,
+it's time to learn the truth about this place."
 Duration = 8.0
 metadata/_custom_type_script = "uid://co4mkbnsfso8p"
 
@@ -225,7 +224,7 @@ objectVariablesComponent = NodePath("ObjectVariablesComponent")
 [node name="ObjectVariablesComponent" type="Node" parent="DoorObject" unique_id=1327446626]
 script = ExtResource("14_gqxei")
 Variables = Dictionary[String, Variant]({
-"Seed": 1982,
+"Seed": 1987,
 "SpriteHeight": 2.88,
 "SpriteNumber": 1
 })

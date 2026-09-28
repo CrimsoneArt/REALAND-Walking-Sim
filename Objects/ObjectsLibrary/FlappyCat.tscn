@@ -177,7 +177,7 @@ animations = [{
 }]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_4s8r2"]
-radius = 0.81200916
+radius = 0.9029446
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4frnh"]
 radius = 1.6069336
@@ -200,11 +200,13 @@ pixel_size = 0.04
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_ahu5r")
 animation = &"Fly"
+frame_progress = 0.014222566
 script = ExtResource("3_0o2rl")
 movementComponent = NodePath("../../FlappyMovementComponent")
 metadata/_custom_type_script = "uid://dn7olex1h6kds"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=225309516]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.049756885, 0)
 shape = SubResource("SphereShape3D_4s8r2")
 
 [node name="InteractabilityComponent" parent="CharacterBody3D" unique_id=500345398 instance=ExtResource("4_raml5")]

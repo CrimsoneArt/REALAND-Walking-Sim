@@ -118,6 +118,7 @@ metadata/_custom_type_script = "uid://dl3v7yp1te08c"
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1149344872]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0373056, 0)
+collision_layer = 4
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="CharacterBody3D" unique_id=2073024134]
 sorting_offset = 10.0

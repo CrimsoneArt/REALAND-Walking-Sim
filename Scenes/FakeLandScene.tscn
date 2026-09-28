@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://gwi0f2u68ldl"]
 
 [ext_resource type="PackedScene" uid="uid://igw0ct71j4e2" path="res://Player/Player.tscn" id="1_3qpf4"]
+[ext_resource type="Script" uid="uid://ccw8i6slrwoyr" path="res://Scenes/FakeLandScene.gd" id="1_qh5ub"]
 [ext_resource type="Material" uid="uid://cxp5hsnyjmr1m" path="res://Materials/FakeLand1.tres" id="2_g28tc"]
 [ext_resource type="Material" uid="uid://l4ro33mu0bdc" path="res://Materials/FakeLand2.tres" id="3_1i74k"]
 [ext_resource type="PackedScene" uid="uid://cfqcueih77i7x" path="res://Materials/Props/FakeLandCitizen.tscn" id="4_vnagb"]
@@ -11,11 +12,15 @@
 background_mode = 1
 background_color = Color(0.49747366, 0.49747366, 0.49747366, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ljt7t"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_xrivr"]
+size = Vector3(550, 0.001, 421)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qh5ub"]
 transparency = 1
 albedo_color = Color(1, 1, 1, 0)
 
 [node name="FakeLandScene" type="Node3D" unique_id=645542727]
+script = ExtResource("1_qh5ub")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=259606310]
 environment = SubResource("Environment_xrivr")
@@ -27,7 +32,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8164628, 0)
 use_collision = true
 
 [node name="Floor" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1002067795]
-size = Vector3(100, 0, 100)
+size = Vector3(122, 0, 122)
 material = ExtResource("3_1i74k")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1102806589]
@@ -58,6 +63,47 @@ material = ExtResource("2_g28tc")
 [node name="CSGBox3D7" type="CSGBox3D" parent="CSGCombiner3D" unique_id=718853010]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.59982, 3.2132416, 18.05597)
 size = Vector3(12.104492, 7.426483, 7.765625)
+material = ExtResource("2_g28tc")
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="CSGCombiner3D" unique_id=677229225]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -111.59982, 0, -0.94403076)
+size = Vector3(12.104492, 1, 12)
+material = ExtResource("2_g28tc")
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="CSGCombiner3D" unique_id=2025491985]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -111.59982, 11, -0.94403076)
+size = Vector3(12.104492, 1, 12)
+material = ExtResource("2_g28tc")
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="CSGCombiner3D" unique_id=912760978]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -111.59982, 5.5, 4.555969)
+size = Vector3(12.104492, 1, 12)
+material = ExtResource("2_g28tc")
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="CSGCombiner3D" unique_id=750101128]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -111.59982, 5.5, -6.444031)
+size = Vector3(12.104492, 1, 12)
+material = ExtResource("2_g28tc")
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="CSGCombiner3D" unique_id=2146560246]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -111.59982, 6.5, 1.0559692)
+size = Vector3(12.104492, 1, 1)
+material = ExtResource("2_g28tc")
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="CSGCombiner3D" unique_id=166970714]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -111.59982, 4, -0.94403076)
+size = Vector3(12.104492, 5, 2)
+material = ExtResource("2_g28tc")
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="CSGCombiner3D" unique_id=866932108]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -111.59982, 4.5, -0.94403076)
+operation = 2
+size = Vector3(12.104492, 4, 2)
+material = ExtResource("2_g28tc")
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="CSGCombiner3D" unique_id=349828744]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -111.59982, 6.5, -2.9440308)
+size = Vector3(12.104492, 1, 1)
 material = ExtResource("2_g28tc")
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1877060133]
@@ -114,13 +160,22 @@ pixel_size = 0.25
 texture_filter = 0
 texture = ExtResource("5_ljt7t")
 
-[node name="CSGCombiner3D2" type="CSGCombiner3D" parent="." unique_id=707781927]
-use_collision = true
-
-[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D2" unique_id=349939556]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.120941, 0)
-flip_faces = true
-size = Vector3(96.305664, 36.648987, 97.0979)
-material = SubResource("StandardMaterial3D_ljt7t")
-
 [node name="AutomaticMusicPlayer" parent="." unique_id=177518372 instance=ExtResource("6_n7c0g")]
+
+[node name="Area3D" type="Area3D" parent="." unique_id=439365165]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1669797332]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -33, 0)
+shape = SubResource("BoxShape3D_xrivr")
+
+[node name="CSGCombiner3D2" type="CSGCombiner3D" parent="." unique_id=1870615104]
+use_collision = true
+collision_layer = 4
+collision_mask = 0
+
+[node name="Floor" type="CSGBox3D" parent="CSGCombiner3D2" unique_id=1867021912]
+flip_faces = true
+size = Vector3(77, 48, 69)
+material = SubResource("StandardMaterial3D_qh5ub")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

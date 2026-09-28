@@ -19,7 +19,7 @@ func readJSON(json_file_path:String):
 
 func _ready() -> void:
 	load_regular_scene("res://Scenes/Menus/AgreementMenu.tscn")
-	
+	#load_regular_scene("res://Scenes/FakeLandScene.tscn") # ignore this
 	var Loader = FileLoader.new()
 	
 	Songs = Loader.load_files_in_array(Loader.get_file_paths_from_folder("res://SFX/Music/MusicLibrary/",".wav"))

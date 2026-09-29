@@ -6,6 +6,10 @@ class_name FlappyMovementComponent extends WanderComponent
 @export var max_jump_strengh := 15.0
 @export var min_jump_wait_time := 0.1
 @export var max_jump_wait_time := 1.5
+@export var JumpSfx : AudioStream
+@export var JumpSfxPitchMin := 0.8
+@export var JumpSfxPitchMax := 1.4
+@export var AudioPlayer : AudioStreamPlayer3D
 
 var flapping_timer := Timer.new()
 
@@ -15,6 +19,11 @@ func _ready() -> void:
 	flap()
 
 func flap() -> void:
+	if AudioPlayer != null:
+		AudioPlayer.stream = JumpSfx
+		AudioPlayer.pitch_scale = randf_range(JumpSfxPitchMin,JumpSfxPitchMax)
+		AudioPlayer.play()
+	
 	var current_y: float = MovementNode.global_position.y
 	var height_factor: float = clampf((current_y - min_height) / (max_height - min_height), 0.0, 1.0)
 	flapping_timer.wait_time = lerp(min_jump_wait_time, max_jump_wait_time, height_factor)

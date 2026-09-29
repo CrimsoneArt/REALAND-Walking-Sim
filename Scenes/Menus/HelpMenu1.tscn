@@ -63,5 +63,6 @@ Enter - Interact
 T - Return to Nexus
 ESC - Return to Main Menu
 
+Tab - Menu visibility toggle
 F11 - Fullscreen toggle"
 autowrap_mode = 2

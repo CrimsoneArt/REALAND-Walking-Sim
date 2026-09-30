@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://fua65whrqxhh"]
+
+[ext_resource type="Script" uid="uid://cbnbr3mxb8ls0" path="res://Materials/Props/Deer.gd" id="1_6kasn"]
+[ext_resource type="Texture2D" uid="uid://bxt367nkvjn3r" path="res://Materials/Props/Deers-Sheet.png" id="2_b55ct"]
+[ext_resource type="PackedScene" uid="uid://cns6liybukkun" path="res://Objects/ObjectComponents/WanderingComponent.tscn" id="3_qifry"]
+[ext_resource type="Script" uid="uid://cbgpvmrkx1dw3" path="res://Objects/ObjectComponents/ObjectVariablesComponent.gd" id="4_qifry"]
+[ext_resource type="Script" uid="uid://bjokdxs5441sl" path="res://Objects/ObjectComponents/ObjectVariableRule.gd" id="5_6kasn"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_6kasn"]
+radius = 1.2075568
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qifry"]
+atlas = ExtResource("2_b55ct")
+region = Rect2(0, 0, 156, 154)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6kasn"]
+atlas = ExtResource("2_b55ct")
+region = Rect2(156, 0, 156, 154)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_860ja"]
+atlas = ExtResource("2_b55ct")
+region = Rect2(312, 0, 156, 154)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b55ct"]
+atlas = ExtResource("2_b55ct")
+region = Rect2(0, 154, 156, 154)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlfbp"]
+atlas = ExtResource("2_b55ct")
+region = Rect2(156, 154, 156, 154)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ytp05"]
+atlas = ExtResource("2_b55ct")
+region = Rect2(312, 154, 156, 154)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y8ugb"]
+atlas = ExtResource("2_b55ct")
+region = Rect2(0, 308, 156, 154)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6wlg2"]
+atlas = ExtResource("2_b55ct")
+region = Rect2(156, 308, 156, 154)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_syrkc"]
+atlas = ExtResource("2_b55ct")
+region = Rect2(312, 308, 156, 154)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qlfbp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qifry")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6kasn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_860ja")
+}],
+"loop": 1,
+"name": &"1",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b55ct")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlfbp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ytp05")
+}],
+"loop": 1,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y8ugb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6wlg2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_syrkc")
+}],
+"loop": 1,
+"name": &"3",
+"speed": 5.0
+}]
+
+[sub_resource type="Resource" id="Resource_6kasn"]
+script = ExtResource("5_6kasn")
+variable_name = "Type"
+type = 1
+min_int = 1
+max_int = 3
+metadata/_custom_type_script = "uid://bjokdxs5441sl"
+
+[node name="Deer" type="Node3D" unique_id=530756489 node_paths=PackedStringArray("MovementNode", "ActiveComponent", "objectVariablesComponent")]
+script = ExtResource("1_6kasn")
+MovementNode = NodePath("CharacterBody3D")
+ActiveComponent = NodePath("CharacterBody3D/WanderingComponent")
+objectVariablesComponent = NodePath("ObjectVariablesComponent")
+metadata/_custom_type_script = "uid://dkxweyao0waoj"
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1279235388]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1523767776]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.26512837, 0)
+shape = SubResource("SphereShape3D_6kasn")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="CharacterBody3D" unique_id=603925987]
+pixel_size = 0.02
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_qlfbp")
+animation = &"1"
+
+[node name="WanderingComponent" parent="CharacterBody3D" unique_id=2005606164 node_paths=PackedStringArray("MovementNode") instance=ExtResource("3_qifry")]
+MovementNode = NodePath("..")
+
+[node name="ObjectVariablesComponent" type="Node" parent="." unique_id=8173006]
+script = ExtResource("4_qifry")
+Variables = Dictionary[String, Variant]({
+"Type": 1
+})
+VariableRules = Array[ExtResource("5_6kasn")]([SubResource("Resource_6kasn")])
+metadata/_custom_type_script = "uid://cbgpvmrkx1dw3"

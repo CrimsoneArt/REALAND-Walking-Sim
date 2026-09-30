@@ -4,4 +4,5 @@
 
 [node name="RandomAudioPlayer" type="AudioStreamPlayer3D" unique_id=1452292652]
 unit_size = 1.6
+bus = &"SFX"
 script = ExtResource("1_jmxrf")

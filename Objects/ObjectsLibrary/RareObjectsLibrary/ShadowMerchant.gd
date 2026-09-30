@@ -1,15 +1,7 @@
 extends NPCObject
 
-const Symbols = [
-	"$",
-	"¥",
-	"€",
-	"₪",
-	"₱",
-	"⃁",
-	"ك",
-]
-
 func _on_interactability_component_interacted(PlayerNode: Player) -> void:
-	var Symbol = Symbols.pick_random()
-	PlayerNode.show_dialouge(Symbol+" "+Symbol+" "+Symbol,2.0)
+	if get_node("/root/SceneLoader").Coins > 0:
+		get_node("/root/SceneLoader").Coins = 0
+		PlayerNode.get_node("PlayerUI").update_coin_counter()
+		get_node("/root/SceneLoader").load_regular_scene("res://Scenes/FakeLandIntroCutscene.tscn")

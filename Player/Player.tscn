@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cllm3ak12877a" path="res://Player/Player.gd" id="1_xhfnw"]
 [ext_resource type="PackedScene" uid="uid://cxd7stqoepm5b" path="res://Player/PlayerUI/PlayerUI.tscn" id="2_oansn"]
+[ext_resource type="AudioStream" uid="uid://ct7tmfp7rvhiw" path="res://SFX/Step.wav" id="3_tok1r"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xhfnw"]
 
@@ -26,7 +27,12 @@ collide_with_bodies = false
 shape = SubResource("CapsuleShape3D_xhfnw")
 debug_color = Color(1, 1, 1, 0.41960785)
 
-[node name="PlayerUI" parent="." unique_id=676471365 instance=ExtResource("2_oansn")]
-
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1148924469]
 mesh = SubResource("CapsuleMesh_xrivr")
+
+[node name="PlayerUI" parent="." unique_id=676471365 instance=ExtResource("2_oansn")]
+
+[node name="StepSFXPlayer" type="AudioStreamPlayer" parent="." unique_id=1663634877]
+stream = ExtResource("3_tok1r")
+volume_db = 1.0
+bus = &"SFX"

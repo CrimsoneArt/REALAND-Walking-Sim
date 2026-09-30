@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://eclw55bkgg8w"]
+
+[ext_resource type="Script" uid="uid://dpoxk86q0vc0o" path="res://Objects/GameObject.gd" id="1_1oxcb"]
+[ext_resource type="PackedScene" uid="uid://d2a5ij2s4bw3d" path="res://Objects/ObjectsLibrary/Statue1.glb" id="1_s46ot"]
+
+[node name="StatueObject" type="Node3D" unique_id=1150842520]
+script = ExtResource("1_1oxcb")
+amount_min = 10
+amount_max = 25
+metadata/_custom_type_script = "uid://dpoxk86q0vc0o"
+
+[node name="Statue1" parent="." unique_id=249664064 instance=ExtResource("1_s46ot")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9926081, 0)

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c8ypdgk3oaulf"
+path="res://.godot/imported/Happy Space.wav-8eb3ab71c4aa12a62af04221c79a6cde.sample"
+
+[deps]
+
+source_file="res://SFX/Music/MusicLibrary/Happy Space.wav"
+dest_files=["res://.godot/imported/Happy Space.wav-8eb3ab71c4aa12a62af04221c79a6cde.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://bnf6mh6geo7n5"]
+
+[ext_resource type="Script" uid="uid://cvtifpnkp1ilq" path="res://Objects/ObjectsLibrary/WeedObject.gd" id="1_uqjd3"]
+[ext_resource type="Texture2D" uid="uid://cu50hs28imb1d" path="res://Objects/ObjectsLibrary/WeedSprites-Sheet.png" id="2_ih6g2"]
+[ext_resource type="Script" uid="uid://cbgpvmrkx1dw3" path="res://Objects/ObjectComponents/ObjectVariablesComponent.gd" id="3_h6imn"]
+[ext_resource type="Script" uid="uid://bjokdxs5441sl" path="res://Objects/ObjectComponents/ObjectVariableRule.gd" id="4_uqjd3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6imn"]
+atlas = ExtResource("2_ih6g2")
+region = Rect2(25, 0, 25, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqjd3"]
+atlas = ExtResource("2_ih6g2")
+region = Rect2(0, 0, 25, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4tfy"]
+atlas = ExtResource("2_ih6g2")
+region = Rect2(50, 0, 25, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5esb8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h6imn")
+}],
+"loop": 1,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uqjd3")
+}],
+"loop": 1,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t4tfy")
+}],
+"loop": 1,
+"name": &"3",
+"speed": 5.0
+}]
+
+[sub_resource type="Resource" id="Resource_h6imn"]
+script = ExtResource("4_uqjd3")
+variable_name = "Sprite"
+type = 1
+min_int = 1
+max_int = 3
+metadata/_custom_type_script = "uid://bjokdxs5441sl"
+
+[sub_resource type="Resource" id="Resource_uqjd3"]
+script = ExtResource("4_uqjd3")
+variable_name = "ColorLerpAmount"
+metadata/_custom_type_script = "uid://bjokdxs5441sl"
+
+[node name="WeedObject" type="Node3D" unique_id=2140391034 node_paths=PackedStringArray("objectVariablesComponent")]
+script = ExtResource("1_uqjd3")
+objectVariablesComponent = NodePath("ObjectVariablesComponent")
+amount_min = 10
+amount_max = 1000
+metadata/_custom_type_script = "uid://dpoxk86q0vc0o"
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=2022178490]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1109655, 0)
+pixel_size = 0.08
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_5esb8")
+animation = &"1"
+
+[node name="ObjectVariablesComponent" type="Node" parent="." unique_id=139369406]
+script = ExtResource("3_h6imn")
+Variables = Dictionary[String, Variant]({
+"ColorLerpAmount": 0.0,
+"Sprite": 0
+})
+VariableRules = Array[ExtResource("4_uqjd3")]([SubResource("Resource_h6imn"), SubResource("Resource_uqjd3")])
+metadata/_custom_type_script = "uid://cbgpvmrkx1dw3"

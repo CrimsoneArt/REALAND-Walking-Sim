@@ -33,8 +33,9 @@ func start_walking() -> void:
 	walking_timer = randf_range(min_walk_time, max_walk_time)
 	var angle = randf_range(0, TAU)
 	State = States[1]
+	
 	move_direction = Vector3(cos(angle), 0, sin(angle)).normalized()
-	MovementNode.rotation.y = angle
+	MovementNode.look_at(MovementNode.global_position + move_direction, Vector3.UP)
 
 func start_waiting() -> void:
 	is_waiting = true

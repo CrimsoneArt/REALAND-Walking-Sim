@@ -1,0 +1,145 @@
+[gd_scene format=3 uid="uid://brnjdtrvh7h02"]
+
+[ext_resource type="Material" uid="uid://bwr3jxqsjtcae" path="res://Materials/DimensionMaterials/Patterns4.tres" id="1_xwq0f"]
+[ext_resource type="PackedScene" uid="uid://igw0ct71j4e2" path="res://Player/Player.tscn" id="2_h0cvs"]
+[ext_resource type="Material" uid="uid://co5r0ik8mplah" path="res://Materials/Tree1.tres" id="2_qm8gt"]
+[ext_resource type="Material" uid="uid://dyhvbpkf7uiu8" path="res://Materials/Tree3.tres" id="4_xp681"]
+[ext_resource type="PackedScene" uid="uid://d347byqx522x5" path="res://Materials/Props/WaterCooler1Sided.tscn" id="5_h3f5y"]
+[ext_resource type="PackedScene" uid="uid://cdnf6l5oawl3i" path="res://Objects/ObjectComponents/InteractabilityComponent.tscn" id="6_xp681"]
+[ext_resource type="PackedScene" uid="uid://cew3wwjvvnui1" path="res://Scenes/HubWorld.tscn" id="7_du3ut"]
+[ext_resource type="PackedScene" uid="uid://c1fxuilteqida" path="res://Scenes/AutomaticMusicPlayer.tscn" id="8_abl07"]
+[ext_resource type="AudioStream" uid="uid://cyneg1qkct1di" path="res://SFX/Music/man.wav" id="9_buc60"]
+
+[sub_resource type="Environment" id="Environment_ghvkk"]
+background_mode = 2
+glow_enabled = true
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 0.0
+fog_sky_affect = 0.0
+fog_depth_curve = 8.0
+fog_depth_end = 50.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h3f5y"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xp681"]
+size = Vector3(5, 4.5, 9)
+
+[node name="ForgottenScene" type="Node3D" unique_id=232654297]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1778077738]
+environment = SubResource("Environment_ghvkk")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=50480263]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1974343475]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.625)
+size = Vector3(3.75, 1, 15.5)
+material = ExtResource("1_xwq0f")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=754212216]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -13.125)
+size = Vector3(9, 1, 9.75)
+material = ExtResource("1_xwq0f")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D" unique_id=290508108]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.057727814, 2.0625, -13)
+height = 3.375
+material = ExtResource("2_qm8gt")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="CSGCombiner3D" unique_id=1018542162]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.057727814, 4.037217, -13)
+radius = 0.75
+material = ExtResource("4_xp681")
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="CSGCombiner3D" unique_id=1348017186]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19227219, 3.5372171, -13.75)
+radius = 0.75
+material = ExtResource("4_xp681")
+
+[node name="CSGSphere3D7" type="CSGSphere3D" parent="CSGCombiner3D" unique_id=1151277486]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6922722, 2.7872171, -13.5)
+radius = 0.75
+material = ExtResource("4_xp681")
+
+[node name="CSGSphere3D3" type="CSGSphere3D" parent="CSGCombiner3D" unique_id=2002177285]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3077278, 2.7872171, -12.5)
+radius = 0.75
+material = ExtResource("4_xp681")
+
+[node name="CSGSphere3D4" type="CSGSphere3D" parent="CSGCombiner3D" unique_id=1647479188]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3077278, 2.7872171, -13.5)
+radius = 0.75
+material = ExtResource("4_xp681")
+
+[node name="CSGSphere3D5" type="CSGSphere3D" parent="CSGCombiner3D" unique_id=1176945836]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8077278, 3.5372171, -13.25)
+radius = 0.75
+material = ExtResource("4_xp681")
+
+[node name="CSGSphere3D6" type="CSGSphere3D" parent="CSGCombiner3D" unique_id=887462203]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4422722, 3.5372171, -12.75)
+radius = 0.75
+material = ExtResource("4_xp681")
+
+[node name="CSGSphere3D8" type="CSGSphere3D" parent="CSGCombiner3D" unique_id=1081664762]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.057727814, 3.5372171, -12.25)
+radius = 0.75
+material = ExtResource("4_xp681")
+
+[node name="CSGSphere3D9" type="CSGSphere3D" parent="CSGCombiner3D" unique_id=1917723966]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.057727814, 3.0372171, -14)
+radius = 0.75
+material = ExtResource("4_xp681")
+
+[node name="CSGSphere3D10" type="CSGSphere3D" parent="CSGCombiner3D" unique_id=239423585]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.057727814, 2.5372171, -12)
+radius = 0.75
+material = ExtResource("4_xp681")
+
+[node name="CSGSphere3D12" type="CSGSphere3D" parent="CSGCombiner3D" unique_id=1559379172]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9422722, 3.2872171, -12.75)
+radius = 0.75
+material = ExtResource("4_xp681")
+
+[node name="CSGSphere3D11" type="CSGSphere3D" parent="CSGCombiner3D" unique_id=1578124884]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3077278, 2.5372171, -13)
+radius = 0.75
+material = ExtResource("4_xp681")
+
+[node name="Player" parent="." unique_id=1083039947 instance=ExtResource("2_h0cvs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.25, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=948334471]
+
+[node name="WaterCooler" parent="." unique_id=1256976886 instance=ExtResource("5_h3f5y")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.67848754, -14.742255)
+
+[node name="CSGCombiner3D2" type="CSGCombiner3D" parent="." unique_id=698380172]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D2" unique_id=1955927234]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.625, -5.625)
+flip_faces = true
+size = Vector3(3.75, 4.25, 15.5)
+material = SubResource("StandardMaterial3D_h3f5y")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D2" unique_id=1475779135]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.625, -13.125)
+flip_faces = true
+size = Vector3(9, 6.25, 9.75)
+material = SubResource("StandardMaterial3D_h3f5y")
+
+[node name="InteractabilityComponent" parent="." unique_id=500345398 instance=ExtResource("6_xp681")]
+TargetScene = ExtResource("7_du3ut")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractabilityComponent" unique_id=42359531]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, 5.5)
+shape = SubResource("BoxShape3D_xp681")
+
+[node name="AutomaticMusicPlayer" parent="." unique_id=177518372 instance=ExtResource("8_abl07")]
+Song = ExtResource("9_buc60")

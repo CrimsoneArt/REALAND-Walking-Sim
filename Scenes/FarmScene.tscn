@@ -1,0 +1,267 @@
+[gd_scene format=3 uid="uid://b27ikm1mv5b8k"]
+
+[ext_resource type="PackedScene" uid="uid://c1fxuilteqida" path="res://Scenes/AutomaticMusicPlayer.tscn" id="1_g8hmk"]
+[ext_resource type="AudioStream" uid="uid://b886exvok5tbd" path="res://SFX/Music/Farm Not Happy Not Sad.wav" id="2_7bvn5"]
+[ext_resource type="Material" uid="uid://q23anu70r6xo" path="res://Materials/Dirt.tres" id="3_c3tqp"]
+[ext_resource type="PackedScene" uid="uid://igw0ct71j4e2" path="res://Player/Player.tscn" id="4_thugb"]
+[ext_resource type="Material" uid="uid://dds6phg6f6tm0" path="res://Materials/DimensionMaterials/Bricks3.tres" id="4_tvd2a"]
+[ext_resource type="Material" uid="uid://crge5samuhfnr" path="res://Materials/Bricks4.tres" id="5_68lul"]
+[ext_resource type="Material" uid="uid://bo7m8nb6elmrx" path="res://Materials/Steel2.tres" id="6_rycd2"]
+[ext_resource type="PackedScene" uid="uid://d3xcho72e4ggt" path="res://Materials/Props/CowNPCObject.tscn" id="6_sw3xu"]
+[ext_resource type="Shader" uid="uid://gxbeh60sgorq" path="res://Scenes/SkyBoxes/SkyBoxShaderFlat.gdshader" id="7_6huay"]
+[ext_resource type="PackedScene" uid="uid://royje8y7hp6f" path="res://Materials/Props/WaterCooler.tscn" id="10_8cdmj"]
+[ext_resource type="Texture2D" uid="uid://cdjknqisanq7c" path="res://Scenes/SkyBoxes/FarmSkybox.png" id="10_lvdy7"]
+[ext_resource type="AudioStream" uid="uid://pk2mpuid0fo4" path="res://SFX/Water1.wav" id="12_ksq32"]
+[ext_resource type="PackedScene" uid="uid://dwqol8w28tgyb" path="res://Objects/Door/DoorObject.tscn" id="13_r6uoj"]
+[ext_resource type="Script" uid="uid://cbgpvmrkx1dw3" path="res://Objects/ObjectComponents/ObjectVariablesComponent.gd" id="14_gqxei"]
+[ext_resource type="Script" uid="uid://bjokdxs5441sl" path="res://Objects/ObjectComponents/ObjectVariableRule.gd" id="15_oof2p"]
+[ext_resource type="Texture2D" uid="uid://c0dcwkg2p0rs" path="res://Materials/Props/Farmer1.png" id="16_vaymd"]
+[ext_resource type="Texture2D" uid="uid://cy3v3k0nv2glq" path="res://Materials/Props/Farmer2.png" id="17_2clff"]
+[ext_resource type="Script" uid="uid://co4mkbnsfso8p" path="res://Objects/ObjectComponents/DialougeText.gd" id="19_lvdy7"]
+[ext_resource type="Texture2D" uid="uid://1cnu0v8ab2wc" path="res://Materials/Props/ShovelProp.png" id="20_itbpb"]
+[ext_resource type="PackedScene" uid="uid://cdnf6l5oawl3i" path="res://Objects/ObjectComponents/InteractabilityComponent.tscn" id="20_pyhan"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m8hm5"]
+shader = ExtResource("7_6huay")
+shader_parameter/sky_texture = ExtResource("10_lvdy7")
+shader_parameter/texture_scale = Vector2(1, 1)
+
+[sub_resource type="Sky" id="Sky_sw3xu"]
+sky_material = SubResource("ShaderMaterial_m8hm5")
+
+[sub_resource type="Environment" id="Environment_sw3xu"]
+background_mode = 2
+sky = SubResource("Sky_sw3xu")
+
+[sub_resource type="Resource" id="Resource_mdjru"]
+script = ExtResource("15_oof2p")
+variable_name = "SpriteHeight"
+min_float = 2.75
+max_float = 3.0
+metadata/_custom_type_script = "uid://bjokdxs5441sl"
+
+[sub_resource type="Resource" id="Resource_j31m4"]
+script = ExtResource("15_oof2p")
+variable_name = "SpriteNumber"
+type = 1
+min_int = 1
+max_int = 8
+metadata/_custom_type_script = "uid://bjokdxs5441sl"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gqxei"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_vaymd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_2clff")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_2clff"]
+radius = 1.3245572
+
+[sub_resource type="Resource" id="Resource_2clff"]
+script = ExtResource("19_lvdy7")
+Dialouge = "I used to live there,
+you know where."
+metadata/_custom_type_script = "uid://co4mkbnsfso8p"
+
+[sub_resource type="Resource" id="Resource_pyhan"]
+script = ExtResource("19_lvdy7")
+Dialouge = "I never once thought about
+leaving until a few months
+ago."
+metadata/_custom_type_script = "uid://co4mkbnsfso8p"
+
+[sub_resource type="Resource" id="Resource_lvdy7"]
+script = ExtResource("19_lvdy7")
+Dialouge = "I was caged in the
+assumptions,"
+metadata/_custom_type_script = "uid://co4mkbnsfso8p"
+
+[sub_resource type="Resource" id="Resource_itbpb"]
+script = ExtResource("19_lvdy7")
+Dialouge = "and now I cage my cows
+in their assumptions."
+metadata/_custom_type_script = "uid://co4mkbnsfso8p"
+
+[sub_resource type="Resource" id="Resource_d1j78"]
+script = ExtResource("19_lvdy7")
+Dialouge = "..."
+metadata/_custom_type_script = "uid://co4mkbnsfso8p"
+
+[sub_resource type="Resource" id="Resource_fp0hy"]
+script = ExtResource("19_lvdy7")
+Dialouge = "Follow the psychopomp,
+it's time to learn the truth about this place."
+Duration = 8.0
+metadata/_custom_type_script = "uid://co4mkbnsfso8p"
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_lvdy7"]
+radius = 1.6358812
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lvdy7"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0)
+
+[node name="FarmScene" type="Node3D" unique_id=2065429186]
+
+[node name="AutomaticMusicPlayer" parent="." unique_id=177518372 instance=ExtResource("1_g8hmk")]
+Song = ExtResource("2_7bvn5")
+VolumeDB = -12.5
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=226985734]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1380132355]
+size = Vector3(148, 1, 161)
+material = ExtResource("3_c3tqp")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=141358585]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 3, -16)
+size = Vector3(11, 7, 12)
+material = ExtResource("4_tvd2a")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D" unique_id=387993531]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 6.5, -16)
+size = Vector3(13, 2, 14)
+material = ExtResource("5_68lul")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D" unique_id=19643964]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 3, -16)
+operation = 2
+size = Vector3(9, 5, 10)
+material = ExtResource("5_68lul")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D" unique_id=767570268]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 1.5, -19.5)
+size = Vector3(2, 2, 3)
+material = ExtResource("6_rycd2")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1846095000]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 5.5, -20)
+size = Vector3(1, 10, 2)
+material = ExtResource("6_rycd2")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D" unique_id=206907572]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2, -9)
+operation = 2
+size = Vector3(3, 3, 4)
+material = ExtResource("5_68lul")
+
+[node name="Player" parent="." unique_id=1083039947 instance=ExtResource("4_thugb")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -21, 2, 0)
+
+[node name="CSGCombiner3D2" type="CSGCombiner3D" parent="." unique_id=1247231976]
+use_collision = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D2" unique_id=1243647057]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.6391907, 2.5)
+size = Vector3(46, 2.2783813, 52)
+material = ExtResource("4_tvd2a")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D2" unique_id=1571199154]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1.1246338, 2.5)
+operation = 2
+size = Vector3(45, 3.1918945, 51)
+material = ExtResource("4_tvd2a")
+
+[node name="CowNPCObject" parent="." unique_id=67871377 instance=ExtResource("6_sw3xu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 7)
+
+[node name="CowNPCObject2" parent="." unique_id=707987982 instance=ExtResource("6_sw3xu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 18)
+
+[node name="CowNPCObject9" parent="." unique_id=1414923124 instance=ExtResource("6_sw3xu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 18)
+
+[node name="CowNPCObject10" parent="." unique_id=304740493 instance=ExtResource("6_sw3xu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 18)
+
+[node name="CowNPCObject3" parent="." unique_id=284914347 instance=ExtResource("6_sw3xu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 18)
+
+[node name="CowNPCObject4" parent="." unique_id=1608787718 instance=ExtResource("6_sw3xu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 9)
+
+[node name="CowNPCObject5" parent="." unique_id=1459744371 instance=ExtResource("6_sw3xu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 0)
+
+[node name="CowNPCObject6" parent="." unique_id=922291349 instance=ExtResource("6_sw3xu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 12)
+
+[node name="Wevil" parent="." unique_id=1187408087 instance=ExtResource("6_sw3xu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 27)
+
+[node name="CowNPCObject7" parent="." unique_id=503540052 instance=ExtResource("6_sw3xu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, -15)
+
+[node name="CowNPCObject8" parent="." unique_id=1992874728 instance=ExtResource("6_sw3xu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -15)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1463340659]
+environment = SubResource("Environment_sw3xu")
+
+[node name="WaterCooler" parent="." unique_id=1256976886 instance=ExtResource("10_8cdmj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8, 0.7061944, -13)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1985271110]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -21)
+stream = ExtResource("12_ksq32")
+volume_db = 8.972
+unit_size = 2.53
+autoplay = true
+
+[node name="DoorObject" parent="." unique_id=322964604 node_paths=PackedStringArray("objectVariablesComponent") instance=ExtResource("13_r6uoj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -14)
+objectVariablesComponent = NodePath("ObjectVariablesComponent")
+
+[node name="ObjectVariablesComponent" type="Node" parent="DoorObject" unique_id=1327446626]
+script = ExtResource("14_gqxei")
+Variables = Dictionary[String, Variant]({
+"Seed": 1987,
+"SpriteHeight": 2.88,
+"SpriteNumber": 1
+})
+VariableRules = Array[ExtResource("15_oof2p")]([SubResource("Resource_mdjru"), SubResource("Resource_j31m4")])
+metadata/_custom_type_script = "uid://cbgpvmrkx1dw3"
+
+[node name="Farmer" type="CharacterBody3D" parent="." unique_id=696396376]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7)
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Farmer" unique_id=119075543]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5713829, 0)
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_gqxei")
+autoplay = "default"
+frame_progress = 0.03495863
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Farmer" unique_id=385343170]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.549893, 0)
+shape = SubResource("SphereShape3D_2clff")
+
+[node name="InteractabilityComponent2" parent="Farmer" unique_id=500345398 instance=ExtResource("20_pyhan")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6462023, 0)
+Dialouge = Array[ExtResource("19_lvdy7")]([SubResource("Resource_2clff"), SubResource("Resource_pyhan"), SubResource("Resource_lvdy7"), SubResource("Resource_itbpb"), SubResource("Resource_d1j78"), SubResource("Resource_fp0hy")])
+DialougeType = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Farmer/InteractabilityComponent2" unique_id=2003951930]
+shape = SubResource("SphereShape3D_lvdy7")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1665307855]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.5, 0)
+use_collision = true
+flip_faces = true
+size = Vector3(145, 46, 156)
+material = SubResource("StandardMaterial3D_lvdy7")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=307679388]
+transform = Transform3D(-1, -8.742278e-08, 3.821371e-15, 0, -4.371139e-08, -1, 8.742278e-08, -1, 4.371139e-08, -21, 0.5305033, -20)
+pixel_size = 0.03
+texture_filter = 0
+texture = ExtResource("20_itbpb")

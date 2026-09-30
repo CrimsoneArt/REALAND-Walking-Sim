@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://tmxwogw8w4lf"]
+
+[ext_resource type="Texture2D" uid="uid://fs0w4mnm7g8t" path="res://Materials/DimensionMaterials/Happy2.png" id="1_d65um"]
+
+[resource]
+shading_mode = 0
+albedo_texture = ExtResource("1_d65um")
+uv1_triplanar = true
+texture_filter = 0

@@ -39,3 +39,4 @@ stream = ExtResource("4_jb2eq")
 unit_size = 3.0
 max_db = -1.5
 autoplay = true
+bus = &"SFX"

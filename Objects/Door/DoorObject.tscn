@@ -35,8 +35,8 @@ height = 2.625
 [node name="DoorObject" type="Node3D" unique_id=322964604 node_paths=PackedStringArray("objectVariablesComponent")]
 script = ExtResource("1_k8bb4")
 objectVariablesComponent = NodePath("StaticBody3D/ObjectVariablesComponent")
-amount_min = 2
-amount_max = 10
+amount_min = 4
+amount_max = 7
 metadata/_custom_type_script = "uid://dpoxk86q0vc0o"
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1308453124]

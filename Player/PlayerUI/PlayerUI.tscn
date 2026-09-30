@@ -3,9 +3,16 @@
 [ext_resource type="Script" uid="uid://hqoe6ybdt4yw" path="res://Player/PlayerUI/PlayerUI.gd" id="1_tts8b"]
 [ext_resource type="Texture2D" uid="uid://bb5g8lv7qbwdv" path="res://Player/PlayerUI/CrossHair1.png" id="2_eai1t"]
 [ext_resource type="PackedScene" uid="uid://glnssl8bcg2t" path="res://Scenes/Menus/RandomizedButton.tscn" id="3_m40nq"]
-[ext_resource type="Texture2D" uid="uid://1a7oparhcias" path="res://Objects/ObjectsLibrary/NeonCreatures.png" id="4_fxite"]
+[ext_resource type="FontFile" uid="uid://bj5tahtxfui2r" path="res://Scenes/Menus/Fonts/1.otf" id="4_fxite"]
+[ext_resource type="FontFile" uid="uid://dcgamcja6cb5a" path="res://Scenes/Menus/Fonts/7.ttf" id="4_meymv"]
+[ext_resource type="Texture2D" uid="uid://cojkoavikuhpl" path="res://Scenes/CoinAnimation.png" id="5_oykui"]
+[ext_resource type="Texture2D" uid="uid://bm07qmmn18y3b" path="res://Scenes/Menus/RandomizedButtonSprites/RandomizedButtonSprite3.png" id="5_xpwe5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d5hn3"]
+texture = ExtResource("5_xpwe5")
 
 [node name="PlayerUI" type="Control" unique_id=676471365]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -30,14 +37,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_eai1t")
 
-[node name="SeedLabel" type="Label" parent="." unique_id=1230725323]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 12
-text = "Seed : "
-
 [node name="DialougeBox" parent="." unique_id=1019148459 instance=ExtResource("3_m40nq")]
 layout_mode = 1
 anchors_preset = 8
@@ -51,15 +50,56 @@ offset_right = 107.685486
 offset_bottom = 217.75
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1e-05, 1e-05)
-pivot_offset = Vector2(108, 30)
+scale = Vector2(1e-45, 1e-45)
+pivot_offset = Vector2(132, 30)
 mouse_filter = 2
+theme_override_colors/font_color = Color(0.39071003, 0.5193149, 0.961181, 1)
+theme_override_colors/font_outline_color = Color(0.13901664, 0.32441264, 0.16917558, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("4_meymv")
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_d5hn3")
 StartingTargetScale = Vector2(0, 0)
+MaxHoverSize = Vector2(2, 2)
 
-[node name="FlappySphere" type="Sprite2D" parent="." unique_id=1186922447]
+[node name="SeedLabel" type="Label" parent="." unique_id=1230725323]
+texture_filter = 1
+layout_mode = 1
+offset_right = 133.0
+offset_bottom = 36.0
+offset_transform_enabled = true
+offset_transform_position = Vector2(15, 0)
+theme_override_colors/font_shadow_color = Color(0, 0, 0.5686275, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("4_fxite")
+theme_override_font_sizes/font_size = 12
+text = "Seed : "
+vertical_alignment = 1
+
+[node name="CoinLabel" type="Label" parent="." unique_id=1967227474]
+texture_filter = 1
+layout_mode = 1
+offset_top = 31.0
+offset_right = 133.0
+offset_bottom = 67.0
+offset_transform_enabled = true
+offset_transform_position = Vector2(30, 0)
+theme_override_colors/font_shadow_color = Color(0, 0, 0.5686275, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("4_fxite")
+theme_override_font_sizes/font_size = 12
+text = "  x 1"
+vertical_alignment = 1
+
+[node name="Coin" type="Sprite2D" parent="." unique_id=999245376]
 visible = false
 texture_filter = 1
-position = Vector2(353.5, 347)
-scale = Vector2(2.953125, 4.1875)
-texture = ExtResource("4_fxite")
+position = Vector2(28.000002, 49)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("5_oykui")

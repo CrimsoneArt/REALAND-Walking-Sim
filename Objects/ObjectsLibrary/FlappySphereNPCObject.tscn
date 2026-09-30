@@ -1,22 +1,23 @@
 [gd_scene format=3 uid="uid://76ra4rksq1dv"]
 
-[ext_resource type="Texture2D" uid="uid://cw12xqnaxatbl" path="res://Objects/ObjectsLibrary/FlappySphere.png" id="1_hev5r"]
-[ext_resource type="Script" uid="uid://dkxweyao0waoj" path="res://Objects/NPCObject.gd" id="1_m1ldl"]
-[ext_resource type="PackedScene" uid="uid://dcnxmcd02wof3" path="res://Objects/ObjectComponents/FlappyMovementComponent.tscn" id="3_70ssn"]
+[ext_resource type="Script" uid="uid://dkxweyao0waoj" path="res://Objects/NPCObject.gd" id="1_82i23"]
+[ext_resource type="Texture2D" uid="uid://cw12xqnaxatbl" path="res://Objects/ObjectsLibrary/FlappySphere.png" id="2_5xut6"]
+[ext_resource type="PackedScene" uid="uid://dcnxmcd02wof3" path="res://Objects/ObjectComponents/FlappyMovementComponent.tscn" id="3_gngwf"]
+[ext_resource type="AudioStream" uid="uid://fay3aokfnita" path="res://SFX/FlappySphereBounce.wav" id="4_pq0ew"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_xrivr"]
 radius = 0.7559032
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xu2wu"]
 shading_mode = 0
-albedo_texture = ExtResource("1_hev5r")
+albedo_texture = ExtResource("2_5xut6")
 uv1_scale = Vector3(3, 3, 3)
 texture_filter = 0
 
 [sub_resource type="SphereMesh" id="SphereMesh_xrivr"]
 
 [node name="FlappySphereNPCObject" type="Node3D" unique_id=1803131332 node_paths=PackedStringArray("MovementNode", "ActiveComponent")]
-script = ExtResource("1_m1ldl")
+script = ExtResource("1_82i23")
 MovementNode = NodePath("CharacterBody3D")
 ActiveComponent = NodePath("FlappyMovementComponent")
 amount_min = 10
@@ -24,6 +25,13 @@ amount_max = 50
 metadata/_custom_type_script = "uid://dkxweyao0waoj"
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1257144249]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="CharacterBody3D" unique_id=265694370]
+volume_db = 17.412
+unit_size = 15.61
+max_db = 6.0
+max_distance = 30.0
+bus = &"SFX"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=2032059144]
 shape = SubResource("SphereShape3D_xrivr")
@@ -33,7 +41,11 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_xu2wu")
 mesh = SubResource("SphereMesh_xrivr")
 
-[node name="FlappyMovementComponent" parent="." unique_id=2051407080 node_paths=PackedStringArray("MovementNode") instance=ExtResource("3_70ssn")]
+[node name="FlappyMovementComponent" parent="." unique_id=2051407080 node_paths=PackedStringArray("AudioPlayer", "MovementNode") instance=ExtResource("3_gngwf")]
+JumpSfx = ExtResource("4_pq0ew")
+JumpSfxPitchMin = 0.9
+JumpSfxPitchMax = 1.5
+AudioPlayer = NodePath("../CharacterBody3D/AudioStreamPlayer3D")
 min_walk_time = 0.25
 max_walk_time = 1.5
 min_wait_time = 0.0

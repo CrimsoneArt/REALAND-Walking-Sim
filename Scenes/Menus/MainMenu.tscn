@@ -3,6 +3,21 @@
 [ext_resource type="Shader" uid="uid://cxl5m7cwrixg5" path="res://Scenes/Menus/Scroll.gdshader" id="1_hqtmt"]
 [ext_resource type="PackedScene" uid="uid://glnssl8bcg2t" path="res://Scenes/Menus/RandomizedButton.tscn" id="1_v3fht"]
 [ext_resource type="Texture2D" uid="uid://d2easpdp2w8s7" path="res://Scenes/Menus/BGMneu.png" id="2_b42ut"]
+<<<<<<< Updated upstream
+=======
+[ext_resource type="FontFile" uid="uid://cbymreepnwda6" path="res://Scenes/Menus/Fonts/6.ttf" id="4_7r21k"]
+[ext_resource type="FontFile" uid="uid://bj5tahtxfui2r" path="res://Scenes/Menus/Fonts/1.otf" id="4_c638u"]
+[ext_resource type="FontFile" uid="uid://dun4oml8pwdwe" path="res://Scenes/Menus/Fonts/2.ttf" id="4_mb40c"]
+[ext_resource type="PackedScene" uid="uid://c1fxuilteqida" path="res://Scenes/AutomaticMusicPlayer.tscn" id="4_tfrft"]
+[ext_resource type="AudioStream" uid="uid://bvkx1u3rm4xq" path="res://SFX/Music/MainMenuOST2.wav" id="5_uv623"]
+[ext_resource type="FontFile" uid="uid://dcgamcja6cb5a" path="res://Scenes/Menus/Fonts/7.ttf" id="6_5re3m"]
+[ext_resource type="Texture2D" uid="uid://y66kkjuu1sq2" path="res://Scenes/Menus/RandomizedButtonSprites/RandomizedButtonSprite5.png" id="7_5re3m"]
+[ext_resource type="Texture2D" uid="uid://dfbf5vh6wruyx" path="res://Scenes/Menus/RandomizedButtonSprites/RandomizedButtonSprite2.png" id="7_h6abm"]
+[ext_resource type="Texture2D" uid="uid://c8cskdyuriw47" path="res://Scenes/Menus/RandomizedButtonSprites/RandomizedButtonSprite1.png" id="8_7r21k"]
+[ext_resource type="FontFile" uid="uid://bj38nuw1ttt86" path="res://Scenes/Menus/Fonts/5.ttf" id="8_7seun"]
+[ext_resource type="Texture2D" uid="uid://cx0uji5f1kuoj" path="res://Scenes/Menus/RandomizedButtonSprites/RandomizedButtonSprite4.png" id="9_7seun"]
+[ext_resource type="Texture2D" uid="uid://bm07qmmn18y3b" path="res://Scenes/Menus/RandomizedButtonSprites/RandomizedButtonSprite3.png" id="13_4gati"]
+>>>>>>> Stashed changes
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b42ut"]
 shader = ExtResource("1_hqtmt")
@@ -11,6 +26,33 @@ shader_parameter/color1 = Color(0, 0, 0, 1)
 shader_parameter/is_silhuoted = false
 shader_parameter/intensity = 0.70000001043084
 
+<<<<<<< Updated upstream
+=======
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qs6c0"]
+texture = ExtResource("13_4gati")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_acty6"]
+texture = ExtResource("8_7r21k")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dgmqu"]
+texture = ExtResource("7_5re3m")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1slb4"]
+texture = ExtResource("8_7r21k")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_60h5f"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dghsp"]
+texture = ExtResource("7_h6abm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_60h5f"]
+texture = ExtResource("9_7seun")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s7c5i"]
+texture = ExtResource("7_5re3m")
+
+>>>>>>> Stashed changes
 [node name="MainMenu" type="Control" unique_id=588403170]
 texture_filter = 1
 layout_mode = 3
@@ -80,8 +122,20 @@ offset_bottom = -129.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+<<<<<<< Updated upstream
 theme_override_font_sizes/font_size = 74
 text = "REA LAND"
+=======
+theme_override_colors/font_color = Color(0.1262973, 0.5267742, 0.2918486, 1)
+theme_override_colors/font_outline_color = Color(0.14229712, 0.62819326, 0.21704265, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_mb40c")
+theme_override_font_sizes/font_size = 74
+theme_override_styles/normal = SubResource("StyleBoxTexture_qs6c0")
+text = "REALAND"
+EnterURL = false
+URL = ""
+>>>>>>> Stashed changes
 
 [node name="RandomizedButton4" parent="." unique_id=93331285 instance=ExtResource("1_v3fht")]
 layout_mode = 1
@@ -97,5 +151,120 @@ offset_bottom = -40.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+<<<<<<< Updated upstream
 theme_override_font_sizes/font_size = 30
 text = "Walking Sim"
+=======
+theme_override_colors/font_color = Color(0.41278064, 0.24515414, 0.27245313, 1)
+theme_override_colors/font_outline_color = Color(0.012121502, 0.12312325, 0.51266587, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("6_5re3m")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_acty6")
+text = "Walking Sim"
+EnterURL = false
+URL = ""
+
+[node name="RandomizedButton" parent="." unique_id=1019148459 instance=ExtResource("1_v3fht")]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 0
+offset_left = 471.0
+offset_top = 360.5
+offset_right = 681.0
+offset_bottom = 435.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(105, 37.5)
+theme_override_colors/font_color = Color(0.16096233, 0.36126593, 0.8851758, 1)
+theme_override_colors/font_outline_color = Color(0.7594154, 0.82202715, 0.4634343, 1)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("4_c638u")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxTexture_dgmqu")
+text = "Play"
+EnterTargetScene = true
+TargetScenePath = "res://Scenes/HubWorld.tscn"
+EnterURL = false
+URL = ""
+
+[node name="RandomizedButton2" parent="." unique_id=680655530 instance=ExtResource("1_v3fht")]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 0
+offset_left = 471.0
+offset_top = 439.5
+offset_right = 681.0
+offset_bottom = 514.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(105, 37.5)
+theme_override_colors/font_color = Color(0.7830511, 0.01301393, 0.30502993, 1)
+theme_override_colors/font_outline_color = Color(0.45846394, 0.79952323, 0.69953954, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("4_mb40c")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxTexture_1slb4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_60h5f")
+text = "Help"
+EnterTargetScene = true
+TargetScenePath = "res://Scenes/Menus/HelpMenu1.tscn"
+EnterURL = false
+URL = ""
+
+[node name="RandomizedButton5" parent="." unique_id=549826396 instance=ExtResource("1_v3fht")]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 0
+offset_left = 471.0
+offset_top = 518.5
+offset_right = 681.0
+offset_bottom = 593.5
+pivot_offset = Vector2(105, 37.5)
+theme_override_colors/font_color = Color(0.5194469, 0.6143578, 0.23129243, 1)
+theme_override_colors/font_outline_color = Color(0.93474084, 0.266702, 0.46501523, 1)
+theme_override_fonts/font = ExtResource("4_c638u")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxTexture_dghsp")
+text = "Exit"
+ForceQuit = true
+EnterURL = false
+URL = ""
+
+[node name="RandomizedButton6" parent="." unique_id=704593116 instance=ExtResource("1_v3fht")]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 0
+offset_left = 82.0
+offset_top = 439.5
+offset_right = 292.0
+offset_bottom = 514.5
+pivot_offset = Vector2(105, 37.5)
+theme_override_colors/font_color = Color(0.12421094, 0.4963068, 0.17743532, 1)
+theme_override_colors/font_outline_color = Color(0.40525043, 0.29824248, 0.7826458, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("8_7seun")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_60h5f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_60h5f")
+text = "Youtube"
+EnterURL = true
+URL = "https://www.youtube.com/@CrimsoneArt69"
+
+[node name="RandomizedButton7" parent="." unique_id=503945213 instance=ExtResource("1_v3fht")]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 0
+offset_left = 82.0
+offset_top = 518.5
+offset_right = 292.0
+offset_bottom = 593.5
+pivot_offset = Vector2(105, 37.5)
+theme_override_colors/font_color = Color(0.61599886, 0.6951542, 0.0972144, 1)
+theme_override_colors/font_outline_color = Color(0.9297748, 0.6183854, 0.18378124, 1)
+theme_override_fonts/font = ExtResource("4_7r21k")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_s7c5i")
+text = "Twitter"
+EnterURL = true
+URL = "https://x.com/CrimsoneArt69"
+
+[node name="AutomaticMusicPlayer" parent="." unique_id=177518372 instance=ExtResource("4_tfrft")]
+Song = ExtResource("5_uv623")
+VolumeDB = -2.5
+>>>>>>> Stashed changes

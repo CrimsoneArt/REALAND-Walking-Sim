@@ -122,7 +122,18 @@ func play_music(stream:AudioStream,volume_db:=-10):
 func stop_music():
 	MusicPlayer.stop()
 
+@onready var MusicIndex = AudioServer.get_bus_index("Music")
+@onready var SFXIndex = AudioServer.get_bus_index("SFX")
+
 func _unhandled_key_input(event: InputEvent) -> void:
 	if event.is_action_pressed("FullScreen"):
 		fullscreen = not fullscreen
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN if fullscreen else DisplayServer.WINDOW_MODE_WINDOWED)
+	elif event.is_action("IncreaseSFXVolume"):
+		AudioServer.set_bus_volume_db(SFXIndex,AudioServer.get_bus_volume_db(SFXIndex)+0.5)
+	elif event.is_action("DecreaseSFXVolume"):
+		AudioServer.set_bus_volume_db(SFXIndex,AudioServer.get_bus_volume_db(SFXIndex)-0.5)
+	elif event.is_action("IncreaseMusicVolume"):
+		AudioServer.set_bus_volume_db(MusicIndex,AudioServer.get_bus_volume_db(MusicIndex)+0.5)
+	elif event.is_action("DecreaseMusicVolume"):
+		AudioServer.set_bus_volume_db(MusicIndex,AudioServer.get_bus_volume_db(MusicIndex)-0.5)

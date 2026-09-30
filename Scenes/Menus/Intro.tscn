@@ -27,6 +27,7 @@ script = ExtResource("1_re1yb")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=603077199]
 stream = ExtResource("2_vd22a")
 autoplay = true
+bus = &"SFX"
 
 [node name="Title" type="Label" parent="." unique_id=87025516]
 texture_filter = 1

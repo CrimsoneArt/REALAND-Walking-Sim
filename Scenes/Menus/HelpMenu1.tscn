@@ -19,9 +19,9 @@ theme = ExtResource("1_1ktfo")
 custom_minimum_size = Vector2(0, 75)
 layout_mode = 0
 offset_left = 471.0
-offset_top = 360.5
+offset_top = 500.0
 offset_right = 681.0
-offset_bottom = 435.5
+offset_bottom = 575.0
 pivot_offset = Vector2(105, 37.5)
 theme = ExtResource("1_1ktfo")
 text = "Next"
@@ -34,6 +34,7 @@ MaxHoverSize = Vector2(1.5, 1.5)
 stream = ExtResource("2_inpae")
 volume_db = 5.0
 autoplay = true
+bus = &"SFX"
 
 [node name="AutomaticMusicPlayer" parent="." unique_id=177518372 instance=ExtResource("3_5hjj6")]
 
@@ -44,10 +45,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -253.5
-offset_top = -283.5
-offset_right = 253.5
-offset_bottom = -20.5
+offset_left = -318.75
+offset_top = -249.0
+offset_right = 318.75
+offset_bottom = 71.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -64,5 +65,8 @@ T - Return to Nexus
 ESC - Return to Main Menu
 
 Tab - Menu visibility toggle
-F11 - Fullscreen toggle"
+F11 - Fullscreen toggle
+
++/- - Increase/Decrease SFX Volume
+[/] - Increase/Decrease Music Volume"
 autowrap_mode = 2

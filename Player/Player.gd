@@ -14,6 +14,7 @@ const Sensitivity = 0.03
 @onready var Camera = $Head/Camera3D
 @onready var InteractableChecker = $Head/RayCast3D
 @onready var PlayerUi = $PlayerUI
+@onready var StepSFXPlayer = $StepSFXPlayer
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -42,10 +43,15 @@ func _process(delta: float) -> void:
 		get_node("/root/SceneLoader").load_regular_scene("res://Scenes/BackRoomsScene.tscn")
 
 func _physics_process(delta: float) -> void:
+	var moving_forward_or_backward = (1.0 if Input.is_action_pressed("Up") else (-1.0 if Input.is_action_pressed("Down") else 0.0))
+	
 	if not is_on_floor():
 		velocity.y -= Gravity * delta
-
-	var moving_forward_or_backward = (1.0 if Input.is_action_pressed("Up") else (-1.0 if Input.is_action_pressed("Down") else 0.0))
+	else:
+		if moving_forward_or_backward != 0.0:
+			if not StepSFXPlayer.playing:
+				StepSFXPlayer.pitch_scale = randf_range(0.8,1.3)
+				StepSFXPlayer.play()
 
 	position += Speed * delta * -Head.global_transform.basis.z.normalized() * moving_forward_or_backward
 

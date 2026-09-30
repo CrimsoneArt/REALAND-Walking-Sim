@@ -1,9 +1,52 @@
 [gd_scene format=3 uid="uid://ccskaif1g8s43"]
 
-[ext_resource type="Script" uid="uid://dipemnfa8c7hf" path="res://Scenes/Menus/RegularButton.gd" id="1_hupqy"]
+[sub_resource type="GDScript" id="GDScript_a0ulj"]
+script/source = "@tool
+class_name RegularButton extends Button
+
+@export var ForceQuit := false
+@export var EnterTargetScene := false
+@export var TargetScenePath : String
+@export var StartingTargetScale := Vector2(1.0,1.0)
+
+var target_scale : Vector2
+var stylebox_normal
+var stylebox_hover
+
+func _ready() -> void:
+	target_scale = StartingTargetScale
+
+func _on_pressed() -> void:
+	if ForceQuit:
+		get_tree().quit()
+	elif EnterTargetScene:
+		get_node(\"/root/SceneLoader\").load_regular_scene(TargetScenePath)
+
+func _process(delta: float) -> void:
+	scale = lerp(scale,target_scale,delta*4.0)
+
+func _on_mouse_entered() -> void:
+	pivot_offset = size/2.0
+	get_parent().move_child(self, -1) 
+	target_scale = Vector2(2.0,2.0)
+
+func _on_mouse_exited() -> void:
+	pivot_offset = size/2.0
+	target_scale = Vector2(1.0,1.0)
+
+func appear():
+	pivot_offset = size/2.0
+	scale = Vector2(0.0,0.0)
+	target_scale = Vector2(1.0,1.0)
+
+func dissappear():
+	pivot_offset = size/2.0
+	scale = Vector2(1.0,1.0)
+	target_scale = Vector2(0.0,0.0)
+"
 
 [node name="RegularButton" type="Button" unique_id=315962111]
 offset_right = 8.0
 offset_bottom = 8.0
 text = "Lorem Ipsum"
-script = ExtResource("1_hupqy")
+script = SubResource("GDScript_a0ulj")

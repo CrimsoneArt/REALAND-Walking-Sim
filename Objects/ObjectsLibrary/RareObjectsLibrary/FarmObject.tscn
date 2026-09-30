@@ -42,3 +42,4 @@ stream = ExtResource("5_yisqf")
 volume_db = 8.972
 unit_size = 1.0
 autoplay = true
+bus = &"SFX"

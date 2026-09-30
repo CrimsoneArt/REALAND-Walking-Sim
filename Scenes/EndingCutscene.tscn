@@ -270,8 +270,10 @@ grow_vertical = 2
 texture = ExtResource("4_rjeu0")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1007967224]
+bus = &"SFX"
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1922444017]
 volume_db = -10.0
+bus = &"SFX"
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

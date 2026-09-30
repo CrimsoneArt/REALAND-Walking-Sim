@@ -31,6 +31,7 @@ volume_db = 17.412
 unit_size = 15.61
 max_db = 6.0
 max_distance = 30.0
+bus = &"SFX"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=2032059144]
 shape = SubResource("SphereShape3D_xrivr")

@@ -109,7 +109,7 @@ MovementNode = NodePath("CharacterBody3D")
 ActiveComponent = NodePath("CharacterBody3D/WanderingComponent")
 objectVariablesComponent = NodePath("ObjectVariablesComponent")
 amount_min = 5
-amount_max = 6
+amount_max = 7
 ChanceOfAppearing = 5.0
 metadata/_custom_type_script = "uid://dkxweyao0waoj"
 

@@ -14,8 +14,11 @@
 [ext_resource type="PackedScene" uid="uid://cdnf6l5oawl3i" path="res://Objects/ObjectComponents/InteractabilityComponent.tscn" id="12_tukt5"]
 [ext_resource type="Script" uid="uid://co4mkbnsfso8p" path="res://Objects/ObjectComponents/DialougeText.gd" id="13_jarrh"]
 [ext_resource type="PackedScene" uid="uid://dwqol8w28tgyb" path="res://Objects/Door/DoorObject.tscn" id="14_mtqux"]
+[ext_resource type="AudioStream" uid="uid://f4yu2opvb476" path="res://SFX/Music/NagualMusic.wav" id="14_rwqg4"]
 [ext_resource type="PackedScene" uid="uid://p6mtwgnviw1d" path="res://Objects/ObjectComponents/ObjectVariablesComponent.tscn" id="15_vvgbc"]
 [ext_resource type="PackedScene" uid="uid://bfrr4s8vb1d3d" path="res://Objects/ObjectsLibrary/BuggyNPC.tscn" id="16_fmwdw"]
+[ext_resource type="PackedScene" uid="uid://c1fxuilteqida" path="res://Scenes/AutomaticMusicPlayer.tscn" id="17_vb0xq"]
+[ext_resource type="AudioStream" uid="uid://n76h8cl4lrjo" path="res://SFX/StavGarden.wav" id="18_y4u1l"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gwjb6"]
 transparency = 1
@@ -621,6 +624,13 @@ DialougeType = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Nagual/InteractabilityComponent" unique_id=199659759]
 shape = SubResource("SphereShape3D_tukt5")
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Nagual" unique_id=1354884664]
+stream = ExtResource("14_rwqg4")
+unit_size = 13.74
+autoplay = true
+max_distance = 15.0
+bus = &"SFX"
+
 [node name="DoorObject" parent="." unique_id=322964604 node_paths=PackedStringArray("objectVariablesComponent") instance=ExtResource("14_mtqux")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -7.5)
 objectVariablesComponent = NodePath("ObjectVariablesComponent2")
@@ -701,3 +711,7 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -28.
 
 [node name="BuggyNPC3" parent="Buggies" unique_id=1431436624 instance=ExtResource("16_fmwdw")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -10.25)
+
+[node name="AutomaticMusicPlayer" parent="." unique_id=177518372 instance=ExtResource("17_vb0xq")]
+Song = ExtResource("18_y4u1l")
+VolumeDB = -8.0

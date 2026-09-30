@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cfqcueih77i7x" path="res://Materials/Props/FakeLandCitizen.tscn" id="4_vnagb"]
 [ext_resource type="Texture2D" uid="uid://bys01w76yycms" path="res://Materials/Props/WelcomeToFakeLandSign.png" id="5_ljt7t"]
 [ext_resource type="PackedScene" uid="uid://c1fxuilteqida" path="res://Scenes/AutomaticMusicPlayer.tscn" id="6_n7c0g"]
+[ext_resource type="AudioStream" uid="uid://cepmagv5uut4u" path="res://SFX/Music/FakeLandMusic.wav" id="8_1480t"]
 
 [sub_resource type="Environment" id="Environment_xrivr"]
 background_mode = 1
@@ -162,6 +163,7 @@ texture_filter = 0
 texture = ExtResource("5_ljt7t")
 
 [node name="AutomaticMusicPlayer" parent="." unique_id=177518372 instance=ExtResource("6_n7c0g")]
+Song = ExtResource("8_1480t")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=439365165]
 

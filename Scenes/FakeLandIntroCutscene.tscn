@@ -1,0 +1,151 @@
+[gd_scene format=3 uid="uid://c1qap1nnpbl8r"]
+
+[ext_resource type="Script" uid="uid://ch2dn8xct4ehd" path="res://Scenes/FakeLandIntroCutscene.gd" id="1_ejfhd"]
+[ext_resource type="Texture2D" uid="uid://bp331cf20rqlu" path="res://Scenes/Menus/Dagger.png" id="2_7sej1"]
+[ext_resource type="Texture2D" uid="uid://x6vcg3tj0naj" path="res://Scenes/Menus/IntroSmiley.png" id="3_nhl32"]
+[ext_resource type="AudioStream" uid="uid://chxaggt6swmta" path="res://SFX/FakeLandIntroCutsceneSFX.wav" id="4_wp2py"]
+
+[sub_resource type="Animation" id="Animation_pmwhc"]
+resource_name = "FakeLandIntroCutscene"
+length = 7.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4, 5, 6, 6.3, 6.4),
+"transitions": PackedFloat32Array(1, 0.4506252, 0.32987675, 0.32987675, 1, 0.29730177, 1),
+"update": 0,
+"values": [Vector2(576, -195), Vector2(576, -195), Vector2(576, 250), Vector2(576, 250), Vector2(576, 120), Vector2(576, 120), Vector2(576, 350)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(576, 450)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 6.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_7sej1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(388, 195)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ejfhd"]
+_data = {
+&"FakeLandIntroCutscene": SubResource("Animation_pmwhc"),
+&"RESET": SubResource("Animation_7sej1")
+}
+
+[node name="FakeLandIntroCutscene" type="Control" unique_id=1357315675]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ejfhd")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1400711527]
+libraries/ = SubResource("AnimationLibrary_ejfhd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=288851695]
+position = Vector2(388, 195)
+scale = Vector2(4, 4)
+texture = ExtResource("2_7sej1")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1202394921]
+scale = Vector2(8, 8)
+texture = ExtResource("3_nhl32")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=365115262]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=593818455]
+stream = ExtResource("4_wp2py")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

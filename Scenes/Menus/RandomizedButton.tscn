@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://glnssl8bcg2t"]
 
-[ext_resource type="FontFile" uid="uid://di475omylqbbs" path="res://Scenes/Menus/Fonts/4.ttf" id="1_7dcs8"]
+[ext_resource type="FontFile" uid="uid://bj5tahtxfui2r" path="res://Scenes/Menus/Fonts/1.otf" id="1_7dcs8"]
 [ext_resource type="Script" uid="uid://biowloyrts2i8" path="res://Scenes/Menus/RandomizedButton.gd" id="1_yc4fn"]
-[ext_resource type="Texture2D" uid="uid://dfbf5vh6wruyx" path="res://Scenes/Menus/RandomizedButtonSprites/RandomizedButtonSprite2.png" id="2_7dcs8"]
+[ext_resource type="Texture2D" uid="uid://y66kkjuu1sq2" path="res://Scenes/Menus/RandomizedButtonSprites/RandomizedButtonSprite5.png" id="2_jmxj2"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tavue"]
-texture = ExtResource("2_7dcs8")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jmxj2"]
+texture = ExtResource("2_jmxj2")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ho6rl"]
 bg_color = Color(0, 0, 0, 1)
@@ -14,17 +14,15 @@ bg_color = Color(0, 0, 0, 1)
 texture_filter = 1
 offset_right = 8.0
 offset_bottom = 8.0
-pivot_offset = Vector2(88, 8)
-theme_override_colors/font_color = Color(0.1148119, 0.018362893, 0.18874812, 1)
-theme_override_colors/font_outline_color = Color(0.3205243, 0.11868162, 0.04491555, 1)
-theme_override_constants/outline_size = 6
+pivot_offset = Vector2(42.5, 9.5)
+theme_override_colors/font_color = Color(0.03101045, 0.68057513, 0.8726028, 1)
+theme_override_colors/font_outline_color = Color(0.62092805, 0.0817213, 0.04724585, 1)
+theme_override_constants/outline_size = 12
 theme_override_fonts/font = ExtResource("1_7dcs8")
-theme_override_styles/normal = SubResource("StyleBoxTexture_tavue")
+theme_override_styles/normal = SubResource("StyleBoxTexture_jmxj2")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ho6rl")
 text = "Lorem Ipsum"
 script = ExtResource("1_yc4fn")
-EnterURL = null
-URL = null
 
 [node name="ChangeTextureTimer" type="Timer" parent="." unique_id=545846842]
 autostart = true

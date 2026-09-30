@@ -1,4 +1,3 @@
-@tool
 class_name RandomizedButton extends Button
 
 @export var ForceQuit := false

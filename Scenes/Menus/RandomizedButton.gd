@@ -22,6 +22,8 @@ class_name RandomizedButton extends Button
 			add_theme_stylebox_override("hover", stylebox_hover.duplicate())
 			_on_change_texture_timer_timeout()
 @export var MaxHoverSize := Vector2(2.0,2.0)
+@export var EnterURL := false
+@export var URL := ""
 
 func _remove_theme_override():
 	remove_theme_stylebox_override("normal")
@@ -47,8 +49,11 @@ func _ready() -> void:
 func _on_pressed() -> void:
 	if ForceQuit:
 		get_tree().quit()
-	elif EnterTargetScene:
-		get_node("/root/SceneLoader").load_regular_scene(TargetScenePath)
+	else:
+		if EnterTargetScene:
+			get_node("/root/SceneLoader").load_regular_scene(TargetScenePath)
+		if EnterURL:
+			OS.shell_open(URL)
 
 func _on_change_texture_timer_timeout() -> void:
 	if not CustomThemeOverride:

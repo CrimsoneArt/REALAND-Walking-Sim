@@ -4,15 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://glnssl8bcg2t" path="res://Scenes/Menus/RandomizedButton.tscn" id="1_v3fht"]
 [ext_resource type="Texture2D" uid="uid://d2easpdp2w8s7" path="res://Scenes/Menus/BGMneu.png" id="2_b42ut"]
 [ext_resource type="FontFile" uid="uid://cbymreepnwda6" path="res://Scenes/Menus/Fonts/6.ttf" id="4_7r21k"]
-[ext_resource type="FontFile" uid="uid://di475omylqbbs" path="res://Scenes/Menus/Fonts/4.ttf" id="4_mdbg0"]
+[ext_resource type="FontFile" uid="uid://dun4oml8pwdwe" path="res://Scenes/Menus/Fonts/2.ttf" id="4_mb40c"]
 [ext_resource type="PackedScene" uid="uid://c1fxuilteqida" path="res://Scenes/AutomaticMusicPlayer.tscn" id="4_tfrft"]
-[ext_resource type="Texture2D" uid="uid://dfbf5vh6wruyx" path="res://Scenes/Menus/RandomizedButtonSprites/RandomizedButtonSprite2.png" id="5_c638u"]
 [ext_resource type="AudioStream" uid="uid://bvkx1u3rm4xq" path="res://SFX/Music/MainMenuOST2.wav" id="5_uv623"]
 [ext_resource type="FontFile" uid="uid://dbavb7pa4n48j" path="res://Scenes/Menus/Fonts/3.otf" id="6_mdbg0"]
 [ext_resource type="Texture2D" uid="uid://y66kkjuu1sq2" path="res://Scenes/Menus/RandomizedButtonSprites/RandomizedButtonSprite5.png" id="7_5re3m"]
-[ext_resource type="Texture2D" uid="uid://bm07qmmn18y3b" path="res://Scenes/Menus/RandomizedButtonSprites/RandomizedButtonSprite3.png" id="7_h6abm"]
 [ext_resource type="Texture2D" uid="uid://c8cskdyuriw47" path="res://Scenes/Menus/RandomizedButtonSprites/RandomizedButtonSprite1.png" id="8_7r21k"]
-[ext_resource type="FontFile" uid="uid://bj38nuw1ttt86" path="res://Scenes/Menus/Fonts/5.ttf" id="8_h6abm"]
 [ext_resource type="Texture2D" uid="uid://cx0uji5f1kuoj" path="res://Scenes/Menus/RandomizedButtonSprites/RandomizedButtonSprite4.png" id="9_7seun"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b42ut"]
@@ -22,22 +19,28 @@ shader_parameter/color1 = Color(0, 0, 0, 1)
 shader_parameter/is_silhuoted = false
 shader_parameter/intensity = 0.70000001043084
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mb40c"]
-texture = ExtResource("5_c638u")
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mdbg0"]
-texture = ExtResource("7_h6abm")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7r21k"]
 texture = ExtResource("7_5re3m")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7r21k"]
+texture = ExtResource("9_7seun")
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c638u"]
-texture = ExtResource("8_7r21k")
+texture = ExtResource("7_5re3m")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5re3m"]
+texture = ExtResource("7_5re3m")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_60h5f"]
 bg_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5re3m"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h6abm"]
+texture = ExtResource("8_7r21k")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7seun"]
+texture = ExtResource("7_5re3m")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4gati"]
 texture = ExtResource("9_7seun")
 
 [node name="MainMenu" type="Control" unique_id=588403170]
@@ -75,14 +78,14 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(299, 58)
 mouse_filter = 2
-theme_override_colors/font_color = Color(0.015264711, 0.5218923, 0.22176765, 1)
-theme_override_colors/font_outline_color = Color(0.40466854, 0.69059896, 0.19388397, 1)
-theme_override_constants/outline_size = 9
+theme_override_colors/font_color = Color(0.48787495, 0.8414432, 0.66290945, 1)
+theme_override_colors/font_outline_color = Color(0.17844315, 0.28069937, 0.3511042, 1)
 theme_override_fonts/font = ExtResource("4_7r21k")
 theme_override_font_sizes/font_size = 74
-theme_override_styles/normal = SubResource("StyleBoxTexture_mb40c")
-text = "REA LAND"
-MaxHoverSize = Vector2(2, 2)
+theme_override_styles/normal = SubResource("StyleBoxTexture_mdbg0")
+text = "REALAND"
+EnterURL = false
+URL = ""
 
 [node name="RandomizedButton4" parent="." unique_id=93331285 instance=ExtResource("1_v3fht")]
 layout_mode = 1
@@ -97,16 +100,16 @@ offset_right = 105.0
 offset_bottom = -40.5
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(105, 37.5)
+pivot_offset = Vector2(155, 37.5)
 mouse_filter = 2
-theme_override_colors/font_color = Color(0.83976465, 0.6903333, 0.6985152, 1)
-theme_override_colors/font_outline_color = Color(0.40364662, 0.16462491, 0.2292376, 1)
-theme_override_constants/outline_size = 11
-theme_override_fonts/font = ExtResource("8_h6abm")
+theme_override_colors/font_color = Color(0.32794788, 0.019520521, 0.82591385, 1)
+theme_override_colors/font_outline_color = Color(0.59954876, 0.7568646, 0.7826371, 1)
+theme_override_fonts/font = ExtResource("4_7r21k")
 theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxTexture_mdbg0")
+theme_override_styles/normal = SubResource("StyleBoxTexture_7r21k")
 text = "Walking Sim"
-MaxHoverSize = Vector2(2, 2)
+EnterURL = false
+URL = ""
 
 [node name="RandomizedButton" parent="." unique_id=1019148459 instance=ExtResource("1_v3fht")]
 custom_minimum_size = Vector2(0, 75)
@@ -118,16 +121,17 @@ offset_bottom = 435.5
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(105, 37.5)
-theme_override_colors/font_color = Color(0.88266546, 0.03517233, 0.33156088, 1)
-theme_override_colors/font_outline_color = Color(0.48895946, 0.5181894, 0.92026585, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/font = ExtResource("4_mdbg0")
+theme_override_colors/font_color = Color(0.53701293, 0.2694709, 0.96137226, 1)
+theme_override_colors/font_outline_color = Color(0.7047506, 0.6915891, 0.41873047, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("6_mdbg0")
 theme_override_font_sizes/font_size = 48
-theme_override_styles/normal = SubResource("StyleBoxTexture_7r21k")
+theme_override_styles/normal = SubResource("StyleBoxTexture_c638u")
 text = "Play"
 EnterTargetScene = true
 TargetScenePath = "res://Scenes/HubWorld.tscn"
-MaxHoverSize = Vector2(2, 2)
+EnterURL = false
+URL = ""
 
 [node name="RandomizedButton2" parent="." unique_id=680655530 instance=ExtResource("1_v3fht")]
 custom_minimum_size = Vector2(0, 75)
@@ -138,18 +142,19 @@ offset_right = 681.0
 offset_bottom = 514.5
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(105, 38.5)
-theme_override_colors/font_color = Color(0.57637554, 0.7763023, 0.055609625, 1)
-theme_override_colors/font_outline_color = Color(0.12758106, 0.51973176, 0.6799451, 1)
-theme_override_constants/outline_size = 5
-theme_override_fonts/font = ExtResource("6_mdbg0")
+pivot_offset = Vector2(105, 37.5)
+theme_override_colors/font_color = Color(0.017795771, 0.58176994, 0.9644597, 1)
+theme_override_colors/font_outline_color = Color(0.42309096, 0.9485454, 0.08089997, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("4_mb40c")
 theme_override_font_sizes/font_size = 48
-theme_override_styles/normal = SubResource("StyleBoxTexture_c638u")
+theme_override_styles/normal = SubResource("StyleBoxTexture_5re3m")
 theme_override_styles/hover = SubResource("StyleBoxFlat_60h5f")
 text = "Help"
 EnterTargetScene = true
 TargetScenePath = "res://Scenes/Menus/HelpMenu1.tscn"
-MaxHoverSize = Vector2(2, 2)
+EnterURL = false
+URL = ""
 
 [node name="RandomizedButton5" parent="." unique_id=549826396 instance=ExtResource("1_v3fht")]
 custom_minimum_size = Vector2(0, 75)
@@ -159,15 +164,50 @@ offset_top = 518.5
 offset_right = 681.0
 offset_bottom = 593.5
 pivot_offset = Vector2(105, 37.5)
-theme_override_colors/font_color = Color(0.3827827, 0.37251505, 0.3047109, 1)
-theme_override_colors/font_outline_color = Color(0.9958146, 0.26455742, 0.26299742, 1)
-theme_override_constants/outline_size = 12
-theme_override_fonts/font = ExtResource("4_mdbg0")
+theme_override_colors/font_color = Color(0.06571483, 0.19694716, 0.54364365, 1)
+theme_override_colors/font_outline_color = Color(0.23810579, 0.93187183, 0.89376086, 1)
+theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 48
-theme_override_styles/normal = SubResource("StyleBoxTexture_5re3m")
+theme_override_styles/normal = SubResource("StyleBoxTexture_h6abm")
 text = "Exit"
 ForceQuit = true
-MaxHoverSize = Vector2(2, 2)
+EnterURL = false
+URL = ""
+
+[node name="RandomizedButton6" parent="." unique_id=704593116 instance=ExtResource("1_v3fht")]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 0
+offset_left = 82.0
+offset_top = 439.5
+offset_right = 292.0
+offset_bottom = 514.5
+pivot_offset = Vector2(105, 38.5)
+theme_override_colors/font_color = Color(0.72838444, 0.7427247, 0.8205728, 1)
+theme_override_colors/font_outline_color = Color(0.15807202, 0.9932811, 0.019270286, 1)
+theme_override_constants/outline_size = 11
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_7seun")
+theme_override_styles/hover = SubResource("StyleBoxFlat_60h5f")
+text = "Youtube"
+EnterURL = true
+URL = "https://www.youtube.com/@CrimsoneArt69/featured"
+
+[node name="RandomizedButton7" parent="." unique_id=503945213 instance=ExtResource("1_v3fht")]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 0
+offset_left = 82.0
+offset_top = 518.5
+offset_right = 292.0
+offset_bottom = 593.5
+pivot_offset = Vector2(105, 37.5)
+theme_override_colors/font_color = Color(0.9556667, 0.06868657, 0.14749904, 1)
+theme_override_colors/font_outline_color = Color(0.62696874, 0.68135107, 0.79915607, 1)
+theme_override_constants/outline_size = 11
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_4gati")
+text = "Twitter"
+EnterURL = true
+URL = "https://x.com/CrimsoneArt69"
 
 [node name="AutomaticMusicPlayer" parent="." unique_id=177518372 instance=ExtResource("4_tfrft")]
 Song = ExtResource("5_uv623")

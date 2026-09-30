@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Rea Land Walking Sim"
+config/name="REALAND Walking Sim"
 run/main_scene="uid://cf31gf6dexort"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="uid://b3j84b6xgusyo"

@@ -3,6 +3,8 @@ class_name DimensionType extends Node3D
 var RNG = RandomNumberGenerator.new()
 var DoorObjectScene = preload("res://Objects/Door/DoorObject.tscn")
 
+signal materials_chosen(Materials:Array)
+
 func _generate_dimension(seed:int):
 	assert(false, "_generate_dimension() must be overridden by the subclass.")
 
@@ -10,7 +12,7 @@ func spawn_objects(objectSpawner:ObjectSpawner,Objects:Array,generate_position:C
 	for ObjectScene in Objects:
 		var ObjectNode = ObjectScene.instantiate()
 		if ObjectNode is GameObject:
-			for Count in range(ObjectNode.amount_min*(2 if self is CityDimensionType else 1),ObjectNode.amount_max*(3 if self is CityDimensionType else 1)):
+			for Count in range(ObjectNode.amount_min,ObjectNode.amount_max*(3 if self is CityDimensionType else 1)):
 				objectSpawner.spawn_object(RNG,ObjectScene,generate_position.call(),Materials)
 
 func pick_random_materials(rng:RandomNumberGenerator):
@@ -25,11 +27,13 @@ func pick_random_materials(rng:RandomNumberGenerator):
 	var MaterialNumber = rng.randi_range(1,6)
 	for i in range(1,Materials.size()-MaterialNumber):
 		Materials.pop_at(rng.randi() % Materials.size())
-		
+	
+	materials_chosen.emit(Materials)
+	
 	return Loader.load_files_in_array(Materials)
 	
 func pick_random_objects(rng:RandomNumberGenerator) -> Array[PackedScene]:
-	if rng.randf_range(0,100) <= 30:
+	if rng.randf_range(0,100) <= 28:
 		var Objects: Array = []
 		
 		var Loader = FileLoader.new()

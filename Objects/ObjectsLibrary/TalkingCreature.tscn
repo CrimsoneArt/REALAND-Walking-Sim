@@ -1,27 +1,27 @@
 [gd_scene format=3 uid="uid://clpyh6wo1hspm"]
 
-[ext_resource type="Script" uid="uid://bigmfike0mjoo" path="res://Objects/ObjectsLibrary/TalkingCreature.gd" id="1_k0v6w"]
-[ext_resource type="Texture2D" uid="uid://dscedat22b63h" path="res://Objects/ObjectsLibrary/TalkingCreature-Sheet.png" id="2_ffx57"]
-[ext_resource type="Script" uid="uid://dn7olex1h6kds" path="res://Objects/ObjectComponents/NPCObjectAnimationStatePlayer.gd" id="2_lej2c"]
-[ext_resource type="Script" uid="uid://dl3v7yp1te08c" path="res://Objects/ObjectComponents/WanderingComponent.gd" id="3_lej2c"]
-[ext_resource type="PackedScene" uid="uid://cdnf6l5oawl3i" path="res://Objects/ObjectComponents/InteractabilityComponent.tscn" id="4_k0v6w"]
-[ext_resource type="Script" uid="uid://buom1dm7hnqqu" path="res://Objects/ObjectComponents/NPCObjectAnimationState.gd" id="4_mo2df"]
-[ext_resource type="AudioStream" uid="uid://dxcaoxbnghajm" path="res://SFX/TalkingCreature.mp3" id="5_jnclm"]
+[ext_resource type="Script" uid="uid://bigmfike0mjoo" path="res://Objects/ObjectsLibrary/TalkingCreature.gd" id="1_gymb2"]
+[ext_resource type="Texture2D" uid="uid://dscedat22b63h" path="res://Objects/ObjectsLibrary/TalkingCreature-Sheet.png" id="2_1h7am"]
+[ext_resource type="Script" uid="uid://dn7olex1h6kds" path="res://Objects/ObjectComponents/NPCObjectAnimationStatePlayer.gd" id="3_w4a1t"]
+[ext_resource type="PackedScene" uid="uid://cdnf6l5oawl3i" path="res://Objects/ObjectComponents/InteractabilityComponent.tscn" id="4_6i0ae"]
+[ext_resource type="AudioStream" uid="uid://dxcaoxbnghajm" path="res://SFX/TalkingCreature.mp3" id="5_pcg58"]
+[ext_resource type="Script" uid="uid://dl3v7yp1te08c" path="res://Objects/ObjectComponents/WanderingComponent.gd" id="6_oaepj"]
+[ext_resource type="Script" uid="uid://buom1dm7hnqqu" path="res://Objects/ObjectComponents/NPCObjectAnimationState.gd" id="7_0argo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k0v6w"]
-atlas = ExtResource("2_ffx57")
+atlas = ExtResource("2_1h7am")
 region = Rect2(0, 0, 16, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jnclm"]
-atlas = ExtResource("2_ffx57")
+atlas = ExtResource("2_1h7am")
 region = Rect2(16, 0, 16, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ffx57"]
-atlas = ExtResource("2_ffx57")
+atlas = ExtResource("2_1h7am")
 region = Rect2(0, 24, 16, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ahtsj"]
-atlas = ExtResource("2_ffx57")
+atlas = ExtResource("2_1h7am")
 region = Rect2(16, 24, 16, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_h4qny"]
@@ -55,16 +55,16 @@ animations = [{
 radius = 1.1639355
 
 [sub_resource type="Resource" id="Resource_lej2c"]
-script = ExtResource("4_mo2df")
+script = ExtResource("7_0argo")
 metadata/_custom_type_script = "uid://buom1dm7hnqqu"
 
 [sub_resource type="Resource" id="Resource_mo2df"]
-script = ExtResource("4_mo2df")
+script = ExtResource("7_0argo")
 State = 1
 metadata/_custom_type_script = "uid://buom1dm7hnqqu"
 
 [node name="TalkingCreature" type="Node3D" unique_id=484000923 node_paths=PackedStringArray("MovementNode", "ActiveComponent")]
-script = ExtResource("1_k0v6w")
+script = ExtResource("1_gymb2")
 MovementNode = NodePath("CharacterBody3D")
 ActiveComponent = NodePath("WanderComponent")
 amount_min = 1
@@ -81,15 +81,15 @@ texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_h4qny")
 animation = &"Walk"
 frame_progress = 0.54612607
-script = ExtResource("2_lej2c")
+script = ExtResource("3_w4a1t")
 movementComponent = NodePath("../../WanderComponent")
 metadata/_custom_type_script = "uid://dn7olex1h6kds"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=413510804]
 shape = SubResource("CapsuleShape3D_xrivr")
 
-[node name="InteractabilityComponent" parent="CharacterBody3D" unique_id=500345398 instance=ExtResource("4_k0v6w")]
-SoundEffect = ExtResource("5_jnclm")
+[node name="InteractabilityComponent" parent="CharacterBody3D" unique_id=500345398 instance=ExtResource("4_6i0ae")]
+SoundEffect = ExtResource("5_pcg58")
 Pitch_Min = 1.0
 Pitch_Max = 1.0
 
@@ -97,9 +97,9 @@ Pitch_Max = 1.0
 shape = SubResource("SphereShape3D_xrivr")
 
 [node name="WanderComponent" type="Node" parent="." unique_id=436872693 node_paths=PackedStringArray("MovementNode")]
-script = ExtResource("3_lej2c")
+script = ExtResource("6_oaepj")
 MovementNode = NodePath("../CharacterBody3D")
-States = Array[ExtResource("4_mo2df")]([SubResource("Resource_lej2c"), SubResource("Resource_mo2df")])
+States = Array[ExtResource("7_0argo")]([SubResource("Resource_lej2c"), SubResource("Resource_mo2df")])
 metadata/_custom_type_script = "uid://dl3v7yp1te08c"
 
 [connection signal="Interacted" from="CharacterBody3D/InteractabilityComponent" to="." method="_on_interactability_component_interacted"]

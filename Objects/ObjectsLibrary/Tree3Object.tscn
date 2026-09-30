@@ -1,38 +1,38 @@
 [gd_scene format=3 uid="uid://ljtmm1uduay8"]
 
-[ext_resource type="Script" uid="uid://w20ux2inkv7" path="res://Objects/ObjectsLibrary/Tree3Object.gd" id="1_t7m3n"]
-[ext_resource type="Script" uid="uid://cbgpvmrkx1dw3" path="res://Objects/ObjectComponents/ObjectVariablesComponent.gd" id="2_qx8yh"]
-[ext_resource type="Material" uid="uid://sekd3gokx0bq" path="res://Materials/DimensionMaterials/Patterns1.tres" id="3_ieyam"]
-[ext_resource type="Script" uid="uid://bjokdxs5441sl" path="res://Objects/ObjectComponents/ObjectVariableRule.gd" id="3_qx8yh"]
+[ext_resource type="Script" uid="uid://w20ux2inkv7" path="res://Objects/ObjectsLibrary/Tree3Object.gd" id="1_pnrg8"]
+[ext_resource type="Script" uid="uid://cbgpvmrkx1dw3" path="res://Objects/ObjectComponents/ObjectVariablesComponent.gd" id="2_40xbe"]
+[ext_resource type="Script" uid="uid://bjokdxs5441sl" path="res://Objects/ObjectComponents/ObjectVariableRule.gd" id="3_msd5t"]
+[ext_resource type="Material" uid="uid://sekd3gokx0bq" path="res://Materials/DimensionMaterials/Patterns1.tres" id="4_6y2j0"]
 
 [sub_resource type="Resource" id="Resource_t7m3n"]
-script = ExtResource("3_qx8yh")
+script = ExtResource("3_msd5t")
 variable_name = "Height"
 min_float = 1.0
 max_float = 15.0
 metadata/_custom_type_script = "uid://bjokdxs5441sl"
 
 [sub_resource type="Resource" id="Resource_qx8yh"]
-script = ExtResource("3_qx8yh")
+script = ExtResource("3_msd5t")
 variable_name = "MaterialIndex"
 type = 1
 generate_random_int = true
 metadata/_custom_type_script = "uid://bjokdxs5441sl"
 
 [node name="TreeObject" type="Node3D" unique_id=255021489 node_paths=PackedStringArray("objectVariablesComponent")]
-script = ExtResource("1_t7m3n")
+script = ExtResource("1_pnrg8")
 objectVariablesComponent = NodePath("ObjectVariablesComponent")
 amount_min = 10
 amount_max = 40
 metadata/_custom_type_script = "uid://dpoxk86q0vc0o"
 
 [node name="ObjectVariablesComponent" type="Node" parent="." unique_id=1539516392]
-script = ExtResource("2_qx8yh")
+script = ExtResource("2_40xbe")
 Variables = Dictionary[String, Variant]({
 "Height": 0.0,
 "MaterialIndex": 0
 })
-VariableRules = Array[ExtResource("3_qx8yh")]([SubResource("Resource_t7m3n"), SubResource("Resource_qx8yh")])
+VariableRules = Array[ExtResource("3_msd5t")]([SubResource("Resource_t7m3n"), SubResource("Resource_qx8yh")])
 metadata/_custom_type_script = "uid://cbgpvmrkx1dw3"
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=209282406]
@@ -40,4 +40,4 @@ use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1114149144]
 size = Vector3(1, 4.75, 1)
-material = ExtResource("3_ieyam")
+material = ExtResource("4_6y2j0")

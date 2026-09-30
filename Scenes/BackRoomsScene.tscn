@@ -1,0 +1,157 @@
+[gd_scene format=3 uid="uid://bhsqkpen6nsnq"]
+
+[ext_resource type="Material" uid="uid://ry42vi77246q" path="res://Materials/Steel3.tres" id="1_1ahcq"]
+[ext_resource type="PackedScene" uid="uid://igw0ct71j4e2" path="res://Player/Player.tscn" id="2_2x6ys"]
+[ext_resource type="Material" uid="uid://qdrroywmlg5l" path="res://Materials/DimensionMaterials/Bricks1.tres" id="2_lvl7c"]
+[ext_resource type="Texture2D" uid="uid://d2mqx6hovyjbt" path="res://Materials/Props/StaffOnlyDoor.png" id="3_2uuhy"]
+[ext_resource type="Texture2D" uid="uid://dwabp5np7ay55" path="res://Materials/Props/PsychoPomp.png" id="4_epdub"]
+[ext_resource type="PackedScene" uid="uid://c1fxuilteqida" path="res://Scenes/AutomaticMusicPlayer.tscn" id="4_fu1vu"]
+[ext_resource type="Texture2D" uid="uid://b2ov3jgb3x6q3" path="res://Materials/Props/Shelf1.png" id="5_p28bm"]
+[ext_resource type="Texture2D" uid="uid://dxwls0bg83rwb" path="res://Materials/Props/Sacrifice.png" id="6_pq1ay"]
+[ext_resource type="Texture2D" uid="uid://due405hs8w3nw" path="res://Materials/Props/BucketProp.png" id="8_51w33"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p28bm"]
+size = Vector3(4, 5, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_51w33"]
+radius = 0.92049336
+
+[node name="BackRooms" type="Node3D" unique_id=1702263679]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=633563821]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1444419594]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -24.5)
+flip_faces = true
+size = Vector3(4, 6, 65)
+material = ExtResource("1_1ahcq")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1339630232]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 2.5, -55)
+flip_faces = true
+size = Vector3(32, 6, 4)
+material = ExtResource("1_1ahcq")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="CSGCombiner3D" unique_id=682606387]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 2.5, -54)
+flip_faces = true
+size = Vector3(4, 6, 26)
+material = ExtResource("1_1ahcq")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D" unique_id=597093657]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 2.5, -55)
+flip_faces = true
+size = Vector3(7, 6, 7)
+material = ExtResource("1_1ahcq")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D" unique_id=2060692599]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 2.5, -68)
+flip_faces = true
+size = Vector3(7, 6, 7)
+material = ExtResource("1_1ahcq")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1237997129]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 2.5, -55)
+flip_faces = true
+size = Vector3(7, 6, 7)
+material = ExtResource("1_1ahcq")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1389912355]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 2.5, -43)
+flip_faces = true
+size = Vector3(7, 6, 7)
+material = ExtResource("1_1ahcq")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="CSGCombiner3D" unique_id=777393705]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, -0.25, -42)
+operation = 2
+flip_faces = true
+size = Vector3(3, 0.5, 3)
+material = ExtResource("2_lvl7c")
+
+[node name="Player" parent="." unique_id=1083039947 instance=ExtResource("2_2x6ys")]
+transform = Transform3D(-0.8, 0, -1.2079664e-07, 0, 0.8, 0, 1.2079664e-07, 0, -0.8, 0, 1, 3)
+
+[node name="StaffOnlyDoor" type="Sprite3D" parent="." unique_id=449840805]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1.3321419, 7.9752326)
+pixel_size = 0.025
+texture_filter = 0
+texture = ExtResource("3_2uuhy")
+
+[node name="StaffOnlyDoor2" type="Sprite3D" parent="." unique_id=273562317]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.9700384, 1.3321419, -27.024767)
+pixel_size = 0.025
+texture_filter = 0
+texture = ExtResource("3_2uuhy")
+
+[node name="StaffOnlyDoor3" type="Sprite3D" parent="." unique_id=169107329]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.9700384, 1.3321419, -31.024767)
+pixel_size = 0.025
+texture_filter = 0
+texture = ExtResource("3_2uuhy")
+
+[node name="StaffOnlyDoor4" type="Sprite3D" parent="." unique_id=487845635]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.9700384, 1.3321419, -35.024765)
+pixel_size = 0.025
+texture_filter = 0
+texture = ExtResource("3_2uuhy")
+
+[node name="StaffOnlyDoor5" type="Sprite3D" parent="." unique_id=34841742]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.9700384, 1.3321419, -55.36414)
+pixel_size = 0.025
+texture_filter = 0
+texture = ExtResource("3_2uuhy")
+
+[node name="StaffOnlyDoor6" type="Sprite3D" parent="." unique_id=498586984]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13.520642, 1.3321419, -68.364136)
+pixel_size = 0.025
+texture_filter = 0
+texture = ExtResource("3_2uuhy")
+
+[node name="Shelf1" type="Sprite3D" parent="." unique_id=1147406524]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 31.02996, 2.1349568, -55.36414)
+pixel_size = 0.03
+texture_filter = 0
+texture = ExtResource("5_p28bm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Shelf1" unique_id=584298143]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Shelf1/StaticBody3D" unique_id=394164026]
+shape = SubResource("BoxShape3D_p28bm")
+
+[node name="Shelf2" type="Sprite3D" parent="." unique_id=1051063517]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.02996, 2.1349568, -69.864136)
+pixel_size = 0.03
+texture_filter = 0
+texture = ExtResource("5_p28bm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Shelf2" unique_id=1168229831]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Shelf2/StaticBody3D" unique_id=1900615159]
+shape = SubResource("BoxShape3D_p28bm")
+
+[node name="Psychopomp" type="Sprite3D" parent="." unique_id=880589337]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 17.02996, 3.3321419, -39.53276)
+pixel_size = 0.025
+texture_filter = 0
+texture = ExtResource("4_epdub")
+
+[node name="Sacrifice" type="Sprite3D" parent="." unique_id=1053245084]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 17.02996, 0.6634853, -42.27201)
+pixel_size = 0.08
+texture_filter = 0
+texture = ExtResource("6_pq1ay")
+
+[node name="Bucket" type="Sprite3D" parent="." unique_id=1234442881]
+transform = Transform3D(0.7071068, 0, -0.7071067, 0, 1, 0, 0.7071067, 0, 0.7071068, 20.02996, 0.4256084, -57.27201)
+pixel_size = 0.04
+texture_filter = 0
+texture = ExtResource("8_51w33")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Bucket" unique_id=408901540]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bucket/StaticBody3D" unique_id=877159990]
+shape = SubResource("SphereShape3D_51w33")
+
+[node name="AutomaticMusicPlayer" parent="." unique_id=177518372 instance=ExtResource("4_fu1vu")]

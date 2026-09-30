@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://b4a56q5depfgo"]
+
+[ext_resource type="Script" uid="uid://rcovi0yn2agy" path="res://Scenes/Menus/intro.gd" id="1_re1yb"]
+[ext_resource type="FontFile" uid="uid://dcgamcja6cb5a" path="res://Scenes/Menus/Fonts/7.ttf" id="1_rebka"]
+[ext_resource type="AudioStream" uid="uid://bw8t0v50eemhc" path="res://SFX/Intro.wav" id="2_vd22a"]
+[ext_resource type="Shader" uid="uid://cxl5m7cwrixg5" path="res://Materials/Scroll.gdshader" id="3_s11i4"]
+[ext_resource type="Texture2D" uid="uid://x6vcg3tj0naj" path="res://Scenes/Menus/IntroSmiley.png" id="5_vkb2h"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vd22a"]
+shader = ExtResource("3_s11i4")
+shader_parameter/scroll_speed = Vector2(0, 0)
+shader_parameter/color1 = Color(0, 0, 0, 1)
+shader_parameter/is_silhuoted = false
+shader_parameter/intensity = 0.0
+
+[node name="Intro" type="Control" unique_id=1571303425]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_re1yb")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=603077199]
+stream = ExtResource("2_vd22a")
+autoplay = true
+bus = &"SFX"
+
+[node name="Title" type="Label" parent="." unique_id=87025516]
+texture_filter = 1
+material = SubResource("ShaderMaterial_vd22a")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -464.0
+offset_top = -32.0
+offset_right = 464.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(464, 32)
+theme_override_fonts/font = ExtResource("1_rebka")
+theme_override_font_sizes/font_size = 72
+text = "Created by CrimsoneArt"
+
+[node name="Timer" type="Timer" parent="." unique_id=1094664670]
+wait_time = 2.0
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1527980604]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_vkb2h")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -6,3 +6,4 @@ var PreviousState : NPCObjectAnimationState
 func _process(delta: float) -> void:
 	if PreviousState != movementComponent.State:
 		play(movementComponent.State.States.find_key(movementComponent.State.State))
+	PreviousState = movementComponent.State

@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://dexhnwru7tdhn"]
 
-[ext_resource type="Script" uid="uid://dpoxk86q0vc0o" path="res://Objects/GameObject.gd" id="1_x0kn2"]
-[ext_resource type="Texture2D" uid="uid://d00vfegkaijor" path="res://Objects/ObjectsLibrary/Tree1.png" id="2_ohtt6"]
-[ext_resource type="Script" uid="uid://cbgpvmrkx1dw3" path="res://Objects/ObjectComponents/ObjectVariablesComponent.gd" id="3_mrs3s"]
+[ext_resource type="Script" uid="uid://dpoxk86q0vc0o" path="res://Objects/GameObject.gd" id="1_vue6a"]
+[ext_resource type="Texture2D" uid="uid://d00vfegkaijor" path="res://Objects/ObjectsLibrary/Tree1.png" id="2_2unxg"]
+[ext_resource type="Script" uid="uid://cbgpvmrkx1dw3" path="res://Objects/ObjectComponents/ObjectVariablesComponent.gd" id="3_eblav"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ohtt6"]
 radius = 0.625
 height = 3.125
 
 [node name="TreeObject" type="Node3D" unique_id=1358014396 node_paths=PackedStringArray("objectVariablesComponent")]
-script = ExtResource("1_x0kn2")
+script = ExtResource("1_vue6a")
 objectVariablesComponent = NodePath("StaticBody3D/ObjectVariablesComponent")
 amount_min = 17
 amount_max = 63
@@ -21,12 +21,12 @@ metadata/_custom_type_script = "uid://dpoxk86q0vc0o"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8612413, 0)
 pixel_size = 0.02
 texture_filter = 0
-texture = ExtResource("2_ohtt6")
+texture = ExtResource("2_2unxg")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=2068898764]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6875, 0)
 shape = SubResource("CapsuleShape3D_ohtt6")
 
 [node name="ObjectVariablesComponent" type="Node" parent="StaticBody3D" unique_id=1539516392]
-script = ExtResource("3_mrs3s")
+script = ExtResource("3_eblav")
 metadata/_custom_type_script = "uid://cbgpvmrkx1dw3"

@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://jtmv5d2rsur"]
+
+[ext_resource type="Script" uid="uid://ccdi1474lyoje" path="res://Objects/ObjectsLibrary/RareObjectsLibrary/CoinNPCObject.gd" id="1_h77r7"]
+[ext_resource type="Texture2D" uid="uid://buq1mk5gsq0st" path="res://Objects/ObjectsLibrary/RareObjectsLibrary/CoinNPCBall1.png" id="2_h77r7"]
+[ext_resource type="PackedScene" uid="uid://dcnxmcd02wof3" path="res://Objects/ObjectComponents/FlappyMovementComponent.tscn" id="2_uk8d4"]
+[ext_resource type="Texture2D" uid="uid://8ryahpjjt8v5" path="res://Objects/ObjectsLibrary/RareObjectsLibrary/CoinNPCWings-Sheet.png" id="3_vncdg"]
+[ext_resource type="PackedScene" uid="uid://cdnf6l5oawl3i" path="res://Objects/ObjectComponents/InteractabilityComponent.tscn" id="5_p02l7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h77r7"]
+shading_mode = 0
+albedo_texture = ExtResource("2_h77r7")
+texture_filter = 0
+
+[sub_resource type="SphereMesh" id="SphereMesh_h77r7"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_h77r7"]
+radius = 0.89710706
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p02l7"]
+atlas = ExtResource("3_vncdg")
+region = Rect2(0, 0, 120, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5ohg"]
+atlas = ExtResource("3_vncdg")
+region = Rect2(120, 0, 120, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7h8jg"]
+atlas = ExtResource("3_vncdg")
+region = Rect2(240, 0, 120, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4sbsh"]
+atlas = ExtResource("3_vncdg")
+region = Rect2(360, 0, 120, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1yax"]
+atlas = ExtResource("3_vncdg")
+region = Rect2(480, 0, 120, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7uaj1"]
+atlas = ExtResource("3_vncdg")
+region = Rect2(600, 0, 120, 160)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h77r7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p02l7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x5ohg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7h8jg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4sbsh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1yax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7uaj1")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_p02l7"]
+radius = 1.583737
+
+[node name="CoinNPCObject" type="Node3D" unique_id=1109430514 node_paths=PackedStringArray("MovementNode", "ActiveComponent")]
+script = ExtResource("1_h77r7")
+MovementNode = NodePath("CharacterBody3D")
+ActiveComponent = NodePath("FlappyMovementComponent")
+amount_min = 1
+amount_max = 2
+ChanceOfAppearing = 5.9
+metadata/_custom_type_script = "uid://dkxweyao0waoj"
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=210175096]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D" unique_id=37751284]
+transform = Transform3D(1.75, 0, 0, 0, 1.4124182, -1.0332351, 0, 1.0332351, 1.4124182, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_h77r7")
+mesh = SubResource("SphereMesh_h77r7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1687269805]
+shape = SubResource("SphereShape3D_h77r7")
+
+[node name="Wing1" type="AnimatedSprite3D" parent="CharacterBody3D" unique_id=537121499]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.88974, 0, 0)
+pixel_size = 0.02
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_h77r7")
+autoplay = "default"
+frame = 1
+
+[node name="Wing2" type="AnimatedSprite3D" parent="CharacterBody3D" unique_id=1447775086]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.89, 0, 0)
+flip_h = true
+pixel_size = 0.02
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_h77r7")
+autoplay = "default"
+frame = 1
+
+[node name="InteractabilityComponent" parent="CharacterBody3D" unique_id=243203785 instance=ExtResource("5_p02l7")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D/InteractabilityComponent" unique_id=630863694]
+shape = SubResource("SphereShape3D_p02l7")
+
+[node name="FlappyMovementComponent" parent="." unique_id=424461509 node_paths=PackedStringArray("MovementNode") instance=ExtResource("2_uk8d4")]
+min_height = 1.0
+max_height = 3.0
+min_jump_strength = 2.5
+max_jump_strengh = 3.5
+min_walk_time = 4.5
+max_walk_time = 19.5
+min_wait_time = 0.1
+max_wait_time = 1.75
+walking_speed = 1.0
+MovementNode = NodePath("../CharacterBody3D")
+
+[node name="Timer" type="Timer" parent="." unique_id=1402630707]
+wait_time = 0.25
+autostart = true
+
+[connection signal="Interacted" from="CharacterBody3D/InteractabilityComponent" to="." method="_on_interactability_component_interacted"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

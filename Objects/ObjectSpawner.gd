@@ -10,4 +10,5 @@ func spawn_object(RNG,ObjectScene:PackedScene,Position:Vector3,Materials:Array):
 		ObjectNode.SetRandomVariables(RNG)
 		if ObjectNode.objectVariablesComponent != null:
 			ObjectNode.objectVariablesComponent.MaterialsList = Materials
+			ObjectNode.objectVariablesComponent.Seed = RNG.seed
 		get_parent().add_child(ObjectNode)

@@ -3,13 +3,10 @@
 [ext_resource type="Shader" uid="uid://cxl5m7cwrixg5" path="res://Materials/Scroll.gdshader" id="1_hqtmt"]
 [ext_resource type="PackedScene" uid="uid://glnssl8bcg2t" path="res://Scenes/Menus/RandomizedButton.tscn" id="1_v3fht"]
 [ext_resource type="Texture2D" uid="uid://d2easpdp2w8s7" path="res://Scenes/Menus/BGMneu.png" id="2_b42ut"]
-
 [ext_resource type="FontFile" uid="uid://cbymreepnwda6" path="res://Scenes/Menus/Fonts/6.ttf" id="4_7r21k"]
-[ext_resource type="FontFile" uid="uid://bj5tahtxfui2r" path="res://Scenes/Menus/Fonts/1.otf" id="4_c638u"]
 [ext_resource type="FontFile" uid="uid://dun4oml8pwdwe" path="res://Scenes/Menus/Fonts/2.ttf" id="4_mb40c"]
 [ext_resource type="PackedScene" uid="uid://c1fxuilteqida" path="res://Scenes/AutomaticMusicPlayer.tscn" id="4_tfrft"]
 [ext_resource type="AudioStream" uid="uid://bvkx1u3rm4xq" path="res://SFX/Music/MainMenuOST2.wav" id="5_uv623"]
-[ext_resource type="FontFile" uid="uid://dcgamcja6cb5a" path="res://Scenes/Menus/Fonts/7.ttf" id="6_5re3m"]
 [ext_resource type="Texture2D" uid="uid://y66kkjuu1sq2" path="res://Scenes/Menus/RandomizedButtonSprites/RandomizedButtonSprite5.png" id="7_5re3m"]
 [ext_resource type="Texture2D" uid="uid://dfbf5vh6wruyx" path="res://Scenes/Menus/RandomizedButtonSprites/RandomizedButtonSprite2.png" id="7_h6abm"]
 [ext_resource type="Texture2D" uid="uid://c8cskdyuriw47" path="res://Scenes/Menus/RandomizedButtonSprites/RandomizedButtonSprite1.png" id="8_7r21k"]
@@ -26,9 +23,6 @@ shader_parameter/intensity = 0.70000001043084
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qs6c0"]
 texture = ExtResource("13_4gati")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_acty6"]
-texture = ExtResource("8_7r21k")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dgmqu"]
 texture = ExtResource("7_5re3m")
@@ -83,15 +77,12 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(299, 58)
 mouse_filter = 2
-
 theme_override_colors/font_color = Color(0.48787495, 0.8414432, 0.66290945, 1)
 theme_override_colors/font_outline_color = Color(0.17844315, 0.28069937, 0.3511042, 1)
 theme_override_fonts/font = ExtResource("4_7r21k")
 theme_override_font_sizes/font_size = 74
-theme_override_styles/normal = SubResource("StyleBoxTexture_mdbg0")
+theme_override_styles/normal = SubResource("StyleBoxTexture_qs6c0")
 text = "REALAND"
-EnterURL = false
-URL = ""
 
 [node name="RandomizedButton4" parent="." unique_id=93331285 instance=ExtResource("1_v3fht")]
 layout_mode = 1
@@ -112,10 +103,8 @@ theme_override_colors/font_color = Color(0.32794788, 0.019520521, 0.82591385, 1)
 theme_override_colors/font_outline_color = Color(0.59954876, 0.7568646, 0.7826371, 1)
 theme_override_fonts/font = ExtResource("4_7r21k")
 theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxTexture_7r21k")
+theme_override_styles/normal = SubResource("StyleBoxTexture_qs6c0")
 text = "Walking Sim"
-EnterURL = false
-URL = ""
 
 [node name="RandomizedButton" parent="." unique_id=1019148459 instance=ExtResource("1_v3fht")]
 custom_minimum_size = Vector2(0, 75)
@@ -130,14 +119,11 @@ pivot_offset = Vector2(105, 37.5)
 theme_override_colors/font_color = Color(0.16096233, 0.36126593, 0.8851758, 1)
 theme_override_colors/font_outline_color = Color(0.7594154, 0.82202715, 0.4634343, 1)
 theme_override_constants/outline_size = 9
-theme_override_fonts/font = ExtResource("4_c638u")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxTexture_dgmqu")
 text = "Play"
 EnterTargetScene = true
 TargetScenePath = "res://Scenes/HubWorld.tscn"
-EnterURL = false
-URL = ""
 
 [node name="RandomizedButton2" parent="." unique_id=680655530 instance=ExtResource("1_v3fht")]
 custom_minimum_size = Vector2(0, 75)
@@ -159,8 +145,6 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_60h5f")
 text = "Help"
 EnterTargetScene = true
 TargetScenePath = "res://Scenes/Menus/HelpMenu1.tscn"
-EnterURL = false
-URL = ""
 
 [node name="RandomizedButton5" parent="." unique_id=549826396 instance=ExtResource("1_v3fht")]
 custom_minimum_size = Vector2(0, 75)
@@ -172,13 +156,10 @@ offset_bottom = 593.5
 pivot_offset = Vector2(105, 37.5)
 theme_override_colors/font_color = Color(0.5194469, 0.6143578, 0.23129243, 1)
 theme_override_colors/font_outline_color = Color(0.93474084, 0.266702, 0.46501523, 1)
-theme_override_fonts/font = ExtResource("4_c638u")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxTexture_dghsp")
 text = "Exit"
 ForceQuit = true
-EnterURL = false
-URL = ""
 
 [node name="RandomizedButton6" parent="." unique_id=704593116 instance=ExtResource("1_v3fht")]
 custom_minimum_size = Vector2(0, 75)

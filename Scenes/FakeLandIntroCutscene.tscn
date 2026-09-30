@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://0gp3uaj73bsl"]
 
-[ext_resource type="Script" path="res://Scenes/FakeLandIntroCutscene.gd" id="1_ejfhd"]
-[ext_resource type="Texture2D" path="res://Scenes/Menus/Dagger.png" id="2_7sej1"]
-[ext_resource type="Texture2D" path="res://Scenes/Menus/IntroSmiley.png" id="3_nhl32"]
-[ext_resource type="AudioStream" path="res://SFX/FakeLandIntroCutsceneSFX.wav" id="4_wp2py"]
+[ext_resource type="Script" uid="uid://ch2dn8xct4ehd" path="res://Scenes/FakeLandIntroCutscene.gd" id="1_ejfhd"]
+[ext_resource type="Texture2D" uid="uid://bp331cf20rqlu" path="res://Scenes/Menus/Dagger.png" id="2_7sej1"]
+[ext_resource type="Texture2D" uid="uid://x6vcg3tj0naj" path="res://Scenes/Menus/IntroSmiley.png" id="3_nhl32"]
+[ext_resource type="AudioStream" uid="uid://chxaggt6swmta" path="res://SFX/FakeLandIntroCutsceneSFX.wav" id="4_wp2py"]
 
 [sub_resource type="Animation" id="Animation_pmwhc"]
 resource_name = "FakeLandIntroCutscene"

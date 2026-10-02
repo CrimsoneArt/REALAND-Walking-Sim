@@ -31,4 +31,4 @@ pixel_size = 0.07
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_btwrg")
 autoplay = "default"
-frame_progress = 0.42572567
+frame_progress = 0.037186313

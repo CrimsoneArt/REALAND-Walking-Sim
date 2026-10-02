@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://dw81hv4y6gdd5"]
+
+[ext_resource type="Script" uid="uid://dpoxk86q0vc0o" path="res://Objects/GameObject.gd" id="1_btwrg"]
+[ext_resource type="Texture2D" uid="uid://diefp8wi8m5u" path="res://Objects/ObjectsLibrary/RareObjectsLibrary/Doodle1.png" id="2_fq465"]
+[ext_resource type="Texture2D" uid="uid://bkbrg0kyj2vud" path="res://Objects/ObjectsLibrary/RareObjectsLibrary/Doodle2.png" id="3_dcmnq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_btwrg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fq465")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_dcmnq")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="Doodle" type="Node3D" unique_id=368057495]
+script = ExtResource("1_btwrg")
+amount_min = 1
+amount_max = 2
+ChanceOfAppearing = 1.0
+metadata/_custom_type_script = "uid://dpoxk86q0vc0o"
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1979102325]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6041826, 0)
+pixel_size = 0.07
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_btwrg")
+autoplay = "default"
+frame_progress = 0.42572567

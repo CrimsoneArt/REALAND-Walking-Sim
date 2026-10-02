@@ -32,7 +32,6 @@ sky_material = SubResource("ShaderMaterial_sd3w8")
 background_mode = 2
 sky = SubResource("Sky_q53a6")
 glow_enabled = true
-fog_enabled = true
 fog_mode = 1
 fog_light_color = Color(0, 0, 0, 1)
 fog_density = 1.0

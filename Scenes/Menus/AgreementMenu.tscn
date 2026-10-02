@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://glnssl8bcg2t" path="res://Scenes/Menus/RandomizedButton.tscn" id="1_65t6h"]
 
 [node name="AgreementMenu" type="Control" unique_id=1518392886]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,32 +13,12 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_1ji1t")
 
-[node name="RandomizedButton3" parent="." unique_id=1920411792 instance=ExtResource("1_65t6h")]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -54.5
-offset_top = -156.5
-offset_right = 54.5
-offset_bottom = -95.5
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(291, 35)
-mouse_filter = 2
-text = "Do you consent to the possibility
-of feelling bored during gameplay?"
-CustomThemeOverride = true
-MaxHoverSize = Vector2(2, 2)
-
 [node name="RandomizedButton" parent="." unique_id=1019148459 instance=ExtResource("1_65t6h")]
 layout_mode = 0
 offset_left = 394.0
-offset_top = 350.0
+offset_top = 500.0
 offset_right = 576.0
-offset_bottom = 404.0
+offset_bottom = 554.0
 pivot_offset = Vector2(91, 27)
 text = "I consent"
 EnterTargetScene = true
@@ -48,11 +29,34 @@ MaxHoverSize = Vector2(1.5, 1.5)
 [node name="RandomizedButton2" parent="." unique_id=315931199 instance=ExtResource("1_65t6h")]
 layout_mode = 0
 offset_left = 608.0
-offset_top = 350.0
+offset_top = 500.0
 offset_right = 758.0
-offset_bottom = 404.0
+offset_bottom = 554.0
 pivot_offset = Vector2(75, 27)
 text = "I don't"
 ForceQuit = true
 CustomThemeOverride = true
 MaxHoverSize = Vector2(1.5, 1.5)
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1761031408]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -205.0
+offset_top = -249.0
+offset_right = 205.0
+offset_bottom = -71.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="PanelContainer" unique_id=1263837022]
+layout_mode = 2
+text = "This game contains flashing lights.
+
+
+Do you consent to the possibility
+of feelling bored during gameplay?"
+autowrap_mode = 2

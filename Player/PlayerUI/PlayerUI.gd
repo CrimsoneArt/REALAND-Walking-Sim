@@ -8,6 +8,7 @@ var timer: Timer
 
 func _ready() -> void:
 	update_coin_counter()
+	visible = get_node("/root/SceneLoader").ui_visible
 
 func change_cross_hair(texture: Texture):
 	CrossHair.texture = texture
@@ -17,7 +18,8 @@ func update_seed_label(seed):
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ShowOrHideUI"):
-		visible = not visible
+		get_node("/root/SceneLoader").ui_visible = not get_node("/root/SceneLoader").ui_visible
+		visible = get_node("/root/SceneLoader").ui_visible
 
 func _process(delta: float) -> void:
 	if DialougeBox.get_theme_stylebox("normal") is StyleBoxTexture:
